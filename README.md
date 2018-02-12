@@ -10,7 +10,7 @@ The WinFormns application was ported to since Wisej is a Web platform, the missi
 This application uses an interesting environment:
 - business layer uses [CSLA .NET](http://github.com/MarimerLLC/csla)
 - business rules and date parser uses [CSLA .NET public contribution](http://github.com/MarimerLLC/cslacontrib)
-- business layer code was generated using [CslaGenFork](https://github.com/CslaGenFork/CslaGenFork)
-- UI uses [MvvmFx](https://github.com/MvvmFx/MvvmFx)
+- business layer code was generated using [CslaGenFork](http://github.com/CslaGenFork/CslaGenFork)
+- UI uses [MvvmFx](http://github.com/MvvmFx/MvvmFx)
 
 The project is instrumental for the improvement and maturity of MvvmFx.
