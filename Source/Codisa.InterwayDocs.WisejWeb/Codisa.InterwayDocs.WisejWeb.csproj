@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BA22EE1E-C853-40B1-A5C1-ED2B10300AC8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Codisa.InterwayDocs</RootNamespace>
+    <AssemblyName>Codisa.InterwayDocs.WisejWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WISEJ</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;WISEJ</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Codisa.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Backups\Readme.txt">
+      <Link>Backups\Readme.txt</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\InterwayDocs.mdf">
+      <Link>InterwayDocs.mdf</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\InterwayDocs_log.ldf">
+      <Link>InterwayDocs_log.ldf</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Release Notes.txt">
+      <Link>Release Notes.txt</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\ApplyTo-1.3.6.sql">
+      <Link>Scripts-1.3.7\ApplyTo-1.3.6.sql</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\DeliveryRegister.sql">
+      <Link>Scripts-1.3.7\DeliveryRegister.sql</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\DeliveryView.sql">
+      <Link>Scripts-1.3.7\DeliveryView.sql</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\IncomingRegister.sql">
+      <Link>Scripts-1.3.7\IncomingRegister.sql</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\IncomingView.sql">
+      <Link>Scripts-1.3.7\IncomingView.sql</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\OutgoingRegister.sql">
+      <Link>Scripts-1.3.7\OutgoingRegister.sql</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\OutgoingView.sql">
+      <Link>Scripts-1.3.7\OutgoingView.sql</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\PropertyConfiguration.sql">
+      <Link>Scripts-1.3.7\PropertyConfiguration.sql</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\PropertyConfigurationColl.sql">
+      <Link>Scripts-1.3.7\PropertyConfigurationColl.sql</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\PropertyConfigurationList.sql">
+      <Link>Scripts-1.3.7\PropertyConfigurationList.sql</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\PropertyFriendlyName.sql">
+      <Link>Scripts-1.3.7\PropertyFriendlyName.sql</Link>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\PropertyRequiredList.sql">
+      <Link>Scripts-1.3.7\PropertyRequiredList.sql</Link>
+    </Content>
+    <Content Include="About.en.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="About.es.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="About.fr.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="About.pt.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Default.html" />
+    <Content Include="Default.json" />
+    <Content Include="favicon.ico" />
+    <Content Include="packages.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Manual.pdf">
+      <Link>Manual.pdf</Link>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Properties\DataSources\Codisa.InterwayDocs.Business.DeliveryBook.datasource" />
+    <Content Include="Properties\DataSources\Codisa.InterwayDocs.Business.DeliveryRegister.datasource" />
+    <Content Include="Properties\DataSources\Codisa.InterwayDocs.Business.IncomingBook.datasource" />
+    <Content Include="Properties\DataSources\Codisa.InterwayDocs.Business.IncomingRegister.datasource" />
+    <Content Include="Properties\DataSources\Codisa.InterwayDocs.Business.OutgoingBook.datasource" />
+    <Content Include="Properties\DataSources\Codisa.InterwayDocs.Business.OutgoingRegister.datasource" />
+    <Content Include="Themes\Classic-2.theme" />
+    <Content Include="Themes\Classic-3.theme" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\AppBootstrapper.cs">
+      <Link>AppBootstrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Delivery\DeliveryBookViewModel.cs">
+      <Link>Delivery\DeliveryBookViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Delivery\DeliveryDetailViewModel.cs">
+      <Link>Delivery\DeliveryDetailViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\ApplicationCloseCheck.cs">
+      <Link>Framework\ApplicationCloseCheck.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\ApplicationCloseStrategy.cs">
+      <Link>Framework\ApplicationCloseStrategy.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\AuditFormater.cs">
+      <Link>Framework\AuditFormater.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\BookViewBase.cs">
+      <Link>Framework\BookViewBase.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\BusyResult.cs">
+      <Link>Framework\BusyResult.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\CommonBookCriteriaFacade.cs">
+      <Link>Framework\CommonBookCriteriaFacade.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\DetailViewBase.cs">
+      <Link>Framework\DetailViewBase.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\FastDateOptionsFacade.cs">
+      <Link>Framework\FastDateOptionsFacade.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\Helper.cs">
+      <Link>Framework\Helper.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\IBookView.cs">
+      <Link>Framework\IBookView.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\IBookViewModel.cs">
+      <Link>Framework\IBookViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\IDetailView.cs">
+      <Link>Framework\IDetailView.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\IDetailViewModel.cs">
+      <Link>Framework\IDetailViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\IHaveBusyIndicator.cs">
+      <Link>Framework\IHaveBusyIndicator.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\IHaveNamedElements.cs">
+      <Link>Framework\IHaveNamedElements.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\IHaveShutdownTask.cs">
+      <Link>Framework\IHaveShutdownTask.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\InverseBooleanConverter.cs">
+      <Link>Framework\InverseBooleanConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\IRefreshTranslation.cs">
+      <Link>Framework\IRefreshTranslation.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\PrintBook.cs">
+      <Link>Framework\PrintBook.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\PrintRecord.cs">
+      <Link>Framework\PrintRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\Show.cs">
+      <Link>Framework\Show.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\IMainForm.cs">
+      <Link>IMainForm.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\IMainFormViewModel.cs">
+      <Link>IMainFormViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Incoming\IncomingBookViewModel.cs">
+      <Link>Incoming\IncomingBookViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Incoming\IncomingDetailViewModel.cs">
+      <Link>Incoming\IncomingDetailViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Logger.cs">
+      <Link>Logger.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\MainFormViewModel.cs">
+      <Link>MainFormViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Outgoing\OutgoingBookViewModel.cs">
+      <Link>Outgoing\OutgoingBookViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Outgoing\OutgoingDetailViewModel.cs">
+      <Link>Outgoing\OutgoingDetailViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Update\CopyLocalDbFilesManager.cs">
+      <Link>Update\CopyLocalDbFilesManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Update\FileInfoRename.cs">
+      <Link>Update\FileInfoRename.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Update\RefreshObjectsManager.cs">
+      <Link>Update\RefreshObjectsManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Update\UpdateSchemaManager.cs">
+      <Link>Update\UpdateSchemaManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Update\UpdateViewModel.cs">
+      <Link>Update\UpdateViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery\DeliveryBookView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Delivery\DeliveryBookView.Designer.cs">
+      <DependentUpon>DeliveryBookView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery\DeliveryDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Delivery\DeliveryDetailView.Designer.cs">
+      <DependentUpon>DeliveryDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\BusyIndicator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Framework\BusyIndicator.Designer.cs">
+      <DependentUpon>BusyIndicator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Incoming\IncomingBookView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Incoming\IncomingBookView.Designer.cs">
+      <DependentUpon>IncomingBookView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Incoming\IncomingDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Incoming\IncomingDetailView.Designer.cs">
+      <DependentUpon>IncomingDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outgoing\OutgoingBookView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Outgoing\OutgoingBookView.Designer.cs">
+      <DependentUpon>OutgoingBookView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outgoing\OutgoingDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Outgoing\OutgoingDetailView.Designer.cs">
+      <DependentUpon>OutgoingDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\BackupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\BackupForm.Designer.cs">
+      <DependentUpon>BackupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ExportForm.Designer.cs">
+      <DependentUpon>ExportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ImportForm.Designer.cs">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\RestoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\RestoreForm.Designer.cs">
+      <DependentUpon>RestoreForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="Csla, Version=4.6.603.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\CSLA-Core.4.6.603\lib\net45\Csla.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CslaContrib, Version=4.6.602.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\CslaContrib.4.6.602\lib\net45\CslaContrib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CslaContrib.WisejWeb, Version=4.6.602.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\CslaContrib-Wisej.4.6.602\lib\net45\CslaContrib.WisejWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="CaliburnMicro.WisejWeb.PanelEx">
+      <HintPath>..\..\Dependencies\Library\WisejWeb\net45\CaliburnMicro.WisejWeb.PanelEx.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmFx.CaliburnMicro.Csla.WisejWeb">
+      <HintPath>..\..\Dependencies\Library\WisejWeb\net45\MvvmFx.CaliburnMicro.Csla.WisejWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmFx.CaliburnMicro.WisejWeb">
+      <HintPath>..\..\Dependencies\Library\WisejWeb\net45\MvvmFx.CaliburnMicro.WisejWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmFx.DataBinding.WisejWeb">
+      <HintPath>..\..\Dependencies\Library\WisejWeb\net45\MvvmFx.DataBinding.WisejWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmFx.Logging">
+      <HintPath>..\..\Dependencies\Library\Common\net45\MvvmFx.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmFx.NLogLogger">
+      <HintPath>..\..\Dependencies\Library\Common\net45\MvvmFx.NLogLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\NPOI.2.3.0\lib\net40\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\NPOI.2.3.0\lib\net40\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Wisej.Core" />
+    <Reference Include="Wisej.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delivery\DeliveryBookView.resx">
+      <DependentUpon>DeliveryBookView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delivery\DeliveryDetailView.resx">
+      <DependentUpon>DeliveryDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Framework\BusyIndicator.resx">
+      <DependentUpon>BusyIndicator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\IncomingBookView.resx">
+      <DependentUpon>IncomingBookView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incoming\IncomingDetailView.resx">
+      <DependentUpon>IncomingDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\OutgoingBookView.resx">
+      <DependentUpon>OutgoingBookView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outgoing\OutgoingDetailView.resx">
+      <DependentUpon>OutgoingDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.es.resx" />
+    <EmbeddedResource Include="Properties\Resources.fr.resx" />
+    <EmbeddedResource Include="Properties\Resources.pt.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BackupForm.resx">
+      <DependentUpon>BackupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ExportForm.resx">
+      <DependentUpon>ExportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ImportForm.resx">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\RestoreForm.resx">
+      <DependentUpon>RestoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\Dependencies\packages\CSLA-Core.4.6.603\analyzers\c#\Csla.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Codisa.InterwayDocs.Business\Codisa.InterwayDocs.Business.csproj">
+      <Project>{bb691219-f5a9-493d-ba15-853d3ad8500a}</Project>
+      <Name>Codisa.InterwayDocs.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Codisa.InterwayDocs.Configuration\Codisa.InterwayDocs.Configuration.csproj">
+      <Project>{8f384b5e-c997-41ef-a22a-b72c59c2315c}</Project>
+      <Name>Codisa.InterwayDocs.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Codisa.InterwayDocs.Rules\Codisa.InterwayDocs.Rules.csproj">
+      <Project>{bb2ccd46-4b03-477d-acc7-aabbf15f9245}</Project>
+      <Name>Codisa.InterwayDocs.Rules</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:28020/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

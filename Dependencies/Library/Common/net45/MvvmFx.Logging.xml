@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MvvmFx.Logging</name>
+    </assembly>
+    <members>
+        <member name="T:MvvmFx.Logging.DebugLogger">
+            <summary>
+            Creates and manages the DebugLogger object.
+            </summary>
+            <remarks>The DebugLogger logs to System.Diagnostics.Debug.</remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.DebugLogger.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvvmFx.Logging.DebugLogger"/> class.
+            </summary>
+            <param name="type">The type.</param>        
+        </member>
+        <member name="M:MvvmFx.Logging.DebugLogger.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:MvvmFx.Logging.DebugLogger"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Logging.DebugLogger.Trace(System.String,System.Object[])">
+            <summary>
+            Reports a Trace message.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>
+            A Trace message just shows the execution path.
+            This log level shouldn't be used in production environment.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.DebugLogger.Debug(System.String,System.Object[])">
+            <summary>
+            Reports a Debug message.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>
+            A Debug message reports successful processing or shows key variable values.
+            This log level shouldn't be used in production environment.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.DebugLogger.Info(System.String,System.Object[])">
+            <summary>
+            Reports an information message.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>
+            An information message is used to report harmless events like program start and stop.
+            This log level is part of normal program log and can be used in production environment.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.DebugLogger.Warn(System.String,System.Object[])">
+            <summary>
+            Reports a warning message.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>
+            A warning message reports an event that could be an error but was or can be recovered by the program. Example:<br />
+            - the configuration file didn't supply a value but a default value was used;<br />
+            - there was an error sending an email message but the program will retry later.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.DebugLogger.Error(System.String,System.Object[])">
+            <summary>
+            Reports an Error program condition.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>
+            An Error message logs a serious error condition: an Exception
+            or some essential program action didn't succeed.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.DebugLogger.Error(System.Exception)">
+            <summary>
+            Reports an Error program condition.
+            </summary>
+            <param name="exception">The Exception to report.</param>
+            <remarks>
+            An Error message logs a serious error condition: an Exception
+            or some essential program action didn't succeed.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.DebugLogger.Fatal(System.String,System.Object[])">
+            <summary>
+            Reports a Fatal program condition.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>
+            A Fatal message is issued just before the program execution stops.
+            The error makes impossible to the program to do what it was supposed to do.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.DebugLogger.Fatal(System.Exception)">
+            <summary>
+            Reports a Fatal program condition.
+            </summary>
+            <param name="exception">The Exception to report.</param>
+            <remarks>
+            A Fatal message is issued just before the program execution stops.
+            The error makes impossible to the program to do what it was supposed to do.
+            </remarks>
+        </member>
+        <member name="T:MvvmFx.Logging.ILog">
+            <summary>
+            Interface definiton for a logger.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Logging.ILog.Trace(System.String,System.Object[])">
+            <summary>
+            Reports a Trace message.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>A Trace message just shows the execution path.
+            This log level shouldn't be used in production environment.</remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.ILog.Debug(System.String,System.Object[])">
+            <summary>
+            Reports a Debug message.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>A Debug message reports successful processing or shows key variable values.
+            This log level shouldn't be used in production environment.</remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.ILog.Info(System.String,System.Object[])">
+            <summary>
+            Reports an information message.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>An information message is used to report harmless events like program start and stop.
+            This log level is part of normal program log and can be used in production environment.</remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.ILog.Warn(System.String,System.Object[])">
+            <summary>
+            Reports a warning message.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>A warning message reports an event that could be an error but was or can be recovered by the program. Example:<br/>
+            - the configuration file didn't supply a value but a default value was used;<br/>
+            - there was an error sending an email message but the program will retry later.</remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.ILog.Error(System.String,System.Object[])">
+            <summary>
+            Reports an Error program condition.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>An Error message logs a serious error condition: an Exception
+            or some essential program action didn't succeed.</remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.ILog.Error(System.Exception)">
+            <summary>
+            Reports an Error program condition.
+            </summary>
+            <param name="exception">The Exception to report.</param>
+            <remarks>An Error message logs a serious error condition: an Exception
+            or some essential program action didn't succeed.</remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.ILog.Fatal(System.String,System.Object[])">
+            <summary>
+            Reports a Fatal program condition.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>A Fatal message is issued just before the program execution stops.
+            The error makes impossible to the program to do what it was supposed to do.</remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.ILog.Fatal(System.Exception)">
+            <summary>
+            Reports a Fatal program condition.
+            </summary>
+            <param name="exception">The Exception to report.</param>
+            <remarks>A Fatal message is issued just before the program execution stops.
+            The error makes impossible to the program to do what it was supposed to do.</remarks>
+        </member>
+        <member name="T:MvvmFx.Logging.NullLogger">
+            <summary>
+            Creates and manages the NullLogger object.
+            </summary>
+            <remarks>The NullLogger discards all the logs.</remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.NullLogger.Trace(System.String,System.Object[])">
+            <summary>
+            Reports a Trace message.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>
+            A Trace message just shows the execution path.
+            This log level shouldn't be used in production environment.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.NullLogger.Debug(System.String,System.Object[])">
+            <summary>
+            Reports a Debug message.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>
+            A Debug message reports successful processing or shows key variable values.
+            This log level shouldn't be used in production environment.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.NullLogger.Info(System.String,System.Object[])">
+            <summary>
+            Reports an information message.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>
+            An information message is used to report harmless events like program start and stop.
+            This log level is part of normal program log and can be used in production environment.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.NullLogger.Warn(System.String,System.Object[])">
+            <summary>
+            Reports a warning message.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>
+            A warning message reports an event that could be an error but was or can be recovered by the program. Example:<br />
+            - the configuration file didn't supply a value but a default value was used;<br />
+            - there was an error sending an email message but the program will retry later.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.NullLogger.Error(System.String,System.Object[])">
+            <summary>
+            Reports an Error program condition.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>
+            An Error message logs a serious error condition: an Exception
+            or some essential program action didn't succeed.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.NullLogger.Error(System.Exception)">
+            <summary>
+            Reports an Error program condition.
+            </summary>
+            <param name="exception">The Exception to report.</param>
+            <remarks>
+            An Error message logs a serious error condition: an Exception
+            or some essential program action didn't succeed.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.NullLogger.Fatal(System.String,System.Object[])">
+            <summary>
+            Reports a Fatal program condition.
+            </summary>
+            <param name="format">A formatted message.</param>
+            <param name="args">Parameters to be injected into the formatted message.</param>
+            <remarks>
+            A Fatal message is issued just before the program execution stops.
+            The error makes impossible to the program to do what it was supposed to do.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Logging.NullLogger.Fatal(System.Exception)">
+            <summary>
+            Reports a Fatal program condition.
+            </summary>
+            <param name="exception">The Exception to report.</param>
+            <remarks>
+            A Fatal message is issued just before the program execution stops.
+            The error makes impossible to the program to do what it was supposed to do.
+            </remarks>
+        </member>
+    </members>
+</doc>
