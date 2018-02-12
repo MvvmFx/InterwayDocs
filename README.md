@@ -13,4 +13,4 @@ This application uses an interesting environment:
 - business layer code was generated using [CslaGenFork](https://github.com/CslaGenFork/CslaGenFork)
 - UI uses [MvvmFx](https://github.com/MvvmFx/MvvmFx)
 
-The project was instrumental for the improvement and maturity of MvvmFx.
+The project is instrumental for the improvement and maturity of MvvmFx.
