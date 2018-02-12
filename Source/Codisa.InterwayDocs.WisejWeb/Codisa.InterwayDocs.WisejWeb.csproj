@@ -52,12 +52,6 @@
     <Content Include="..\Codisa.InterwayDocs.WindowsForms\Backups\Readme.txt">
       <Link>Backups\Readme.txt</Link>
     </Content>
-    <Content Include="..\Codisa.InterwayDocs.WindowsForms\InterwayDocs.mdf">
-      <Link>InterwayDocs.mdf</Link>
-    </Content>
-    <Content Include="..\Codisa.InterwayDocs.WindowsForms\InterwayDocs_log.ldf">
-      <Link>InterwayDocs_log.ldf</Link>
-    </Content>
     <Content Include="..\Codisa.InterwayDocs.WindowsForms\Release Notes.txt">
       <Link>Release Notes.txt</Link>
     </Content>
@@ -108,6 +102,10 @@
     </Content>
     <Content Include="About.pt.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\InterwayDocs.mdf" />
+    <Content Include="App_Data\InterwayDocs_log.ldf">
+      <DependentUpon>InterwayDocs.mdf</DependentUpon>
     </Content>
     <Content Include="Default.html" />
     <Content Include="Default.json" />
