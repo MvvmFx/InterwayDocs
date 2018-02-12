@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MvvmFx.CaliburnMicro.DialogExtensions.WinForms</name>
+    </assembly>
+    <members>
+        <member name="T:MvvmFx.CaliburnMicro.DialogConductorViewModel">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:MvvmFx.CaliburnMicro.PropertyChangedBase" />
+            <seealso cref="T:MvvmFx.CaliburnMicro.IDialogManager" />
+            <seealso cref="T:MvvmFx.CaliburnMicro.IConductActiveItem" />
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.DialogConductorViewModel.#ctor(System.Func{MvvmFx.CaliburnMicro.IMessageBox})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvvmFx.CaliburnMicro.DialogConductorViewModel"/> class.
+            </summary>
+            <param name="messageBoxFactory">The message box factory.</param>
+        </member>
+        <member name="P:MvvmFx.CaliburnMicro.DialogConductorViewModel.ActiveItem">
+            <summary>
+            Gets the active item.
+            </summary>
+            <value>
+            The active item.
+            </value>
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.DialogConductorViewModel.GetChildren">
+            <summary>
+            Gets the children.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.DialogConductorViewModel.ActivateItem(System.Object)">
+            <summary>
+            Activates the item.
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.DialogConductorViewModel.DeactivateItem(System.Object,System.Boolean)">
+            <summary>
+            Deactivates the item.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="close">if set to <c>true</c> [close].</param>
+        </member>
+        <member name="E:MvvmFx.CaliburnMicro.DialogConductorViewModel.ActivationProcessed">
+            <summary>
+            Occurs when after the item activation is processed.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.DialogConductorViewModel.ShowDialog(MvvmFx.CaliburnMicro.IScreen)">
+            <summary>
+            Shows the view model as a dialog.
+            </summary>
+            <param name="dialogModel">The view model.</param>
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.DialogConductorViewModel.ShowMessageBox(System.String,System.String,MvvmFx.CaliburnMicro.MessageBoxOptions,System.Action{MvvmFx.CaliburnMicro.IMessageBox})">
+            <summary>
+            Shows a message box.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="title">The message box title.</param>
+            <param name="options">The message box options.</param>
+            <param name="callback">The callback method.</param>
+        </member>
+        <member name="T:MvvmFx.CaliburnMicro.IDialogManager">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.IDialogManager.ShowDialog(MvvmFx.CaliburnMicro.IScreen)">
+            <summary>
+            Shows the dialog.
+            </summary>
+            <param name="dialogModel">The dialog model.</param>
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.IDialogManager.ShowMessageBox(System.String,System.String,MvvmFx.CaliburnMicro.MessageBoxOptions,System.Action{MvvmFx.CaliburnMicro.IMessageBox})">
+            <summary>
+            Shows the message box.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="title">The message box title.</param>
+            <param name="options">The message box options.</param>
+            <param name="callback">The callback method.</param>
+        </member>
+    </members>
+</doc>

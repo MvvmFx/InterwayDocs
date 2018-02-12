@@ -1,0 +1,21 @@
+﻿InterwayDocs versão 1.3.7 - 2016/07/22
+======================================
+
+Alterações
+----------
+1. Foi criada uma opção de configuração "UseLongNameEntities" que permite que
+   os nomes das entidades tenham até 150 caracteres (anteriormente o comprimento
+   era de 20 caracteres), nos seguintes campos:
+   * entradas - Entidade, Departamento, Proveniência
+   * saídas - Entidade, Departamento, Destinatário
+   * protocolo - Entidade, Departamento, Destinatário
+
+Melhorias
+---------
+1. Foi criado um sistema de actualização automática da versão do esquena da 
+   base de dados.
+   Sempre que um utilizador entra na aplicação, é feita a cópia dos ficheiros
+   da base de dados para a pasta "Backups"
+   Assim, antes de executar a actualização da base de dados, os ficheiros
+   anteriores estão sempre salvaguardados.
+   Os scripts de actualização da base de dados estão na pasta "Scripts-1.3.7".

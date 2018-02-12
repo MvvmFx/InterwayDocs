@@ -1,0 +1,2318 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MvvmFx.DataBinding.WisejWeb</name>
+    </assembly>
+    <members>
+        <member name="T:MvvmFx.Windows.Data.Binding">
+            <summary>
+            Connects a target property to a single source property using simple path-formatted strings to resolve the bound properties on both
+            the target and source objects.
+            </summary>
+            <remarks>
+            <para>
+            Instances of the <c>Binding</c> class can be used to connect together two properties. The properties are specified via strings, so
+            there is no compile-time check to ensure that the property actually exists. If the types of the target and source objects are
+            known, it is recommended that a <see cref="T:MvvmFx.Windows.Data.TypedBinding`2" /> be used rather than a <c>Binding</c>.
+            </para>
+            <para>
+			The syntax for specifying a property is similar to that of C#. For example, a target path of "PropertyName" will attempt to
+			resolve a property called "PropertyName" on the target object. A target path of "Parent.Child" will attempt first to resolve
+			a property called "Parent" on the target object, and then a property called "Child" on the value of the "Parent" property.
+		</para>
+            </remarks>
+            <example>
+			The following example demonstrates how a <c>Binding</c> can be used to connect the <c>Name</c> property of two <c>Customer</c>
+			instances:
+			<code><![CDATA[var bindingManager = new BindingManager();
+var binding = new Binding(targetCustomer, "Name", sourceCustomer, "Name");
+bindingManager.Bindings.Add(binding);]]></code>
+		</example>
+            <example>
+			The following example demonstrates how a <c>Binding</c> can be used to connect the <c>Name</c> property of two <c>Customer</c>
+			instances using the fluent interface:
+			<code><![CDATA[var bindingManager = new BindingManager();
+bindingManager.Bind(targetCustomer, "Name")
+	.To(sourceCustomer, "Name")
+	.Activate();]]></code>
+		</example>
+            <example>
+			The following example demonstrates how a <c>Binding</c> can be used to connect a <c>PostCode</c> property on a <c>Customer</c>
+			instance with a <c>Region</c> property on a <c>CustomerInfo</c> instance. The post code is a <c>string</c> so needs to be
+			converted to a member of the <c>Region</c> enumeration during bindings. Since a region is not enough information to convert
+			to a post code, the binding is one-way.
+			<code><![CDATA[public enum Region
+{
+	Unknown,
+	North,
+	South,
+	East,
+	West
+}
+
+public abstract class Entity : INotifyPropertyChanged
+{
+	public event PropertyChangedEventHandler PropertyChanged;
+
+	protected void OnPropertyChanged(string propertyName)
+	{
+		var handler = PropertyChanged;
+
+		if (handler != null)
+		{
+			handler(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+public class Customer : Entity
+{
+	private string _name;
+	private readonly Address _address;
+
+	public Customer()
+	{
+		_address = new Address();
+	}
+
+	public string Name
+	{
+		get { return _name; }
+		set
+		{
+			if (_name != value)
+			{
+				_name = value;
+				OnPropertyChanged("Name");
+			}
+		}
+	}
+
+	public Address Address
+	{
+		get { return _address; }
+	}
+}
+
+public class Address : Entity
+{
+	private string _postCode;
+
+	public string PostCode
+	{
+		get { return _postCode; }
+		set
+		{
+			if (_postCode != value)
+			{
+				_postCode = value;
+				OnPropertyChanged("PostCode");
+			}
+		}
+	}
+}
+
+public class SomeClass : Entity
+{
+	private readonly BindingManager _bindingManager;
+	private Region _region;
+
+	public SomeClass(Customer customer)
+	{
+		_bindingManager = new BindingManager();
+		var binding = new Binding(this, "Region", customer, "Address.PostCode");
+		binding.Converter = new PostCodeToRegionConverter();
+		binding.Mode = BindingMode.OneWayToTarget;
+		_bindingManager.Bindings.Add(binding);
+	}
+
+	public Region Region
+	{
+		get { return _region; }
+		set
+		{
+			if (_region != value)
+			{
+				_region = value;
+				OnPropertyChanged("Region");
+			}
+		}
+	}
+}
+
+public class PostCodeToRegionConverter : IValueConverter
+{
+	public object Convert(object value, System.Type type, object parameter)
+	{
+		var postCode = value as string;
+
+		if (string.IsNullOrEmpty(postCode))
+		{
+			return Region.Unknown;
+		}
+
+		switch (postCode[0])
+		{
+			case 'N':
+				return Region.North;
+			case 'S':
+				return Region.South;
+			case 'E':
+				return Region.East;
+			case 'W':
+				return Region.West;
+			default:
+				return Region.Unknown;
+		}
+	}
+
+	public object ConvertBack(object value, System.Type type, object parameter)
+	{
+		throw new NotSupportedException();
+	}
+}]]></code>
+		</example>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.Binding.#ctor">
+            <summary>
+            Constructs an instance of <c>Binding</c>.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.Binding.#ctor(System.Object,System.String,System.Object,System.String)">
+            <summary>
+            Constructs an instance of <c>Binding</c> using the specified details.
+            </summary>
+            <param name="targetObject">
+            The target object for the binding.
+            </param>
+            <param name="targetPath">
+            A path used to resolve the bound property on the target object.
+            </param>
+            <param name="sourceObject">
+            The source object for the binding.
+            </param>
+            <param name="sourcePath">
+            A path used to resolve the bound property on the source object.
+            </param>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.Binding.TargetPath">
+            <summary>
+            Gets or sets the target path for this <c>Binding</c>.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.Binding.SourcePath">
+            <summary>
+            Gets or sets the source path for this <c>Binding</c>.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.Binding.AttemptCreateTargetPropertyExpression">
+            <summary>
+            Attempts to create the <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/> for this <c>Binding</c>'s target.
+            </summary>
+            <returns>
+            The <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/>, or <see langword="null"/> if the property expression cannot be created.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.Binding.AttemptCreateSourcePropertyExpression">
+            <summary>
+            Attempts to create the <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/> for this <c>Binding</c>'s source.
+            </summary>
+            <returns>
+            The <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/>, or <see langword="null"/> if the property expression cannot be created.
+            </returns>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.BindingListAdapter`1">
+            <summary>
+            Generic IBindingList implementation that can be instantiated with reference type T.
+            </summary>
+            <typeparam name="T">The item type of the list.</typeparam>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvvmFx.Windows.Data.BindingListAdapter`1"/> class.
+            </summary>
+            <param name="list">The list.</param>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.IsReadOnly">
+            <summary>
+            Gets a value indicating whether this instance is read only.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is read only; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.Count">
+            <summary>
+            Gets the number of elements contained in this instance.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the element to get or set.</param>
+            <returns>The element at the specified index.</returns>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.System#Collections#ICollection#IsSynchronized">
+            <summary>
+            Gets a value indicating whether access to the <see cref="T:System.Collections.ICollection"/> is synchronized (thread safe).
+            </summary>
+            <returns> <c>true</c> if access to the <see cref="T:System.Collections.ICollection"/> is synchronized (thread safe); otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.System#Collections#ICollection#SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access to the <see cref="T:System.Collections.ICollection"/>.
+            </summary>
+            <returns>An object that can be used to synchronize access to the <see cref="T:System.Collections.ICollection"/>.</returns>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.System#Collections#IList#IsFixedSize">
+            <summary>
+            Gets a value indicating whether the <see cref="T:System.Collections.IList"/> has a fixed size.
+            </summary>
+            <returns> <c>true</c> if the <see cref="T:System.Collections.IList"/> has a fixed size; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.System#Collections#IList#Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the element to get or set.</param>
+            <returns>The element at the specified index.</returns>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#AllowNew">
+            <summary>
+            Gets whether you can add items to the list using <see cref="M:System.ComponentModel.IBindingList.AddNew"/>.
+            </summary>
+            <returns>
+            <c>true</c> if you can add items to the list using <see cref="M:System.ComponentModel.IBindingList.AddNew"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#AllowEdit">
+            <summary>
+            Gets whether you can update items in the list.
+            </summary>
+            <returns>
+            <c>true</c> if you can update the items in the list; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#AllowRemove">
+            <summary>
+            Gets whether you can remove items from the list, using <see cref="M:System.Collections.IList.Remove(System.Object)"/> or <see cref="M:System.Collections.IList.RemoveAt(System.Int32)"/>.
+            </summary>
+            <returns>
+            <c>true</c> if you can remove items from the list; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#SupportsChangeNotification">
+            <summary>
+            Gets whether a <see cref="E:System.ComponentModel.IBindingList.ListChanged"/> event is raised when the list changes or an item in the list changes.
+            </summary>
+            <returns>
+            <c>true</c> if a <see cref="E:System.ComponentModel.IBindingList.ListChanged"/> event is raised when the list changes or when an item changes; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#SupportsSorting">
+            <summary>
+            Gets whether the list supports sorting.
+            </summary>
+            <returns>
+            true if the list supports sorting; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#IsSorted">
+             <summary>
+             Gets whether the items in the list are sorted.
+             </summary>
+             <returns>
+             <c>true</c> if <see cref="M:System.ComponentModel.IBindingList.ApplySort(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)"/> has been called and <see cref="M:System.ComponentModel.IBindingList.RemoveSort"/> has not been called; otherwise, <c>false</c>.</returns>
+            
+             <exception cref="T:System.NotSupportedException">
+               <see cref="P:System.ComponentModel.IBindingList.SupportsSorting"/> is false. </exception>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#SortDirection">
+             <summary>
+             Gets the direction of the sort.
+             </summary>
+             <returns>One of the <see cref="T:System.ComponentModel.ListSortDirection"/> values.</returns>
+            
+             <exception cref="T:System.NotSupportedException">
+               <see cref="P:System.ComponentModel.IBindingList.SupportsSorting"/> is false. </exception>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#SortProperty">
+             <summary>
+             Gets the <see cref="T:System.ComponentModel.PropertyDescriptor"/> that is being used for sorting.
+             </summary>
+             <returns>The <see cref="T:System.ComponentModel.PropertyDescriptor"/> that is being used for sorting.</returns>
+            
+             <exception cref="T:System.NotSupportedException">
+               <see cref="P:System.ComponentModel.IBindingList.SupportsSorting"/> is false. </exception>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#SupportsSearching">
+            <summary>
+            Gets whether the list supports searching using the <see cref="M:System.ComponentModel.IBindingList.Find(System.ComponentModel.PropertyDescriptor,System.Object)"/> method.
+            </summary>
+            <returns>
+                <c>true</c> if the list supports searching using the <see cref="M:System.ComponentModel.IBindingList.Find(System.ComponentModel.PropertyDescriptor,System.Object)"/> method; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="E:MvvmFx.Windows.Data.BindingListAdapter`1.ListChanged">
+            <summary>
+            Occurs when the list changes or an item in the list changes.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.Contains(`0)">
+            <summary>
+            Determines whether [contains] [the specified item].
+            </summary>
+            <param name="item">The item.</param>
+            <returns>
+              <c>true</c> if [contains] [the specified item]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.IndexOf(`0)">
+            <summary>
+            Determines the index of a specific item in the <see cref="T:System.Collections.Generic.IList`1"/>.
+            </summary>
+            <returns>
+            The index of <paramref name="item"/> if found in the list; otherwise, -1.
+            </returns>
+            <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.IList`1"/>.</param>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.Add(`0)">
+            <summary>
+            Adds an item to the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.Insert(System.Int32,`0)">
+            <summary>
+            Inserts an item to the <see cref="T:System.Collections.Generic.IList`1"/> at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which <paramref name="item"/> should be inserted.</param><param name="item">The object to insert into the <see cref="T:System.Collections.Generic.IList`1"/>.</param><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1"/>.</exception><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.IList`1"/> is read-only.</exception>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.Remove(`0)">
+            <summary>
+            Removes the specified item.
+            </summary>
+            <param name="item">The object to remove from the System.Collections.Generic.ICollection&lt;T&gt;.</param>
+            <returns>
+                <c>true</c>  if item was successfully removed from the System.Collections.Generic.ICollection&lt;T&gt;; otherwise, false. This method also returns false if item is not found in the original System.Collections.Generic.ICollection&lt;T&gt;.</returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.RemoveAt(System.Int32)">
+            <summary>
+            Removes the System.Collections.Generic.IList&lt;T&gt; item at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the item to remove</param>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.Clear">
+            <summary>
+            Removes all items from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only. </exception>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.CopyTo(`0[],System.Int32)">
+            <summary>
+            Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"/> to an <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
+            </summary>
+            <param name="array">The array.</param>
+            <param name="arrayIndex">Index of the array.</param>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+            A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
+            </returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+             <summary>
+             Copies the elements of the <see cref="T:System.Collections.ICollection"/> to an <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
+             </summary>
+             <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:System.Collections.ICollection"/>. The <see cref="T:System.Array"/> must have zero-based indexing.</param>
+             <param name="index">The zero-based index in <paramref name="array"/> at which copying begins.</param>
+             <exception cref="T:System.ArgumentNullException">
+               <paramref name="array"/> is null. </exception>
+            
+             <exception cref="T:System.ArgumentOutOfRangeException">
+               <paramref name="index"/> is less than zero. </exception>
+            
+             <exception cref="T:System.ArgumentException">
+               <paramref name="array"/> is multidimensional.-or- The number of elements in the source <see cref="T:System.Collections.ICollection"/> is greater than the available space from <paramref name="index"/> to the end of the destination <paramref name="array"/>. </exception>
+            
+             <exception cref="T:System.ArgumentException">The type of the source <see cref="T:System.Collections.ICollection"/> cannot be cast automatically to the type of the destination <paramref name="array"/>. </exception>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.System#Collections#IList#Contains(System.Object)">
+            <summary>
+            Determines whether the <see cref="T:System.Collections.IList"/> contains a specific value.
+            </summary>
+            <param name="value">The object to locate in the <see cref="T:System.Collections.IList"/>.</param>
+            <returns>
+            true if the <see cref="T:System.Object"/> is found in the <see cref="T:System.Collections.IList"/>; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.System#Collections#IList#IndexOf(System.Object)">
+            <summary>
+            Determines the index of a specific item in the <see cref="T:System.Collections.IList"/>.
+            </summary>
+            <param name="value">The object to locate in the <see cref="T:System.Collections.IList"/>.</param>
+            <returns>
+            The index of <paramref name="value"/> if found in the list; otherwise, -1.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.System#Collections#IList#Add(System.Object)">
+            <summary>
+            Adds an item to the <see cref="T:System.Collections.IList"/>.
+            </summary>
+            <param name="value">The object to add to the <see cref="T:System.Collections.IList"/>.</param>
+            <returns>
+            The position into which the new element was inserted, or -1 to indicate that the item was not inserted into the collection,
+            </returns>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList"/> is read-only.-or- The <see cref="T:System.Collections.IList"/> has a fixed size. </exception>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.System#Collections#IList#Insert(System.Int32,System.Object)">
+             <summary>
+             Inserts an item to the <see cref="T:System.Collections.IList"/> at the specified index.
+             </summary>
+             <param name="index">The zero-based index at which <paramref name="value"/> should be inserted.</param>
+             <param name="value">The object to insert into the <see cref="T:System.Collections.IList"/>.</param>
+             <exception cref="T:System.ArgumentOutOfRangeException">
+               <paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.IList"/>. </exception>
+            
+             <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList"/> is read-only.-or- The <see cref="T:System.Collections.IList"/> has a fixed size. </exception>
+            
+             <exception cref="T:System.NullReferenceException">
+               <paramref name="value"/> is null reference in the <see cref="T:System.Collections.IList"/>.</exception>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.System#Collections#IList#Remove(System.Object)">
+            <summary>
+            Removes the first occurrence of a specific object from the <see cref="T:System.Collections.IList"/>.
+            </summary>
+            <param name="value">The object to remove from the <see cref="T:System.Collections.IList"/>.</param>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.IList"/> is read-only.-or- The <see cref="T:System.Collections.IList"/> has a fixed size. </exception>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#AddNew">
+            <summary>
+            Adds a new item to the list.
+            </summary>
+            <returns>
+            The item added to the list.
+            </returns>
+            <exception cref="T:System.NotSupportedException">
+              <see cref="P:System.ComponentModel.IBindingList.AllowNew"/> is false. </exception>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#ApplySort(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)">
+            <summary>
+            Sorts the list based on a <see cref="T:System.ComponentModel.PropertyDescriptor"/> and a <see cref="T:System.ComponentModel.ListSortDirection"/>.
+            </summary>
+            <param name="property">The <see cref="T:System.ComponentModel.PropertyDescriptor"/> to sort by.</param>
+            <param name="direction">One of the <see cref="T:System.ComponentModel.ListSortDirection"/> values.</param>
+            <exception cref="T:System.NotSupportedException">
+              <see cref="P:System.ComponentModel.IBindingList.SupportsSorting"/> is false. </exception>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#RemoveSort">
+            <summary>
+            Removes any sort applied using <see cref="M:System.ComponentModel.IBindingList.ApplySort(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)"/>.
+            </summary>
+            <exception cref="T:System.NotSupportedException">
+              <see cref="P:System.ComponentModel.IBindingList.SupportsSorting"/> is false. </exception>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#Find(System.ComponentModel.PropertyDescriptor,System.Object)">
+            <summary>
+            Returns the index of the row that has the given <see cref="T:System.ComponentModel.PropertyDescriptor"/>.
+            </summary>
+            <param name="property">The <see cref="T:System.ComponentModel.PropertyDescriptor"/> to search on.</param>
+            <param name="key">The value of the <paramref name="property"/> parameter to search for.</param>
+            <returns>
+            The index of the row that has the given <see cref="T:System.ComponentModel.PropertyDescriptor"/>.
+            </returns>
+            <exception cref="T:System.NotSupportedException">
+              <see cref="P:System.ComponentModel.IBindingList.SupportsSearching"/> is false. </exception>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#AddIndex(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Adds the <see cref="T:System.ComponentModel.PropertyDescriptor"/> to the indexes used for searching.
+            </summary>
+            <param name="property">The <see cref="T:System.ComponentModel.PropertyDescriptor"/> to add to the indexes used for searching.</param>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingListAdapter`1.System#ComponentModel#IBindingList#RemoveIndex(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Removes the <see cref="T:System.ComponentModel.PropertyDescriptor"/> from the indexes used for searching.
+            </summary>
+            <param name="property">The <see cref="T:System.ComponentModel.PropertyDescriptor"/> to remove from the indexes used for searching.</param>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.BindingManager">
+            <summary>
+            Manages a collection of <see cref="T:MvvmFx.Windows.Data.BindingBase" /> instances.
+            </summary>
+            <remarks>
+            <para>
+            Instances of <c>BindingManager</c> are used to store activated bindings. If the <c>BindingManager</c> is disposed, all those
+            bindings will be deactivated. Once disposed, a <c>BindingManager</c> is no longer usable.
+            </para>
+            <para>
+            A <c>BindingManager</c> represents the root of a binding hierarchy. As a container of bindings, it implements the
+            <see cref="T:MvvmFx.Windows.Data.IBindingContainer" /> interface. However, it never resides in a container itself, so its
+            <see cref="P:MvvmFx.Windows.Data.IBindingContainer.Container" /> property always yields <see langword="null" />.
+            </para>
+            <para>
+            When a <c>BindingManager</c> is created, a <see cref="T:System.Threading.SynchronizationContext" /> can optionally be specified. If a
+            <c>BindingManager</c> has a <see cref="T:System.Threading.SynchronizationContext" />, it will be used to marshal any binding value
+            changes onto the appropriate thread. If the default constructor is used, the
+            <see cref="P:System.Threading.SynchronizationContext.Current" /> property is used to set <see cref="P:MvvmFx.Windows.Data.BindingManager.SynchronizationContext" />.
+            </para>
+            <para>
+            The <c>BindingManager</c> class is lightweight, which makes it feasible to create mulitple instances for the purposes of
+            scoping bindings.
+            </para>
+            </remarks>
+            <example>
+			The following example demonstrates how a <c>BindingManager</c> can be constructed and populated with some bindings:
+			<code><![CDATA[var bindingManager = new BindingManager();
+//bind the Name properties of the customers
+bindingManager.Bindings.Add(new TypedBinding<Customer, Customer>(targetCustomer, x => x.Name, sourceCustomer, x => x.Name));
+bind the Age properties of the customers
+bindingManager.Bindings.Add(new Binding(targetCustomer, "Age", sourceCustomer, "Age"));]]></code>
+		</example>
+            <example>
+			The following example demonstrates how a <c>BindingManager</c> can be constructed and populated with some bindings using the fluent interface:
+			<code>
+				<![CDATA[var bindingManager = new BindingManager();
+bindingManager.Bind(targetCustomer, x => x.Name)
+	.To(sourceCustomer, x => x.Name)
+	.Activate();
+bindingManager.Bind(targetCustomer, x => x.Age)
+	.To(sourceCustomer, x => x.Age)
+	.Activate();]]>
+			</code>
+		</example>
+            <example>
+			The following example demonstrates how a component uses a <c>BindingManager</c> for its lifetime to link its <c>Id</c> property
+			with the <c>Name</c> property of a <c>Customer</c> instance:
+			<code><![CDATA[public class SomeComponent : Component, INotifyPropertyChanged
+{
+	private readonly BindingManager _bindingManager;
+	private string _id;
+
+	public SomeComponent(Customer customer)
+	{
+		_bindingManager = new BindingManager();
+		_bindingManager.Bindings.Add(new TypedBinding<SomeComponent, Customer>(this, x => x.Id, customer, x => x.Name));
+	}
+
+	public event PropertyChangedEventHandler PropertyChanged;
+
+	public string Id
+	{
+		get { return _id; }
+		set
+		{
+			if (_id != value)
+			{
+				_id = value;
+				OnPropertyChanged("Id");
+			}
+		}
+	}
+
+	protected override void Dispose(bool disposing)
+	{
+		base.Dispose(disposing);
+
+		if (disposing)
+		{
+			_bindingManager.Dispose();
+		}
+	}
+
+	protected void OnPropertyChanged(string propertyName)
+	{
+		var handler = PropertyChanged;
+
+		if (handler != null)
+		{
+			handler(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}]]></code>
+		</example>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingManager.#ctor">
+            <summary>
+            Constructs an instance of <c>BindingManager</c>, using the current <see cref="P:MvvmFx.Windows.Data.BindingManager.SynchronizationContext"/>.
+            </summary>
+            <remarks>
+            <para>
+            This constructor will use <see cref="P:System.Threading.SynchronizationContext.Current"/> for the <c>BindingManager</c>'s
+            <see cref="P:MvvmFx.Windows.Data.BindingManager.SynchronizationContext"/> property.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingManager.#ctor(System.Threading.SynchronizationContext)">
+            <summary>
+            Constructs an instance of <c>BindingManager</c> with the specified <see cref="P:MvvmFx.Windows.Data.BindingManager.SynchronizationContext"/>.
+            </summary>
+            <param name="synchronizationContext">
+            The <see cref="P:MvvmFx.Windows.Data.BindingManager.SynchronizationContext"/> to use for all bindings in this binding manager, or <see langword="null"/> if no
+            <see cref="P:MvvmFx.Windows.Data.BindingManager.SynchronizationContext"/> should be used.
+            </param>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingManager.Bindings">
+            <summary>
+            Gets a collection of all the bindings activated in this <c>BindingManager</c>.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingManager.SynchronizationContext">
+            <summary>
+            Gets the <see cref="P:MvvmFx.Windows.Data.BindingManager.SynchronizationContext"/> in use within this <c>BindingManager</c>.
+            </summary>
+            <value>
+            The <see cref="P:MvvmFx.Windows.Data.BindingManager.SynchronizationContext"/> being used for all bindings in this <c>BindingManager</c>, or <see langword="null"/>
+            if no <see cref="P:MvvmFx.Windows.Data.BindingManager.SynchronizationContext"/> is being used in this <c>BindingManager</c>.
+            </value>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingManager.MvvmFx#Windows#Data#IBindingContainer#Container">
+            <summary>
+            Always returns <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingManager.MvvmFx#Windows#Data#IBindingContainer#Bindings">
+            <summary>
+            Gets a collection of all the bindings activated in this <c>BindingManager</c>.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingManager.BindOnValidation">
+            <summary>
+            Gets or sets a flag indicating whether to update the bound value on property validation.
+            </summary>
+            <value>
+            <c>true</c> if the bound value should be updated on property validation;
+            <c>false</c> if the bound value should be updated on property change.
+            </value>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingManager.Dispose">
+            <summary>
+            Disposes of this <c>BindingManager</c>.
+            </summary>
+            <remarks>
+            This method deactivates all bindings currently activated in this <c>BindingManager</c>.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingManager.Dispose(System.Boolean)">
+            <summary>
+            Disposes of this <c>BindingManager</c>.
+            </summary>
+            <param name="disposing">
+            Always <see langword="true"/>.
+            </param>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.BindingMode">
+            <summary>
+            Defines the various modes a <see cref="T:MvvmFx.Windows.Data.BindingBase"/> can operate in.
+            </summary>
+        </member>
+        <member name="F:MvvmFx.Windows.Data.BindingMode.TwoWay">
+            <summary>
+            Changes are pushed both from the binding's target to its source, and from its source to its target.
+            </summary>
+        </member>
+        <member name="F:MvvmFx.Windows.Data.BindingMode.OneWayToSource">
+            <summary>
+            Changes are pushed only from the binding's target to its source.
+            </summary>
+        </member>
+        <member name="F:MvvmFx.Windows.Data.BindingMode.OneWayToTarget">
+            <summary>
+            Changes are pushed only from the binding's source to its target.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.BindingManagerExtensions">
+            <summary>
+            Provides extension methods for instigating the fluent interface.
+            </summary>
+            <remarks>
+            <para>
+            This class provides extension methods to the <see cref="T:MvvmFx.Windows.Data.BindingManager"/> type to support a fluent interface for MvvmFx. This enables bindings to be added
+            to a <see cref="T:MvvmFx.Windows.Data.BindingManager"/> with a more natural, simpler API.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingManagerExtensions.Bind(MvvmFx.Windows.Data.BindingManager,System.Object,System.String)">
+            <summary>
+            Binds to the specified target object with a given path.
+            </summary>
+            <param name="bindingManager">
+            The <see cref="T:MvvmFx.Windows.Data.BindingManager"/> to which the <see cref="T:MvvmFx.Windows.Data.Binding"/> will be added.
+            </param>
+            <param name="targetObject">
+            The target object.
+            </param>
+            <param name="targetPath">
+            The path within the target object to bind to.
+            </param>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingManagerExtensions.Bind``1(MvvmFx.Windows.Data.BindingManager,``0,System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Binds to the specified target object with a given expression.
+            </summary>
+            <typeparam name="TTarget">
+            The type of the target object.
+            </typeparam>
+            <param name="bindingManager">
+            The <see cref="T:MvvmFx.Windows.Data.BindingManager"/> to which the <see cref="T:MvvmFx.Windows.Data.TypedBinding`2"/> will be added.
+            </param>
+            <param name="targetObject">
+            The target object.
+            </param>
+            <param name="targetExpression">
+            The expression that resolves the bound property within the target object.
+            </param>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingManagerExtensions.MultiBind(MvvmFx.Windows.Data.BindingManager,System.Object,System.String)">
+            <summary>
+            Multi-binds the specified target object with a given path.
+            </summary>
+            <param name="bindingManager">
+            The <see cref="T:MvvmFx.Windows.Data.BindingManager"/> to which the <see cref="T:MvvmFx.Windows.Data.MultiBinding"/> will be added.
+            </param>
+            <param name="targetObject">
+            The target object.
+            </param>
+            <param name="targetPath">
+            The path within the target object to bind to.
+            </param>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingManagerExtensions.MultiBind``1(MvvmFx.Windows.Data.BindingManager,``0,System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Multi-binds the specified target object with a given expression.
+            </summary>
+            <typeparam name="TTarget">
+            The type of the target object.
+            </typeparam>
+            <param name="bindingManager">
+            The <see cref="T:MvvmFx.Windows.Data.BindingManager"/> to which the <see cref="T:MvvmFx.Windows.Data.TypedMultiBinding`1"/> will be added.
+            </param>
+            <param name="targetObject">
+            The target object.
+            </param>
+            <param name="targetExpression">
+            The expression that resolves the bound property of the target object.
+            </param>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.IActivation">
+            <summary>
+            Allows a binding to be activated.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IActivation.Activate">
+            <summary>
+            Activates the binding, bringing the fluent expression to a close.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.IConverterSelection`2">
+            <summary>
+            Allows selection of a converter for a binding.
+            </summary>
+            <typeparam name="TFollowOn">
+            The follow-on type for methods in this interface.
+            </typeparam>
+            <typeparam name="TConverter">
+            The converter type.
+            </typeparam>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IConverterSelection`2.WithConverter(`1)">
+            <summary>
+            Requests that the specified converter be used with the binding.
+            </summary>
+            <param name="converter">
+            The converter.
+            </param>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IConverterSelection`2.WithConverter(`1,System.Object)">
+            <summary>
+            Requests that the specified converter and converter parameter be used with the binding.
+            </summary>
+            <param name="converter">
+            The converter.
+            </param>
+            <param name="converterParameter">
+            The converter parameter.
+            </param>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.IHideObjectMembers">
+            <summary>
+            Used to hide irrelevant members in the fluent API to make Intellisense cleaner. Note that this only works for people referencing this assembly. It doesn't
+            work within this solution.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IHideObjectMembers.GetType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of the current instance.
+            </summary>
+            <returns>The <see cref="T:System.Type"/> instance that represents the exact runtime type of the current instance.</returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IHideObjectMembers.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IHideObjectMembers.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IHideObjectMembers.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="other">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.ILambdaBasedSourceSelection">
+            <summary>
+            Allows the source to be specified for a lamda-based binding fluent expression.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.ILambdaBasedSourceSelection.To``1(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Binds to the source with the specified expression.
+            </summary>
+            <typeparam name="TSource">
+            The type of the source object.
+            </typeparam>
+            <param name="sourceObject">
+            The source object.
+            </param>
+            <param name="sourceExpression">
+            The expression that resolves to a property within the source object.
+            </param>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.IModeSelection`1">
+            <summary>
+            Allows a mode to be selected.
+            </summary>
+            <typeparam name="TFollowOn">
+            The follow-on type for methods in this interface.
+            </typeparam>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IModeSelection`1.TwoWay">
+            <summary>
+            Requests that the binding be two-way.
+            </summary>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IModeSelection`1.OneWayToSource">
+            <summary>
+            Requests that the binding be one-way to source.
+            </summary>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IModeSelection`1.OneWayToTarget">
+            <summary>
+            Requests that the binding be one-way to target.
+            </summary>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.IMultiSourceBindingOptions">
+            <summary>
+            Provides options for a multi-source binding fluent expression.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IMultiSourceBindingOptions.To(System.Object,System.String)">
+            <summary>
+            Binds to a source object with the specified path.
+            </summary>
+            <param name="sourceObject">
+            The source object.
+            </param>
+            <param name="sourcePath">
+            The path within the source object to bind to.
+            </param>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IMultiSourceBindingOptions.To``1(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Binds to a source object with the specified expression.
+            </summary>
+            <typeparam name="TSource">
+            The type of the source object.
+            </typeparam>
+            <param name="sourceObject">
+            The source object.
+            </param>
+            <param name="sourceExpression">
+            The expression that resolves to a property within the source object.
+            </param>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.IPathBasedSourceSelection">
+            <summary>
+            Allows the source to be specified for a path-based binding fluent expression.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IPathBasedSourceSelection.To(System.Object,System.String)">
+            <summary>
+            Binds to the source with the specified path.
+            </summary>
+            <param name="sourceObject">
+            The source object.
+            </param>
+            <param name="sourcePath">
+            The path within the source object to bind to.
+            </param>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.ISingleSourceBindingOptions">
+            <summary>
+            Provides binding options for single-source binding fluent expressions.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.ISubsequentSourceBindingOptions">
+            <summary>
+            Allows subsequent sources to be specified in a multi-binding fluent expression.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.ISubsequentSourceBindingOptions.AndTo(System.Object,System.String)">
+            <summary>
+            Binds to another source with the given path.
+            </summary>
+            <param name="sourceObject">
+            The source object to bind to.
+            </param>
+            <param name="sourcePath">
+            The path within the source object to bind to.
+            </param>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.ISubsequentSourceBindingOptions.AndTo``1(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Binds to another source with the given expression.
+            </summary>
+            <typeparam name="TSource">
+            The type of the source object.
+            </typeparam>
+            <param name="sourceObject">
+            The source object.
+            </param>
+            <param name="sourceExpression">
+            The expression that resolves to a path within the source object.
+            </param>
+            <returns>
+            The follow-on object.
+            </returns>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.IMultiValueConverter">
+            <summary>
+            Provides a way to convert values for a <see cref="T:MvvmFx.Windows.Data.MultiSourceBinding" />.
+            </summary>
+            <remarks>
+            <para>
+            A <see cref="T:MvvmFx.Windows.Data.MultiSourceBinding" /> requires a means to convert multiple values into one, and vice-versa. An implementation of
+            this interface must be assigned to the <see cref="P:MvvmFx.Windows.Data.MultiSourceBinding.Converter" /> parameter before the binding can be activated.
+            </para>
+            </remarks>
+            <example>
+			The following example shows an implementation of <c>IMultiValueConverter</c> that sums a set of integers. Since there is no
+			way to convert a summed integer back into its constituent parts, the <c>ConvertBacks</c> method is left without an
+			implementation:
+			<code><![CDATA[public class SumConverter : IMultiValueConverter
+{
+	public object ConvertSourcesToTarget(object[] values, Type type, object parameter)
+	{
+		return values.Cast<int>().Aggregate((working, next) => working + next);
+	}
+
+	public object[] ConvertBacks(object value, Type[] types, object parameter)
+	{
+		throw new NotImplementedException();
+	}
+}]]></code>
+		</example>
+            <example>
+			The following example shows an implementation of <c>IMultiValueConverter</c> that converts a set of values into a single
+			delimitered <c>string</c>:
+			<code><![CDATA[public class SeparatorConverter : IMultiValueConverter
+{
+	private readonly string _separator;
+
+	public SeparatorConverter(string separator)
+	{
+		_separator = separator;
+	}
+
+	public object ConvertSourcesToTarget(object[] values, Type type, object parameter)
+	{
+		return string.Join(_separator, values.Select(x => x == null ? "" : x.ToString()).ToArray());
+	}
+
+	public object[] ConvertBacks(object value, Type[] types, object parameter)
+	{
+		var valueStr = value as string;
+
+		if (valueStr == null)
+		{
+			return new object[types.Length];
+		}
+
+		return valueStr.Split(new string[] { _separator }, StringSplitOptions.None);
+	}
+}
+]]></code>
+		</example>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IMultiValueConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts multiple source values into a single target value.
+            </summary>
+            <param name="values">The array of values from all sources of the <see cref="T:MvvmFx.Windows.Data.MultiSourceBinding"/>.</param>
+            <param name="targetType">The type of the target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            The single target value. If the method returns null, the valid null value is used.
+            </returns>
+            <remarks>
+            This method will only be called if the mode of the <see cref="T:MvvmFx.Windows.Data.MultiSourceBinding"/> is either <see cref="F:MvvmFx.Windows.Data.BindingMode.TwoWay"/>
+            or <see cref="F:MvvmFx.Windows.Data.BindingMode.OneWayToTarget"/>.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IMultiValueConverter.ConvertBack(System.Object,System.Type[],System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts back a single target value into multiple source values.
+            </summary>
+            <param name="value">The single target value.</param>
+            <param name="taregtTypes">The array of types of the source properties.
+            The array length indicates the number and types of values that are suggested
+            for the method to return.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            The multiple source values, which must have the same length as <paramref name="taregtTypes"/>.
+            </returns>
+            <remarks>
+            This method will only be called if the mode of the <see cref="T:MvvmFx.Windows.Data.MultiSourceBinding"/> is either <see cref="F:MvvmFx.Windows.Data.BindingMode.TwoWay"/>
+            or <see cref="F:MvvmFx.Windows.Data.BindingMode.OneWayToSource"/>.
+            </remarks>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.IValueConverter">
+            <summary>
+            Provides a way to convert values for a <see cref="T:MvvmFx.Windows.Data.SingleSourceBinding" />.
+            </summary>
+            <remarks>
+            <para>
+            Converters on a <see cref="T:MvvmFx.Windows.Data.SingleSourceBinding" /> are not required. However, if a default conversion between target and source
+            does not exist, or if the conversion should be customized in some manner, implementations of this interface allow the conversion
+            behavior to be tailored.
+            </para>
+            </remarks>
+            <example>
+			The following example shows a simple <c>IValueConverter</c> that converts an <c>Int32</c> into a culturally-sensitive
+			currency-formatted <c>string</c>. In this case, changes are only being pushed from the source to the target, so the
+			<c>ConvertBack</c> method is left without an implementation:
+			<code><![CDATA[public class NumberConverter : IValueConverter
+{
+	public object Convert(object value, Type type, object parameter)
+	{
+		var i = (int)value;
+		return i.ToString("C", CultureInfo.CurrentUICulture);
+	}
+
+	public object ConvertBack(object value, Type type, object parameter)
+	{
+		throw new NotImplementedException();
+	}
+}]]></code>
+		</example>
+            <example>
+			The following examples shows an <c>IValueConverter</c> implementation that converters between a custom <c>Gender</c> class
+			and a <c>string</c>:
+			<code><![CDATA[public class Gender
+{
+	private readonly string _display;
+
+	public static readonly Gender Male = new Gender("Male");
+	public static readonly Gender Female = new Gender("Female");
+
+	private Gender(string display)
+	{
+		_display = display;
+	}
+
+	public string Display
+	{
+		get { return _display; }
+	}
+}
+
+public class GenderConverter : IValueConverter
+{
+	public object Convert(object value, Type type, object parameter)
+	{
+		var gender = value as Gender;
+		return gender == null ? null : gender.Display;
+	}
+
+	public object ConvertBack(object value, Type type, object parameter)
+	{
+		switch (value as string)
+		{
+			case "Male":
+				return Gender.Male;
+			case "Female":
+				return Gender.Female;
+			default:
+				throw new InvalidOperationException();
+		}
+	}
+}]]></code>
+		</example>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the source value to a target value.
+            </summary>
+            <param name="value">The source value to convert.</param>
+            <param name="targetType">The type of the target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+            <remarks>
+            This method will only be called if the mode of the <see cref="T:MvvmFx.Windows.Data.SingleSourceBinding"/> is either <see cref="F:MvvmFx.Windows.Data.BindingMode.TwoWay"/>
+            or <see cref="F:MvvmFx.Windows.Data.BindingMode.OneWayToTarget"/>.
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts back the target value to a source value.
+            </summary>
+            <param name="value">The target value to convert.</param>
+            <param name="sourceType">The type of the source property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+            <remarks>
+            This method will only be called if the mode of the <see cref="T:MvvmFx.Windows.Data.SingleSourceBinding"/> is either <see cref="F:MvvmFx.Windows.Data.BindingMode.TwoWay"/>
+            or <see cref="F:MvvmFx.Windows.Data.BindingMode.OneWayToSource"/>.
+            </remarks>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.MultiBinding">
+            <summary>
+            Connects a target property to multiple source properties using a simple path-formatted string to resolve the bound property on
+            the target object.
+            </summary>
+            <remarks>
+            <para>
+            Instances of the <c>MultiBinding</c> class can be used to connect together multiple source properties to a single target property.
+            The target property is specified via a string, so there is no compile-time check to ensure that the property actually exists. If
+            the type of the target is known at compile-time, it is recommended that a <see cref="T:MvvmFx.Windows.Data.TypedMultiBinding`1" /> be used rather
+            than a <c>MultiBinding</c>.
+            </para>
+            <para>
+            The bindings comprising the sources for the <c>MultiBinding</c> must be added to the <see cref="P:MvvmFx.Windows.Data.MultiSourceBinding.Sources" />
+            collection prior to activation. Only <see cref="T:MvvmFx.Windows.Data.SingleSourceBinding" />s are supported, and target information for those bindings
+            must be absent. Only the source information should be provided.
+            </para>
+            <para>
+            A <c>MultiBinding</c> always requires a converter be set via the <see cref="P:MvvmFx.Windows.Data.MultiSourceBinding.Converter" /> property before it can
+            be activated.
+            </para>
+            <para>
+			The syntax for specifying a property is similar to that of C#. For example, a target path of "PropertyName" will attempt to
+			resolve a property called "PropertyName" on the target object. A target path of "Parent.Child" will attempt first to resolve
+			a property called "Parent" on the target object, and then a property called "Child" on the value of the "Parent" property.
+		</para>
+            </remarks>
+            <example>
+			The following example demonstrates how a <c>MultiBinding</c> can be used to connect the <c>DeliveryAddress</c> property of a
+			<c>Mail</c> instance to multiple address-related properties in a <c>Customer</c> instance:
+			<code><![CDATA[var bindingManager = new BindingManager();
+var binding = new MultiBinding(mail, "DeliveryAddress");
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.Line1 });
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.Line2 });
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.Line3 });
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.PostCode });
+binding.Converter = new AddressConverter();
+bindingManager.Bindings.Add(binding);]]></code>
+		</example>
+            <example>
+			The following example demonstrates how a <c>MultiBinding</c> can be used to connect the <c>DeliveryAddress</c> property of a
+			<c>Mail</c> instance to multiple address-related properties in a <c>Customer</c> instance using the fluent interface:
+			<code>
+				<![CDATA[var bindingManager = new BindingManager();
+bindingManager.MultiBind(mail, "DeliveryAddress)
+	.WithConverter(new AddressConverter())
+	.To(customer, x => x.Address.Line1)
+	.AndTo(customer, x => x.Address.Line2)
+	.AndTo(customer, x => x.Address.Line3)
+	.AndTo(customer, x => x.Address.PostCode)
+	.Activate();]]>
+			</code>
+		</example>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.MultiBinding.#ctor">
+            <summary>
+            Constructs an instance of <c>MultiBinding</c>.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.MultiBinding.#ctor(System.Object,System.String)">
+            <summary>
+            Constructs an instance of <c>MultiBinding</c> using the specified information.
+            </summary>
+            <param name="targetObject">
+            The target object for the binding.
+            </param>
+            <param name="targetPath">
+            A path used to resolve the bound property on the target object.
+            </param>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.MultiBinding.TargetPath">
+            <summary>
+            Gets or sets the target path for this <c>MultiBinding</c>.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.MultiBinding.AttemptCreateTargetPropertyExpression">
+            <summary>
+            Attempts to create the target property expressions for this <c>MultiBinding</c>.
+            </summary>
+            <returns>
+            <see langword="true"/> if the target property expression was successfully created, otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.BindingBase">
+            <summary>
+            A base class for all binding types provided with MvvmFx.
+            </summary>
+            <remarks>
+            <para>
+            This class provides behavior common to all MvvmFx bindings.
+            </para>
+            <para>
+            All bindings must have a single target object. That object is made accessible via the <see cref="P:MvvmFx.Windows.Data.BindingBase.TargetObject"/> property. As
+            with most properties on this class, attempting to set the <see cref="P:MvvmFx.Windows.Data.BindingBase.TargetObject"/> after the binding has been activated will
+            throw an exception.
+            </para>
+            <para>
+            All bindings also have a mode which is exposed by the <see cref="P:MvvmFx.Windows.Data.BindingBase.Mode"/> property. The mode determines which direction or
+            directions changes are pushed. By default, the mode is set to <see cref="F:MvvmFx.Windows.Data.BindingMode.TwoWay"/>, which means that changes are
+            pushed in both directions. Changes can be pushed in a single direction by setting the <see cref="P:MvvmFx.Windows.Data.BindingBase.Mode"/> to either
+            <see cref="F:MvvmFx.Windows.Data.BindingMode.OneWayToTarget"/> or <see cref="F:MvvmFx.Windows.Data.BindingMode.OneWayToSource"/>.
+            </para>
+            <para>
+            The <see cref="P:MvvmFx.Windows.Data.BindingBase.Container"/> property provides access to the <see cref="T:MvvmFx.Windows.Data.IBindingContainer"/> in which the binding is activated.
+            For many bindings, this will be the <see cref="T:MvvmFx.Windows.Data.BindingManager"/> to which they were added. However, bindings added to a
+            <see cref="T:MvvmFx.Windows.Data.MultiSourceBinding"/>'s <see cref="P:MvvmFx.Windows.Data.MultiSourceBinding.Sources"/> collection will have the
+            <see cref="T:MvvmFx.Windows.Data.MultiSourceBinding"/> as their container.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingBase.#ctor">
+            <summary>
+            Constructs an instance of <c>BindingBase</c>.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingBase.Container">
+            <summary>
+            Gets the <see cref="T:MvvmFx.Windows.Data.BindingManager"/> that this binding is currently activated in, or <see langword="null"/> if it is not
+            activated.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingBase.TargetObject">
+            <summary>
+            Gets or sets the target object for this binding.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingBase.TargetPropertyExpression">
+            <summary>
+            Gets or sets the <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/> that resolves to the bound property in the <see cref="P:MvvmFx.Windows.Data.BindingBase.TargetObject"/>.
+            </summary>
+            <remarks>
+            <para>
+            When a binding is activated, a target property expression must be determined. This will allow the target property to be
+            monitored and updated. If this property has been set explicitly to a non-<see langword="null"/> value, the binding will use it
+            once activated instead of determining one.
+            </para>
+            </remarks>
+            <value>
+            The <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/>, or <see langword="null"/> if it has not yet been set or determined.
+            </value>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingBase.Mode">
+            <summary>
+            Gets or sets the mode in which this binding operates.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.BindingBase.BindOnValidation">
+            <summary>
+            Gets or sets a flag indicating whether to update the bound value on property validation.
+            </summary>
+            <value>
+            <c>true</c> if the bound value should be updated on property validation;
+            <c>false</c> if the bound value should be updated on property change.
+            </value>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingBase.Activate(MvvmFx.Windows.Data.IBindingContainer)">
+            <summary>
+            Attempts to activate this <c>BindingBase</c> in the specified <see cref="T:MvvmFx.Windows.Data.IBindingContainer"/>.
+            </summary>
+            <param name="bindingContainer">
+            The <see cref="T:MvvmFx.Windows.Data.IBindingContainer"/> within which this binding will be activated.
+            </param>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingBase.Activate(MvvmFx.Windows.Data.IBindingContainer,MvvmFx.Windows.Data.PropertyExpression)">
+            <summary>
+            Attempts to activate this <c>BindingBase</c> in the specified <see cref="T:MvvmFx.Windows.Data.IBindingContainer"/> and with a custom target
+            <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/>.
+            </summary>
+            <param name="bindingContainer">
+            The <see cref="T:MvvmFx.Windows.Data.IBindingContainer"/> within which this binding will be activated.
+            </param>
+            <param name="targetPropertyExpression">
+            The <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/> to use for this binding's target property expression.
+            </param>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingBase.OnTargetPropertyExpressionValueChanged">
+            <summary>
+            Called whenever the value of the target property expression on this <c>BindingBase</c> is changed.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingBase.AttemptCreateTargetPropertyExpression">
+            <summary>
+            Attempts to create the target <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/> for this binding.
+            </summary>
+            <returns>
+            A <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/>, or <see langword="null"/> if no expression could be created.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingBase.Deactivate">
+            <summary>
+            Deactivates this <c>BindingBase</c> so that it can be activated again.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingBase.VerifyActivated">
+            <summary>
+            Verifies that this <c>BindingBase</c> is activated, and throws an exception with a default message if it is not.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingBase.VerifyActivated(System.String)">
+            <summary>
+            Verifies that this <c>BindingBase</c> is activated, and throws an exception with the specified message if it is not.
+            </summary>
+            <param name="message">
+            The message to use for the exception if the <c>BindingBase</c> is not activated.
+            </param>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingBase.VerifyNotActivated">
+            <summary>
+            Verifies that this <c>BindingBase</c> is not activated, and throws an exception with a default message if it is.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingBase.VerifyNotActivated(System.String)">
+            <summary>
+            Verifies that this <c>BindingBase</c> is not activated, and throws an exception with the specified message if it is.
+            </summary>
+            <param name="message">
+            The message to use for the exception if the <c>BindingBase</c> is activated.
+            </param>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingBase.OnActivated">
+            <summary>
+            Called when this <c>BindingBase</c> is activated.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.BindingBase.OnDeactivated">
+            <summary>
+            Called when this <c>BindingBase</c> is deactivated.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.IBindingContainer">
+            <summary>
+            Provides functionality for binding containers, which are objects that contain zero or more <see cref="T:MvvmFx.Windows.Data.BindingBase"/> instances.
+            </summary>
+            <remarks>
+            <para>
+            This interface is implemented by objects that contain bindings. Since a binding may itself be a container for other bindings,
+            MvvmFx supports a hierarchy of containers. A <see cref="T:MvvmFx.Windows.Data.BindingManager"/> will always be at the root of such a hierarchy.
+            </para>
+            <para>
+            The <see cref="P:MvvmFx.Windows.Data.IBindingContainer.Container"/> property of this interface obtains the <c>IBindingContainer</c> in which this container is contained.
+            This will be <see langword="null"/> for root-level containers (ie. <see cref="T:MvvmFx.Windows.Data.BindingManager"/>s).
+            </para>
+            <para>
+            The <see cref="P:MvvmFx.Windows.Data.IBindingContainer.Bindings"/> property allows the bindings in this container to be enumerated, whilst the
+            <see cref="P:MvvmFx.Windows.Data.IBindingContainer.SynchronizationContext"/> property yields the <see cref="T:System.Threading.SynchronizationContext"/> used to marshal
+            property changes within this container.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.IBindingContainer.Container">
+            <summary>
+            Gets the container of this container.
+            </summary>
+            <value>
+            The <see cref="T:MvvmFx.Windows.Data.IBindingContainer"/> that contains this container, or <see langword="null"/> if this container is not contained
+            within another.
+            </value>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.IBindingContainer.Bindings">
+            <summary>
+            Gets all <see cref="T:MvvmFx.Windows.Data.BindingBase"/> instances in this container.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.IBindingContainer.SynchronizationContext">
+            <summary>
+            Gets the <see cref="P:MvvmFx.Windows.Data.IBindingContainer.SynchronizationContext"/> being used by this binding container.
+            </summary>
+            <value>
+            The <see cref="P:MvvmFx.Windows.Data.IBindingContainer.SynchronizationContext"/> being used by this container, or <see langword="null"/> if this container is not using
+            a <see cref="P:MvvmFx.Windows.Data.IBindingContainer.SynchronizationContext"/>.
+            </value>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.IBindingContainer.BindOnValidation">
+            <summary>
+            Gets or sets a flag indicating whether to update the bound value on property validation.
+            </summary>
+            <value>
+            <c>true</c> if the bound value should be updated on property validation;
+            <c>false</c> if the bound value should be updated on property change.
+            </value>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.LambdaPropertyExpression">
+            <summary>
+            A <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/> that uses a <see cref="T:System.Linq.Expressions.LambdaExpression"/> to resolve its property.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.LambdaPropertyExpression.FromLambdaExpression(System.Object,System.Linq.Expressions.LambdaExpression,System.Boolean)">
+            <summary>
+            Creates a <see cref="T:MvvmFx.Windows.Data.LambdaPropertyExpression" /> from a given lambda expression.
+            </summary>
+            <param name="obj">The object against which the lambda expression will be resolved.</param>
+            <param name="lambdaExpression">The lambda expression.</param>
+            <param name="bindOnValidation">if set to <c>true</c> the bound value should be updated on property validation.</param>
+            <returns>
+            A <see cref="T:MvvmFx.Windows.Data.LambdaPropertyExpression" /> based on the supplied lambda expression.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">lambdaExpression</exception>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.LambdaPropertyExpression.MemberExpressionPropertyExpressionPart">
+            <summary>
+            An implementation of PropertyExpressionPart that uses a member expression to resolve the underlying property.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.MultiSourceBinding">
+            <summary>
+            A base class for all bindings that have multiple sources.
+            </summary>
+            <remarks>
+            <para>
+            This class extends <see cref="T:MvvmFx.Windows.Data.BindingBase"/> for bindings that have multiple sources. Each source is represented as an instance
+            of <see cref="T:MvvmFx.Windows.Data.BindingBase"/> inside the <see cref="P:MvvmFx.Windows.Data.MultiSourceBinding.Sources"/> collection. Bindings added to this collection must have only their
+            source information set, as the target is implicitly the <c>MultiSourceBinding</c>.
+            </para>
+            <para>
+            Since there is no sensible default way to convert multiple sources into a single target and vice versa, every
+            <c>MultiSourceBinding</c> requires a converter. To that end, the <see cref="P:MvvmFx.Windows.Data.MultiSourceBinding.Converter"/> parameter allows an implementation of
+            <see cref="T:MvvmFx.Windows.Data.IMultiValueConverter"/> to be supplied. Any object can be assigned to the <see cref="P:MvvmFx.Windows.Data.MultiSourceBinding.ConverterParameter"/> property,
+            and that object will be passed to the converter during conversions.
+            </para>
+            <para>
+            The <c>MultiSourceBinding</c> class implements the <see cref="T:MvvmFx.Windows.Data.IBindingContainer"/> interface because it contains bindings in its
+            <see cref="P:MvvmFx.Windows.Data.MultiSourceBinding.Sources"/> collection. Any binding added to the <see cref="P:MvvmFx.Windows.Data.MultiSourceBinding.Sources"/> collection will have the <c>MultiSourceBinding</c>
+            as its container.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.MultiSourceBinding.#ctor">
+            <summary>
+            Constructs an instance of <c>MultiSourceBinding</c>.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.MultiSourceBinding.Sources">
+            <summary>
+            Gets the collection of <see cref="T:MvvmFx.Windows.Data.SingleSourceBinding"/> objects comprising the source of this <c>MultiSourceBinding</c>.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.MultiSourceBinding.Converter">
+            <summary>
+            Gets or sets the converter to be used by this binding.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.MultiSourceBinding.ConverterParameter">
+            <summary>
+            Gets or sets an object to be passed as a parameter to the converter applied to this binding.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.MultiSourceBinding.ConverterCulture">
+            <summary>
+            Gets or sets the <see cref="T:System.Globalization.CultureInfo"/> to be passed to the converter applied to this binding.
+            </summary>
+            <value>
+            The <see cref="T:System.Globalization.CultureInfo"/>, or <see langword="null"/> if it has not yet been determined.
+            </value>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.MultiSourceBinding.MvvmFx#Windows#Data#IBindingContainer#Container">
+            <summary>
+            Gets the <see cref="T:MvvmFx.Windows.Data.IBindingContainer"/> instance within which this <c>MultiSourceBinding</c> is activated.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.MultiSourceBinding.MvvmFx#Windows#Data#IBindingContainer#Bindings">
+            <summary>
+            Gets all <see cref="T:MvvmFx.Windows.Data.BindingBase"/> instances activated within this <c>MultiSourceBinding</c>.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.MultiSourceBinding.MvvmFx#Windows#Data#IBindingContainer#SynchronizationContext">
+            <summary>
+            Gets the <see cref="T:System.Threading.SynchronizationContext"/> being used by this <c>MultiSourceBinding</c>.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.MultiSourceBinding.OnActivated">
+            <summary>
+            Attempts to activate this <c>MultiSourceBinding</c>.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.MultiSourceBinding.OnDeactivated">
+            <summary>
+            Deactivate this <c>MultiSourceBinding</c>.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.MultiSourceBinding.OnTargetPropertyExpressionValueChanged">
+            <summary>
+            Applies changes in the target property to the source property of this <c>MultiSourceBinding</c>.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.MultiSourceBinding.MultiSourceBindingPropertyExpressionPart">
+            <summary>
+            An implementation of PropertyExpressionPart for multi source.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.PathPropertyExpression">
+            <summary>
+            A <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/> that accepts a <see cref="T:System.String"/> in standard property accessor syntax.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.PathPropertyExpression.FromPath(System.Object,System.String,System.Boolean)">
+            <summary>
+            Creates a <see cref="T:MvvmFx.Windows.Data.PathPropertyExpression" /> from a given path.
+            </summary>
+            <param name="obj">The object against which the path will be resolved.</param>
+            <param name="path">The path.</param>
+            <param name="bindOnValidation">if set to <c>true</c> the bound value should be updated on property validation.</param>
+            <returns>
+            A <see cref="T:MvvmFx.Windows.Data.PathPropertyExpression" /> based on the supplied path.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            obj
+            or
+            path
+            </exception>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.PathPropertyExpression.PathPropertyExpressionPart">
+            <summary>
+            An implementation of PropertyExpressionPart that uses a path part to resolve the underlying property.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.PropertyExpression">
+            <summary>
+            Represents an expression that resolves to a property in an object.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.PropertyExpression.#ctor(System.Object,System.Collections.Generic.IEnumerable{MvvmFx.Windows.Data.PropertyExpressionPart})">
+            <summary>
+            Constructs an instance of <c>PropertyExpression</c>.
+            </summary>
+            <param name="obj">
+            The object against which the property expression is evaluated.
+            </param>
+            <param name="parts">
+            The parts comprising the <c>PropertyExpression</c>.
+            </param>
+        </member>
+        <member name="E:MvvmFx.Windows.Data.PropertyExpression.ValueChanged">
+            <summary>
+            Occurs whenever the value of the property that this expression resolves to changes.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.PropertyExpression.Value">
+            <summary>
+            Gets or sets the value of the property this expression resolves to.
+            </summary>
+            <remarks>
+            This property will return <see cref="F:MvvmFx.Windows.Data.PropertyExpressionPart.Unresolved"/> if the expression does not yet successfully resolve to the property.
+            </remarks>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.PropertyExpression.NormalizedValue">
+            <summary>
+            Gets the normalized value of this <c>PropertyExpression</c>.
+            </summary>
+            <remarks>
+            This property returns the normalized value of this <c>PropertyExpression</c>, which will be equivalent to <see cref="P:MvvmFx.Windows.Data.PropertyExpression.Value"/>
+            unless <see cref="P:MvvmFx.Windows.Data.PropertyExpression.Value"/> returns <see cref="F:MvvmFx.Windows.Data.PropertyExpressionPart.Unresolved"/>, in which case this property will return
+            <see langword="null"/>.
+            </remarks>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.PropertyExpression.PropertyType">
+            <summary>
+            Gets the type of the property that this expression resolves to.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.PropertyExpression.PropertyName">
+            <summary>
+            Gets the name of the property that this expression resolves to.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.PropertyExpression.OnValueChanged">
+            <summary>
+            Raises the <see cref="E:MvvmFx.Windows.Data.PropertyExpression.ValueChanged"/> event.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.PropertyExpressionPart">
+            <summary>
+            Represents a single part in the chain of parts held in a <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/>.
+            </summary>
+        </member>
+        <member name="F:MvvmFx.Windows.Data.PropertyExpressionPart.Unresolved">
+            <summary>
+            The value yielded by a property expression part when it has not yet successfully resolved to the property.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.PropertyExpressionPart.#ctor(MvvmFx.Windows.Data.PropertyExpressionPart,System.Boolean)">
+            <summary>
+            Constructs an instance of <c>PropertyExpressionPart</c>.
+            </summary>
+            <param name="nextPart">The next part in the chain of parts held in the <see cref="T:MvvmFx.Windows.Data.PropertyExpression" />.</param>
+            <param name="bindOnValidation">if set to <c>true</c> the bound value should be updated on property validation.</param>
+        </member>
+        <member name="E:MvvmFx.Windows.Data.PropertyExpressionPart.ValueChanged">
+            <summary>
+            Occurs whenever the value of the property to which this expression part resolves changes.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.PropertyExpressionPart.PropertyName">
+            <summary>
+            Gets the name of the property that this expression part will attempt to resolve to.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.PropertyExpressionPart.PropertyType">
+            <summary>
+            Gets the type of the property that this expression part has resolved to, or <see langword="null"/> if it is not yet resolved.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.PropertyExpressionPart.Object">
+            <summary>
+            Gets or sets the object that this expression part is attempting to resolve its property against, or <see langword="null"/> if the object has not yet been
+            resolved.
+            </summary>
+            <remarks>
+            <para>
+            The object may not yet be resolved if this expression part is not the first in its chain. Any expression part appearing before this part may not yet have
+            resolved its own object, or may have a <see langword="null"/> value. In either of those cases, this expression part will not yet know its object.
+            </para>
+            <para>
+            Only a <see cref="T:System.WeakReference"/> is maintained against any object set on the property.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.PropertyExpressionPart.Value">
+            <summary>
+            Gets or sets the value of the property that this expression part resolves to, or <see langword="Unresolved"/> if it is not yet resolved.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.PropertyExpressionPart.GetValueCore">
+            <summary>
+            Gets the value that this expression part resolves to, or <see langword="Unresolved"/> if it is not yet resolved.
+            </summary>
+            <returns>
+            The value of the resolved property, or <see langword="Unresolved"/> if the property is not yet resolved.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.PropertyExpressionPart.SetValueCore(System.Object)">
+            <summary>
+            Sets the value of the property that this expression part has resolved to.
+            </summary>
+            <remarks>
+            If the property is not yet resolved, this method should do nothing.
+            </remarks>
+            <param name="value">
+            The value for the property.
+            </param>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.PropertyExpressionPart.OnValueChanged">
+            <summary>
+            Raises the <see cref="E:MvvmFx.Windows.Data.PropertyExpressionPart.ValueChanged"/> event, and passes changes onto the next expression part in the chain.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.PropertyExpressionPart.INPCPropertyObservationStrategy">
+            <summary>
+            A property observation strategy that uses the <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> interface.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.PropertyExpressionPart.XxxChangedPropertyObservationStrategy">
+            <summary>
+            A property observation strategy that looks for XxxChanged events on the target object.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.PropertyExpressionPart.ValidatedPropertyObservationStrategy">
+            <summary>
+            A property observation strategy that looks for Validated event on the target object.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.IPropertyObservationStrategy">
+            <summary>
+            Interface for all strategies that observe properties.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.IPropertyObservation">
+            <summary>
+            Interface for all actual observations of a property.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.SingleSourceBinding">
+            <summary>
+            A base class for all bindings that have a single source.
+            </summary>
+            <remarks>
+            <para>
+            This class extends <see cref="T:MvvmFx.Windows.Data.BindingBase"/> for bindings that have a single source. The source object is exposed via the
+            <see cref="P:MvvmFx.Windows.Data.SingleSourceBinding.SourceObject"/> property, while the <see cref="P:MvvmFx.Windows.Data.SingleSourceBinding.SourcePropertyExpression"/> provides access to the
+            <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/> that resolves to the source property.
+            </para>
+            <para>
+            Conversions between the target and source properties can be customized by assigned an implementation of
+            <see cref="T:MvvmFx.Windows.Data.IValueConverter"/> to the <see cref="P:MvvmFx.Windows.Data.SingleSourceBinding.Converter"/> property. Any object can be assigned to the
+            <see cref="P:MvvmFx.Windows.Data.SingleSourceBinding.ConverterParameter"/> property, and that object will be passed to the converter during conversions.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.SingleSourceBinding.#ctor">
+            <summary>
+            Constructs an instance of <c>SingleSourceBinding</c>.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.SingleSourceBinding.SourceObject">
+            <summary>
+            Gets or sets the source object for this binding.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.SingleSourceBinding.SourcePropertyExpression">
+            <summary>
+            Gets the <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/> that resolves to the bound property in the <see cref="P:MvvmFx.Windows.Data.SingleSourceBinding.SourceObject"/>.
+            </summary>
+            <value>
+            The <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/>, or <see langword="null"/> if it has not yet been determined.
+            </value>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.SingleSourceBinding.Converter">
+            <summary>
+            Gets or sets the converter to be used by this binding.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.SingleSourceBinding.ConverterParameter">
+            <summary>
+            Gets or sets an object to be passed as a parameter to the converter applied to this binding.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.SingleSourceBinding.ConverterCulture">
+            <summary>
+            Gets or sets the <see cref="T:System.Globalization.CultureInfo"/> to be passed to the converter applied to this binding.
+            </summary>
+            <value>
+            The <see cref="T:System.Globalization.CultureInfo"/>, or <see langword="null"/> if it has not yet been determined.
+            </value>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.SingleSourceBinding.OnActivated">
+            <summary>
+            Attempts to create the property expressions for this <c>SingleSourceBinding</c>.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.SingleSourceBinding.OnDeactivated">
+            <summary>
+            Destroys any property expressions created for this <c>SingleSourceBinding</c>.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.SingleSourceBinding.AttemptCreateSourcePropertyExpression">
+            <summary>
+            Attempts to create the source <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/> for this <c>SingleSourceBinding</c>.
+            </summary>
+            <returns>
+            A <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/>, or <see langword="null"/> if no expression could be created.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.SingleSourceBinding.OnTargetPropertyExpressionValueChanged">
+            <summary>
+            Applies changes in the target property to the source property of this <c>SingleSourceBinding</c>.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.TypedBinding`2">
+            <summary>
+            Connects a target property to a single source property using lambda expression to resolve the bound properties on the target
+            and source objects.
+            </summary>
+            <remarks>
+            <para>
+            Instances of the <c>TypedBinding</c> class can be used to connect together two properties. The properties are specified via
+            lambda expression, so they are checked at compile-time. Because of this, it is recommended that a <c>TypedBinding</c>be used in
+            preference to a <see cref="T:MvvmFx.Windows.Data.Binding" /> wherever possible.
+            </para>
+            </remarks>
+            <example>
+			The following example demonstrates how a <c>TypedBinding</c> can be used to connect the <c>Name</c> property of two
+			<c>Customer</c> instances:
+			<code><![CDATA[var bindingManager = new BindingManager();
+var binding = new TypedBinding<Customer, Customer>(targetCustomer, x => x.Name, sourceCustomer, x => x.Name);
+bindingManager.Bindings.Add(binding);]]></code>
+		</example>
+            <example>
+			The following example demonstrates how a <c>TypedBinding</c> can be used to connect the <c>Name</c> property of two
+			<c>Customer</c> instances using the fluent interface:
+			<code><![CDATA[var bindingManager = new BindingManager();
+bindingManager.Bind(targetCustomer, x => x.Name)
+	.To(sourceCustomer, x => x.Name)
+	.Activate();]]></code>
+		</example>
+            <example>
+			The following example demonstrates how a <c>TypedBinding</c> can be used to connect a <c>PostCode</c> property on a
+			<c>Customer</c> instance with a <c>Region</c> property on a <c>CustomerInfo</c> instance. The post code is a <c>string</c> so
+			needs to be converted to a member of the <c>Region</c> enumeration during bindings. Since a region is not enough information
+			to convert to a post code, the binding is one-way.
+			<code><![CDATA[public enum Region
+{
+	Unknown,
+	North,
+	South,
+	East,
+	West
+}
+
+public abstract class Entity : INotifyPropertyChanged
+{
+	public event PropertyChangedEventHandler PropertyChanged;
+
+	protected void OnPropertyChanged(string propertyName)
+	{
+		var handler = PropertyChanged;
+
+		if (handler != null)
+		{
+			handler(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+public class Customer : Entity
+{
+	private string _name;
+	private readonly Address _address;
+
+	public Customer()
+	{
+		_address = new Address();
+	}
+
+	public string Name
+	{
+		get { return _name; }
+		set
+		{
+			if (_name != value)
+			{
+				_name = value;
+				OnPropertyChanged("Name");
+			}
+		}
+	}
+
+	public Address Address
+	{
+		get { return _address; }
+	}
+}
+
+public class Address : Entity
+{
+	private string _postCode;
+
+	public string PostCode
+	{
+		get { return _postCode; }
+		set
+		{
+			if (_postCode != value)
+			{
+				_postCode = value;
+				OnPropertyChanged("PostCode");
+			}
+		}
+	}
+}
+
+public class SomeClass : Entity
+{
+	private readonly BindingManager _bindingManager;
+	private Region _region;
+
+	public SomeClass(Customer customer)
+	{
+		_bindingManager = new BindingManager();
+		var binding = new TypedBinding<SomeClass, Customer>(this, x=> x.Region, customer, x => x.Address.PostCode);
+		binding.Converter = new PostCodeToRegionConverter();
+		binding.Mode = BindingMode.OneWayToTarget;
+		_bindingManager.Bindings.Add(binding);
+	}
+
+	public Region Region
+	{
+		get { return _region; }
+		set
+		{
+			if (_region != value)
+			{
+				_region = value;
+				OnPropertyChanged("Region");
+			}
+		}
+	}
+}
+
+public class PostCodeToRegionConverter : IValueConverter
+{
+	public object Convert(object value, System.Type type, object parameter)
+	{
+		var postCode = value as string;
+
+		if (string.IsNullOrEmpty(postCode))
+		{
+			return Region.Unknown;
+		}
+
+		switch (postCode[0])
+		{
+			case 'N':
+				return Region.North;
+			case 'S':
+				return Region.South;
+			case 'E':
+				return Region.East;
+			case 'W':
+				return Region.West;
+			default:
+				return Region.Unknown;
+		}
+	}
+
+	public object ConvertBack(object value, System.Type type, object parameter)
+	{
+		throw new NotSupportedException();
+	}
+}]]></code>
+		</example>
+            <typeparam name="TTarget">
+            The type of the target object.
+            </typeparam>
+            <typeparam name="TSource">
+            The type of the source object.
+            </typeparam>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.TypedBinding`2.#ctor">
+            <summary>
+            Constructs an instance of <c>TypedBinding</c>.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.TypedBinding`2.#ctor(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}},`1,System.Linq.Expressions.Expression{System.Func{`1,System.Object}})">
+            <summary>
+            Constructs an instance of <c>TypedBinding</c> using the specified details.
+            </summary>
+            <param name="targetObject">
+            The target object for the binding.
+            </param>
+            <param name="targetExpression">
+            A lambda expression used to resolve the bound property on the target object.
+            </param>
+            <param name="sourceObject">
+            The source object for the binding.
+            </param>
+            <param name="sourceExpression">
+            A lambda expression used to resolve the bound property on the source object.
+            </param>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.TypedBinding`2.TargetExpression">
+            <summary>
+            Gets or sets the target lambda expression for this <c>TypedBinding</c>.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.TypedBinding`2.SourceExpression">
+            <summary>
+            Gets or sets the source lambda expression for this <c>TypedBinding</c>.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.TypedBinding`2.AttemptCreateTargetPropertyExpression">
+            <summary>
+            Attempts to create the <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/> for this <c>TypedBinding</c>'s target.
+            </summary>
+            <returns>
+            The <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/>, or <see langword="null"/> if the property expression cannot be created.
+            </returns>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.TypedBinding`2.AttemptCreateSourcePropertyExpression">
+            <summary>
+            Attempts to create the <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/> for this <c>TypedBinding</c>'s source.
+            </summary>
+            <returns>
+            The <see cref="T:MvvmFx.Windows.Data.PropertyExpression"/>, or <see langword="null"/> if the property expression cannot be created.
+            </returns>
+        </member>
+        <member name="T:MvvmFx.Windows.Data.TypedMultiBinding`1">
+            <summary>
+            Connects a target property to multiple source properties using a lambda expression to resolve the target property.
+            </summary>
+            <remarks>
+            <para>
+            Instances of the <c>TypedMultiBinding</c> class can be used to connect together multiple source properties to a single target
+            property. The target property is specified via a lambda expression, so it is checked at compile-time. Because of this, it is
+            recommended that a <c>TypedMultiBinding</c>be used in preference to a <see cref="T:MvvmFx.Windows.Data.MultiBinding" /> wherever possible.
+            </para>
+            <para>
+            The bindings comprising the sources for the <c>TypedMultiBinding</c> must be added to the <see cref="P:MvvmFx.Windows.Data.MultiSourceBinding.Sources" />
+            collection prior to activation. Only <see cref="T:MvvmFx.Windows.Data.SingleSourceBinding" />s are supported, and target information for those bindings
+            must be absent. Only the source information should be provided.
+            </para>
+            <para>
+            A <c>TypedMultiBinding</c> always requires a converter be set via the <see cref="P:MvvmFx.Windows.Data.MultiSourceBinding.Converter" /> property before
+            it can be activated.
+            </para>
+            </remarks>
+            <example>
+			The following example demonstrates how a <c>TypedMultiBinding</c> can be used to connect the <c>DeliveryAddress</c> property
+			of a <c>Mail</c> instance to multiple address-related properties in a <c>Customer</c> instance:
+			<code><![CDATA[var bindingManager = new BindingManager();
+var binding = new TypedMultiBinding<Mail>(mail, x => x.DeliveryAddress);
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.Line1 });
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.Line2 });
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.Line3 });
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.PostCode });
+binding.Converter = new AddressConverter();
+bindingManager.Bindings.Add(binding);]]></code>
+		</example>
+            <example>
+			The following example demonstrates how a <c>TypedMultiBinding</c> can be used to connect the <c>DeliveryAddress</c> property
+			of a <c>Mail</c> instance to multiple address-related properties in a <c>Customer</c> instance using the fluent interface:
+			<code>
+				<![CDATA[var bindingManager = new BindingManager();
+bindingManager.MultiBind(mail, x => x.DeliveryAddress)
+	.WithConverter(new AddressConverter())
+	.To(customer, x => x.Address.Line1)
+	.AndTo(customer, x => x.Address.Line2)
+	.AndTo(customer, x => x.Address.Line3)
+	.AndTo(customer, x => x.Address.PostCode)
+	.Activate();]]>
+			</code>
+		</example>
+            <typeparam name="TTarget">
+            The type of the target object.
+            </typeparam>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.TypedMultiBinding`1.#ctor">
+            <summary>
+            Constructs an instance of <c>TypedMultiBinding</c>.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.TypedMultiBinding`1.#ctor(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            Constructs an instance of <c>TypedMultiBinding</c> using the specified information.
+            </summary>
+            <param name="targetObject">
+            The target object for the binding.
+            </param>
+            <param name="targetExpression">
+            A lambda expression used to resolve the bound property on the target object.
+            </param>
+        </member>
+        <member name="P:MvvmFx.Windows.Data.TypedMultiBinding`1.TargetExpression">
+            <summary>
+            Gets or sets the target lambda expression for this <c>TypedMultiBinding</c>.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.Windows.Data.TypedMultiBinding`1.AttemptCreateTargetPropertyExpression">
+            <summary>
+            Attempts to create the target property expressions for this <c>TypedMultiBinding</c>.
+            </summary>
+            <returns>
+            <see langword="true"/> if the target property expression was successfully created, otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="T:MvvmFx.Windows.Diagnostics.Log">
+             <summary>
+            Provides functionality for making log entries.
+             </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Diagnostics.Log.DummyPerformanceEntry">
+            <summary>
+            Used when performance logging is turned off, to increase performance.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Diagnostics.Log.PerformanceEntry">
+            <summary>
+            Used when performance logging is turned on.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.Windows.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.AlreadyActivated">
+            <summary>
+              Looks up a localized string similar to This binding is already activated..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.AnItemWasNull">
+            <summary>
+              Looks up a localized string similar to An item inside the enumeration was null..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.ArgumentMustBeCollection">
+            <summary>
+              Looks up a localized string similar to The argument must be a collection..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.BindingAlreadyActivatedExceptionMessage">
+            <summary>
+              Looks up a localized string similar to Bindings added to a MultiSourceBinding must not already be activated..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.BindingBaseActivatedExceptionMessage">
+            <summary>
+              Looks up a localized string similar to BindingBase is currently activated and cannot be modified..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.BindingBaseNotActivatedExceptionMessage">
+            <summary>
+              Looks up a localized string similar to BindingBase is not yet activated..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.BindingMustBeActivatedInOwningContainer">
+            <summary>
+              Looks up a localized string similar to A binding being activated must be present in the binding container within which it is being activated..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.CommandBindingMustBeActivatedInOwningContainer">
+            <summary>
+              Looks up a localized string similar to A command binding being activated must be present in the command binding container within which it is being activated..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.ConverterIsRequired">
+            <summary>
+              Looks up a localized string similar to All MultiSourceBindings require a converter..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.ConverterMustReturnValue">
+            <summary>
+              Looks up a localized string similar to The ConvertTargetToSource method on an IMultiValueConverter must return a non-null value..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.EventForCommandBindingIsNotValid">
+            <summary>
+              Looks up a localized string similar to Event for CommandBinding is not valid..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.ExpectedMoreOrLessValues">
+            <summary>
+              Looks up a localized string similar to The converter for this MultiSourceBinding returned {0} values when {1} were expected..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.NoBindingForComponentExceptionMessage">
+            <summary>
+              Looks up a localized string similar to No binding found for component of type {0}..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.OnePartRequired">
+            <summary>
+              Looks up a localized string similar to At least one PropertyExpressionPart is required..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.PropertyNameNotRegisteredException">
+            <summary>
+              Looks up a localized string similar to Property name &apos;{0}&apos; not registered..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.PropertyNotRegistered">
+            <summary>
+              Looks up a localized string similar to One or more properties are not registered for this type.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.PropertyRegisterDuplicateNotAllowed">
+            <summary>
+              Looks up a localized string similar to Cannot register property {0}, a PropertyInfo with the same name already exists..
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.PropertyRegisterNotAllowed">
+            <summary>
+              Looks up a localized string similar to Cannot register property {0} after containing type ({1}) has been instantiated.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.Windows.Properties.Resources.UnsupportedExpression">
+            <summary>
+              Looks up a localized string similar to Lambda expression &apos;{0}&apos; is not supported..
+            </summary>
+        </member>
+    </members>
+</doc>
