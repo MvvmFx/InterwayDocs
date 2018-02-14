@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.detailPanel = new CaliburnMicro.WisejWeb.PanelEx.PanelEx();
-            this.toggleDetailPanel = new CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx();
-            this.printDetail = new CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx();
-            this.cancel = new CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx();
-            this.save = new CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx();
-            this.editDetail = new CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx();
-            this.createRegister = new CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx();
+            this.detailPanel = new MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelEx();
+            this.toggleDetailPanel = new MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx();
+            this.printDetail = new MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx();
+            this.cancel = new MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx();
+            this.save = new MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx();
+            this.editDetail = new MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx();
+            this.createRegister = new MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx();
             this.registerId = new Wisej.Web.Label();
             this.registerDateLabel = new Wisej.Web.Label();
             this.model_RegisterDate = new Wisej.Web.TextBox();
@@ -78,7 +78,7 @@
             // detailPanel
             // 
             this.detailPanel.Dock = Wisej.Web.DockStyle.Fill;
-            this.detailPanel.Tools.AddRange(new CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx[] {
+            this.detailPanel.Tools.AddRange(new MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx[] {
             this.createRegister,
             this.editDetail,
             this.save,
@@ -460,13 +460,13 @@
 
         #endregion
 
-        private CaliburnMicro.WisejWeb.PanelEx.PanelEx detailPanel;
-        private CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx createRegister;
-        private CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx editDetail;
-        private CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx cancel;
-        private CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx save;
-        private CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx printDetail;
-        private CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx toggleDetailPanel;
+        private MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelEx detailPanel;
+        private MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx createRegister;
+        private MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx editDetail;
+        private MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx cancel;
+        private MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx save;
+        private MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx printDetail;
+        private MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx toggleDetailPanel;
         private Wisej.Web.Label registerId;
         private Wisej.Web.Label registerDateLabel;
         private Wisej.Web.TextBox model_RegisterDate;

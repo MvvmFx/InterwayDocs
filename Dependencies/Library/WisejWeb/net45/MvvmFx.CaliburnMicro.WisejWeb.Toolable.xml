@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MvvmFx.CaliburnMicro.WisejWeb.Toolable</name>
+    </assembly>
+    <members>
+        <member name="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx">
+            <summary>
+            Extends the <see cref="T:Wisej.Web.ComponentTool"/> 
+            to support the <see cref="E:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx.Click"/> event.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx.ClickBubbling">
+            <summary>
+            Gets or sets whether the <see cref="E:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx.Click"/> event bubbles up.  
+            <see cref="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx"/>.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx.Parent">
+            <summary>
+            Gets the  <see cref="T:Wisej.Web.Control"/> that owns the collection of this 
+            <see cref="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx"/>.
+            </summary>
+        </member>
+        <member name="E:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx.Click">
+            <summary>
+            Fired when the ComponentTool is clicked.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx.OnClick(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx.Click" /> event.
+            </summary>
+            <param name="e">A <see cref="T:System.EventArgs" /> that contains the event data.</param>
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx.PerformClick">
+            <summary>
+            Generates the <see cref="E:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx.Click"/> event.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolExProxy">
+            <summary>
+            Proxy class for <see cref="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx"/> components.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolExProxy.UserData">
+            <summary>
+            Returns a dynamic object that can be used to store custom data in relation to this control.
+            </summary>
+        </member>
+        <member name="P:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolExProxy.Item">
+            <summary>
+            Gets the <see cref="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx"/> component item.
+            </summary>
+            <value>
+            The component item.
+            </value>
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolExProxy.Dispose(System.Boolean)">
+            <summary>Dispose the control.</summary>
+            <param name="disposing">true when this method is called by the application rather than a finalizer.</param>
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolExProxy.#ctor(MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx,Wisej.Web.Control,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolExProxy" /> class, for the specified <see cref="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolExProxy" />.
+            </summary>
+            <param name="item">The tool strip item.</param>
+            <param name="parent">The parent Control.</param>
+            <param name="wireEvents">if set to <c>true</c>, the constructor will wire the item events.</param>
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolExProxy.WireEvents">
+            <summary>
+            Wires the proxy events.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolExProxy.UnwireEvents">
+            <summary>
+            Unwires the proxy events.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelEx">
+            <summary>
+            Extends Panel so ComponentTool items raises their individual click event.
+            </summary>
+            <seealso cref="T:Wisej.Web.Panel" />
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelEx.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelEx" /> class.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelExHandler">
+            <summary>
+            Proxy agent for <see cref="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelEx"/> and binder agent for <see cref="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolExProxy"/>.
+            </summary>
+            <seealso cref="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolExProxy" />
+        </member>
+        <member name="F:MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelExHandler.GetChildItems">
+            <summary>
+            Return the <see cref="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelEx" /> child items as <see cref="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolExProxy"/>.
+            </summary>
+        </member>
+        <member name="F:MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelExHandler.BindVisualProperties">
+            <summary>
+            Binds the visible and enabled properties of a <see cref="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolExProxy"/> to 
+            the ViewModel properties, using a <see cref="T:MvvmFx.Windows.Data.BindingManager"/>.
+            </summary>
+        </member>
+        <member name="T:MvvmFx.CaliburnMicro.WisejWeb.Toolable.Setup">
+            <summary>
+            Setup this Wisej extension on CaliburnMicro.WisejWeb.
+            </summary>
+        </member>
+        <member name="M:MvvmFx.CaliburnMicro.WisejWeb.Toolable.Setup.Run">
+            <summary>
+            Runs ProxyAgent and ElementConvention configurations.
+            </summary>
+        </member>
+    </members>
+</doc>

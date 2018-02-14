@@ -34,8 +34,8 @@ namespace Codisa.InterwayDocs.Framework
         protected ToolStrip BaseDetailToolStrip;
         protected ToolStripButton BaseToggleDetailPanel;
 #else
-        protected CaliburnMicro.WisejWeb.PanelEx.PanelEx BaseDetailPanel;
-        protected CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx BaseToggleDetailPanel;
+        protected MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelEx BaseDetailPanel;
+        protected MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx BaseToggleDetailPanel;
         protected CslaContrib.WisejWeb.ErrorWarnInfoProvider BaseErrorWarnInfoProvider;
 #endif
         protected Button BaseWhenEmptyCreateRegister;
