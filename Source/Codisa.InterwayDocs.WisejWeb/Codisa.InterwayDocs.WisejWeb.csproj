@@ -362,8 +362,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="CaliburnMicro.WisejWeb.PanelEx">
-      <HintPath>..\..\Dependencies\Library\WisejWeb\net45\CaliburnMicro.WisejWeb.PanelEx.dll</HintPath>
+    <Reference Include="MvvmFx.CaliburnMicro.WisejWeb.Toolable">
+      <HintPath>..\..\Dependencies\Library\WisejWeb\net45\MvvmFx.CaliburnMicro.WisejWeb.Toolable.dll</HintPath>
     </Reference>
     <Reference Include="MvvmFx.CaliburnMicro.Csla.WisejWeb">
       <HintPath>..\..\Dependencies\Library\WisejWeb\net45\MvvmFx.CaliburnMicro.Csla.WisejWeb.dll</HintPath>

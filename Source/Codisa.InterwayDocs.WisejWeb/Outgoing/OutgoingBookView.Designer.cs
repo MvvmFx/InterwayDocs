@@ -49,8 +49,8 @@
             this.endDateLabel = new Wisej.Web.Label();
             this.criteria_EndDate = new Wisej.Web.TextBox();
             this.search = new Wisej.Web.Button();
-            this.listNavigator = new CaliburnMicro.WisejWeb.PanelEx.PanelEx();
-            this.printList = new CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx();
+            this.listNavigator = new MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelEx();
+            this.printList = new MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx();
             this.dataGridView = new Wisej.Web.DataGridView();
             this.registerIdDataGridViewTextBoxColumn = new Wisej.Web.DataGridViewTextBoxColumn();
             this.registerDateDataGridViewTextBoxColumn = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -257,7 +257,7 @@
             // 
             this.listNavigator.Dock = Wisej.Web.DockStyle.Top;
             this.listNavigator.Controls.Add(this.dataGridView);
-            this.listNavigator.Tools.AddRange(new CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx[] {
+            this.listNavigator.Tools.AddRange(new MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx[] {
             this.printList});
             this.listNavigator.HeaderBackColor = System.Drawing.Color.FromName("@toolbar");
             this.listNavigator.HeaderForeColor = System.Drawing.Color.FromName("@toolbarText");
@@ -444,8 +444,8 @@
         private Wisej.Web.Label startDateLabel;
         private Wisej.Web.TextBox criteria_StartDate;
         private Wisej.Web.Button search;
-        private CaliburnMicro.WisejWeb.PanelEx.PanelEx listNavigator;
-        private CaliburnMicro.WisejWeb.PanelEx.ComponentToolEx printList;
+        private MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelEx listNavigator;
+        private MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx printList;
         private Wisej.Web.DataGridView dataGridView;
         private Wisej.Web.DataGridViewTextBoxColumn registerIdDataGridViewTextBoxColumn;
         private Wisej.Web.DataGridViewTextBoxColumn registerDateDataGridViewTextBoxColumn;

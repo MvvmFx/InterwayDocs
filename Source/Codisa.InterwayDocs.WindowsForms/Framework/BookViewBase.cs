@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Runtime.Serialization;
 #if WISEJ
 using Wisej.Web;
-using CaliburnMicro.WisejWeb.PanelEx;
+using MvvmFx.CaliburnMicro.WisejWeb.Toolable;
 using FormsBinding = Wisej.Web.Binding;
 #else
 using System.Windows.Forms;

@@ -28,7 +28,7 @@ namespace Codisa.InterwayDocs
 #else
             ApplicationBase.SessionTimeout += Application_SessionTimeout;
             ApplicationBase.ApplicationRefresh += ApplicationBase_ApplicationRefresh;
-            CaliburnMicro.WisejWeb.PanelEx.Setup.Run();
+            MvvmFx.CaliburnMicro.WisejWeb.Toolable.Setup.Run();
 #endif
 
             var uiCulture = ConfigurationManager.AppSettings["UICulture"];
