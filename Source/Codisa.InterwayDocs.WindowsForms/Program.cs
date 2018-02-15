@@ -3,9 +3,9 @@ using System.Configuration;
 using System.Globalization;
 using Codisa.InterwayDocs.Framework;
 #if WISEJ
+using MvvmFx.CaliburnMicro.WisejWeb.Toolable;
 using Wisej.Base;
 using Wisej.Web;
-using System.Collections.Specialized;
 #else
 using System.Threading;
 using System.Windows.Forms;
@@ -29,7 +29,7 @@ namespace Codisa.InterwayDocs
 #else
             ApplicationBase.SessionTimeout += Application_SessionTimeout;
             ApplicationBase.ApplicationRefresh += ApplicationBase_ApplicationRefresh;
-            MvvmFx.CaliburnMicro.WisejWeb.Toolable.Setup.Run();
+            Setup.Run(typeof(PanelEx));
 #endif
 
             var uiCulture = ConfigurationManager.AppSettings["UICulture"];
