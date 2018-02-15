@@ -107,6 +107,9 @@
     <Content Include="App_Data\InterwayDocs_log.ldf">
       <DependentUpon>InterwayDocs.mdf</DependentUpon>
     </Content>
+    <Content Include="CodisaITS-64x64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Default.html" />
     <Content Include="Default.json" />
     <Content Include="favicon.ico" />

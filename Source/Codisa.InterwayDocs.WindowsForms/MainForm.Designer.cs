@@ -38,9 +38,9 @@
             this.restore = new System.Windows.Forms.ToolStripMenuItem();
             this.export = new System.Windows.Forms.ToolStripMenuItem();
             this.import = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languageLabel = new System.Windows.Forms.ToolStripMenuItem();
             this.language = new System.Windows.Forms.ToolStripComboBox();
-            this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.about = new System.Windows.Forms.ToolStripMenuItem();
             this.pdfManual = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar = new System.Windows.Forms.StatusStrip();
@@ -118,6 +118,16 @@
             this.import.Size = new System.Drawing.Size(181, 22);
             this.import.Text = global::Codisa.InterwayDocs.Properties.Resources.ToolsImportLabel;
             // 
+            // helpMenuItem
+            // 
+            this.helpMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Left;
+            this.helpMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.about,
+            this.pdfManual});
+            this.helpMenuItem.Name = "helpMenuItem";
+            this.helpMenuItem.Size = new System.Drawing.Size(44, 23);
+            this.helpMenuItem.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelHelp;
+            // 
             // languageLabel
             // 
             this.languageLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -131,16 +141,6 @@
             this.language.Name = "language";
             this.language.Size = new System.Drawing.Size(121, 23);
             this.language.SelectedIndexChanged += new System.EventHandler(this.language_SelectedIndexChanged);
-            // 
-            // helpMenuItem
-            // 
-            this.helpMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.helpMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.about,
-            this.pdfManual});
-            this.helpMenuItem.Name = "helpMenuItem";
-            this.helpMenuItem.Size = new System.Drawing.Size(44, 23);
-            this.helpMenuItem.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelHelp;
             // 
             // about
             // 
@@ -217,8 +217,8 @@
         private System.Windows.Forms.ToolStripMenuItem export;
         private System.Windows.Forms.ToolStripMenuItem import;
         private System.Windows.Forms.ToolStripMenuItem languageLabel;
-        private System.Windows.Forms.ToolStripComboBox language;
         private System.Windows.Forms.ToolStripMenuItem helpMenuItem;
+        private System.Windows.Forms.ToolStripComboBox language;
         private System.Windows.Forms.ToolStripMenuItem about;
         private System.Windows.Forms.ToolStripMenuItem pdfManual;
         private MvvmFx.CaliburnMicro.ContentContainer activeItem;

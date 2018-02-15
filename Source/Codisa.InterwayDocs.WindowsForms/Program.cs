@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Globalization;
+using Codisa.InterwayDocs.Framework;
 #if WISEJ
 using Wisej.Base;
 using Wisej.Web;
@@ -81,8 +82,12 @@ namespace Codisa.InterwayDocs
                 if (form is IMainForm)
                 {
                     model = (form as IMainForm).DataContext;
-                    break;
+                    continue;
                 }
+
+                var translatableForm = form as IRefreshTranslation;
+                if (translatableForm != null)
+                    translatableForm.RefreshTranslation();
             }
 
             if (model != null && model is IMainFormViewModel)
