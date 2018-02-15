@@ -36,14 +36,15 @@ namespace Codisa.InterwayDocs
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
+            this.panel1.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = Wisej.Web.BorderStyle.Solid;
             this.panel1.Controls.Add(this.webBrowser1);
             this.panel1.Location = new System.Drawing.Point(12, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(410, 336);
+            this.panel1.Size = new System.Drawing.Size(410, 300);
             this.panel1.TabIndex = 1;
             // 
             // webBrowser1
@@ -52,15 +53,16 @@ namespace Codisa.InterwayDocs
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(408, 334);
+            this.webBrowser1.Size = new System.Drawing.Size(408, 298);
             this.webBrowser1.TabIndex = 0;
             // 
             // versionLabel
             // 
+            this.versionLabel.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Bottom | Wisej.Web.AnchorStyles.Left)));
             this.versionLabel.AutoSize = true;
-            this.versionLabel.Location = new System.Drawing.Point(12, 360);
+            this.versionLabel.Location = new System.Drawing.Point(12, 324);
             this.versionLabel.Name = "versionLabel";
-            this.versionLabel.Size = new System.Drawing.Size(74, 13);
+            this.versionLabel.Size = new System.Drawing.Size(75, 14);
             this.versionLabel.TabIndex = 2;
             this.versionLabel.Text = "Versão: 1.N.N";
             // 
@@ -69,7 +71,7 @@ namespace Codisa.InterwayDocs
             this.okButton.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Bottom | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
             this.okButton.DialogResult = Wisej.Web.DialogResult.OK;
-            this.okButton.Location = new System.Drawing.Point(175, 400);
+            this.okButton.Location = new System.Drawing.Point(175, 364);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(100, 23);
             this.okButton.TabIndex = 3;
@@ -78,9 +80,9 @@ namespace Codisa.InterwayDocs
             // 
             // AboutForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 440);
+            this.ClientSize = new System.Drawing.Size(434, 404);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.okButton);

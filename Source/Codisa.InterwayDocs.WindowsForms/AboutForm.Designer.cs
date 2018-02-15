@@ -36,14 +36,15 @@ namespace Codisa.InterwayDocs
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.webBrowser1);
             this.panel1.Location = new System.Drawing.Point(12, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(410, 336);
+            this.panel1.Size = new System.Drawing.Size(410, 297);
             this.panel1.TabIndex = 1;
             // 
             // webBrowser1
@@ -52,13 +53,14 @@ namespace Codisa.InterwayDocs
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(408, 334);
+            this.webBrowser1.Size = new System.Drawing.Size(408, 295);
             this.webBrowser1.TabIndex = 0;
             // 
             // versionLabel
             // 
+            this.versionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.versionLabel.AutoSize = true;
-            this.versionLabel.Location = new System.Drawing.Point(12, 360);
+            this.versionLabel.Location = new System.Drawing.Point(12, 321);
             this.versionLabel.Name = "versionLabel";
             this.versionLabel.Size = new System.Drawing.Size(74, 13);
             this.versionLabel.TabIndex = 2;
@@ -70,7 +72,7 @@ namespace Codisa.InterwayDocs
             | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.okButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.okButton.Location = new System.Drawing.Point(175, 400);
+            this.okButton.Location = new System.Drawing.Point(175, 361);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(100, 23);
             this.okButton.TabIndex = 3;
@@ -81,7 +83,7 @@ namespace Codisa.InterwayDocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 440);
+            this.ClientSize = new System.Drawing.Size(434, 401);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.okButton);
