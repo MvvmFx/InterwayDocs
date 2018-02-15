@@ -111,10 +111,11 @@
             Setup this Wisej extension on CaliburnMicro.WisejWeb.
             </summary>
         </member>
-        <member name="M:MvvmFx.CaliburnMicro.WisejWeb.Toolable.Setup.Run">
+        <member name="M:MvvmFx.CaliburnMicro.WisejWeb.Toolable.Setup.Run(System.Type)">
             <summary>
             Runs ProxyAgent and ElementConvention configurations.
             </summary>
+            <param name="controlType">Type of the control.</param>
         </member>
     </members>
 </doc>
