@@ -5,7 +5,7 @@ This application was developed as "freemium" application to replace mail registe
 It was a desktop only application: no network, no server, no authentication. The missing features would exist only on the "premium" application.
 Thanks to Codisa IT Solutions of Interway Group to release the code as open source.
 
-The WinFormns application was ported to since Wisej is a Web platform, the missing bits must be (and will be) added.
+The WinFormns application was ported to Wisej. Since Wisej is a Web platform, authentication and authorization are badly needed and so is a more robust multilanguage system. Those missing bits must be (and will be) added.
 
 This application uses an interesting environment:
 - business layer uses [CSLA .NET](http://github.com/MarimerLLC/csla)
@@ -14,6 +14,12 @@ This application uses an interesting environment:
 - UI uses [MvvmFx](http://github.com/MvvmFx/MvvmFx)
 
 The project is instrumental for the improvement and maturity of MvvmFx.
+
+## Project Status
+
+The translation feature is ready but some translations are missing.
+- add Wisej single executable (run as a desktop application)
+- add authentication and autorization
 
 ## What is Wisej?
 
