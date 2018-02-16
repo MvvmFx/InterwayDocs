@@ -14,3 +14,9 @@ This application uses an interesting environment:
 - UI uses [MvvmFx](http://github.com/MvvmFx/MvvmFx)
 
 The project is instrumental for the improvement and maturity of MvvmFx.
+
+## What is Wisej?
+
+Take your WinForms project, port it to Wisej retaining all your BO/DAL code and most UI code.
+Now run it as a Web application.
+[Get Wisej](http://wisej.com)
