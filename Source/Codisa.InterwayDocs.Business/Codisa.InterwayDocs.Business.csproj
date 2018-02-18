@@ -38,12 +38,6 @@
       <HintPath>..\..\Dependencies\packages\CSLA-Core.4.6.603\lib\net45\Csla.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmFx.Logging">
-      <HintPath>..\..\Dependencies\Library\Common\net45\MvvmFx.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmFx.NLogLogger">
-      <HintPath>..\..\Dependencies\Library\Common\net45\MvvmFx.NLogLogger.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
