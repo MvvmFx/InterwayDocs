@@ -4,8 +4,8 @@ using Codisa.InterwayDocs.Business;
 using Codisa.InterwayDocs.Framework;
 using Codisa.InterwayDocs.Properties;
 using MvvmFx.CaliburnMicro;
-using MvvmFx.Windows.Data;
-using Binding = MvvmFx.Windows.Data.Binding;
+using MvvmFx.Bindings.Data;
+using Binding = MvvmFx.Bindings.Data.Binding;
 
 namespace Codisa.InterwayDocs.Outgoing
 {

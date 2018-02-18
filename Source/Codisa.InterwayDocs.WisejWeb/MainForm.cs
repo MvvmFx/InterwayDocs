@@ -4,7 +4,7 @@ using System.Drawing;
 using Codisa.InterwayDocs.Framework;
 using Codisa.InterwayDocs.Properties;
 using MvvmFx.CaliburnMicro;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 using Wisej.Web;
 
 namespace Codisa.InterwayDocs
