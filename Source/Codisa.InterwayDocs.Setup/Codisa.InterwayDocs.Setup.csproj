@@ -47,33 +47,37 @@
       <HintPath>..\..\Dependencies\packages\CSLA-WindowsForms.4.6.603\lib\net45\Csla.Windows.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CslaContrib, Version=4.6.603.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
-      <HintPath>..\..\Dependencies\packages\CslaContrib.4.6.603\lib\net45\CslaContrib.dll</HintPath>
+    <Reference Include="CslaContrib, Version=4.6.604.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\CslaContrib.4.6.604\lib\net45\CslaContrib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CslaContrib.Windows, Version=4.6.603.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
-      <HintPath>..\..\Dependencies\packages\CslaContrib-Windows.4.6.603\lib\net45\CslaContrib.Windows.dll</HintPath>
+    <Reference Include="CslaContrib.Windows, Version=4.6.604.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\CslaContrib-Windows.4.6.604\lib\net45\CslaContrib.Windows.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MvvmFx.CaliburnMicro.Csla.WinForms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Dependencies\Library\WinForms\net45\MvvmFx.CaliburnMicro.Csla.WinForms.dll</HintPath>
+      <HintPath>..\..\Dependencies\packages\MvvmFx-CaliburnMicro-Csla-WinForms.3.0.0\lib\net45\MvvmFx.CaliburnMicro.Csla.WinForms.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MvvmFx.CaliburnMicro.WinForms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Dependencies\Library\WinForms\net45\MvvmFx.CaliburnMicro.WinForms.dll</HintPath>
+      <HintPath>..\..\Dependencies\packages\MvvmFx-CaliburnMicro-WinForms.3.0.0\lib\net45\MvvmFx.CaliburnMicro.WinForms.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MvvmFx.DataBinding.WinForms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Dependencies\Library\WinForms\net45\MvvmFx.DataBinding.WinForms.dll</HintPath>
+      <HintPath>..\..\Dependencies\packages\MvvmFx-CaliburnMicro-WinForms.3.0.0\lib\net45\MvvmFx.DataBinding.WinForms.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MvvmFx.Logging, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Dependencies\Library\Common\net45\MvvmFx.Logging.dll</HintPath>
+      <HintPath>..\..\Dependencies\packages\MvvmFx-Logging.3.0.0\lib\net45\MvvmFx.Logging.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MvvmFx.NLogLogger, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Dependencies\Library\Common\net45\MvvmFx.NLogLogger.dll</HintPath>
+      <HintPath>..\..\Dependencies\packages\MvvmFx-NLogLogger.3.0.0\lib\net45\MvvmFx.NLogLogger.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -121,6 +125,12 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
