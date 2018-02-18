@@ -120,9 +120,6 @@
     <Content Include="..\Codisa.InterwayDocs.WindowsForms\Manual.pdf">
       <Link>Manual.pdf</Link>
     </Content>
-    <None Include="NLog.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Properties\DataSources\Codisa.InterwayDocs.Business.DeliveryBook.datasource" />
     <Content Include="Properties\DataSources\Codisa.InterwayDocs.Business.DeliveryRegister.datasource" />
     <Content Include="Properties\DataSources\Codisa.InterwayDocs.Business.IncomingBook.datasource" />
@@ -131,6 +128,9 @@
     <Content Include="Properties\DataSources\Codisa.InterwayDocs.Business.OutgoingRegister.datasource" />
     <Content Include="Themes\Classic-2.theme" />
     <Content Include="Themes\Classic-3.theme" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -352,12 +352,12 @@
       <HintPath>..\..\Dependencies\packages\CSLA-Core.4.6.603\lib\net45\Csla.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CslaContrib, Version=4.6.603.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
-      <HintPath>..\..\Dependencies\packages\CslaContrib.4.6.603\lib\net45\CslaContrib.dll</HintPath>
+    <Reference Include="CslaContrib, Version=4.6.604.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\CslaContrib.4.6.604\lib\net45\CslaContrib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CslaContrib.WisejWeb, Version=4.6.603.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
-      <HintPath>..\..\Dependencies\packages\CslaContrib-Wisej.4.6.603\lib\net45\CslaContrib.WisejWeb.dll</HintPath>
+    <Reference Include="CslaContrib.WisejWeb, Version=4.6.604.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\CslaContrib-Wisej.4.6.604\lib\net45\CslaContrib.WisejWeb.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
@@ -365,23 +365,29 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MvvmFx.CaliburnMicro.WisejWeb.Toolable">
-      <HintPath>..\..\Dependencies\Library\WisejWeb\net45\MvvmFx.CaliburnMicro.WisejWeb.Toolable.dll</HintPath>
+    <Reference Include="MvvmFx.CaliburnMicro.Csla.WisejWeb, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\MvvmFx-CaliburnMicro-Csla-Wisej.3.0.0\lib\net45\MvvmFx.CaliburnMicro.Csla.WisejWeb.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmFx.CaliburnMicro.Csla.WisejWeb">
-      <HintPath>..\..\Dependencies\Library\WisejWeb\net45\MvvmFx.CaliburnMicro.Csla.WisejWeb.dll</HintPath>
+    <Reference Include="MvvmFx.CaliburnMicro.WisejWeb, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\MvvmFx-CaliburnMicro-Wisej.3.0.0\lib\net45\MvvmFx.CaliburnMicro.WisejWeb.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmFx.CaliburnMicro.WisejWeb">
-      <HintPath>..\..\Dependencies\Library\WisejWeb\net45\MvvmFx.CaliburnMicro.WisejWeb.dll</HintPath>
+    <Reference Include="MvvmFx.CaliburnMicro.WisejWeb.Toolable, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\MvvmFx-CaliburnMicro-Wisej.3.0.0\lib\net45\MvvmFx.CaliburnMicro.WisejWeb.Toolable.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmFx.DataBinding.WisejWeb">
-      <HintPath>..\..\Dependencies\Library\WisejWeb\net45\MvvmFx.DataBinding.WisejWeb.dll</HintPath>
+    <Reference Include="MvvmFx.DataBinding.WisejWeb, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\MvvmFx-CaliburnMicro-Wisej.3.0.0\lib\net45\MvvmFx.DataBinding.WisejWeb.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmFx.Logging">
-      <HintPath>..\..\Dependencies\Library\Common\net45\MvvmFx.Logging.dll</HintPath>
+    <Reference Include="MvvmFx.Logging, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\MvvmFx-Logging.3.0.0\lib\net45\MvvmFx.Logging.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmFx.NLogLogger">
-      <HintPath>..\..\Dependencies\Library\Common\net45\MvvmFx.NLogLogger.dll</HintPath>
+    <Reference Include="MvvmFx.NLogLogger, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\MvvmFx-NLogLogger.3.0.0\lib\net45\MvvmFx.NLogLogger.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\..\Dependencies\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>

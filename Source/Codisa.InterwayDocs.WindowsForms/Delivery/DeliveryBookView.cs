@@ -4,8 +4,8 @@ using Codisa.InterwayDocs.Business.SearchObjects;
 using Codisa.InterwayDocs.Framework;
 using Codisa.InterwayDocs.Properties;
 using MvvmFx.CaliburnMicro;
-using MvvmFx.Windows.Data;
-using Binding = MvvmFx.Windows.Data.Binding;
+using MvvmFx.Bindings.Data;
+using Binding = MvvmFx.Bindings.Data.Binding;
 using FormsBinding = System.Windows.Forms.Binding;
 
 namespace Codisa.InterwayDocs.Delivery

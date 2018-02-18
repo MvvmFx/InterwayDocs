@@ -16,8 +16,8 @@ using ToolStripItemProxy = MvvmFx.CaliburnMicro.ComponentHandlers.ToolStripItemP
 #endif
 using Codisa.InterwayDocs.Properties;
 using MvvmFx.CaliburnMicro;
-using MvvmFx.Windows.Data;
-using Binding = MvvmFx.Windows.Data.Binding;
+using MvvmFx.Bindings.Data;
+using Binding = MvvmFx.Bindings.Data.Binding;
 
 namespace Codisa.InterwayDocs.Framework
 {

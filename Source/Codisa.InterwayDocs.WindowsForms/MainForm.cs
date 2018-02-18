@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using Codisa.InterwayDocs.Framework;
 using Codisa.InterwayDocs.Properties;
 using MvvmFx.CaliburnMicro;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 using ApplicationContext = MvvmFx.CaliburnMicro.ApplicationContext;
 
 namespace Codisa.InterwayDocs

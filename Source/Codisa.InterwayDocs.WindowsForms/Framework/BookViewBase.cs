@@ -14,7 +14,7 @@ using FormsBinding = System.Windows.Forms.Binding;
 #endif
 using Codisa.InterwayDocs.Properties;
 using MvvmFx.CaliburnMicro;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 
 namespace Codisa.InterwayDocs.Framework
 {
