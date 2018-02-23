@@ -283,7 +283,6 @@ namespace Codisa.InterwayDocs.Business
         public IncomingRegister()
         {
             // Use factory methods and do not use direct creation.
-            Saved += OnIncomingRegisterSaved;
         }
 
         #endregion
@@ -304,7 +303,7 @@ namespace Codisa.InterwayDocs.Business
             // Property Business Rules
 
             // RegisterDate
-            BusinessRules.AddRule(new DateNotInFuture(RegisterDateProperty) { MessageText = Resources.DateNotInFuture, Priority = 1 });
+            BusinessRules.AddRule(new DateNotInFuture(RegisterDateProperty) { MessageDelegate = () => Resources.DateNotInFuture, Priority = 1 });
             // DocumentType
             BusinessRules.AddRule(new CollapseWhiteSpace(DocumentTypeProperty) { Priority = 1 });
             // DocumentReference
@@ -316,13 +315,13 @@ namespace Codisa.InterwayDocs.Business
             // DocumentClass
             BusinessRules.AddRule(new ClassificationFormat(DocumentClassProperty) { Priority = 1 });
             // DocumentDate
-            BusinessRules.AddRule(new DateNotInFuture(DocumentDateProperty) { MessageText = Resources.DateNotInFuture, Priority = 1 });
+            BusinessRules.AddRule(new DateNotInFuture(DocumentDateProperty) { MessageDelegate = () => Resources.DateNotInFuture, Priority = 1 });
             // Subject
             BusinessRules.AddRule(new CollapseSpace(SubjectProperty) { Priority = 1 });
             // SenderName
             BusinessRules.AddRule(new CollapseWhiteSpace(SenderNameProperty) { Priority = 1 });
             // ReceptionDate
-            BusinessRules.AddRule(new DateNotInFuture(ReceptionDateProperty) { MessageText = Resources.DateNotInFuture, Priority = 1 });
+            BusinessRules.AddRule(new DateNotInFuture(ReceptionDateProperty) { MessageDelegate = () => Resources.DateNotInFuture, Priority = 1 });
             // RoutedTo
             BusinessRules.AddRule(new CollapseWhiteSpace(RoutedToProperty) { Priority = 1 });
             // Notes
@@ -507,19 +506,6 @@ namespace Codisa.InterwayDocs.Business
                 LoadProperty(CreateDateProperty, ReadProperty(ChangeDateProperty));
             }
         }
-
-        #endregion
-
-        #region Saved Event
-
-        private void OnIncomingRegisterSaved(object sender, Csla.Core.SavedEventArgs e)
-        {
-            if (IncomingRegisterSaved != null)
-                IncomingRegisterSaved(sender, e);
-        }
-
-        /// <summary> Use this event to signal a <see cref="IncomingRegister"/> object was saved.</summary>
-        public static event EventHandler<Csla.Core.SavedEventArgs> IncomingRegisterSaved;
 
         #endregion
 
