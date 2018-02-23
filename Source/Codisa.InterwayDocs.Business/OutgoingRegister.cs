@@ -16,6 +16,8 @@ namespace Codisa.InterwayDocs.Business
         private const string ObjectName = "OutgoingRegister";
         [NotUndoable]
         private static PropertyRequiredList _requiredList;
+        // this might be a problem if business logic changes
+        // and the required list depends on the role or document lifecycle.
 
         public static PropertyRequiredList RequiredList
         {
