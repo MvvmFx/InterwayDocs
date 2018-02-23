@@ -175,6 +175,7 @@
             this.model_RegisterDate.Name = "model_RegisterDate";
             this.model_RegisterDate.Size = new System.Drawing.Size(65, 20);
             this.model_RegisterDate.TabIndex = 1;
+            this.model_RegisterDate.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // registerDateLabel
             // 
@@ -223,6 +224,7 @@
             this.model_DocumentType.Name = "model_DocumentType";
             this.model_DocumentType.Size = new System.Drawing.Size(180, 20);
             this.model_DocumentType.TabIndex = 1;
+            this.model_DocumentType.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // documentTypeLabel
             // 
@@ -240,6 +242,7 @@
             this.model_DocumentReference.Name = "model_DocumentReference";
             this.model_DocumentReference.Size = new System.Drawing.Size(150, 20);
             this.model_DocumentReference.TabIndex = 2;
+            this.model_DocumentReference.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // documentReferenceLabel
             // 
@@ -257,6 +260,7 @@
             this.model_DocumentEntity.Name = "model_DocumentEntity";
             this.model_DocumentEntity.Size = new System.Drawing.Size(360, 20);
             this.model_DocumentEntity.TabIndex = 3;
+            this.model_DocumentEntity.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // documentEntityLabel
             // 
@@ -274,6 +278,7 @@
             this.model_DocumentDept.Name = "model_DocumentDept";
             this.model_DocumentDept.Size = new System.Drawing.Size(360, 20);
             this.model_DocumentDept.TabIndex = 4;
+            this.model_DocumentDept.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // documentDeptLabel
             // 
@@ -291,6 +296,7 @@
             this.model_DocumentClass.Name = "model_DocumentClass";
             this.model_DocumentClass.Size = new System.Drawing.Size(60, 20);
             this.model_DocumentClass.TabIndex = 5;
+            this.model_DocumentClass.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // documentClassLabel
             // 
@@ -308,6 +314,7 @@
             this.model_DocumentDate.Name = "model_DocumentDate";
             this.model_DocumentDate.Size = new System.Drawing.Size(65, 20);
             this.model_DocumentDate.TabIndex = 6;
+            this.model_DocumentDate.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // documentDateLabel
             // 
@@ -327,6 +334,7 @@
             this.model_Subject.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.model_Subject.Size = new System.Drawing.Size(425, 72);
             this.model_Subject.TabIndex = 7;
+            this.model_Subject.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // subjectLabel
             // 
@@ -344,6 +352,7 @@
             this.model_SenderName.Name = "model_SenderName";
             this.model_SenderName.Size = new System.Drawing.Size(360, 20);
             this.model_SenderName.TabIndex = 3;
+            this.model_SenderName.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // senderNameLabel
             // 
@@ -361,6 +370,7 @@
             this.model_ReceptionDate.Name = "model_ReceptionDate";
             this.model_ReceptionDate.Size = new System.Drawing.Size(65, 20);
             this.model_ReceptionDate.TabIndex = 4;
+            this.model_ReceptionDate.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // receptionDateLabel
             // 
@@ -378,6 +388,7 @@
             this.model_RoutedTo.Name = "model_RoutedTo";
             this.model_RoutedTo.Size = new System.Drawing.Size(360, 20);
             this.model_RoutedTo.TabIndex = 5;
+            this.model_RoutedTo.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // routedToLabel
             // 
@@ -397,6 +408,7 @@
             this.model_Notes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.model_Notes.Size = new System.Drawing.Size(425, 46);
             this.model_Notes.TabIndex = 6;
+            this.model_Notes.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // notesLabel
             // 
@@ -413,6 +425,7 @@
             this.model_ArchiveLocation.Name = "model_ArchiveLocation";
             this.model_ArchiveLocation.Size = new System.Drawing.Size(360, 20);
             this.model_ArchiveLocation.TabIndex = 7;
+            this.model_ArchiveLocation.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // archiveLocationLabel
             // 
