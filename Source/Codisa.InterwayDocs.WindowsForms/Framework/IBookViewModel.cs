@@ -9,5 +9,6 @@ namespace Codisa.InterwayDocs.Framework
         bool IsDetailPanelStateOpen { get; set; }
         IGenericCriteriaInformation Criteria { get; set; }
         IMainFormViewModel RootViewModel { get; set; }
+        void AutoRefreshDocuments();
     }
 }
