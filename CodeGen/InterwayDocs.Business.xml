@@ -1522,7 +1522,7 @@
       <ContainsItem>true</ContainsItem>
       <UniqueItems>false</UniqueItems>
       <FindMethodsParameters />
-      <UpdaterType>IncomingRegister</UpdaterType>
+      <UpdaterType />
       <AllowNew>false</AllowNew>
       <AllowEdit>false</AllowEdit>
       <AllowRemove>false</AllowRemove>
@@ -1656,162 +1656,7 @@
       <InheritedChildCollectionProperties />
       <InheritedChildProperties />
       <ConvertValueProperties />
-      <UpdateValueProperties>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>RegisterId</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>RegisterId</SourcePropertyName>
-          <IsIdentity>true</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>RegisterDate</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>RegisterDate</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentType</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentType</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentReference</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentReference</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentEntity</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentEntity</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentDept</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentDept</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentClass</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentClass</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentDate</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentDate</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>Subject</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>Subject</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>SenderName</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>SenderName</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>ReceptionDate</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>ReceptionDate</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>RoutedTo</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>RoutedTo</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>Notes</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>Notes</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>ArchiveLocation</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>ArchiveLocation</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-      </UpdateValueProperties>
+      <UpdateValueProperties />
       <InheritedValueProperties />
       <ValueProperties>
         <ValueProperty>
@@ -3157,7 +3002,8 @@
               </Constructors>
               <RuleProperties />
               <Severity>Error</Severity>
-              <MessageText>*Resources.DateNotInFuture</MessageText>
+              <MessageText />
+              <MessageDelegate>() =&gt; Resources.DateNotInFuture</MessageDelegate>
               <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
               <CanRunOnServer>true</CanRunOnServer>
               <CanRunInCheckRules>true</CanRunInCheckRules>
@@ -3980,7 +3826,8 @@
               </Constructors>
               <RuleProperties />
               <Severity>Error</Severity>
-              <MessageText>*Resources.DateNotInFuture</MessageText>
+              <MessageText />
+              <MessageDelegate>() =&gt; Resources.DateNotInFuture</MessageDelegate>
               <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
               <CanRunOnServer>true</CanRunOnServer>
               <CanRunInCheckRules>true</CanRunInCheckRules>
@@ -4392,7 +4239,8 @@
               </Constructors>
               <RuleProperties />
               <Severity>Error</Severity>
-              <MessageText>*Resources.DateNotInFuture</MessageText>
+              <MessageText />
+              <MessageDelegate>() =&gt; Resources.DateNotInFuture</MessageDelegate>
               <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
               <CanRunOnServer>true</CanRunOnServer>
               <CanRunInCheckRules>true</CanRunInCheckRules>
@@ -4950,7 +4798,7 @@
       <Singleton>false</Singleton>
       <EditOnDemand>false</EditOnDemand>
       <CheckRulesOnFetch>false</CheckRulesOnFetch>
-      <SupportUpdateProperties>true</SupportUpdateProperties>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
       <CriteriaObjects>
         <Criteria>
           <Name>CriteriaNew</Name>
@@ -5510,7 +5358,7 @@
       <ContainsItem>true</ContainsItem>
       <UniqueItems>false</UniqueItems>
       <FindMethodsParameters />
-      <UpdaterType>OutgoingRegister</UpdaterType>
+      <UpdaterType />
       <AllowNew>false</AllowNew>
       <AllowEdit>false</AllowEdit>
       <AllowRemove>false</AllowRemove>
@@ -5644,162 +5492,7 @@
       <InheritedChildCollectionProperties />
       <InheritedChildProperties />
       <ConvertValueProperties />
-      <UpdateValueProperties>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>RegisterId</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>RegisterId</SourcePropertyName>
-          <IsIdentity>true</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>RegisterDate</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>RegisterDate</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentType</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentType</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentReference</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentReference</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentEntity</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentEntity</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentDept</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentDept</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentClass</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentClass</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentDate</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentDate</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>Subject</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>Subject</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>SendDate</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>SendDate</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>RecipientName</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>RecipientName</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>RecipientTown</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>RecipientTown</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>Notes</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>Notes</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>ArchiveLocation</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>ArchiveLocation</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-      </UpdateValueProperties>
+      <UpdateValueProperties />
       <InheritedValueProperties />
       <ValueProperties>
         <ValueProperty>
@@ -7145,7 +6838,8 @@
               </Constructors>
               <RuleProperties />
               <Severity>Error</Severity>
-              <MessageText>*Resources.DateNotInFuture</MessageText>
+              <MessageText />
+              <MessageDelegate>() =&gt; Resources.DateNotInFuture</MessageDelegate>
               <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
               <CanRunOnServer>true</CanRunOnServer>
               <CanRunInCheckRules>true</CanRunInCheckRules>
@@ -7968,7 +7662,8 @@
               </Constructors>
               <RuleProperties />
               <Severity>Error</Severity>
-              <MessageText>*Resources.DateNotInFuture</MessageText>
+              <MessageText />
+              <MessageDelegate>() =&gt; Resources.DateNotInFuture</MessageDelegate>
               <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
               <CanRunOnServer>true</CanRunOnServer>
               <CanRunInCheckRules>true</CanRunInCheckRules>
@@ -8259,7 +7954,8 @@
               </Constructors>
               <RuleProperties />
               <Severity>Error</Severity>
-              <MessageText>*Resources.DateNotInFuture</MessageText>
+              <MessageText />
+              <MessageDelegate>() =&gt; Resources.DateNotInFuture</MessageDelegate>
               <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
               <CanRunOnServer>true</CanRunOnServer>
               <CanRunInCheckRules>true</CanRunInCheckRules>
@@ -8938,7 +8634,7 @@
       <Singleton>false</Singleton>
       <EditOnDemand>false</EditOnDemand>
       <CheckRulesOnFetch>false</CheckRulesOnFetch>
-      <SupportUpdateProperties>true</SupportUpdateProperties>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
       <CriteriaObjects>
         <Criteria>
           <Name>CriteriaNew</Name>
@@ -9471,7 +9167,7 @@
       <ContainsItem>true</ContainsItem>
       <UniqueItems>false</UniqueItems>
       <FindMethodsParameters />
-      <UpdaterType>DeliveryRegister</UpdaterType>
+      <UpdaterType />
       <AllowNew>false</AllowNew>
       <AllowEdit>false</AllowEdit>
       <AllowRemove>false</AllowRemove>
@@ -9605,140 +9301,7 @@
       <InheritedChildCollectionProperties />
       <InheritedChildProperties />
       <ConvertValueProperties />
-      <UpdateValueProperties>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>RegisterId</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>RegisterId</SourcePropertyName>
-          <IsIdentity>true</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>RegisterDate</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>RegisterDate</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentType</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentType</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentReference</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentReference</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentEntity</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentEntity</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentDept</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentDept</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentClass</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentClass</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>DocumentDate</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>DocumentDate</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>RecipientName</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>RecipientName</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>ExpeditorName</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>ExpeditorName</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>ReceptionName</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>ReceptionName</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-        <UpdateValueProperty>
-          <ParameterName />
-          <Name>ReceptionDate</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <SourcePropertyName>ReceptionDate</SourcePropertyName>
-          <IsIdentity>false</IsIdentity>
-        </UpdateValueProperty>
-      </UpdateValueProperties>
+      <UpdateValueProperties />
       <InheritedValueProperties />
       <ValueProperties>
         <ValueProperty>
@@ -10942,7 +10505,8 @@
               </Constructors>
               <RuleProperties />
               <Severity>Error</Severity>
-              <MessageText>*Resources.DateNotInFuture</MessageText>
+              <MessageText />
+              <MessageDelegate>() =&gt; Resources.DateNotInFuture</MessageDelegate>
               <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
               <CanRunOnServer>true</CanRunOnServer>
               <CanRunInCheckRules>true</CanRunInCheckRules>
@@ -11765,7 +11329,8 @@
               </Constructors>
               <RuleProperties />
               <Severity>Error</Severity>
-              <MessageText>*Resources.DateNotInFuture</MessageText>
+              <MessageText />
+              <MessageDelegate>() =&gt; Resources.DateNotInFuture</MessageDelegate>
               <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
               <CanRunOnServer>true</CanRunOnServer>
               <CanRunInCheckRules>true</CanRunInCheckRules>
@@ -12298,7 +11863,8 @@
               </Constructors>
               <RuleProperties />
               <Severity>Information</Severity>
-              <MessageText>*Resources.DateNotInFuture</MessageText>
+              <MessageText />
+              <MessageDelegate>() =&gt; Resources.DateNotInFuture</MessageDelegate>
               <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
               <CanRunOnServer>true</CanRunOnServer>
               <CanRunInCheckRules>true</CanRunInCheckRules>
@@ -12493,7 +12059,7 @@
       <Singleton>false</Singleton>
       <EditOnDemand>false</EditOnDemand>
       <CheckRulesOnFetch>false</CheckRulesOnFetch>
-      <SupportUpdateProperties>true</SupportUpdateProperties>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
       <CriteriaObjects>
         <Criteria>
           <Name>CriteriaNew</Name>
@@ -12692,6 +12258,6 @@
   <AssociativeEntities />
   <ConnectionString>Server=(local);Database=InterwayDocs;persist security info=False;user id=sa;password=password_1234;packet size=4096</ConnectionString>
   <ProjectName>InterwayDocs.Business</ProjectName>
-  <TargetDirectory>C:\VS_Projects\Codisa.InterwayDocs\trunk\Source</TargetDirectory>
+  <TargetDirectory>C:\VS_GitHub\InterwayDocs\Source</TargetDirectory>
   <FileVersion>4.0.6</FileVersion>
 </CslaGeneratorUnit>
