@@ -208,39 +208,6 @@ namespace Codisa.InterwayDocs.Business
 
         #endregion
 
-        #region Update properties on saved object event
-
-        /// <summary>
-        /// Existing <see cref="DeliveryInfo"/> object is updated by <see cref="DeliveryRegister"/> Saved event.
-        /// </summary>
-        internal static DeliveryInfo LoadInfo(DeliveryRegister deliveryRegister)
-        {
-            var info = new DeliveryInfo();
-            info.UpdatePropertiesOnSaved(deliveryRegister);
-            return info;
-        }
-
-        /// <summary>
-        /// Properties on <see cref="DeliveryInfo"/> object are updated by <see cref="DeliveryRegister"/> Saved event.
-        /// </summary>
-        internal void UpdatePropertiesOnSaved(DeliveryRegister deliveryRegister)
-        {
-            LoadProperty(RegisterIdProperty, deliveryRegister.RegisterId);
-            LoadProperty(RegisterDateProperty, (SmartDate)deliveryRegister.RegisterDate);
-            LoadProperty(DocumentTypeProperty, deliveryRegister.DocumentType);
-            LoadProperty(DocumentReferenceProperty, deliveryRegister.DocumentReference);
-            LoadProperty(DocumentEntityProperty, deliveryRegister.DocumentEntity);
-            LoadProperty(DocumentDeptProperty, deliveryRegister.DocumentDept);
-            LoadProperty(DocumentClassProperty, deliveryRegister.DocumentClass);
-            LoadProperty(DocumentDateProperty, (SmartDate)deliveryRegister.DocumentDate);
-            LoadProperty(RecipientNameProperty, deliveryRegister.RecipientName);
-            LoadProperty(ExpeditorNameProperty, deliveryRegister.ExpeditorName);
-            LoadProperty(ReceptionNameProperty, deliveryRegister.ReceptionName);
-            LoadProperty(ReceptionDateProperty, (SmartDate)deliveryRegister.ReceptionDate);
-        }
-
-        #endregion
-
         #region Data Access
 
         /// <summary>
