@@ -474,6 +474,8 @@ namespace Codisa.InterwayDocs.Incoming
             _isSaving = false;
 
             //IsBusy = false;
+
+            ParentViewModel.AutoRefreshDocuments();
         }
 
         public void PrintDetail()

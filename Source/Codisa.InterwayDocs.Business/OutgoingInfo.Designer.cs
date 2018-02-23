@@ -234,41 +234,6 @@ namespace Codisa.InterwayDocs.Business
 
         #endregion
 
-        #region Update properties on saved object event
-
-        /// <summary>
-        /// Existing <see cref="OutgoingInfo"/> object is updated by <see cref="OutgoingRegister"/> Saved event.
-        /// </summary>
-        internal static OutgoingInfo LoadInfo(OutgoingRegister outgoingRegister)
-        {
-            var info = new OutgoingInfo();
-            info.UpdatePropertiesOnSaved(outgoingRegister);
-            return info;
-        }
-
-        /// <summary>
-        /// Properties on <see cref="OutgoingInfo"/> object are updated by <see cref="OutgoingRegister"/> Saved event.
-        /// </summary>
-        internal void UpdatePropertiesOnSaved(OutgoingRegister outgoingRegister)
-        {
-            LoadProperty(RegisterIdProperty, outgoingRegister.RegisterId);
-            LoadProperty(RegisterDateProperty, (SmartDate)outgoingRegister.RegisterDate);
-            LoadProperty(DocumentTypeProperty, outgoingRegister.DocumentType);
-            LoadProperty(DocumentReferenceProperty, outgoingRegister.DocumentReference);
-            LoadProperty(DocumentEntityProperty, outgoingRegister.DocumentEntity);
-            LoadProperty(DocumentDeptProperty, outgoingRegister.DocumentDept);
-            LoadProperty(DocumentClassProperty, outgoingRegister.DocumentClass);
-            LoadProperty(DocumentDateProperty, (SmartDate)outgoingRegister.DocumentDate);
-            LoadProperty(SubjectProperty, outgoingRegister.Subject);
-            LoadProperty(SendDateProperty, (SmartDate)outgoingRegister.SendDate);
-            LoadProperty(RecipientNameProperty, outgoingRegister.RecipientName);
-            LoadProperty(RecipientTownProperty, outgoingRegister.RecipientTown);
-            LoadProperty(NotesProperty, outgoingRegister.Notes);
-            LoadProperty(ArchiveLocationProperty, outgoingRegister.ArchiveLocation);
-        }
-
-        #endregion
-
         #region Data Access
 
         /// <summary>

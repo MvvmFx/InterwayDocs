@@ -110,6 +110,11 @@ namespace Codisa.InterwayDocs.Framework
 
         #region Commmun event handlers
 
+        protected void ForceValidation(object sender, EventArgs e)
+        {
+            ValidateChildren();
+        }
+
         protected void ViewBaseLoad(object sender, EventArgs e)
         {
             Load -= ViewBaseLoad;

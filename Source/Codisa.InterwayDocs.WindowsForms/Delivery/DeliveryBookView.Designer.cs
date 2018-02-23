@@ -176,6 +176,7 @@
             this.criteria_FullText.Name = "criteria_FullText";
             this.criteria_FullText.Size = new System.Drawing.Size(504, 20);
             this.criteria_FullText.TabIndex = 4;
+            this.criteria_FullText.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // dateTypeLabel
             // 
@@ -212,6 +213,7 @@
             this.criteria_StartDate.Name = "criteria_StartDate";
             this.criteria_StartDate.Size = new System.Drawing.Size(100, 20);
             this.criteria_StartDate.TabIndex = 7;
+            this.criteria_StartDate.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // endDateLabel
             // 
@@ -230,6 +232,7 @@
             this.criteria_EndDate.Name = "criteria_EndDate";
             this.criteria_EndDate.Size = new System.Drawing.Size(100, 20);
             this.criteria_EndDate.TabIndex = 8;
+            this.criteria_EndDate.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // search
             // 

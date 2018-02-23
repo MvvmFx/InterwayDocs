@@ -414,8 +414,8 @@ up to three words.</value>
     <value>Unsaved register</value>
   </data>
   <data name="CloseOrCancel" xml:space="preserve">
-    <value>O registo não está gravada. Se fechar sem gravar, vai perder as alterações.
-Quer fechar o registo sem gravar?</value>
+    <value>The register isn't saved. If you close without saving you will loose the changes.
+Do you want to close without saving?</value>
   </data>
   <data name="EmailSupport" xml:space="preserve">
     <value>suporte@codisa-its.com</value>

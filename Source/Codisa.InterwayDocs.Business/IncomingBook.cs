@@ -9,16 +9,15 @@ namespace Codisa.InterwayDocs.Business
 
         #region OnDeserialized actions
 
-        /// <summary>
+        /*/// <summary>
         /// This method is called on a newly deserialized object
         /// after deserialization is complete.
         /// </summary>
         protected override void OnDeserialized()
         {
             base.OnDeserialized();
-            IncomingRegisterSaved.Register(this);
             // add your custom OnDeserialized actions here.
-        }
+        }*/
 
         #endregion
 
@@ -168,7 +167,7 @@ namespace Codisa.InterwayDocs.Business
 
         private string GetOrderPart(string query)
         {
-            query += Environment.NewLine + "ORDER BY IncomingRegisters.RegisterId" + Environment.NewLine;
+            query += Environment.NewLine + "ORDER BY IncomingRegisters.RegisterId DESC" + Environment.NewLine;
 
             return query;
         }

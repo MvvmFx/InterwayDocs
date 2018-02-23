@@ -348,6 +348,13 @@ namespace Codisa.InterwayDocs.Incoming
 
         #region Refresh list
 
+        public void AutoRefreshDocuments()
+        {
+            var listItemId = ListItemId;
+            RefreshDocuments();
+            ListItemId = listItemId;
+        }
+
         public void RefreshDocuments()
         {
             DoRefresh(() => IncomingBook.GetIncomingBook(Criteria as IncomingBookCriteriaGet));

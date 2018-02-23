@@ -262,8 +262,8 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O registo não está gravada. Se fechar sem gravar, vai perder as alterações.
-        ///Quer fechar o registo sem gravar?.
+        ///   Looks up a localized string similar to The register isn&apos;t saved. If you close without saving you will loose the changes.
+        ///Do you want to close without saving?.
         /// </summary>
         internal static string CloseOrCancel {
             get {

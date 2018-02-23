@@ -17,11 +17,6 @@ namespace Codisa.InterwayDocs.Framework
         }
 #endif
 
-        public CommonBookCriteriaFacade()
-        {
-            _facade = new CommonBookCriteria();
-        }
-
         public static CommonBookCriteria Instance
         {
             get

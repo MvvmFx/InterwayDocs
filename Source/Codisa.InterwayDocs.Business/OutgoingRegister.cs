@@ -10,19 +10,19 @@ namespace Codisa.InterwayDocs.Business
     public partial class OutgoingRegister
     {
 
-        #region Fields
+        #region Extra fields & properties
 
         [NotUndoable]
-        private static string _objectName;
+        private const string ObjectName = "OutgoingRegister";
         [NotUndoable]
         private static PropertyRequiredList _requiredList;
 
-        public PropertyRequiredList RequiredList
+        public static PropertyRequiredList RequiredList
         {
             get
             {
                 if (_requiredList == null)
-                    _requiredList = PropertyRequiredList.GetPropertyRequiredList(_objectName);
+                    _requiredList = PropertyRequiredList.GetPropertyRequiredList(ObjectName);
 
                 return _requiredList;
             }
@@ -32,7 +32,7 @@ namespace Codisa.InterwayDocs.Business
 
         #region OnDeserialized actions
 
-        /// <summary>
+        /*/// <summary>
         /// This method is called on a newly deserialized object
         /// after deserialization is complete.
         /// </summary>
@@ -40,9 +40,8 @@ namespace Codisa.InterwayDocs.Business
         protected override void OnDeserialized(System.Runtime.Serialization.StreamingContext context)
         {
             base.OnDeserialized(context);
-            Saved += OnOutgoingRegisterSaved;
             // add your custom OnDeserialized actions here.
-        }
+        }*/
 
         #endregion
 
@@ -50,9 +49,6 @@ namespace Codisa.InterwayDocs.Business
 
         partial void AddBusinessRulesExtend()
         {
-            if (string.IsNullOrEmpty(_objectName))
-                _objectName = ToString().Substring(ToString().LastIndexOf('.') + 1);
-
             var allProperties = FieldManager.GetRegisteredProperties();
 
             foreach (IPropertyInfo propertyInfo in from propertyInfo in allProperties
@@ -63,7 +59,7 @@ namespace Codisa.InterwayDocs.Business
             {
                 BusinessRules.AddRule(new Required(propertyInfo)
                 {
-                    MessageText = Resources.Required
+                    MessageDelegate = () => Resources.Required
                 });
             }
         }

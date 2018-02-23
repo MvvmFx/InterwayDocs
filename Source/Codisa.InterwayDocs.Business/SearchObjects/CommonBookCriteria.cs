@@ -2,12 +2,6 @@
 {
     public class CommonBookCriteria
     {
-        #region Singleton instance property
-
-        private static CommonBookCriteria Instance { get; set; }
-
-        #endregion
-
         #region Business Properties
 
         /// <summary>
@@ -45,22 +39,6 @@
         /// </summary>
         /// <value>The Full Text.</value>
         public string FullText { get; set; }
-
-        #endregion
-
-        #region Factory Methods
-
-        /// <summary>
-        /// Factory method. Loads a <see cref="CommonBookCriteria"/> object.
-        /// </summary>
-        /// <returns>A reference to the fetched <see cref="CommonBookCriteria"/> object.</returns>
-        public static CommonBookCriteria GetCommonBookCriteria()
-        {
-            if (Instance == null)
-                Instance = new CommonBookCriteria();
-
-            return Instance;
-        }
 
         #endregion
     }

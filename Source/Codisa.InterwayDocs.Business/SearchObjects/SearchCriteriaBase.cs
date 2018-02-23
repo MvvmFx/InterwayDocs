@@ -174,25 +174,25 @@ namespace Codisa.InterwayDocs.Business.SearchObjects
             // StartDate
             BusinessRules.AddRule(new DateNotInFuture(StartDateProperty)
             {
-                MessageText = Resources.DateNotInFuture,
+                MessageDelegate = () => Resources.DateNotInFuture,
                 Priority = 0
             });
             // EndDate
             BusinessRules.AddRule(new DateNotInFuture(EndDateProperty)
             {
-                MessageText = Resources.DateNotInFuture,
+                MessageDelegate = () => Resources.DateNotInFuture,
                 Priority = 0
             });
             BusinessRules.AddRule(new GreaterThanOrEqual(EndDateProperty, StartDateProperty)
             {
-                MessageText = Resources.EndDateGreaterThanOrEqualStartDate,
+                MessageDelegate = () => Resources.EndDateGreaterThanOrEqualStartDate,
                 Priority = 1
             });
             // FullText
             BusinessRules.AddRule(new CollapseWhiteSpace(FullTextProperty) {Priority = 0});
             BusinessRules.AddRule(new ThreePartsFullText(FullTextProperty)
             {
-                MessageText = Resources.ThreePartsFullText,
+                MessageDelegate = () => Resources.ThreePartsFullText,
                 Priority = 1
             });
             // SelectedFastDateIndex
