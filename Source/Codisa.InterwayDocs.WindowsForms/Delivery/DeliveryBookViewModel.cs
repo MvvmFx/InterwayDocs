@@ -348,6 +348,13 @@ namespace Codisa.InterwayDocs.Delivery
 
         #region Refresh list
 
+        public void AutoRefreshDocuments()
+        {
+            var listItemId = ListItemId;
+            RefreshDocuments();
+            ListItemId = listItemId;
+        }
+
         public void RefreshDocuments()
         {
             DoRefresh(() => DeliveryBook.GetDeliveryBook(Criteria as DeliveryBookCriteriaGet));
