@@ -129,6 +129,15 @@ namespace Codisa.InterwayDocs.Framework
 
         #endregion
 
+        #region Commmun event handlers
+
+        protected void ForceValidation(object sender, EventArgs e)
+        {
+            ValidateChildren();
+        }
+
+        #endregion
+
         #region Layout area methods
 
         public void ToggleDetailPanel()
