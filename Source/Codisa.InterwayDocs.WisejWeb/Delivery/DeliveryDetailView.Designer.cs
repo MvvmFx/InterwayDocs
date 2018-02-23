@@ -141,6 +141,7 @@
             this.model_RegisterDate.Name = "model_RegisterDate";
             this.model_RegisterDate.Size = new System.Drawing.Size(65, 20);
             this.model_RegisterDate.TabIndex = 1;
+            this.model_RegisterDate.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // registerDateLabel
             // 
@@ -189,6 +190,7 @@
             this.model_DocumentType.Name = "model_DocumentType";
             this.model_DocumentType.Size = new System.Drawing.Size(180, 20);
             this.model_DocumentType.TabIndex = 1;
+            this.model_DocumentType.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // documentTypeLabel
             // 
@@ -206,6 +208,7 @@
             this.model_DocumentReference.Name = "model_DocumentReference";
             this.model_DocumentReference.Size = new System.Drawing.Size(150, 20);
             this.model_DocumentReference.TabIndex = 2;
+            this.model_DocumentReference.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // documentReferenceLabel
             // 
@@ -223,6 +226,7 @@
             this.model_DocumentEntity.Name = "model_DocumentEntity";
             this.model_DocumentEntity.Size = new System.Drawing.Size(360, 20);
             this.model_DocumentEntity.TabIndex = 3;
+            this.model_DocumentEntity.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // documentEntityLabel
             // 
@@ -240,6 +244,7 @@
             this.model_DocumentDept.Name = "model_DocumentDept";
             this.model_DocumentDept.Size = new System.Drawing.Size(360, 20);
             this.model_DocumentDept.TabIndex = 4;
+            this.model_DocumentDept.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // documentDeptLabel
             // 
@@ -257,6 +262,7 @@
             this.model_DocumentClass.Name = "model_DocumentClass";
             this.model_DocumentClass.Size = new System.Drawing.Size(60, 20);
             this.model_DocumentClass.TabIndex = 5;
+            this.model_DocumentClass.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // documentClassLabel
             // 
@@ -274,6 +280,7 @@
             this.model_DocumentDate.Name = "model_DocumentDate";
             this.model_DocumentDate.Size = new System.Drawing.Size(65, 20);
             this.model_DocumentDate.TabIndex = 6;
+            this.model_DocumentDate.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // documentDateLabel
             // 
@@ -291,6 +298,7 @@
             this.model_RecipientName.Name = "model_RecipientName";
             this.model_RecipientName.Size = new System.Drawing.Size(360, 20);
             this.model_RecipientName.TabIndex = 7;
+            this.model_RecipientName.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // recipientNameLabel
             // 
@@ -308,6 +316,7 @@
             this.model_ExpeditorName.Name = "model_ExpeditorName";
             this.model_ExpeditorName.Size = new System.Drawing.Size(360, 20);
             this.model_ExpeditorName.TabIndex = 3;
+            this.model_ExpeditorName.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // expeditorNameLabel
             // 
@@ -325,6 +334,7 @@
             this.model_ReceptionName.Name = "model_ReceptionName";
             this.model_ReceptionName.Size = new System.Drawing.Size(360, 20);
             this.model_ReceptionName.TabIndex = 6;
+            this.model_ReceptionName.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // receptionNameLabel
             // 
@@ -342,6 +352,7 @@
             this.model_ReceptionDate.Name = "model_ReceptionDate";
             this.model_ReceptionDate.Size = new System.Drawing.Size(65, 20);
             this.model_ReceptionDate.TabIndex = 4;
+            this.model_ReceptionDate.MouseLeave += new System.EventHandler(this.ForceValidation);
             // 
             // receptionDateLabel
             // 
