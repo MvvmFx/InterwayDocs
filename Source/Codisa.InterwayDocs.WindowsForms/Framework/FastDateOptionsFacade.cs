@@ -17,11 +17,6 @@ namespace Codisa.InterwayDocs.Framework
         }
 #endif
 
-        public FastDateOptionsFacade()
-        {
-            _facade = new FastDateOptions();
-        }
-
         public static FastDateOptions Instance
         {
             get
