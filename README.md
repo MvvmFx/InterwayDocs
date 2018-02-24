@@ -17,9 +17,23 @@ The project is instrumental for the improvement and maturity of MvvmFx.
 
 ## Project Status
 
+Project is ready to run using LocalDb for SQL Server 2014. Instructions included on how to use LocalDB for SQL Server 2012.
+
 The translation feature is ready but some translations are missing.
-- add Wisej single executable (run as a desktop application)
-- add authentication and autorization
+
+## Roadmap
+
+### Version 1.3.7
+- Translate all resources in all 4 languages
+- Add language combobox to Wisej version.
+- Add Wisej single executable (run as a desktop application)
+
+### Version 1.3.8 (last single user release)
+- Load all translations from database
+
+### Version 1.4.0
+- Add authentication, autorization and roles
+- Add user management
 
 ## What is Wisej?
 
