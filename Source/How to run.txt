@@ -1,0 +1,12 @@
+1. As Startup Project select one of these:
+- Codisa.InterwayDocs.WindowsForms
+- Codisa.InterwayDocs.WisejWeb
+
+2. Open project config file:
+- App.config for Codisa.InterwayDocs.WindowsForms
+- Web.config for Codisa.InterwayDocs.WisejWeb
+
+3. Select the LocalDB connection string,
+Under <connectionStrings> select the appropriate connection string for:
+- SQL Server 2012 - Data Source=(LocalDB)\v11.0
+- SQL Server 2014 - Data Source=(LocalDB)\MSSQLLocalDB
