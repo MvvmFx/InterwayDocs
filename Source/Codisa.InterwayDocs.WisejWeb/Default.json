@@ -29,5 +29,5 @@
 {
   "theme": "Classic-3",
   "url": "Default.html",
-  "startup": "Codisa.InterwayDocs.Program.Main, Codisa.InterwayDocs.WisejWeb"
+  "startup": "Codisa.InterwayDocs.Program.Main, InterwayDocs"
 }
