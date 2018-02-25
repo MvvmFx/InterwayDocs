@@ -21,6 +21,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterwayDocs.Chrome", "InterwayDocs.Chrome\InterwayDocs.Chrome.csproj", "{8F7868FF-A25D-4958-8912-908A44F5077E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BA22EE1E-C853-40B1-A5C1-ED2B10300AC8} = {BA22EE1E-C853-40B1-A5C1-ED2B10300AC8}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

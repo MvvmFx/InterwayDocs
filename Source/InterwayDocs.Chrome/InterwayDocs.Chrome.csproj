@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <WisejDir>$(SolutionDir)Codisa.InterwayDocs.WisejWeb\</WisejDir>
-    <StandAloneDir>$(SolutionDir)..\OutputStandAlone\</StandAloneDir>
+    <OutputDir>$(SolutionDir)..\WebStandalone\</OutputDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -231,15 +231,13 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>"$(SolutionDir)InterwayDocs.Chrome\Owin\ILMerge.exe" /ndebug /copyattrs /targetplatform:4.0 /out:"$(TargetPath)" "$(TargetPath)" "$(TargetDir)Microsoft.Owin.Host.HttpListener.dll" "$(TargetDir)Microsoft.Owin.Hosting.dll" "$(TargetDir)Microsoft.Owin.StaticFiles.dll" "$(TargetDir)Microsoft.Owin.dll" "$(TargetDir)Microsoft.Owin.FileSystems.dll" "$(TargetDir)Owin.dll"
-XCOPY /S /Y /K /R "$(WisejDir)bin" "$(StandAloneDir)bin\"
-XCOPY /S /Y /K /R "$(WisejDir)Themes" "$(StandAloneDir)Themes\"
-XCOPY /S /Y /K /R "$(WisejDir)App_Data" "$(StandAloneDir)App_Data\"
-COPY /Y "$(TargetPath)" "$(StandAloneDir)$(TargetFileName)"
-COPY /Y "$(WisejDir)Default.html" "$(StandAloneDir)Default.html"
-COPY /Y "$(WisejDir)Default.json" "$(StandAloneDir)Default.json"
-COPY /Y "$(WisejDir)Web.config" "$(StandAloneDir)Web.config"
-COPY /Y "$(WisejDir)Web.Debug.config" "$(StandAloneDir)Web.Debug.config"
-COPY /Y "$(WisejDir)Web.Release.config" "$(StandAloneDir)Web.Release.config"
+XCOPY /S /Y /K /R "$(WisejDir)bin" "$(OutputDir)bin\"
+XCOPY /S /Y /K /R "$(WisejDir)Themes" "$(OutputDir)Themes\"
+XCOPY /S /Y /K /R "$(WisejDir)App_Data" "$(OutputDir)App_Data\"
+COPY /Y "$(TargetPath)" "$(OutputDir)$(TargetFileName)"
+COPY /Y "$(WisejDir)Default.html" "$(OutputDir)Default.html"
+COPY /Y "$(WisejDir)Default.json" "$(OutputDir)Default.json"
+COPY /Y "$(WisejDir)Web.config" "$(OutputDir)Web.config"
     </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

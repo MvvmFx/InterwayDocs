@@ -10,3 +10,11 @@
 Under <connectionStrings> select the appropriate connection string for:
 - SQL Server 2012 - Data Source=(LocalDB)\v11.0
 - SQL Server 2014 - Data Source=(LocalDB)\MSSQLLocalDB
+
+4. Deployment notes
+To make deployment easier, all runnable projects have post-build actions to copy the relevant files to an output folder:
+- Codisa.InterwayDocs.Configuration - WinForms
+- Codisa.InterwayDocs.WisejWeb - WinForms
+- Codisa.InterwayDocs.WindowsForms - WebSite
+- InterwayDocs.Chrome - WebStandalone
+These folders are located in the root folder, side by side with Source, Documentation, etc..
