@@ -115,3 +115,9 @@ Backup*/
 UpgradeLog*.XML
 
 Desktop.ini
+
+# Project specific
+
+WebSite
+WebStandalone
+WinForms
