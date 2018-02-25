@@ -43,11 +43,11 @@ namespace Wisej.Application
         private WisejHost _host;
 
         // names of splash images to replace the built-in splash image.
-        private string[] SplashImages = {"CodisaITS64"};
-        //private readonly string[] SplashImages = {"CodisaITS64", "splash.png", "splash.gif", "splash.jpg"};
+        private readonly string[] _splashImages = {"CodisaITS64"};
+        //private readonly string[] _splashImages = {"CodisaITS64", "splash.png", "splash.gif", "splash.jpg"};
 
-        private readonly int halfPanelWidth = 0;
-        private readonly int halfPanelHeight = 0;
+        private readonly int _halfPanelWidth;
+        private readonly int _halfPanelHeight;
 
         /// <summary>
         /// Initializes the MainView.
@@ -56,8 +56,8 @@ namespace Wisej.Application
         {
             InitializeComponent();
 
-            halfPanelWidth = loaderPanel.Width / 2;
-            halfPanelHeight = loaderPanel.Height / 2;
+            _halfPanelWidth = loaderPanel.Width / 2;
+            _halfPanelHeight = loaderPanel.Height / 2;
         }
 
         #region Properties
@@ -108,7 +108,7 @@ namespace Wisej.Application
         {
             try
             {
-                foreach (var file in SplashImages)
+                foreach (var file in _splashImages)
                 {
                     var path = Path.Combine(WinForms.Application.StartupPath, file);
                     if (File.Exists(path))
@@ -122,6 +122,7 @@ namespace Wisej.Application
             }
             catch
             {
+                // ignored
             }
         }
 
@@ -311,7 +312,7 @@ namespace Wisej.Application
             {
                 if (_appRegistryKey == null)
                     _appRegistryKey =
-                        Registry.CurrentUser.CreateSubKey("SOFTWARE\\IceTeaGroup\\Wisej\\Application");
+                        Registry.CurrentUser.CreateSubKey("SOFTWARE\\MvvmFx\\InterwayDocs");
 
                 return _appRegistryKey;
             }
@@ -383,10 +384,9 @@ namespace Wisej.Application
         {
             try
             {
-                Rectangle bounds =
-                    WindowState == FormWindowState.Normal
-                        ? Bounds
-                        : RestoreBounds;
+                Rectangle bounds = WindowState == FormWindowState.Normal
+                    ? Bounds
+                    : RestoreBounds;
 
                 // size
                 if (!bounds.Size.IsEmpty)
@@ -409,12 +409,14 @@ namespace Wisej.Application
                 // window state
                 {
                     TypeConverter converter = TypeDescriptor.GetConverter(typeof(FormWindowState));
-                    AppRegistryKey.SetValue("windowState", converter.ConvertToString(WindowState),
+                    AppRegistryKey.SetValue("windowState",
+                        converter.ConvertToString(WindowState),
                         RegistryValueKind.String);
                 }
             }
             catch
             {
+                // ignored
             }
         }
 
@@ -424,7 +426,7 @@ namespace Wisej.Application
         {
             var halfWidth = Size.Width / 2;
             var halfHeight = Size.Height / 2;
-            loaderPanel.Location = new Point(halfWidth - halfPanelWidth, halfHeight - halfPanelHeight);
+            loaderPanel.Location = new Point(halfWidth - _halfPanelWidth, halfHeight - _halfPanelHeight);
         }
     }
 }
