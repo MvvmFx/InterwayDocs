@@ -24,9 +24,9 @@ The translation feature is ready but some translations are missing.
 ## Roadmap
 
 ### Version 1.3.7
+- Add Wisej standalone executable (run as a desktop application) - done
 - Translate all resources in all 4 languages
 - Add language combobox to Wisej version.
-- Add Wisej single executable (run as a desktop application)
 
 ### Version 1.3.8 (last single user release)
 - Load all translations from database
