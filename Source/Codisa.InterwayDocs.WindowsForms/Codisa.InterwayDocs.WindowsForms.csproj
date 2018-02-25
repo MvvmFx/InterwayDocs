@@ -463,7 +463,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>XCOPY /S /Y /K /R "$(ProjectDir)bin\$(ConfigurationName)" "$(OutputDir)"</PostBuildEvent>
+    <PostBuildEvent>if "$(ConfigurationName)" == "Release" XCOPY /S /Y /K /R "$(ProjectDir)bin\$(ConfigurationName)" "$(OutputDir)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
