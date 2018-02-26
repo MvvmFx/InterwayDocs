@@ -1,4 +1,6 @@
-﻿namespace Codisa.InterwayDocs.Incoming
+﻿using System.Drawing;
+
+namespace Codisa.InterwayDocs.Incoming
 {
     partial class IncomingBookView
     {
@@ -87,7 +89,7 @@
             this.headerPanel.Dock = Wisej.Web.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(1008, 40);
+            this.headerPanel.Size = new System.Drawing.Size(1004, 40);
             this.headerPanel.TabIndex = 0;
             // 
             // displayName
@@ -152,7 +154,7 @@
             this.searchPanel.Dock = Wisej.Web.DockStyle.Top;
             this.searchPanel.Location = new System.Drawing.Point(0, 40);
             this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(1008, 65);
+            this.searchPanel.Size = new System.Drawing.Size(1004, 65);
             this.searchPanel.TabIndex = 3;
             // 
             // fullTextLabel
@@ -271,7 +273,7 @@
             this.listNavigator.Text = "listNavigator";
             this.listNavigator.ShowCloseButton = false;
             this.listNavigator.ShowHeader = true;
-            this.listNavigator.Size = new System.Drawing.Size(1008, 253);
+            this.listNavigator.Size = new System.Drawing.Size(1004, 168);
             this.listNavigator.TabIndex = 10;
             // 
             // printList
@@ -308,7 +310,7 @@
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.SelectionMode = Wisej.Web.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.ShowColumnVisibilityMenu = false;
-            this.dataGridView.Size = new System.Drawing.Size(1008, 219);
+            this.dataGridView.Size = new System.Drawing.Size(1004, 219);
             this.dataGridView.TabIndex = 11;
             // 
             // registerIdDataGridViewTextBoxColumn
@@ -402,19 +404,20 @@
             this.activeItem.Dock = Wisej.Web.DockStyle.Bottom;
             this.activeItem.Location = new System.Drawing.Point(0, 349);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(1008, 294);
+            this.activeItem.Size = new System.Drawing.Size(1004, 294);
             this.activeItem.TabIndex = 12;
             // 
             // IncomingBookView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
+            this.BackColor = Color.DeepPink;
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.listNavigator);
             this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.headerPanel);
             this.Name = "IncomingBookView";
-            this.Size = new System.Drawing.Size(1008, 643);
+            this.Size = new System.Drawing.Size(1004, 568);
             this.headerPanel.ResumeLayout(false);
             this.headerPanel.PerformLayout();
             this.searchPanel.ResumeLayout(false);

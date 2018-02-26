@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainMenu = new Wisej.Web.MenuBar();
             this.openIncomingBook = new Wisej.Web.MenuItem();
             this.openOutgoingBook = new Wisej.Web.MenuItem();
@@ -45,7 +44,6 @@
             this.placeHolder = new Wisej.Web.StatusBarPanel();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
             this.busyIndicator = new Codisa.InterwayDocs.Framework.BusyIndicator();
-            //this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -58,29 +56,32 @@
             this.openDeliveryBook,
             this.toolsMenuItem,
             this.helpMenuItem});
-            this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(1008, 22);
+            this.mainMenu.Size = new System.Drawing.Size(1004, 22);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.TabStop = false;
             // 
             // openIncomingBook
             // 
+            this.openIncomingBook.Index = 0;
             this.openIncomingBook.Name = "openIncomingBook";
             this.openIncomingBook.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelIncoming;
             // 
             // openOutgoingBook
             // 
+            this.openOutgoingBook.Index = 1;
             this.openOutgoingBook.Name = "openOutgoingBook";
             this.openOutgoingBook.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelOutgoing;
             // 
             // openDeliveryBook
             // 
+            this.openDeliveryBook.Index = 2;
             this.openDeliveryBook.Name = "openDeliveryBook";
             this.openDeliveryBook.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelDelivery;
             // 
             // toolsMenuItem
             // 
+            this.toolsMenuItem.Index = 3;
             this.toolsMenuItem.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.backup,
             this.restore,
@@ -92,26 +93,31 @@
             // 
             // backup
             // 
+            this.backup.Index = 0;
             this.backup.Name = "backup";
             this.backup.Text = global::Codisa.InterwayDocs.Properties.Resources.ToolsBackupLabel;
             // 
             // restore
             // 
+            this.restore.Index = 1;
             this.restore.Name = "restore";
             this.restore.Text = global::Codisa.InterwayDocs.Properties.Resources.ToolsRestoreLabel;
             // 
             // export
             // 
+            this.export.Index = 2;
             this.export.Name = "export";
             this.export.Text = global::Codisa.InterwayDocs.Properties.Resources.ToolsExportlabel;
             // 
             // import
             // 
+            this.import.Index = 3;
             this.import.Name = "import";
             this.import.Text = global::Codisa.InterwayDocs.Properties.Resources.ToolsImportLabel;
             // 
             // helpMenuItem
             // 
+            this.helpMenuItem.Index = 4;
             this.helpMenuItem.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.about,
             this.pdfManual});
@@ -120,34 +126,37 @@
             // 
             // about
             // 
+            this.about.Index = 0;
             this.about.Name = "about";
             this.about.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelAboutApplication;
             // 
             // pdfManual
             // 
+            this.pdfManual.Index = 1;
             this.pdfManual.Name = "pdfManual";
             this.pdfManual.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelDocumentation;
             // 
             // statusBar
             // 
-            this.statusBar.Location = new System.Drawing.Point(0, 667);
+            this.statusBar.Location = new System.Drawing.Point(0, 590);
             this.statusBar.Name = "statusBar";
             this.statusBar.Panels.AddRange(new Wisej.Web.StatusBarPanel[] {
             this.placeHolder});
-            this.statusBar.Size = new System.Drawing.Size(1008, 22);
+            this.statusBar.Size = new System.Drawing.Size(1004, 22);
             this.statusBar.TabIndex = 1;
             // 
             // placeHolder
             // 
             this.placeHolder.AutoSize = Wisej.Web.StatusBarPanelAutoSize.Spring;
             this.placeHolder.Name = "placeHolder";
+            this.placeHolder.Text = null;
             // 
             // activeItem
             // 
             this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
-            this.activeItem.Location = new System.Drawing.Point(0, 24);
+            this.activeItem.Location = new System.Drawing.Point(0, 22);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(1008, 643);
+            this.activeItem.Size = new System.Drawing.Size(1004, 568);
             this.activeItem.TabIndex = 2;
             // 
             // busyIndicator
@@ -163,22 +172,16 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 689);
+            this.ClientSize = new System.Drawing.Size(1004, 612);
             this.Controls.Add(this.busyIndicator);
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mainMenu);
-            //this.DoubleBuffered = true;
             this.FormBorderStyle = Wisej.Web.FormBorderStyle.Fixed;
-            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            //this.MainMenu = this.mainMenu;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1024, 728);
             this.Name = "MainForm";
-            //this.mainMenu.ResumeLayout(false);
-            //this.mainMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

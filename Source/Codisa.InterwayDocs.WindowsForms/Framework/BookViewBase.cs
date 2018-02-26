@@ -124,11 +124,17 @@ namespace Codisa.InterwayDocs.Framework
             _highlightCellStyle = new DataGridViewCellStyle {SelectionBackColor = Color.Red};
 #endif
 
+#if WINFORMS
             Height += MainForm.HeightDifference;
             baseDataGridView.Height += MainForm.HeightDifference;
+#else
+            baselistNavigator.Height += MainForm.HeightDifference;
+#endif
+
+#if WINFORMS
             var activeItemTop = baseActiveItem.Location.Y;
             baseActiveItem.Location = new Point(0, activeItemTop + MainForm.HeightDifference);
-
+#endif
             if (ParentForm != null)
                 ParentForm.AcceptButton = baseSearch;
 
@@ -224,7 +230,12 @@ namespace Codisa.InterwayDocs.Framework
 #endif
                     baseSearchPanel.Visible = true;
                     RootViewModel.IsSearchPanelOpen = true;
-                    //baseCriteria_FullText.Focus();
+#if WISEJ
+                    baseCriteria_FullText.Focus();
+
+                    // TODO: the first time the AcceptButton is shown, it doesn't react to <enter>
+                    //((MainForm) Parent.Parent).AcceptButton = baseSearch;
+#endif
                 }
             }
         }
