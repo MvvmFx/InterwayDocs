@@ -27,9 +27,13 @@ namespace Codisa.InterwayDocs
         {
             InitializeComponent();
 
-            /*var workingAreaHeight = Wisej.Web.Screen.WorkingArea.Height;
-            HeightDifference = workingAreaHeight - Height;
-            Height += HeightDifference;*/
+            var workingAreaHeight = Wisej.Web.Screen.WorkingArea.Height;
+
+            if (AutoScrollMinSize.Height > workingAreaHeight)
+                HeightDifference = AutoScrollMinSize.Height - Height;
+            else
+                HeightDifference = workingAreaHeight - Height;
+            Height += HeightDifference;
             Closed += MainFormClosed;
         }
 
