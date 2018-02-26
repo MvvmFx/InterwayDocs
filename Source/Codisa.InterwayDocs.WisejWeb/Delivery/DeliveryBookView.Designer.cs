@@ -250,7 +250,7 @@ namespace Codisa.InterwayDocs.Delivery
             this.listNavigator.Text = "listNavigator";
             this.listNavigator.ShowCloseButton = false;
             this.listNavigator.ShowHeader = true;
-            this.listNavigator.Size = new System.Drawing.Size(1004, 220);
+            this.listNavigator.Size = new System.Drawing.Size(1004, 221);
             this.listNavigator.TabIndex = 10;
             // 
             // printList
@@ -388,7 +388,7 @@ namespace Codisa.InterwayDocs.Delivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
-            this.BackColor = Color.DeepPink;
+            //this.BackColor = Color.DeepPink;
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.listNavigator);
             this.Controls.Add(this.searchPanel);

@@ -230,9 +230,8 @@ namespace Codisa.InterwayDocs.Framework
 #endif
                     baseSearchPanel.Visible = true;
                     RootViewModel.IsSearchPanelOpen = true;
-#if WISEJ
                     baseCriteria_FullText.Focus();
-
+#if WISEJ
                     // TODO: the first time the AcceptButton is shown, it doesn't react to <enter>
                     //((MainForm) Parent.Parent).AcceptButton = baseSearch;
 #endif
