@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             this.components = new System.ComponentModel.Container();
             this.toolTip = new Wisej.Web.ToolTip(this.components);
             this.errorWarnInfoProvider = new CslaContrib.WisejWeb.ErrorWarnInfoProvider(this.components);
@@ -312,7 +313,9 @@
             // 
             // registerIdDataGridViewTextBoxColumn
             // 
+            dataGridViewCellStyle1.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
             this.registerIdDataGridViewTextBoxColumn.DataPropertyName = "RegisterId";
+            this.registerIdDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;this.registerIdDataGridViewTextBoxColumn.DataPropertyName = "RegisterId";
             this.registerIdDataGridViewTextBoxColumn.HeaderText = "N.º Ordem";
             this.registerIdDataGridViewTextBoxColumn.Name = "registerIdDataGridViewTextBoxColumn";
             this.registerIdDataGridViewTextBoxColumn.ReadOnly = true;
@@ -410,7 +413,6 @@
             this.Controls.Add(this.listNavigator);
             this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.headerPanel);
-            //this.DoubleBuffered = true;
             this.Name = "OutgoingBookView";
             this.Size = new System.Drawing.Size(1008, 643);
             this.headerPanel.ResumeLayout(false);
