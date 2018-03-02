@@ -33,9 +33,17 @@ namespace Codisa.InterwayDocs.Incoming
             baseToolTip = toolTip;
             baseSearchPanel = searchPanel;
 
-            Load += ViewBaseLoad;
+            Load += ViewLoad;
 
             dataGridView.SelectionChanged += DataGridViewSelectionChanged;
+        }
+
+        // language ComboBox should be the focused control.
+        // temporary workaround needed only on the startup view
+        private void ViewLoad(object sender, EventArgs e)
+        {
+            fastDate.Focus();
+            ViewBaseLoad(sender, e);
         }
 
         #endregion

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using Codisa.InterwayDocs.Framework;
 using Codisa.InterwayDocs.Properties;
-using MvvmFx.CaliburnMicro;
 using MvvmFx.Bindings.Data;
+using MvvmFx.CaliburnMicro;
+using Wisej.Base;
 using Wisej.Web;
 
 namespace Codisa.InterwayDocs
@@ -35,6 +36,34 @@ namespace Codisa.InterwayDocs
                 HeightDifference = workingAreaHeight - Height;
             Height += HeightDifference;
             Closed += MainFormClosed;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            foreach (var lang in Languages.LanguageList)
+            {
+                language.Items.Add(lang.Name);
+            }
+
+            language.SelectedIndex = Languages.GetIndexOfUICode(ApplicationContext.UICulture);
+        }
+
+        private void language_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var uICultureIndex = Languages.GetIndexOfUICode(ApplicationContext.UICulture);
+
+            if (uICultureIndex == language.SelectedIndex)
+                return;
+
+            var uiCulture = Languages.LanguageList[language.SelectedIndex].UICode;
+            ApplicationContext.UICulture = uiCulture;
+
+            if (uiCulture == "en")
+                uiCulture += "-GB";
+
+            ApplicationBase.Navigate(ApplicationBase.StartupUri + "?lang=" + uiCulture);
+
+            Program.RefreshTranslation();
         }
 
         private void MainFormClosed(object sender, EventArgs e)
@@ -132,6 +161,9 @@ namespace Codisa.InterwayDocs
             helpMenuItem.Text = Resources.LabelHelp;
             about.Text = Resources.LabelAboutApplication;
             pdfManual.Text = Resources.LabelDocumentation;
+            languageLabel.Text = Resources.Language;
+
+            language.SelectedIndex = Languages.GetIndexOfUICode(ApplicationContext.UICulture);
         }
 
         #endregion

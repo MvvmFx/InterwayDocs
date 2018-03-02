@@ -40,6 +40,8 @@
             this.helpMenuItem = new Wisej.Web.MenuItem();
             this.about = new Wisej.Web.MenuItem();
             this.pdfManual = new Wisej.Web.MenuItem();
+            this.language = new Wisej.Web.ComboBox();
+            this.languageLabel = new Wisej.Web.Label();
             this.statusBar = new Wisej.Web.StatusBar();
             this.placeHolder = new Wisej.Web.StatusBarPanel();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
@@ -136,6 +138,25 @@
             this.pdfManual.Name = "pdfManual";
             this.pdfManual.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelDocumentation;
             // 
+            // language
+            // 
+            this.language.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.language.Location = new System.Drawing.Point(884, 1);
+            this.language.Name = "language";
+            this.language.Size = new System.Drawing.Size(120, 20);
+            this.language.TabIndex = 5;
+            this.language.SelectedIndexChanged += new System.EventHandler(this.language_SelectedIndexChanged);
+            // 
+            // languageLabel
+            // 
+            this.languageLabel.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.languageLabel.Location = new System.Drawing.Point(772, 5);
+            this.languageLabel.Name = "languageLabel";
+            this.languageLabel.Size = new System.Drawing.Size(100, 13);
+            this.languageLabel.TabIndex = 4;
+            this.languageLabel.Text = global::Codisa.InterwayDocs.Properties.Resources.Language;
+            this.languageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // statusBar
             // 
             this.statusBar.Location = new System.Drawing.Point(0, 590);
@@ -175,6 +196,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 612);
+            this.Controls.Add(this.languageLabel);
+            this.Controls.Add(this.language);
             this.Controls.Add(this.busyIndicator);
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
@@ -182,6 +205,7 @@
             this.FormBorderStyle = Wisej.Web.FormBorderStyle.Fixed;
             this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +229,7 @@
         private Wisej.Web.MenuItem pdfManual;
         private MvvmFx.CaliburnMicro.ContentContainer activeItem;
         private Framework.BusyIndicator busyIndicator;
+        private Wisej.Web.Label languageLabel;
+        private Wisej.Web.ComboBox language;
     }
 }

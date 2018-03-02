@@ -141,10 +141,10 @@ namespace Codisa.InterwayDocs
             restore.Text = Resources.ToolsRestoreLabel;
             export.Text = Resources.ToolsExportlabel;
             import.Text = Resources.ToolsImportLabel;
-            languageLabel.Text = Resources.Language;
             helpMenuItem.Text = Resources.LabelHelp;
             about.Text = Resources.LabelAboutApplication;
             pdfManual.Text = Resources.LabelDocumentation;
+            languageLabel.Text = Resources.Language;
         }
 
         #endregion
