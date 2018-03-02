@@ -42,14 +42,15 @@ namespace Codisa.InterwayDocs
                 else
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo(uiCulture);
 #else
-                //CultureInfo currentCulture = ApplicationBase.CurrentCulture;
-                //string configurationCulture = ApplicationBase.Configuration.Culture;
-
                 if (string.IsNullOrEmpty(uiCulture))
                     uiCulture = ApplicationBase.CurrentCulture.ToString();
                 else
                 {
                     uiCulture = uiCulture.Substring(0, 2);
+
+                    if (uiCulture == "en")
+                        uiCulture += "-GB";
+
                     ApplicationBase.Navigate(ApplicationBase.StartupUri + "?lang=" + uiCulture);
                 }
 #endif
@@ -105,10 +106,17 @@ namespace Codisa.InterwayDocs
 
         private static void ApplicationBase_ApplicationRefresh(object sender, EventArgs e)
         {
-            //CultureInfo currentCulture = ApplicationBase.CurrentCulture;
-            //string configurationCulture = ApplicationBase.Configuration.Culture;
-
             ApplicationContext.UICulture = ApplicationBase.CurrentCulture.ToString().Substring(0, 2);
+
+            var uiCulture = ApplicationContext.UICulture;
+
+            if (ApplicationBase.CurrentCulture.ToString() == "en")
+            {
+                uiCulture += "-GB";
+
+                ApplicationBase.Navigate(ApplicationBase.StartupUri + "?lang=" + uiCulture);
+            }
+
             RefreshTranslation();
         }
 #endif
