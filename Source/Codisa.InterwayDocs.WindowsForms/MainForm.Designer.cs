@@ -39,10 +39,10 @@
             this.export = new System.Windows.Forms.ToolStripMenuItem();
             this.import = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.languageLabel = new System.Windows.Forms.ToolStripMenuItem();
-            this.language = new System.Windows.Forms.ToolStripComboBox();
             this.about = new System.Windows.Forms.ToolStripMenuItem();
             this.pdfManual = new System.Windows.Forms.ToolStripMenuItem();
+            this.language = new System.Windows.Forms.ToolStripComboBox();
+            this.languageLabel = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
             this.busyIndicator = new Codisa.InterwayDocs.Framework.BusyIndicator();
@@ -120,27 +120,12 @@
             // 
             // helpMenuItem
             // 
-            this.helpMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Left;
             this.helpMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.about,
             this.pdfManual});
             this.helpMenuItem.Name = "helpMenuItem";
             this.helpMenuItem.Size = new System.Drawing.Size(44, 23);
             this.helpMenuItem.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelHelp;
-            // 
-            // languageLabel
-            // 
-            this.languageLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.languageLabel.Name = "languageLabel";
-            this.languageLabel.Size = new System.Drawing.Size(71, 23);
-            this.languageLabel.Text = global::Codisa.InterwayDocs.Properties.Resources.Language;
-            // 
-            // language
-            // 
-            this.language.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.language.Name = "language";
-            this.language.Size = new System.Drawing.Size(121, 23);
-            this.language.SelectedIndexChanged += new System.EventHandler(this.language_SelectedIndexChanged);
             // 
             // about
             // 
@@ -153,6 +138,21 @@
             this.pdfManual.Name = "pdfManual";
             this.pdfManual.Size = new System.Drawing.Size(181, 22);
             this.pdfManual.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelDocumentation;
+            // 
+            // language
+            // 
+            this.language.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.language.Name = "language";
+            this.language.Size = new System.Drawing.Size(121, 23);
+            this.language.SelectedIndexChanged += new System.EventHandler(this.language_SelectedIndexChanged);
+            // 
+            // languageLabel
+            // 
+            this.languageLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.languageLabel.Name = "languageLabel";
+            this.languageLabel.Size = new System.Drawing.Size(71, 23);
+            this.languageLabel.Text = global::Codisa.InterwayDocs.Properties.Resources.Language;
+            this.languageLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // statusBar
             // 
