@@ -145,11 +145,11 @@
             // 
             // registerDateLabel
             // 
-            this.registerDateLabel.AutoSize = true;
-            this.registerDateLabel.Location = new System.Drawing.Point(308, 34);
+            this.registerDateLabel.Location = new System.Drawing.Point(276, 34);
             this.registerDateLabel.Name = "registerDateLabel";
-            this.registerDateLabel.Size = new System.Drawing.Size(79, 13);
+            this.registerDateLabel.Size = new System.Drawing.Size(110, 13);
             this.registerDateLabel.Text = "Data de registo";
+            this.registerDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip.SetToolTip(this.registerDateLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipRegisterDate);
             // 
             // documentGroup
@@ -284,11 +284,11 @@
             // 
             // documentDateLabel
             // 
-            this.documentDateLabel.AutoSize = true;
-            this.documentDateLabel.Location = new System.Drawing.Point(824, 48);
+            this.documentDateLabel.Location = new System.Drawing.Point(803, 48);
             this.documentDateLabel.Name = "documentDateLabel";
-            this.documentDateLabel.Size = new System.Drawing.Size(30, 13);
+            this.documentDateLabel.Size = new System.Drawing.Size(50, 13);
             this.documentDateLabel.Text = "Data";
+            this.documentDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip.SetToolTip(this.documentDateLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipDocumentDate);
             // 
             // model_RecipientName
