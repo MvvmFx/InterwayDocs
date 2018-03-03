@@ -309,13 +309,13 @@ namespace Codisa.InterwayDocs.Delivery
 
         private void ResetHeaderMessage()
         {
-            var todayDate = _todayDate.Date.ToString("d");
+            var todayDate = _todayDate.Date.ToString(Resources.DateTimeFormat);
             var startDate = string.IsNullOrEmpty(Criteria.CriteriaStartDate)
                 ? null
-                : Criteria.CriteriaStartDate.Date.ToString("d");
+                : Criteria.CriteriaStartDate.Date.ToString(Resources.DateTimeFormat);
             var endDate = string.IsNullOrEmpty(Criteria.CriteriaEndDate)
                 ? null
-                : Criteria.CriteriaEndDate.Date.ToString("d");
+                : Criteria.CriteriaEndDate.Date.ToString(Resources.DateTimeFormat);
 
             var message = string.Empty;
 
@@ -338,7 +338,7 @@ namespace Codisa.InterwayDocs.Delivery
 
                 message += " ";
 
-                message += Criteria.CriteriaEndDate.Date.ToString("d");
+                message += Criteria.CriteriaEndDate.Date.ToString(Resources.DateTimeFormat);
             }
 
             HeaderMessage = message;

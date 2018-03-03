@@ -454,7 +454,7 @@ Do you want to close without saving?</value>
     <value>yyyy-MM-dd HHmmss</value>
   </data>
   <data name="DateTimeFormat" xml:space="preserve">
-    <value>dd/mm/yyyy</value>
+    <value>dd/MM/yyyy</value>
   </data>
   <data name="MainFormTitle" xml:space="preserve">
     <value>InterwayDocs - Mail registry</value>
