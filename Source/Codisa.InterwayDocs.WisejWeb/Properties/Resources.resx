@@ -209,7 +209,7 @@
     <value>{0} between {1} and {2}</value>
   </data>
   <data name="Unspecified" xml:space="preserve">
-    <value>&lt;não preenchido&gt;</value>
+    <value>&lt;not filled&gt;</value>
   </data>
   <data name="LabelArchiveLocation" xml:space="preserve">
     <value>Location</value>
@@ -342,7 +342,7 @@ up to three words.</value>
     <value>Hide the register</value>
   </data>
   <data name="ToolTipSave" xml:space="preserve">
-    <value>Confirmar as alterações</value>
+    <value>Confirm changes</value>
   </data>
   <data name="ToolTipEdit" xml:space="preserve">
     <value>Edit the register.</value>
@@ -351,16 +351,16 @@ up to three words.</value>
     <value>New register</value>
   </data>
   <data name="ToolTipRegisterDate" xml:space="preserve">
-    <value>The date the document was created in.</value>
+    <value>Document creation date.</value>
   </data>
   <data name="ToolTipDocumentNumber" xml:space="preserve">
     <value>The number that is written on the document.</value>
   </data>
   <data name="ToolTipDocumentEntity" xml:space="preserve">
-    <value>Entidade produtora do documento</value>
+    <value>Document Producing Entity</value>
   </data>
   <data name="ToolTipDocumentDept" xml:space="preserve">
-    <value>Department that produced the document</value>
+    <value>Department that produced the document.</value>
   </data>
   <data name="ToolTipDocumentClass" xml:space="preserve">
     <value>Document classification code</value>
@@ -372,10 +372,10 @@ up to three words.</value>
     <value>Document recipient</value>
   </data>
   <data name="ToolTipExpeditorName" xml:space="preserve">
-    <value>Pessoa que expediu o documento</value>
+    <value>Person that sent the document</value>
   </data>
   <data name="ToolTipReceptionName" xml:space="preserve">
-    <value>Pessoa que recebeu o documento</value>
+    <value>Person who received the document</value>
   </data>
   <data name="ToolTipReceptionDate" xml:space="preserve">
     <value>Document reception date.</value>
@@ -387,16 +387,16 @@ up to three words.</value>
     <value>Document subject</value>
   </data>
   <data name="ToolTipSendDate" xml:space="preserve">
-    <value>Data de expedição do documento</value>
+    <value>Date of document dispatch</value>
   </data>
   <data name="ToolTipRecipientTown" xml:space="preserve">
-    <value>Localidade para onde o documento foi expedido</value>
+    <value>Document recipient town</value>
   </data>
   <data name="ToolTipSenderName" xml:space="preserve">
-    <value>Proveniência do documento</value>
+    <value>Origin of the document</value>
   </data>
   <data name="ToolTipRoutedTo" xml:space="preserve">
-    <value>Pessoa ou serviço para quem o documento foi encaminhado</value>
+    <value>Person or department for whom the document was forwarded.</value>
   </data>
   <data name="ToolTipShowSearchPanel" xml:space="preserve">
     <value>Show the search panel</value>
@@ -405,10 +405,10 @@ up to three words.</value>
     <value>Alert</value>
   </data>
   <data name="AppDomain_UnhandledException" xml:space="preserve">
-    <value>Fatal error (AD_UE)</value>
+    <value>Fatal error (AppDomain Unhandled)</value>
   </data>
   <data name="Application_ThreadException" xml:space="preserve">
-    <value>Fatal error (A_TE)</value>
+    <value>Fatal error (ThreadException)</value>
   </data>
   <data name="UnsavedRegister" xml:space="preserve">
     <value>Unsaved register</value>
@@ -418,7 +418,7 @@ up to three words.</value>
 Do you want to close without saving?</value>
   </data>
   <data name="EmailSupport" xml:space="preserve">
-    <value>suporte@codisa-its.com</value>
+    <value>email@support.sup</value>
   </data>
   <data name="AboutFormDeveloperLabel" xml:space="preserve">
     <value>Developed by Codisa IT Solutions &amp; Tiago Freitas Leal</value>
@@ -460,28 +460,28 @@ Do you want to close without saving?</value>
     <value>InterwayDocs - Mail registry</value>
   </data>
   <data name="DatabaseTemperingVersionEmpty" xml:space="preserve">
-    <value>A base de dados foi adulterada (a versão não pode estar em branco). Consulte o seu administrador de rede.</value>
+    <value>The database have been tampered with (the version can't be empty). Consult your system administrator.</value>
   </data>
   <data name="UpgradingVersion" xml:space="preserve">
-    <value>Vai actualizar a versão {0} para {1}.</value>
+    <value>You are going to upgrade version {0} to {1}.</value>
   </data>
   <data name="RefreshigDbObjects" xml:space="preserve">
     <value>Recreate the objects in the database.</value>
   </data>
   <data name="CopyDatabaseFiles" xml:space="preserve">
-    <value>Vai copiar os ficheiros da base de dados.</value>
+    <value>You are going to copy the database files.</value>
   </data>
   <data name="MissingDatabaseFile" xml:space="preserve">
-    <value>O ficheiro da base de dados {0} não foi encontrado.</value>
+    <value>The database file {0} wasn't found.</value>
   </data>
   <data name="DatabaseTemperingWrongVersion" xml:space="preserve">
-    <value>A base de dados foi adulterada (versão não pode ser {0}). Consulte o seu administrador de rede.</value>
+    <value>The database have been tampered with (the version can't be {0}). Consult your system administrator.</value>
   </data>
   <data name="ApplyingQueryFile" xml:space="preserve">
-    <value>Vai aplicar o ficheiro {0}.</value>
+    <value>You are going to apply the file {0}.</value>
   </data>
   <data name="NoScriptForVersion" xml:space="preserve">
-    <value>A base de dados ou os ficheiros foram adulterados (não há script para a versão {0}). Consulte o seu administrador de rede.</value>
+    <value>The database or files have been tampered with (there is no update script for version {0}). Consult your system administrator.</value>
   </data>
   <data name="FatalError" xml:space="preserve">
     <value>Fatal error</value>

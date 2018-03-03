@@ -161,7 +161,7 @@
     <value>..\..\Resources\Images\64x64\CodisaITS-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="OperationError" xml:space="preserve">
-    <value>Erro de operación</value>
+    <value>Error de operación</value>
   </data>
   <data name="NewRegister" xml:space="preserve">
     <value>Nuevo registro</value>
@@ -266,10 +266,7 @@
     <value>Texto libre</value>
   </data>
   <data name="ToolTipDocumentDate" xml:space="preserve">
-    <value>Fecha del documento</value>
-  </data>
-  <data name="ToolTipRegisterDate" xml:space="preserve">
-    <value>Fecha de registro</value>
+    <value>Fecha que está escrita en el documento.</value>
   </data>
   <data name="LabelDates" xml:space="preserve">
     <value>Fechas</value>
@@ -287,7 +284,7 @@
     <value>Ayuda</value>
   </data>
   <data name="ToolTipEdit" xml:space="preserve">
-    <value>Cambiar el registro.</value>
+    <value>Modificar el registro.</value>
   </data>
   <data name="ToolTipFirstPage" xml:space="preserve">
     <value>Primera página</value>
@@ -299,10 +296,10 @@
     <value>Información de InterwayDocs</value>
   </data>
   <data name="AppDomain_UnhandledException" xml:space="preserve">
-    <value>Erro "AppDomain UnhandledException"</value>
+    <value>Error fatal (AppDomain Unhandled)</value>
   </data>
   <data name="Application_ThreadException" xml:space="preserve">
-    <value>Erro "Application ThreadException"</value>
+    <value>Error fatal (ThreadException)</value>
   </data>
   <data name="AboutFormDeveloperLabel" xml:space="preserve">
     <value>Desarrollado por Codisa IT Solutions &amp; Tiago Freitas Leal</value>
@@ -341,7 +338,7 @@
     <value>Clique para crear un registro de correspondencia entrada</value>
   </data>
   <data name="CloseOrCancel" xml:space="preserve">
-    <value>El registro no está grabado. Si se cierra sin grabar, perderá los cambios.
+    <value>El registro no está grabado. Si se cierra sin grabar, perderá las modificaciones.
 ¿Quiere cerrar el registro sin grabar?</value>
   </data>
   <data name="MainFormTitle" xml:space="preserve">
@@ -381,7 +378,7 @@
     <value>Error fatal</value>
   </data>
   <data name="ToolTipCancel" xml:space="preserve">
-    <value>Cancelar cambios</value>
+    <value>Cancelar las modificaciones</value>
   </data>
   <data name="ToolTipCurrentPageTotalPages" xml:space="preserve">
     <value>Nº página / Total de páginas</value>
@@ -390,7 +387,7 @@
     <value>Code de classification du document</value>
   </data>
   <data name="ToolTipDocumentDept" xml:space="preserve">
-    <value>Departamento que produjo el documento</value>
+    <value>Sección que produjo el documento.</value>
   </data>
   <data name="RefreshigDbObjects" xml:space="preserve">
     <value>Vuelve a crear los objetos de la base de datos.</value>
@@ -409,5 +406,86 @@
   </data>
   <data name="ToolTipShowDetailPanel" xml:space="preserve">
     <value>Mostrar el registro</value>
+  </data>
+  <data name="NoScriptForVersion" xml:space="preserve">
+    <value>La base de datos o los archivos se han sido adulterados (no hay script de actualización para la versión {0}). Consulte a su administrador de sistemas.</value>
+  </data>
+  <data name="MissingDatabaseFile" xml:space="preserve">
+    <value>El archivo de base de datos {0} no se encontró.</value>
+  </data>
+  <data name="CopyDatabaseFiles" xml:space="preserve">
+    <value>Va a copiar los archivos de la base de datos.</value>
+  </data>
+  <data name="ApplyingQueryFile" xml:space="preserve">
+    <value>Va a aplicar el archivo {0}.</value>
+  </data>
+  <data name="ToolTipSave" xml:space="preserve">
+    <value>Confirmar las modificaciones</value>
+  </data>
+  <data name="DatabaseTemperingVersionEmpty" xml:space="preserve">
+    <value>La base de datos ha sido adulterado (la versión no puede estar en blanco). Consulte a su administrador de sistemas.</value>
+  </data>
+  <data name="DatabaseTemperingWrongVersion" xml:space="preserve">
+    <value>La base de datos ha sido adulterada (la versión no puede ser {0}). Consulte a su administrador de sistemas.</value>
+  </data>
+  <data name="ToolTipExportListExcel" xml:space="preserve">
+    <value>Exportar la lista para Excel</value>
+  </data>
+  <data name="ToolTipDocumentType" xml:space="preserve">
+    <value>Tipo do documento</value>
+  </data>
+  <data name="ToolTipDocumentEntity" xml:space="preserve">
+    <value>Entidad productora del documento</value>
+  </data>
+  <data name="ToolTipDocumentNumber" xml:space="preserve">
+    <value>El número que está escrito en el documento.</value>
+  </data>
+  <data name="ToolTipEndDate" xml:space="preserve">
+    <value>Buscar hasta esta fecha (inclusive).
+Si está vacío, encuentra los documentos más recientes.</value>
+  </data>
+  <data name="ToolTipExpeditorName" xml:space="preserve">
+    <value>Persona que envió el documento</value>
+  </data>
+  <data name="UpgradingVersion" xml:space="preserve">
+    <value>Va a actualizar la versión {0} a {1}.</value>
+  </data>
+  <data name="ToolTipSenderName" xml:space="preserve">
+    <value>Origen del documento</value>
+  </data>
+  <data name="ToolTipRecipientTown" xml:space="preserve">
+    <value>Localidad del destinatario del documento</value>
+  </data>
+  <data name="ToolTipReceptionName" xml:space="preserve">
+    <value>Persona que recibió el documento</value>
+  </data>
+  <data name="ToolTipRoutedTo" xml:space="preserve">
+    <value>Persona o sección para quien el documento fue encaminado.</value>
+  </data>
+  <data name="ToolTipLastPage" xml:space="preserve">
+    <value>Última página</value>
+  </data>
+  <data name="ToolTipPreviousPage" xml:space="preserve">
+    <value>Página anterior</value>
+  </data>
+  <data name="ToolTipNextPage" xml:space="preserve">
+    <value>Página siguiente</value>
+  </data>
+  <data name="ToolTipRegisterDate" xml:space="preserve">
+    <value>Fecha de creación del documento.</value>
+  </data>
+  <data name="UnsavedRegister" xml:space="preserve">
+    <value>Registro no grabado</value>
+  </data>
+  <data name="ToolTipDates" xml:space="preserve">
+    <value>Seleccione el tipo de fecha que desea buscar.</value>
+  </data>
+  <data name="ToolTipFullText" xml:space="preserve">
+    <value>Escriba las palabras que se buscarán en todos los campos,
+hasta un máximo de 3 palabras.</value>
+  </data>
+  <data name="ToolTipStartDate" xml:space="preserve">
+    <value>Búsqueda desde esta fecha (inclusive).
+Si está vacío, encuentra los documentos más antiguos.</value>
   </data>
 </root>

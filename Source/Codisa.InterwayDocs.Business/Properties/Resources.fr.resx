@@ -154,7 +154,7 @@
     <value>Toutes les dates</value>
   </data>
   <data name="ChangeDate" xml:space="preserve">
-    <value>Date de changement</value>
+    <value>Date de modification</value>
   </data>
   <data name="CreateDate" xml:space="preserve">
     <value>Date de creation</value>
