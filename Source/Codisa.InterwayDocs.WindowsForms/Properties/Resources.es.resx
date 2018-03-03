@@ -387,7 +387,7 @@
     <value>Code de classification du document</value>
   </data>
   <data name="ToolTipDocumentDept" xml:space="preserve">
-    <value>Sección que produjo el documento.</value>
+    <value>Departamento que produjo el documento.</value>
   </data>
   <data name="RefreshigDbObjects" xml:space="preserve">
     <value>Vuelve a crear los objetos de la base de datos.</value>
@@ -460,7 +460,7 @@ Si está vacío, encuentra los documentos más recientes.</value>
     <value>Persona que recibió el documento</value>
   </data>
   <data name="ToolTipRoutedTo" xml:space="preserve">
-    <value>Persona o sección para quien el documento fue encaminado.</value>
+    <value>Persona o departamento para quien el documento fue encaminado.</value>
   </data>
   <data name="ToolTipLastPage" xml:space="preserve">
     <value>Última página</value>
