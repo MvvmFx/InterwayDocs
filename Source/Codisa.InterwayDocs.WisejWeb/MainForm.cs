@@ -55,13 +55,9 @@ namespace Codisa.InterwayDocs
             if (uICultureIndex == language.SelectedIndex)
                 return;
 
-            var uiCulture = Languages.LanguageList[language.SelectedIndex].UICode;
-            ApplicationContext.UICulture = uiCulture;
+            ApplicationContext.UICulture = Languages.LanguageList[language.SelectedIndex].UICode;
 
-            if (uiCulture == "en")
-                uiCulture += "-GB";
-
-            ApplicationBase.Navigate(ApplicationBase.StartupUri + "?lang=" + uiCulture);
+            ApplicationBase.Navigate(ApplicationBase.StartupUri + "?lang=" + ApplicationContext.UICulture);
 
             Program.RefreshTranslation();
         }

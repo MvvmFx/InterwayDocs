@@ -411,8 +411,8 @@ namespace Codisa.InterwayDocs.Framework
             }
             else if (_refreshCriteria.CriteriaStartDate != null && _refreshCriteria.CriteriaEndDate != null)
             {
-                var startDate = _refreshCriteria.CriteriaStartDate.Date.ToString("d");
-                var endDate = _refreshCriteria.CriteriaEndDate.Date.ToString("d");
+                var startDate = _refreshCriteria.CriteriaStartDate.Date.ToString(Resources.DateTimeFormat);
+                var endDate = _refreshCriteria.CriteriaEndDate.Date.ToString(Resources.DateTimeFormat);
 
                 value = string.Format(Resources.BookReportDateRange,
                     _refreshCriteria.DateTypeList.GetDescription(_refreshCriteria.SelectedDateTypeName),
@@ -423,7 +423,7 @@ namespace Codisa.InterwayDocs.Framework
             }
             else if (_refreshCriteria.CriteriaStartDate == null && _refreshCriteria.CriteriaEndDate != null)
             {
-                var endDate = _refreshCriteria.CriteriaEndDate.Date.ToString("d");
+                var endDate = _refreshCriteria.CriteriaEndDate.Date.ToString(Resources.DateTimeFormat);
 
                 value = string.Format(Resources.BookReportDateUpTo,
                     _refreshCriteria.DateTypeList.GetDescription(_refreshCriteria.SelectedDateTypeName),
@@ -433,7 +433,7 @@ namespace Codisa.InterwayDocs.Framework
             }
             else //if (_refreshCriteria.CriteriaStartDate != null && _refreshCriteria.CriteriaEndDate == null)
             {
-                var startDate = _refreshCriteria.CriteriaStartDate.Date.ToString("d");
+                var startDate = _refreshCriteria.CriteriaStartDate.Date.ToString(Resources.DateTimeFormat);
 
                 value = string.Format(Resources.BookReportDateSince,
                     _refreshCriteria.DateTypeList.GetDescription(_refreshCriteria.SelectedDateTypeName),
