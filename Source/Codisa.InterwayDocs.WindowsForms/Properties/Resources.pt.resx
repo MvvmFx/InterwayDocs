@@ -291,7 +291,7 @@ até ao máximo de 3 palavras.</value>
     <value>Nº página / Total de páginas</value>
   </data>
   <data name="ToolTipExportListExcel" xml:space="preserve">
-    <value>Export the list to Excel</value>
+    <value>Exportar a lista para Excel</value>
   </data>
   <data name="LabelAboutApplication" xml:space="preserve">
     <value>Sobre o InterwayDocs</value>
@@ -344,23 +344,20 @@ até ao máximo de 3 palavras.</value>
   <data name="ToolTipNew" xml:space="preserve">
     <value>Novo registo</value>
   </data>
-  <data name="ToolTipRegisterDate" xml:space="preserve">
-    <value>Data de registo</value>
-  </data>
   <data name="ToolTipDocumentNumber" xml:space="preserve">
-    <value>Número do documento</value>
+    <value>O número que está escrito no documento.</value>
   </data>
   <data name="ToolTipDocumentEntity" xml:space="preserve">
     <value>Entidade produtora do documento</value>
   </data>
   <data name="ToolTipDocumentDept" xml:space="preserve">
-    <value>Departamento que produziu o documento</value>
+    <value>Departamento que produziu o documento.</value>
   </data>
   <data name="ToolTipDocumentClass" xml:space="preserve">
     <value>Código de classificação do documento</value>
   </data>
   <data name="ToolTipDocumentDate" xml:space="preserve">
-    <value>Data que está escrita no documento.</value>
+    <value>A data que está escrita no documento.</value>
   </data>
   <data name="ToolTipRecipientName" xml:space="preserve">
     <value>Destinatário do documento</value>
@@ -384,13 +381,13 @@ até ao máximo de 3 palavras.</value>
     <value>Data de expedição do documento</value>
   </data>
   <data name="ToolTipRecipientTown" xml:space="preserve">
-    <value>Localidade para onde o documento foi expedido</value>
+    <value>Localidade do destinatário do documento</value>
   </data>
   <data name="ToolTipSenderName" xml:space="preserve">
-    <value>Proveniência do documento</value>
+    <value>Origem do documento</value>
   </data>
   <data name="ToolTipRoutedTo" xml:space="preserve">
-    <value>Pessoa ou serviço para quem o documento foi encaminhado</value>
+    <value>Pessoa ou departamento para quem o documento foi encaminhado.</value>
   </data>
   <data name="ToolTipShowSearchPanel" xml:space="preserve">
     <value>Mostrar painel da pesquisa</value>
@@ -399,13 +396,13 @@ até ao máximo de 3 palavras.</value>
     <value>Alerta</value>
   </data>
   <data name="AppDomain_UnhandledException" xml:space="preserve">
-    <value>Erro fatal (AD_UE)</value>
+    <value>Erro fatal (AppDomain Unhandled)</value>
   </data>
   <data name="Application_ThreadException" xml:space="preserve">
-    <value>Erro fatal (A_TE)</value>
+    <value>Erro fatal (ThreadException)</value>
   </data>
   <data name="UnsavedRegister" xml:space="preserve">
-    <value>Ficha não gravada</value>
+    <value>Registo não gravado</value>
   </data>
   <data name="CloseOrCancel" xml:space="preserve">
     <value>O registo não está gravada. Se fechar sem gravar, vai perder as alterações.
@@ -457,13 +454,13 @@ Quer fechar o registo sem gravar?</value>
     <value>O ficheiro da base de dados {0} não foi encontrado.</value>
   </data>
   <data name="DatabaseTemperingWrongVersion" xml:space="preserve">
-    <value>A base de dados foi adulterada (versão não pode ser {0}). Consulte o seu administrador de rede.</value>
+    <value>A base de dados foi adulterada (a versão não pode ser {0}). Consulte o seu administrador de rede.</value>
   </data>
   <data name="ApplyingQueryFile" xml:space="preserve">
     <value>Vai aplicar o ficheiro {0}.</value>
   </data>
   <data name="NoScriptForVersion" xml:space="preserve">
-    <value>A base de dados ou os ficheiros foram adulterados (não há script para a versão {0}). Consulte o seu administrador de rede.</value>
+    <value>A base de dados ou os ficheiros foram adulterados (não há script de actualização para a versão {0}). Consulte o seu administrador de sistemas.</value>
   </data>
   <data name="FatalError" xml:space="preserve">
     <value>Erro fatal</value>
@@ -487,5 +484,8 @@ Se vazio, encontra os documentos mais recentes.</value>
   </data>
   <data name="FastDateToolTip" xml:space="preserve">
     <value>Seleccione o modo de pesquisa.</value>
+  </data>
+  <data name="ToolTipRegisterDate" xml:space="preserve">
+    <value>Data de criação do documento.</value>
   </data>
 </root>

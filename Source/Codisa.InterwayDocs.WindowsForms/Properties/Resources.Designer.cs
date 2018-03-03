@@ -143,7 +143,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vai aplicar o ficheiro {0}..
+        ///   Looks up a localized string similar to You are going to apply the file {0}..
         /// </summary>
         internal static string ApplyingQueryFile {
             get {
@@ -281,7 +281,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vai copiar os ficheiros da base de dados..
+        ///   Looks up a localized string similar to You are going to copy the database files..
         /// </summary>
         internal static string CopyDatabaseFiles {
             get {
@@ -654,7 +654,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O ficheiro da base de dados {0} não foi encontrado..
+        ///   Looks up a localized string similar to The database file {0} wasn&apos;t found..
         /// </summary>
         internal static string MissingDatabaseFile {
             get {
@@ -721,7 +721,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A base de dados ou os ficheiros foram adulterados (não há script para a versão {0}). Consulte o seu administrador de rede..
+        ///   Looks up a localized string similar to The database or files have been tampered with (there is no update script for version {0}). Consult your system administrator..
         /// </summary>
         internal static string NoScriptForVersion {
             get {

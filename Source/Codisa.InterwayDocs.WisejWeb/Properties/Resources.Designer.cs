@@ -125,7 +125,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fatal error (AD_UE).
+        ///   Looks up a localized string similar to Fatal error (AppDomain Unhandled).
         /// </summary>
         internal static string AppDomain_UnhandledException {
             get {
@@ -134,7 +134,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fatal error (A_TE).
+        ///   Looks up a localized string similar to Fatal error (ThreadException).
         /// </summary>
         internal static string Application_ThreadException {
             get {
@@ -143,7 +143,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vai aplicar o ficheiro {0}..
+        ///   Looks up a localized string similar to You are going to apply the file {0}..
         /// </summary>
         internal static string ApplyingQueryFile {
             get {
@@ -281,7 +281,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vai copiar os ficheiros da base de dados..
+        ///   Looks up a localized string similar to You are going to copy the database files..
         /// </summary>
         internal static string CopyDatabaseFiles {
             get {
@@ -290,7 +290,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A base de dados foi adulterada (a versão não pode estar em branco). Consulte o seu administrador de rede..
+        ///   Looks up a localized string similar to The database have been tampered with (the version can&apos;t be empty). Consult your system administrator..
         /// </summary>
         internal static string DatabaseTemperingVersionEmpty {
             get {
@@ -299,7 +299,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A base de dados foi adulterada (versão não pode ser {0}). Consulte o seu administrador de rede..
+        ///   Looks up a localized string similar to The database have been tampered with (the version can&apos;t be {0}). Consult your system administrator..
         /// </summary>
         internal static string DatabaseTemperingWrongVersion {
             get {
@@ -364,7 +364,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to suporte@codisa-its.com.
+        ///   Looks up a localized string similar to email@support.sup.
         /// </summary>
         internal static string EmailSupport {
             get {
@@ -654,7 +654,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O ficheiro da base de dados {0} não foi encontrado..
+        ///   Looks up a localized string similar to The database file {0} wasn&apos;t found..
         /// </summary>
         internal static string MissingDatabaseFile {
             get {
@@ -721,7 +721,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A base de dados ou os ficheiros foram adulterados (não há script para a versão {0}). Consulte o seu administrador de rede..
+        ///   Looks up a localized string similar to The database or files have been tampered with (there is no update script for version {0}). Consult your system administrator..
         /// </summary>
         internal static string NoScriptForVersion {
             get {
@@ -921,7 +921,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Department that produced the document.
+        ///   Looks up a localized string similar to Department that produced the document..
         /// </summary>
         internal static string ToolTipDocumentDept {
             get {
@@ -930,7 +930,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Entidade produtora do documento.
+        ///   Looks up a localized string similar to Document Producing Entity.
         /// </summary>
         internal static string ToolTipDocumentEntity {
             get {
@@ -976,7 +976,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pessoa que expediu o documento.
+        ///   Looks up a localized string similar to Person that sent the document.
         /// </summary>
         internal static string ToolTipExpeditorName {
             get {
@@ -1085,7 +1085,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pessoa que recebeu o documento.
+        ///   Looks up a localized string similar to Person who received the document.
         /// </summary>
         internal static string ToolTipReceptionName {
             get {
@@ -1103,7 +1103,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Localidade para onde o documento foi expedido.
+        ///   Looks up a localized string similar to Document recipient town.
         /// </summary>
         internal static string ToolTipRecipientTown {
             get {
@@ -1112,7 +1112,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The date the document was created in..
+        ///   Looks up a localized string similar to Document creation date..
         /// </summary>
         internal static string ToolTipRegisterDate {
             get {
@@ -1121,7 +1121,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pessoa ou serviço para quem o documento foi encaminhado.
+        ///   Looks up a localized string similar to Person or department for whom the document was forwarded..
         /// </summary>
         internal static string ToolTipRoutedTo {
             get {
@@ -1130,7 +1130,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Confirmar as alterações.
+        ///   Looks up a localized string similar to Confirm changes.
         /// </summary>
         internal static string ToolTipSave {
             get {
@@ -1139,7 +1139,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data de expedição do documento.
+        ///   Looks up a localized string similar to Date of document dispatch.
         /// </summary>
         internal static string ToolTipSendDate {
             get {
@@ -1148,7 +1148,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Proveniência do documento.
+        ///   Looks up a localized string similar to Origin of the document.
         /// </summary>
         internal static string ToolTipSenderName {
             get {
@@ -1203,7 +1203,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;não preenchido&gt;.
+        ///   Looks up a localized string similar to &lt;not filled&gt;.
         /// </summary>
         internal static string Unspecified {
             get {
@@ -1212,7 +1212,7 @@ namespace Codisa.InterwayDocs.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vai actualizar a versão {0} para {1}..
+        ///   Looks up a localized string similar to You are going to upgrade version {0} to {1}..
         /// </summary>
         internal static string UpgradingVersion {
             get {
