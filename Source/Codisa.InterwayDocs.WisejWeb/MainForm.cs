@@ -18,8 +18,6 @@ namespace Codisa.InterwayDocs
 
         private bool _isBindingSet;
 
-        public static int HeightDifference { get; private set; }
-
         #endregion
 
         #region Initializers
@@ -28,13 +26,6 @@ namespace Codisa.InterwayDocs
         {
             InitializeComponent();
 
-            var workingAreaHeight = Wisej.Web.Screen.WorkingArea.Height;
-
-            if (AutoScrollMinSize.Height > workingAreaHeight)
-                HeightDifference = AutoScrollMinSize.Height - Height;
-            else
-                HeightDifference = workingAreaHeight - Height;
-            Height += HeightDifference;
             Closed += MainFormClosed;
         }
 
@@ -69,7 +60,7 @@ namespace Codisa.InterwayDocs
 
         public new void Close()
         {
-            Application.Exit();
+            ApplicationBase.Exit();
         }
 
         #endregion

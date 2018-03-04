@@ -375,7 +375,7 @@
             this.senderNameDataGridViewTextBoxColumn,
             this.receptionDateDataGridViewTextBoxColumn,
             this.routedToDataGridViewTextBoxColumn});
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(0, 130);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";

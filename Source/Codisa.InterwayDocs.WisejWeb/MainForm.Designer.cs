@@ -59,7 +59,7 @@
             this.toolsMenuItem,
             this.helpMenuItem});
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(1004, 22);
+            this.mainMenu.Size = new System.Drawing.Size(1006, 22);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.TabStop = false;
             // 
@@ -141,7 +141,7 @@
             // language
             // 
             this.language.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.language.Location = new System.Drawing.Point(884, 1);
+            this.language.Location = new System.Drawing.Point(886, 1);
             this.language.Name = "language";
             this.language.Size = new System.Drawing.Size(120, 20);
             this.language.TabIndex = 5;
@@ -150,7 +150,7 @@
             // languageLabel
             // 
             this.languageLabel.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.languageLabel.Location = new System.Drawing.Point(772, 5);
+            this.languageLabel.Location = new System.Drawing.Point(774, 5);
             this.languageLabel.Name = "languageLabel";
             this.languageLabel.Size = new System.Drawing.Size(100, 13);
             this.languageLabel.TabIndex = 4;
@@ -163,7 +163,7 @@
             this.statusBar.Name = "statusBar";
             this.statusBar.Panels.AddRange(new Wisej.Web.StatusBarPanel[] {
             this.placeHolder});
-            this.statusBar.Size = new System.Drawing.Size(1004, 22);
+            this.statusBar.Size = new System.Drawing.Size(1006, 22);
             this.statusBar.TabIndex = 1;
             // 
             // placeHolder
@@ -177,7 +177,7 @@
             this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
             this.activeItem.Location = new System.Drawing.Point(0, 22);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(1004, 568);
+            this.activeItem.Size = new System.Drawing.Size(1006, 568);
             this.activeItem.TabIndex = 2;
             // 
             // busyIndicator
@@ -195,6 +195,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoScrollMinSize = new System.Drawing.Size(1006, 545);
             this.ClientSize = new System.Drawing.Size(1004, 612);
             this.Controls.Add(this.languageLabel);
             this.Controls.Add(this.language);
@@ -204,7 +206,10 @@
             this.Controls.Add(this.mainMenu);
             this.FormBorderStyle = Wisej.Web.FormBorderStyle.Fixed;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Movable = false;
             this.Name = "MainForm";
+            this.WindowState = Wisej.Web.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

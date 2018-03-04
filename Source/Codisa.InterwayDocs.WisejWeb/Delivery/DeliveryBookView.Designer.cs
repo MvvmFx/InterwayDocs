@@ -243,7 +243,7 @@ namespace Codisa.InterwayDocs.Delivery
             // 
             // listNavigator
             // 
-            this.listNavigator.Dock = Wisej.Web.DockStyle.Top;
+            this.listNavigator.Dock = Wisej.Web.DockStyle.Fill;
             this.listNavigator.Controls.Add(this.dataGridView);
             this.listNavigator.Tools.AddRange(new MvvmFx.CaliburnMicro.WisejWeb.Toolable.ComponentToolEx[] {
             this.printList});
@@ -392,9 +392,8 @@ namespace Codisa.InterwayDocs.Delivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
-            //this.BackColor = Color.DeepPink;
-            this.Controls.Add(this.activeItem);
             this.Controls.Add(this.listNavigator);
+            this.Controls.Add(this.activeItem);
             this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.headerPanel);
             this.Name = "DeliveryBookView";
