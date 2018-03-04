@@ -25,8 +25,14 @@ The translation feature is ready but some translations are missing.
 
 ### Version 1.3.7
 - Add Wisej standalone executable (run as a desktop application) - done
-- Translate all resources in all 4 languages
-- Add language combobox to Wisej version.
+- Translate all resources in all 4 languages - done
+- Add language combobox to Wisej version. - done
+
+#### When you build the solution in Release mode, there will be 3 folder
+with ready to run versions:
+- WebSite
+- WebStandalone
+- WinForms
 
 ### Version 1.3.8 (last single user release)
 - Load all translations from database
