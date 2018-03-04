@@ -93,6 +93,7 @@
             this.detailPanel.ShowCloseButton = false;
             this.detailPanel.ShowHeader = true;
             this.detailPanel.Size = new System.Drawing.Size(1008, 25);
+            this.detailPanel.MouseHover += new System.EventHandler(this.ForceValidation);
             // 
             // toggleDetailPanel
             // 
