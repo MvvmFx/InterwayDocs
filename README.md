@@ -28,8 +28,7 @@ The translation feature is ready but some translations are missing.
 - Translate all resources in all 4 languages - done
 - Add language combobox to Wisej version. - done
 
-#### When you build the solution in Release mode, there will be 3 folder
-with ready to run versions:
+#### When you build the solution in Release mode, at the root level there will be 3 folders with ready to run versions:
 - WebSite
 - WebStandalone
 - WinForms
