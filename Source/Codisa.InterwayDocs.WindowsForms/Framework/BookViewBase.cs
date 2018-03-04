@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.Serialization;
 #if WISEJ
+using Wisej.Base;
 using Wisej.Web;
 using MvvmFx.CaliburnMicro.WisejWeb.Toolable;
 using FormsBinding = Wisej.Web.Binding;
@@ -133,6 +134,18 @@ namespace Codisa.InterwayDocs.Framework
             {
                 SetFocusAndAcceptButton();
             }
+
+            baseDataGridView.Resize += BaseDataGridViewResize;
+        }
+
+        private void BaseDataGridViewResize(object sender, EventArgs e)
+        {
+#if WISEJ
+            ParentForm.Update();
+            //ApplicationBase.Update(ParentForm);
+#endif
+
+            ShowSelectRow();
         }
 
         protected void DataGridViewSelectionChanged(object sender, EventArgs e)
@@ -228,6 +241,7 @@ namespace Codisa.InterwayDocs.Framework
                     RootViewModel.IsSearchPanelOpen = true;
 
                     SetFocusAndAcceptButton();
+                    ShowSelectRow();
                 }
             }
         }
@@ -247,7 +261,45 @@ namespace Codisa.InterwayDocs.Framework
         internal void ListResize(int panelSize, int baseItemHeight)
         {
             baseActiveItem.Size = new Size(baseActiveItem.Width, baseItemHeight);
+            ShowSelectRow();
         }
+
+        private void ShowSelectRow()
+        {
+            if (baseDataGridView.SelectedRows.Count == 0)
+                return;
+
+#if WISEJ
+            //ParentForm.Update();
+            Update();
+            baseDataGridView.Update();
+            //ApplicationBase.Update(ParentForm);
+            ApplicationBase.Update(this);
+            ApplicationBase.Update(baseDataGridView);
+            baseDataGridView.ScrollCellIntoView(0, baseDataGridView.SelectedRows[0].Index);
+#else
+            if (baseDataGridView.SelectedRows[0].Displayed)
+                return;
+
+            ScrollGrid();
+#endif
+        }
+
+#if WINFORMS
+        private void ScrollGrid()
+        {
+            int halfWay = baseDataGridView.DisplayedRowCount(false) / 2;
+            if (baseDataGridView.FirstDisplayedScrollingRowIndex + halfWay > baseDataGridView.SelectedRows[0].Index ||
+                baseDataGridView.FirstDisplayedScrollingRowIndex + baseDataGridView.DisplayedRowCount(false) -
+                halfWay <= baseDataGridView.SelectedRows[0].Index)
+            {
+                int targetRow = baseDataGridView.SelectedRows[0].Index;
+
+                targetRow = Math.Max(targetRow - halfWay, 0);
+                baseDataGridView.FirstDisplayedScrollingRowIndex = targetRow;
+            }
+        }
+#endif
 
         #endregion
 

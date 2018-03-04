@@ -15,6 +15,11 @@ This application uses an interesting environment:
 
 The project is instrumental for the improvement and maturity of MvvmFx.
 
+#### When you build the solution in Release mode, at the root level there will be 3 folders with ready to run versions:
+- WebSite
+- WebStandalone
+- WinForms
+
 ## Project Status
 
 Project is ready to run using LocalDb for SQL Server 2014. Instructions included on how to use LocalDB for SQL Server 2012.
@@ -25,8 +30,8 @@ The translation feature is ready but some translations are missing.
 
 ### Version 1.3.7
 - Add Wisej standalone executable (run as a desktop application) - done
-- Translate all resources in all 4 languages
-- Add language combobox to Wisej version.
+- Translate all resources in all 4 languages - done
+- Add language combobox to Wisej version. - done
 
 ### Version 1.3.8 (last single user release)
 - Load all translations from database
