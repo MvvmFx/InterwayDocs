@@ -85,6 +85,7 @@
             this.detailToolStrip.Location = new System.Drawing.Point(0, 0);
             this.detailToolStrip.Name = "detailToolStrip";
             this.detailToolStrip.Size = new System.Drawing.Size(1008, 25);
+            this.detailToolStrip.MouseHover += new System.EventHandler(this.ForceValidation);
             // 
             // toggleDetailPanel
             // 

@@ -269,6 +269,7 @@
             this.search.TabIndex = 9;
             this.search.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelSearch;
             this.search.UseVisualStyleBackColor = true;
+            this.search.MouseHover += new System.EventHandler(this.ForceValidation);
             // 
             // listNavigator
             // 

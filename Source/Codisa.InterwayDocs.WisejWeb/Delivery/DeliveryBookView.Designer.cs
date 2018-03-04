@@ -238,6 +238,7 @@ namespace Codisa.InterwayDocs.Delivery
             this.search.Size = new System.Drawing.Size(75, 23);
             this.search.TabIndex = 9;
             this.search.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelSearch;
+            this.search.MouseHover += new System.EventHandler(this.ForceValidation);
             this.toolTip.SetToolTip(this.search, null);
             // 
             // listNavigator
