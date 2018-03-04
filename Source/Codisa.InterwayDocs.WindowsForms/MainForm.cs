@@ -20,8 +20,6 @@ namespace Codisa.InterwayDocs
 
         private bool _isBindingSet;
 
-        public static int HeightDifference { get; private set; }
-
         #endregion
 
         #region Initializers
@@ -31,8 +29,8 @@ namespace Codisa.InterwayDocs
             InitializeComponent();
 
             var workingAreaHeight = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height;
-            HeightDifference = workingAreaHeight - Height;
-            Height += HeightDifference;
+            var heightDifference = workingAreaHeight - Height;
+            Height += heightDifference;
         }
 
         private void MainForm_Load(object sender, EventArgs e)

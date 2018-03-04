@@ -127,22 +127,11 @@ namespace Codisa.InterwayDocs.Framework
             _highlightCellStyle = new DataGridViewCellStyle {SelectionBackColor = Color.Red};
 #endif
 
-#if WINFORMS
-            Height += MainForm.HeightDifference;
-            baseDataGridView.Height += MainForm.HeightDifference;
-#else
-            baselistNavigator.Height += MainForm.HeightDifference;
-#endif
-
-#if WINFORMS
-            var activeItemTop = baseActiveItem.Location.Y;
-            baseActiveItem.Location = new Point(0, activeItemTop + MainForm.HeightDifference);
-#endif
             _lastActiveControl = baseCriteria_FullText;
 
             if (baseSearchPanel.Visible)
             {
-                StepsWhenVisible();
+                SetFocusAndAcceptButton();
             }
         }
 
@@ -222,11 +211,7 @@ namespace Codisa.InterwayDocs.Framework
 
                     baseToolTip.SetToolTip(baseToggleSearchArea, Resources.ToolTipShowSearchPanel);
                     baseToggleSearchArea.Image = Resources.ArrowDown16;
-#if WINFORMS
-                    baseDataGridView.Height += baseSearchPanel.Height;
-#else
-                    baselistNavigator.Height += baseSearchPanel.Height;
-#endif
+
                     // TODO: the following properties should be bound.
                     baseSearchPanel.Visible = false;
                     RootViewModel.IsSearchPanelOpen = false;
@@ -237,21 +222,17 @@ namespace Codisa.InterwayDocs.Framework
 
                     baseToolTip.SetToolTip(baseToggleSearchArea, Resources.HideSearchPanel);
                     baseToggleSearchArea.Image = Resources.ArrowUp16;
-#if WINFORMS
-                    baseDataGridView.Height -= baseSearchPanel.Height;
-#else
-                    baselistNavigator.Height -= baseSearchPanel.Height;
-#endif
+
                     // TODO: the following properties should be bound.
                     baseSearchPanel.Visible = true;
                     RootViewModel.IsSearchPanelOpen = true;
 
-                    StepsWhenVisible();
+                    SetFocusAndAcceptButton();
                 }
             }
         }
 
-        private void StepsWhenVisible()
+        private void SetFocusAndAcceptButton()
         {
             _isFocusing = true;
 
@@ -265,13 +246,6 @@ namespace Codisa.InterwayDocs.Framework
 
         internal void ListResize(int panelSize, int baseItemHeight)
         {
-#if WINFORMS
-            baseDataGridView.Height += panelSize;
-#else
-            baselistNavigator.Height += panelSize;
-#endif
-            var y = baseActiveItem.Location.Y;
-            baseActiveItem.Location = new Point(0, y + panelSize);
             baseActiveItem.Size = new Size(baseActiveItem.Width, baseItemHeight);
         }
 
