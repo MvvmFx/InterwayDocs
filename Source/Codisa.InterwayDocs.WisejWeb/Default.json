@@ -27,7 +27,6 @@
 // settings:                Map of custom application settings. i.e. {jquery: "http://cdn...", rootPath: "c:\\users\\...", ...}.
 //                          Custom settings are available using Application.Configuration.Settings.
 {
-  "theme": "Classic-3",
   "url": "Default.html",
   "startup": "Codisa.InterwayDocs.Program.Main, InterwayDocs"
 }
