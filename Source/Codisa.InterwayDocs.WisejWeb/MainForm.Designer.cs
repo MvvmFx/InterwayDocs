@@ -43,7 +43,6 @@
             this.language = new Wisej.Web.ComboBox();
             this.languageLabel = new Wisej.Web.Label();
             this.statusBar = new Wisej.Web.StatusBar();
-            this.placeHolder = new Wisej.Web.StatusBarPanel();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
             this.busyIndicator = new Codisa.InterwayDocs.Framework.BusyIndicator();
             this.SuspendLayout();
@@ -161,16 +160,8 @@
             // 
             this.statusBar.Location = new System.Drawing.Point(0, 590);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Panels.AddRange(new Wisej.Web.StatusBarPanel[] {
-            this.placeHolder});
             this.statusBar.Size = new System.Drawing.Size(1006, 22);
             this.statusBar.TabIndex = 1;
-            // 
-            // placeHolder
-            // 
-            this.placeHolder.AutoSize = Wisej.Web.StatusBarPanelAutoSize.Spring;
-            this.placeHolder.Name = "placeHolder";
-            this.placeHolder.Text = null;
             // 
             // activeItem
             // 
@@ -220,7 +211,6 @@
 
         private Wisej.Web.MenuBar mainMenu;
         private Wisej.Web.StatusBar statusBar;
-        private Wisej.Web.StatusBarPanel placeHolder;
         private Wisej.Web.MenuItem openIncomingBook;
         private Wisej.Web.MenuItem openOutgoingBook;
         private Wisej.Web.MenuItem openDeliveryBook;
