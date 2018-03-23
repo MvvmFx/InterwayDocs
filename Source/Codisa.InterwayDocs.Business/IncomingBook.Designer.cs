@@ -75,34 +75,4 @@ namespace Codisa.InterwayDocs.Business
         #endregion
 
     }
-
-    #region Criteria
-
-    /// <summary>
-    /// IncomingBookCriteriaGet criteria.
-    /// </summary>
-    [Serializable]
-    public partial class IncomingBookCriteriaGet : SearchLocatableCriteriaBase<IncomingBookCriteriaGet>, IHaveArchiveLocation, IGenericCriteriaInformation
-    {
-
-        #region Constructors
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IncomingBookCriteriaGet"/> class.
-        /// </summary>
-        /// <remarks> A parameterless constructor is required by the MobileFormatter.</remarks>
-        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-        public IncomingBookCriteriaGet()
-        {
-            var dateTypeList = CriteriaDateTypeList.GetCriteriaDateTypeList(false);
-            LoadProperty(DateTypeListProperty, dateTypeList);
-            LoadProperty(SelectedDateTypeIndexProperty, 0);
-        }
-
-        #endregion
-
-    }
-
-    #endregion
-
 }

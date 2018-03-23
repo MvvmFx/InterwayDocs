@@ -239,13 +239,4 @@ namespace Codisa.InterwayDocs.Business
         #endregion
 
     }
-
-    #region Criteria Object
-
-    public partial class DeliveryBookCriteriaGet
-    {
-    }
-
-    #endregion
-
 }

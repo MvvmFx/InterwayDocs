@@ -74,34 +74,4 @@ namespace Codisa.InterwayDocs.Business
         #endregion
 
     }
-
-    #region Criteria
-
-    /// <summary>
-    /// DeliveryBookCriteriaGet criteria.
-    /// </summary>
-    [Serializable]
-    public partial class DeliveryBookCriteriaGet : SearchCriteriaBase<DeliveryBookCriteriaGet>, IGenericCriteriaInformation
-    {
-
-        #region Constructors
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeliveryBookCriteriaGet"/> class.
-        /// </summary>
-        /// <remarks> A parameterless constructor is required by the MobileFormatter.</remarks>
-        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-        public DeliveryBookCriteriaGet()
-        {
-            var dateTypeList = CriteriaDateTypeList.GetCriteriaDateTypeList(false);
-            LoadProperty(DateTypeListProperty, dateTypeList);
-            LoadProperty(SelectedDateTypeIndexProperty, 0);
-        }
-
-        #endregion
-
-    }
-
-    #endregion
-
 }
