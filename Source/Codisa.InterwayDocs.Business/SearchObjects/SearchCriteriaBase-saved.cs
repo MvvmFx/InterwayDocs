@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics.CodeAnalysis;
 using Codisa.InterwayDocs.Business.Properties;
 using Codisa.InterwayDocs.Rules;
@@ -45,7 +45,7 @@ namespace Codisa.InterwayDocs.Business.SearchObjects
         /// Maintains metadata about <see cref="EndDate"/> property.
         /// </summary>
         [SuppressMessage("ReSharper", "StaticMemberInGenericType")]
-        public static readonly PropertyInfo<SmartDate> EndDateProperty = RegisterProperty<SmartDate>(p => p.EndDate, "Até");
+        public static readonly PropertyInfo<SmartDate> EndDateProperty = RegisterProperty<SmartDate>(p => p.EndDate, "At�");
 
         /// <summary>
         /// Gets or sets the End Date.
