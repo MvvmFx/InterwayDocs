@@ -61,7 +61,6 @@
     <PropertyMode>Default</PropertyMode>
     <GenerateAuthorization>None</GenerateAuthorization>
     <HeaderVerbosity>None</HeaderVerbosity>
-    <UseSingleCriteria>false</UseSingleCriteria>
     <UsePublicPropertyInfo>true</UsePublicPropertyInfo>
     <UseChildFactory>true</UseChildFactory>
     <ForceReadOnlyProperties>true</ForceReadOnlyProperties>
