@@ -111,6 +111,9 @@
     <Compile Include="SearchObjects\FastDateOptions.cs" />
     <Compile Include="SearchObjects\IGenericCriteriaInformation.cs" />
     <Compile Include="SearchObjects\SearchCriteriaBase.cs" />
+    <Compile Include="SearchObjects\SearchCriteriaBase.Designer.cs">
+      <DependentUpon>SearchCriteriaBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchObjects\SearchLocatableCriteriaBase.cs" />
     <Compile Include="Tools\BackupDatabase.cs" />
     <Compile Include="Tools\RestoreDatabase.cs" />
