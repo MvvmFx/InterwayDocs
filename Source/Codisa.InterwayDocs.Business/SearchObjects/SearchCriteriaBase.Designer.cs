@@ -109,7 +109,7 @@ namespace Codisa.InterwayDocs.Business.SearchObjects
         #region Constructor
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SearchCriteriaBase{T};"/> class.
+        /// Initializes a new instance of the <see cref="SearchCriteriaBase{T}"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
