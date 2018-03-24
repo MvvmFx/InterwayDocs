@@ -11,7 +11,7 @@ namespace Codisa.InterwayDocs.Business.SearchObjects
 
     /// <summary>
     /// SearchCriteriaBase (base class).<br/>
-    /// This is a generated base class of <see cref="SearchCriteriaBase{T};"/> business object.
+    /// This is a generated base class of <see cref="SearchCriteriaBase{T}"/> business object.
     /// </summary>
     [Serializable]
     public abstract partial class SearchCriteriaBase<T> : BusinessBase<T>
