@@ -66,6 +66,10 @@
     <Compile Include="DeliveryRegister.Designer.cs">
       <DependentUpon>DeliveryRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditOnDemandBase.cs" />
+    <Compile Include="EditOnDemandBase.Designer.cs">
+      <DependentUpon>EditOnDemandBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="IHaveAudit.cs" />
     <Compile Include="IHaveConfigurationList.cs" />
     <Compile Include="IncomingBook.cs" />
@@ -103,7 +107,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="QueryBuilder.cs" />
-    <Compile Include="EditOnDemandBase.cs" />
     <Compile Include="SearchObjects\CommonBookCriteria.cs" />
     <Compile Include="SearchObjects\CriteriaDateTypeInfo.cs" />
     <Compile Include="SearchObjects\CriteriaDateTypeList.cs" />
