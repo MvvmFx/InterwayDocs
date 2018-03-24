@@ -4,7 +4,7 @@ using Codisa.InterwayDocs.Rules;
 
 namespace Codisa.InterwayDocs.Business.SearchObjects
 {
-    public partial class SearchCriteriaBase<T> : BusinessBase<T>
+    public abstract partial class SearchCriteriaBase<T> : BusinessBase<T>
         where T : SearchCriteriaBase<T>, IGenericCriteriaInformation
     {
 
