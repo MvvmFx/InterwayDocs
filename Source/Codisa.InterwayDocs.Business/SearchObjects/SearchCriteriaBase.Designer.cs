@@ -11,7 +11,7 @@ namespace Codisa.InterwayDocs.Business.SearchObjects
 
     /// <summary>
     /// SearchCriteriaBase (base class).<br/>
-    /// This is a generated base class of <see cref="SearchCriteriaBase&lt;T&gt;"/> business object.
+    /// This is a generated base class of <see cref="SearchCriteriaBase{T};"/> business object.
     /// </summary>
     [Serializable]
     public abstract partial class SearchCriteriaBase<T> : BusinessBase<T>
@@ -109,7 +109,7 @@ namespace Codisa.InterwayDocs.Business.SearchObjects
         #region Constructor
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SearchCriteriaBase&lt;T&gt;"/> class.
+        /// Initializes a new instance of the <see cref="SearchCriteriaBase{T};"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
