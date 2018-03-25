@@ -9,7 +9,7 @@ namespace Codisa.InterwayDocs.Business
 
     /// <summary>
     /// OutgoingInfo (read only object).<br/>
-    /// This is a generated base class of <see cref="OutgoingInfo"/> business object.
+    /// This is a generated <see cref="OutgoingInfo"/> business object.
     /// </summary>
     /// <remarks>
     /// This class is an item of <see cref="OutgoingBook"/> collection.

@@ -12,7 +12,7 @@ namespace Codisa.InterwayDocs.Business
 
     /// <summary>
     /// OutgoingRegister (editable root object).<br/>
-    /// This is a generated base class of <see cref="OutgoingRegister"/> business object.
+    /// This is a generated <see cref="OutgoingRegister"/> business object.
     /// </summary>
     [Serializable]
     public partial class OutgoingRegister : EditOnDemandBase<OutgoingRegister>, IHaveAudit

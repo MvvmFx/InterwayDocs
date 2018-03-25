@@ -1,14 +1,17 @@
 using System;
+using System.Data;
+using System.Data.SqlClient;
+using Csla;
+using Csla.Data;
 using Codisa.InterwayDocs.Business.SearchObjects;
 using Codisa.InterwayDocs.Rules;
-using Csla;
 
 namespace Codisa.InterwayDocs.Business
 {
 
     /// <summary>
     /// OutgoingBook (read only list).<br/>
-    /// This is a generated base class of <see cref="OutgoingBook"/> business object.
+    /// This is a generated <see cref="OutgoingBook"/> business object.
     /// This class is a root collection.
     /// </summary>
     /// <remarks>
