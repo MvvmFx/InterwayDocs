@@ -246,7 +246,7 @@
       </DeleteAuthzRuleType>
     </CslaObjectInfo>
     <CslaObjectInfo>
-      <Generate>false</Generate>
+      <Generate>true</Generate>
       <GenerateConstructor>true</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
       <GenerateDataAccessRegion>true</GenerateDataAccessRegion>
@@ -263,11 +263,14 @@
       <CslaBaseClass>BusinessBaseT</CslaBaseClass>
       <IsGenericType>true</IsGenericType>
       <GenericArguments>T</GenericArguments>
-      <ObjectNamespace>Codisa.InterwayDocs.Business</ObjectNamespace>
+      <ObjectNamespace>Codisa.InterwayDocs.Business.SearchObjects</ObjectNamespace>
       <ClassVisibility>Public</ClassVisibility>
-      <ClassSummary />
+      <ClassSummary>Common search criteria</ClassSummary>
       <ClassRemarks />
-      <Namespaces />
+      <Namespaces>
+        <string>Codisa.InterwayDocs.Business.Properties</string>
+        <string>Codisa.InterwayDocs.Rules</string>
+      </Namespaces>
       <Attributes />
       <Interfaces>
         <string>IGenericCriteriaInformation</string>
@@ -296,7 +299,872 @@
       <ConvertValueProperties />
       <UpdateValueProperties />
       <InheritedValueProperties />
-      <ValueProperties />
+      <ValueProperties>
+        <ValueProperty>
+          <ParameterName>StartDate</ParameterName>
+          <Name>StartDate</Name>
+          <PropertyType>String</PropertyType>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <Summary />
+          <Remarks />
+          <DbBindColumn>
+            <ColumnOriginType>None</ColumnOriginType>
+            <DataType>String</DataType>
+            <NativeType />
+            <Size>0</Size>
+            <SpResultIndex>0</SpResultIndex>
+            <ColumnName />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsNullable>false</IsNullable>
+            <IsIdentity>false</IsIdentity>
+          </DbBindColumn>
+          <DataAccess>ReadWrite</DataAccess>
+          <PrimaryKey>Default</PrimaryKey>
+          <FKConstraint />
+          <FriendlyName>Start Date</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
+          <DeclarationMode>ManagedWithTypeConversion</DeclarationMode>
+          <BackingFieldType>SmartDate</BackingFieldType>
+          <DefaultValue />
+          <Attributes />
+          <Interfaces />
+          <BusinessRules>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\InterwayDocs\Dependencies\Library\Rules\InterwayDocs.BusinessRules.dll</AssemblyFile>
+              <Type>DateNotInFuture</Type>
+              <Name>DateNotInFuture</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">StartDate</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #2</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">StartDate</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>message</Name>
+                      <Type>String</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #3</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">StartDate</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>messageDelegate</Name>
+                      <Type>Func&lt;String&gt;</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>true</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string" />
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <MessageDelegate>() =&gt; Resources.DateNotInFuture</MessageDelegate>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>0</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+          </BusinessRules>
+          <AuthzProvider>IsInRole</AuthzProvider>
+          <ReadRoles />
+          <WriteRoles />
+          <ReadAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </ReadAuthzRuleType>
+          <WriteAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </WriteAuthzRuleType>
+          <Access>IsPublic</Access>
+          <PropSetAccessibility>Default</PropSetAccessibility>
+          <Undoable>true</Undoable>
+        </ValueProperty>
+        <ValueProperty>
+          <ParameterName>EndDate</ParameterName>
+          <Name>EndDate</Name>
+          <PropertyType>String</PropertyType>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <Summary />
+          <Remarks />
+          <DbBindColumn>
+            <ColumnOriginType>None</ColumnOriginType>
+            <DataType>String</DataType>
+            <NativeType />
+            <Size>0</Size>
+            <SpResultIndex>0</SpResultIndex>
+            <ColumnName />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsNullable>false</IsNullable>
+            <IsIdentity>false</IsIdentity>
+          </DbBindColumn>
+          <DataAccess>ReadWrite</DataAccess>
+          <PrimaryKey>Default</PrimaryKey>
+          <FKConstraint />
+          <FriendlyName>End Date</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
+          <DeclarationMode>ManagedWithTypeConversion</DeclarationMode>
+          <BackingFieldType>SmartDate</BackingFieldType>
+          <DefaultValue />
+          <Attributes />
+          <Interfaces />
+          <BusinessRules>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\InterwayDocs\Dependencies\Library\Rules\InterwayDocs.BusinessRules.dll</AssemblyFile>
+              <Type>DateNotInFuture</Type>
+              <Name>DateNotInFuture</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">EndDate</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #2</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">EndDate</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>message</Name>
+                      <Type>String</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #3</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">EndDate</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>messageDelegate</Name>
+                      <Type>Func&lt;String&gt;</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>true</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string" />
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <MessageDelegate>() =&gt; Resources.DateNotInFuture</MessageDelegate>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>0</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\InterwayDocs\Dependencies\Library\Rules\InterwayDocs.BusinessRules.dll</AssemblyFile>
+              <Type>GreaterThanOrEqual</Type>
+              <Name>GreaterThanOrEqual</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">EndDate</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>compareToProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">StartDate</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <MessageDelegate>() =&gt; Resources.EndDateGreaterThanOrEqualStartDate</MessageDelegate>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>1</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+          </BusinessRules>
+          <AuthzProvider>IsInRole</AuthzProvider>
+          <ReadRoles />
+          <WriteRoles />
+          <ReadAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </ReadAuthzRuleType>
+          <WriteAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </WriteAuthzRuleType>
+          <Access>IsPublic</Access>
+          <PropSetAccessibility>Default</PropSetAccessibility>
+          <Undoable>true</Undoable>
+        </ValueProperty>
+        <ValueProperty>
+          <ParameterName>FullText</ParameterName>
+          <Name>FullText</Name>
+          <PropertyType>String</PropertyType>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <Summary />
+          <Remarks />
+          <DbBindColumn>
+            <ColumnOriginType>None</ColumnOriginType>
+            <DataType>String</DataType>
+            <NativeType />
+            <Size>0</Size>
+            <SpResultIndex>0</SpResultIndex>
+            <ColumnName />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsNullable>false</IsNullable>
+            <IsIdentity>false</IsIdentity>
+          </DbBindColumn>
+          <DataAccess>ReadWrite</DataAccess>
+          <PrimaryKey>Default</PrimaryKey>
+          <FKConstraint />
+          <FriendlyName>Full Text</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
+          <DeclarationMode>Managed</DeclarationMode>
+          <BackingFieldType>Empty</BackingFieldType>
+          <DefaultValue />
+          <Attributes />
+          <Interfaces />
+          <BusinessRules>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\InterwayDocs\Dependencies\Library\Rules\InterwayDocs.BusinessRules.dll</AssemblyFile>
+              <Type>CollapseWhiteSpace</Type>
+              <Name>CollapseWhiteSpace</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">FullText</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>0</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\InterwayDocs\Dependencies\Library\Rules\InterwayDocs.BusinessRules.dll</AssemblyFile>
+              <Type>ThreePartsFullText</Type>
+              <Name>ThreePartsFullText</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">FullText</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #2</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">FullText</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>message</Name>
+                      <Type>String</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #3</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">FullText</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>messageDelegate</Name>
+                      <Type>Func&lt;String&gt;</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>true</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string" />
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <MessageDelegate>() =&gt; Resources.ThreePartsFullText</MessageDelegate>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>1</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+          </BusinessRules>
+          <AuthzProvider>IsInRole</AuthzProvider>
+          <ReadRoles />
+          <WriteRoles />
+          <ReadAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </ReadAuthzRuleType>
+          <WriteAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </WriteAuthzRuleType>
+          <Access>IsPublic</Access>
+          <PropSetAccessibility>Default</PropSetAccessibility>
+          <Undoable>true</Undoable>
+        </ValueProperty>
+        <ValueProperty>
+          <ParameterName>DateTypeList</ParameterName>
+          <Name>DateTypeList</Name>
+          <PropertyType>CustomType</PropertyType>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <Summary />
+          <Remarks />
+          <DbBindColumn>
+            <ColumnOriginType>None</ColumnOriginType>
+            <DataType>String</DataType>
+            <NativeType />
+            <Size>0</Size>
+            <SpResultIndex>0</SpResultIndex>
+            <ColumnName />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsNullable>false</IsNullable>
+            <IsIdentity>false</IsIdentity>
+          </DbBindColumn>
+          <DataAccess>ReadWrite</DataAccess>
+          <PrimaryKey>Default</PrimaryKey>
+          <FKConstraint />
+          <FriendlyName>Date Type List</FriendlyName>
+          <IsDatabaseBound>false</IsDatabaseBound>
+          <CustomPropertyType>CriteriaDateTypeList</CustomPropertyType>
+          <DeclarationMode>Managed</DeclarationMode>
+          <BackingFieldType>Empty</BackingFieldType>
+          <DefaultValue />
+          <Attributes />
+          <Interfaces />
+          <BusinessRules />
+          <AuthzProvider>IsInRole</AuthzProvider>
+          <ReadRoles />
+          <WriteRoles />
+          <ReadAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </ReadAuthzRuleType>
+          <WriteAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </WriteAuthzRuleType>
+          <Access>IsPublic</Access>
+          <PropSetAccessibility>Default</PropSetAccessibility>
+          <Undoable>true</Undoable>
+        </ValueProperty>
+        <ValueProperty>
+          <ParameterName>SelectedDateTypeIndex</ParameterName>
+          <Name>SelectedDateTypeIndex</Name>
+          <PropertyType>Int32</PropertyType>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <Summary />
+          <Remarks />
+          <DbBindColumn>
+            <ColumnOriginType>None</ColumnOriginType>
+            <DataType>String</DataType>
+            <NativeType />
+            <Size>0</Size>
+            <SpResultIndex>0</SpResultIndex>
+            <ColumnName />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsNullable>false</IsNullable>
+            <IsIdentity>false</IsIdentity>
+          </DbBindColumn>
+          <DataAccess>ReadWrite</DataAccess>
+          <PrimaryKey>Default</PrimaryKey>
+          <FKConstraint />
+          <FriendlyName>Selected Date Type Index</FriendlyName>
+          <IsDatabaseBound>false</IsDatabaseBound>
+          <CustomPropertyType />
+          <DeclarationMode>Managed</DeclarationMode>
+          <BackingFieldType>Empty</BackingFieldType>
+          <DefaultValue />
+          <Attributes />
+          <Interfaces />
+          <BusinessRules />
+          <AuthzProvider>IsInRole</AuthzProvider>
+          <ReadRoles />
+          <WriteRoles />
+          <ReadAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </ReadAuthzRuleType>
+          <WriteAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </WriteAuthzRuleType>
+          <Access>IsPublic</Access>
+          <PropSetAccessibility>Default</PropSetAccessibility>
+          <Undoable>true</Undoable>
+        </ValueProperty>
+        <ValueProperty>
+          <ParameterName>SelectedFastDateIndex</ParameterName>
+          <Name>SelectedFastDateIndex</Name>
+          <PropertyType>Int32</PropertyType>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <Summary />
+          <Remarks />
+          <DbBindColumn>
+            <ColumnOriginType>None</ColumnOriginType>
+            <DataType>String</DataType>
+            <NativeType />
+            <Size>0</Size>
+            <SpResultIndex>0</SpResultIndex>
+            <ColumnName />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsNullable>false</IsNullable>
+            <IsIdentity>false</IsIdentity>
+          </DbBindColumn>
+          <DataAccess>ReadWrite</DataAccess>
+          <PrimaryKey>Default</PrimaryKey>
+          <FKConstraint />
+          <FriendlyName>Selected Fast Date Index</FriendlyName>
+          <IsDatabaseBound>false</IsDatabaseBound>
+          <CustomPropertyType />
+          <DeclarationMode>Managed</DeclarationMode>
+          <BackingFieldType>Empty</BackingFieldType>
+          <DefaultValue>-1</DefaultValue>
+          <Attributes />
+          <Interfaces />
+          <BusinessRules>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\InterwayDocs\Dependencies\Library\Rules\InterwayDocs.BusinessRules.dll</AssemblyFile>
+              <Type>FastDateToDateRange</Type>
+              <Name>FastDateToDateRange</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">SelectedFastDateIndex</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>0</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+          </BusinessRules>
+          <AuthzProvider>IsInRole</AuthzProvider>
+          <ReadRoles />
+          <WriteRoles />
+          <ReadAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </ReadAuthzRuleType>
+          <WriteAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </WriteAuthzRuleType>
+          <Access>IsPublic</Access>
+          <PropSetAccessibility>Default</PropSetAccessibility>
+          <Undoable>true</Undoable>
+        </ValueProperty>
+      </ValueProperties>
       <Singleton>false</Singleton>
       <EditOnDemand>false</EditOnDemand>
       <CheckRulesOnFetch>true</CheckRulesOnFetch>
@@ -398,7 +1266,7 @@
       </DeleteAuthzRuleType>
     </CslaObjectInfo>
     <CslaObjectInfo>
-      <Generate>false</Generate>
+      <Generate>true</Generate>
       <GenerateConstructor>true</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
       <GenerateDataAccessRegion>true</GenerateDataAccessRegion>
@@ -412,16 +1280,21 @@
       <ObjectType>BaseClass</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
       <ObjectName>SearchLocatableCriteriaBase</ObjectName>
-      <CslaBaseClass>None</CslaBaseClass>
+      <CslaBaseClass>BusinessBaseT</CslaBaseClass>
       <IsGenericType>true</IsGenericType>
       <GenericArguments>T</GenericArguments>
-      <ObjectNamespace>Codisa.InterwayDocs.Business</ObjectNamespace>
+      <ObjectNamespace>Codisa.InterwayDocs.Business.SearchObjects</ObjectNamespace>
       <ClassVisibility>Public</ClassVisibility>
-      <ClassSummary />
+      <ClassSummary>Search criteria that includes archive location</ClassSummary>
       <ClassRemarks />
-      <Namespaces />
+      <Namespaces>
+        <string>Codisa.InterwayDocs.Rules</string>
+      </Namespaces>
       <Attributes />
-      <Interfaces />
+      <Interfaces>
+        <string>IGenericCriteriaInformation</string>
+        <string>IHaveArchiveLocation</string>
+      </Interfaces>
       <InheritedType>
         <ObjectName>SearchCriteriaBase&lt;T&gt;</ObjectName>
         <AssemblyFile />
@@ -446,7 +1319,126 @@
       <ConvertValueProperties />
       <UpdateValueProperties />
       <InheritedValueProperties />
-      <ValueProperties />
+      <ValueProperties>
+        <ValueProperty>
+          <ParameterName>ArchiveLocation</ParameterName>
+          <Name>ArchiveLocation</Name>
+          <PropertyType>String</PropertyType>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <Summary />
+          <Remarks />
+          <DbBindColumn>
+            <ColumnOriginType>None</ColumnOriginType>
+            <DataType>String</DataType>
+            <NativeType />
+            <Size>0</Size>
+            <SpResultIndex>0</SpResultIndex>
+            <ColumnName />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsNullable>false</IsNullable>
+            <IsIdentity>false</IsIdentity>
+          </DbBindColumn>
+          <DataAccess>ReadWrite</DataAccess>
+          <PrimaryKey>Default</PrimaryKey>
+          <FKConstraint />
+          <FriendlyName>Archive Location</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
+          <DeclarationMode>Managed</DeclarationMode>
+          <BackingFieldType>Empty</BackingFieldType>
+          <DefaultValue />
+          <Attributes />
+          <Interfaces />
+          <BusinessRules>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\InterwayDocs\Dependencies\Library\Rules\InterwayDocs.BusinessRules.dll</AssemblyFile>
+              <Type>CollapseWhiteSpace</Type>
+              <Name>CollapseWhiteSpace</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">ArchiveLocation</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>0</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+          </BusinessRules>
+          <AuthzProvider>IsInRole</AuthzProvider>
+          <ReadRoles />
+          <WriteRoles />
+          <ReadAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </ReadAuthzRuleType>
+          <WriteAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </WriteAuthzRuleType>
+          <Access>IsPublic</Access>
+          <PropSetAccessibility>Default</PropSetAccessibility>
+          <Undoable>true</Undoable>
+        </ValueProperty>
+      </ValueProperties>
       <Singleton>false</Singleton>
       <EditOnDemand>false</EditOnDemand>
       <CheckRulesOnFetch>true</CheckRulesOnFetch>
@@ -548,8 +1540,8 @@
       </DeleteAuthzRuleType>
     </CslaObjectInfo>
     <CslaObjectInfo>
-      <Generate>false</Generate>
-      <GenerateConstructor>true</GenerateConstructor>
+      <Generate>true</Generate>
+      <GenerateConstructor>false</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
       <GenerateDataAccessRegion>true</GenerateDataAccessRegion>
       <GenerateDataPortalInsert>true</GenerateDataPortalInsert>
@@ -559,7 +1551,7 @@
       <GenerateInlineQueries />
       <DataSetLoadingScheme>false</DataSetLoadingScheme>
       <UseCustomLoading>false</UseCustomLoading>
-      <ObjectType>BaseClass</ObjectType>
+      <ObjectType>CriteriaClass</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
       <ObjectName>IncomingBookCriteriaGet</ObjectName>
       <CslaBaseClass>None</CslaBaseClass>
@@ -567,9 +1559,12 @@
       <GenericArguments />
       <ObjectNamespace>Codisa.InterwayDocs.Business</ObjectNamespace>
       <ClassVisibility>Public</ClassVisibility>
-      <ClassSummary />
+      <ClassSummary>Search criteria for the Incoming book</ClassSummary>
       <ClassRemarks />
-      <Namespaces />
+      <Namespaces>
+        <string>Codisa.InterwayDocs.Business.SearchObjects</string>
+        <string>Codisa.InterwayDocs.Rules</string>
+      </Namespaces>
       <Attributes />
       <Interfaces>
         <string>IHaveArchiveLocation</string>
@@ -701,8 +1696,8 @@
       </DeleteAuthzRuleType>
     </CslaObjectInfo>
     <CslaObjectInfo>
-      <Generate>false</Generate>
-      <GenerateConstructor>true</GenerateConstructor>
+      <Generate>true</Generate>
+      <GenerateConstructor>false</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
       <GenerateDataAccessRegion>true</GenerateDataAccessRegion>
       <GenerateDataPortalInsert>true</GenerateDataPortalInsert>
@@ -712,7 +1707,7 @@
       <GenerateInlineQueries />
       <DataSetLoadingScheme>false</DataSetLoadingScheme>
       <UseCustomLoading>false</UseCustomLoading>
-      <ObjectType>BaseClass</ObjectType>
+      <ObjectType>CriteriaClass</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
       <ObjectName>OutgoingBookCriteriaGet</ObjectName>
       <CslaBaseClass>None</CslaBaseClass>
@@ -720,9 +1715,12 @@
       <GenericArguments />
       <ObjectNamespace>Codisa.InterwayDocs.Business</ObjectNamespace>
       <ClassVisibility>Public</ClassVisibility>
-      <ClassSummary />
+      <ClassSummary>Search criteria for the Outgoing book</ClassSummary>
       <ClassRemarks />
-      <Namespaces />
+      <Namespaces>
+        <string>Codisa.InterwayDocs.Business.SearchObjects</string>
+        <string>Codisa.InterwayDocs.Rules</string>
+      </Namespaces>
       <Attributes />
       <Interfaces>
         <string>IHaveArchiveLocation</string>
@@ -854,8 +1852,8 @@
       </DeleteAuthzRuleType>
     </CslaObjectInfo>
     <CslaObjectInfo>
-      <Generate>false</Generate>
-      <GenerateConstructor>true</GenerateConstructor>
+      <Generate>true</Generate>
+      <GenerateConstructor>false</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
       <GenerateDataAccessRegion>true</GenerateDataAccessRegion>
       <GenerateDataPortalInsert>true</GenerateDataPortalInsert>
@@ -865,7 +1863,7 @@
       <GenerateInlineQueries />
       <DataSetLoadingScheme>false</DataSetLoadingScheme>
       <UseCustomLoading>false</UseCustomLoading>
-      <ObjectType>BaseClass</ObjectType>
+      <ObjectType>CriteriaClass</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
       <ObjectName>DeliveryBookCriteriaGet</ObjectName>
       <CslaBaseClass>None</CslaBaseClass>
@@ -873,12 +1871,13 @@
       <GenericArguments />
       <ObjectNamespace>Codisa.InterwayDocs.Business</ObjectNamespace>
       <ClassVisibility>Public</ClassVisibility>
-      <ClassSummary />
+      <ClassSummary>Search criteria for the Delivery book</ClassSummary>
       <ClassRemarks />
-      <Namespaces />
+      <Namespaces>
+        <string>Codisa.InterwayDocs.Business.SearchObjects</string>
+      </Namespaces>
       <Attributes />
       <Interfaces>
-        <string>IHaveArchiveLocation</string>
         <string>IGenericCriteriaInformation</string>
       </Interfaces>
       <InheritedType>
@@ -1007,8 +2006,8 @@
       </DeleteAuthzRuleType>
     </CslaObjectInfo>
     <CslaObjectInfo>
-      <Generate>false</Generate>
-      <GenerateConstructor>true</GenerateConstructor>
+      <Generate>true</Generate>
+      <GenerateConstructor>false</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
       <GenerateDataAccessRegion>true</GenerateDataAccessRegion>
       <GenerateDataPortalInsert>true</GenerateDataPortalInsert>
@@ -1021,7 +2020,7 @@
       <ObjectType>BaseClass</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
       <ObjectName>EditOnDemandBase</ObjectName>
-      <CslaBaseClass>None</CslaBaseClass>
+      <CslaBaseClass>BusinessBaseT</CslaBaseClass>
       <IsGenericType>true</IsGenericType>
       <GenericArguments>T</GenericArguments>
       <ObjectNamespace>Codisa.InterwayDocs.Business</ObjectNamespace>
@@ -1035,7 +2034,7 @@
         <ObjectName />
         <AssemblyFile />
         <Type />
-        <IsGenericType>false</IsGenericType>
+        <IsGenericType>true</IsGenericType>
       </InheritedType>
       <InheritedTypeWinForms>
         <ObjectName />
@@ -1046,7 +2045,7 @@
       <UseUnitOfWorkType />
       <ConstructorVisibility>Default</ConstructorVisibility>
       <Folder />
-      <FileName>EditOnDemand</FileName>
+      <FileName>EditOnDemandBase</FileName>
       <UnitOfWorkProperties />
       <ChildCollectionProperties />
       <ChildProperties />
