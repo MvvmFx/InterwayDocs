@@ -1,16 +1,26 @@
 using System;
+using Csla;
 using Codisa.InterwayDocs.Business.SearchObjects;
-using Codisa.InterwayDocs.Rules;
 
 namespace Codisa.InterwayDocs.Business
 {
-
-    /// <summary>
-    /// IncomingBookCriteriaGet criteria.
-    /// </summary>
-    [Serializable]
-    public class IncomingBookCriteriaGet : SearchLocatableCriteriaBase<IncomingBookCriteriaGet>, IHaveArchiveLocation, IGenericCriteriaInformation
+    public partial class IncomingBookCriteriaGet
     {
+
+        #region OnDeserialized actions
+
+        /*/// <summary>
+        /// This method is called on a newly deserialized object
+        /// after deserialization is complete.
+        /// </summary>
+        /// <param name="context">Serialization context object.</param>
+        protected override void OnDeserialized(System.Runtime.Serialization.StreamingContext context)
+        {
+            base.OnDeserialized(context);
+            // add your custom OnDeserialized actions here.
+        }*/
+
+        #endregion
 
         #region Constructors
 
@@ -29,5 +39,4 @@ namespace Codisa.InterwayDocs.Business
         #endregion
 
     }
-
 }

@@ -58,6 +58,9 @@
       <DependentUpon>DeliveryBook.cs</DependentUpon>
     </Compile>
     <Compile Include="DeliveryBookCriteriaGet.cs" />
+    <Compile Include="DeliveryBookCriteriaGet.Designer.cs">
+      <DependentUpon>DeliveryBookCriteriaGet.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeliveryInfo.cs" />
     <Compile Include="DeliveryInfo.Designer.cs">
       <DependentUpon>DeliveryInfo.cs</DependentUpon>
@@ -78,6 +81,9 @@
       <DependentUpon>IncomingBook.cs</DependentUpon>
     </Compile>
     <Compile Include="IncomingBookCriteriaGet.cs" />
+    <Compile Include="IncomingBookCriteriaGet.Designer.cs">
+      <DependentUpon>IncomingBookCriteriaGet.cs</DependentUpon>
+    </Compile>
     <Compile Include="IncomingInfo.cs" />
     <Compile Include="IncomingInfo.Designer.cs">
       <DependentUpon>IncomingInfo.cs</DependentUpon>
@@ -92,6 +98,9 @@
       <DependentUpon>OutgoingBook.cs</DependentUpon>
     </Compile>
     <Compile Include="OutgoingBookCriteriaGet.cs" />
+    <Compile Include="OutgoingBookCriteriaGet.Designer.cs">
+      <DependentUpon>OutgoingBookCriteriaGet.cs</DependentUpon>
+    </Compile>
     <Compile Include="OutgoingInfo.cs" />
     <Compile Include="OutgoingInfo.Designer.cs">
       <DependentUpon>OutgoingInfo.cs</DependentUpon>
