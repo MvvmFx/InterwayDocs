@@ -1,69 +1,24 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using Codisa.InterwayDocs.Rules;
+using System;
 using Csla;
+using Codisa.InterwayDocs.Rules;
 
 namespace Codisa.InterwayDocs.Business.SearchObjects
 {
-    /// <summary>
-    /// SearchLocatableCriteriaBase criteria base class.
-    /// </summary>
-    [Serializable]
-    public abstract class SearchLocatableCriteriaBase<T> : SearchCriteriaBase<T> where T : SearchLocatableCriteriaBase<T>,
-            IGenericCriteriaInformation
+    public abstract partial class SearchLocatableCriteriaBase<T> : SearchCriteriaBase<T>
+        where T : SearchLocatableCriteriaBase<T>, IGenericCriteriaInformation, IHaveArchiveLocation
     {
 
-        #region Business Properties
+        #region OnDeserialized actions
 
-        /// <summary>
-        /// Maintains metadata about <see cref="ArchiveLocation"/> property.
+        /*/// <summary>
+        /// This method is called on a newly deserialized object
+        /// after deserialization is complete.
         /// </summary>
-        [SuppressMessage("ReSharper", "StaticMemberInGenericType")]
-        public static readonly PropertyInfo<string> ArchiveLocationProperty = RegisterProperty<string>(p => p.ArchiveLocation);
-
-        /// <summary>
-        /// Gets or sets the Archive Location.
-        /// </summary>
-        /// <value>The Archive Location.</value>
-        public string ArchiveLocation
+        protected override void OnDeserialized()
         {
-            get { return GetProperty(ArchiveLocationProperty); }
-            set { SetProperty(ArchiveLocationProperty, value); }
-        }
-
-        #endregion
-
-        #region Constructor
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchLocatableCriteriaBase{T}"/> class.
-        /// </summary>
-        /// <remarks> A parameterless constructor is required by the MobileFormatter.</remarks>
-        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-        public SearchLocatableCriteriaBase()
-        {
-        }
-
-        #endregion
-
-        #region Business Rules and Property Authorization
-
-        /// <summary>
-        /// Override this method in your business class to be notified when you need to set up shared business rules.
-        /// </summary>
-        /// <remarks>
-        /// This method is automatically called by CSLA.NET when your object should associate
-        /// per-type validation rules with its properties.
-        /// </remarks>
-        protected override void AddBusinessRules()
-        {
-            base.AddBusinessRules();
-
-            // Property Business Rules
-
-            // ArchiveLocation
-            BusinessRules.AddRule(new CollapseWhiteSpace(ArchiveLocationProperty));
-        }
+            base.OnDeserialized();
+            // add your custom OnDeserialized actions here.
+        }*/
 
         #endregion
 
