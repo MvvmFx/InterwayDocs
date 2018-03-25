@@ -119,6 +119,9 @@
       <DependentUpon>SearchCriteriaBase.cs</DependentUpon>
     </Compile>
     <Compile Include="SearchObjects\SearchLocatableCriteriaBase.cs" />
+    <Compile Include="SearchObjects\SearchLocatableCriteriaBase.Designer.cs">
+      <DependentUpon>SearchLocatableCriteriaBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\BackupDatabase.cs" />
     <Compile Include="Tools\RestoreDatabase.cs" />
     <Compile Include="Update\GetSchemaVersion.cs" />
