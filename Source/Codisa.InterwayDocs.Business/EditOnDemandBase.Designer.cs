@@ -9,7 +9,7 @@ namespace Codisa.InterwayDocs.Business
 
     /// <summary>
     /// EditOnDemandBase (base class).<br/>
-    /// This is a generated base class of <see cref="EditOnDemandBase{T}"/> business object.
+    /// This is a generated <see cref="EditOnDemandBase{T}"/> base classe.
     /// </summary>
     [Serializable]
     public abstract partial class EditOnDemandBase<T> : BusinessBase<T>

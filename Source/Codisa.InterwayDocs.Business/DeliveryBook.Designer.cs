@@ -1,13 +1,16 @@
 using System;
-using Codisa.InterwayDocs.Business.SearchObjects;
+using System.Data;
+using System.Data.SqlClient;
 using Csla;
+using Csla.Data;
+using Codisa.InterwayDocs.Business.SearchObjects;
 
 namespace Codisa.InterwayDocs.Business
 {
 
     /// <summary>
     /// DeliveryBook (read only list).<br/>
-    /// This is a generated base class of <see cref="DeliveryBook"/> business object.
+    /// This is a generated <see cref="DeliveryBook"/> business object.
     /// This class is a root collection.
     /// </summary>
     /// <remarks>

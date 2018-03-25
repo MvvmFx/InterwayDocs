@@ -9,8 +9,8 @@ namespace Codisa.InterwayDocs.Business.SearchObjects
 {
 
     /// <summary>
-    /// SearchLocatableCriteriaBase (base class).<br/>
-    /// This is a generated base class of <see cref="SearchLocatableCriteriaBase{T}"/> business object.
+    /// Search criteria that includes archive location (base class).<br/>
+    /// This is a generated <see cref="SearchLocatableCriteriaBase{T}"/> base classe.
     /// </summary>
     [Serializable]
     public abstract partial class SearchLocatableCriteriaBase<T> : SearchCriteriaBase<T>

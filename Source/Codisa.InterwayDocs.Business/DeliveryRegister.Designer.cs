@@ -12,7 +12,7 @@ namespace Codisa.InterwayDocs.Business
 
     /// <summary>
     /// DeliveryRegister (editable root object).<br/>
-    /// This is a generated base class of <see cref="DeliveryRegister"/> business object.
+    /// This is a generated <see cref="DeliveryRegister"/> business object.
     /// </summary>
     [Serializable]
     public partial class DeliveryRegister : EditOnDemandBase<DeliveryRegister>, IHaveAudit
