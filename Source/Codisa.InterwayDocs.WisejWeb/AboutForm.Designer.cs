@@ -80,6 +80,7 @@ namespace Codisa.InterwayDocs
             // 
             // AboutForm
             // 
+            this.AcceptButton = okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 404);
