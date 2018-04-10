@@ -1,4 +1,4 @@
-# InterwayDocs - Sample MvvmFx WinForms/Wisej application
+# InterwayDocs - Sample MvvmFx Wisej/WinForms application
 
 This application was developed as "freemium" application to replace mail register books, intended for absolute beginners in low-tech environments.
 
