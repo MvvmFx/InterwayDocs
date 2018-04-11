@@ -97,8 +97,14 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="Wisej.Core" />
-    <Reference Include="Wisej.Web" />
+    <Reference Include="Wisej.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\Wisej.1.4.80\lib\net45\Wisej.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\Wisej.1.4.80\lib\net45\Wisej.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Browser.cs">
@@ -196,6 +202,7 @@
     <EmbeddedResource Include="CefSharp\x64\icudtl.dat" />
     <EmbeddedResource Include="CefSharp\x64\natives_blob.bin" />
     <EmbeddedResource Include="CefSharp\x64\snapshot_blob.bin" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
