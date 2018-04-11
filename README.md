@@ -13,12 +13,13 @@ This application uses an interesting environment:
 - business layer code was generated using [CslaGenFork](http://github.com/CslaGenFork/CslaGenFork)
 - UI uses [MvvmFx](http://github.com/MvvmFx/MvvmFx)
 
-The project is instrumental for the improvement and maturity of MvvmFx.
+The project is instrumental for the improvement of [MvvmFx](https://github.com/MvvmFx/MvvmFx.
 
-#### When you build the solution in Release mode, at the root level there will be 3 folders with ready to run versions:
-- WebSite
-- WebStandalone
-- WinForms
+### Release mode build
+When you build the solution in __Release__ mode, at the root level there will be 3 folders with ready to run versions:
+- WinForms - Windows Forms desktop application
+- WebSite - web site IIS ready
+- WebStandalone - web site packed into a desktop .exe file
 
 ## Project Status
 
@@ -26,15 +27,18 @@ Project is ready to run using LocalDb for SQL Server 2014. Instructions included
 
 ## Roadmap
 
-### Version 1.3.7
+### Release 1.3.7 (ongoing)
 - Add Wisej standalone executable (run as a desktop application) - done
 - Translate all resources in all 4 languages - done
-- Add language combobox to Wisej version. - done
+- Add language combobox to Wisej version - done
+- Fetch Wisej dependency from NuGet - done
 
-### Version 1.3.8 (last single user release)
+__N.B. - To run Wisej samples (web and standalone) you don't need to install Wisej.__
+
+### Release 1.3.8 (planned - last single user release)
 - Load all translations from database
 
-### Version 1.4.0
+### Release 1.4.0 (planned)
 - Add authentication, autorization and roles
 - Add user management
 
