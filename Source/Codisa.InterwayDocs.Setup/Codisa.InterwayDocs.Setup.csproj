@@ -48,33 +48,33 @@
       <HintPath>..\..\Dependencies\packages\CSLA-WindowsForms.4.7.100\lib\net45\Csla.Windows.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CslaContrib, Version=4.6.605.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
-      <HintPath>..\..\Dependencies\packages\CslaContrib.4.6.605\lib\net45\CslaContrib.dll</HintPath>
+    <Reference Include="CslaContrib, Version=4.6.606.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\CslaContrib.4.6.606\lib\net45\CslaContrib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CslaContrib.Windows, Version=4.6.605.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
-      <HintPath>..\..\Dependencies\packages\CslaContrib-Windows.4.6.605\lib\net45\CslaContrib.Windows.dll</HintPath>
+    <Reference Include="CslaContrib.Windows, Version=4.6.606.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\CslaContrib-Windows.4.6.606\lib\net45\CslaContrib.Windows.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MvvmFx.CaliburnMicro.Csla.WinForms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <HintPath>..\..\Dependencies\packages\MvvmFx-CaliburnMicro-Csla-WinForms.3.0.0\lib\net45\MvvmFx.CaliburnMicro.Csla.WinForms.dll</HintPath>
+    <Reference Include="MvvmFx.CaliburnMicro.Csla.WinForms, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\MvvmFx-CaliburnMicro-Csla-WinForms.3.0.1\lib\net45\MvvmFx.CaliburnMicro.Csla.WinForms.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmFx.CaliburnMicro.WinForms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <HintPath>..\..\Dependencies\packages\MvvmFx-CaliburnMicro-WinForms.3.0.0\lib\net45\MvvmFx.CaliburnMicro.WinForms.dll</HintPath>
+    <Reference Include="MvvmFx.CaliburnMicro.WinForms, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\MvvmFx-CaliburnMicro-WinForms.3.0.1\lib\net45\MvvmFx.CaliburnMicro.WinForms.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmFx.DataBinding.WinForms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <HintPath>..\..\Dependencies\packages\MvvmFx-CaliburnMicro-WinForms.3.0.0\lib\net45\MvvmFx.DataBinding.WinForms.dll</HintPath>
+    <Reference Include="MvvmFx.DataBinding.WinForms, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\MvvmFx-CaliburnMicro-WinForms.3.0.1\lib\net45\MvvmFx.DataBinding.WinForms.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmFx.Logging, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <HintPath>..\..\Dependencies\packages\MvvmFx-Logging.3.0.0\lib\net45\MvvmFx.Logging.dll</HintPath>
+    <Reference Include="MvvmFx.Logging, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\MvvmFx-Logging.3.0.1\lib\net45\MvvmFx.Logging.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmFx.NLogLogger, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <HintPath>..\..\Dependencies\packages\MvvmFx-NLogLogger.3.0.0\lib\net45\MvvmFx.NLogLogger.dll</HintPath>
+    <Reference Include="MvvmFx.NLogLogger, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\MvvmFx-NLogLogger.3.0.1\lib\net45\MvvmFx.NLogLogger.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
