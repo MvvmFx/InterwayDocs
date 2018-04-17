@@ -10,7 +10,7 @@ using Wisej.Web;
 
 namespace Codisa.InterwayDocs
 {
-    public partial class MainForm : Form, IMainForm
+    public partial class MainForm : Page, IMainForm
     {
         #region Fields and properties
 
@@ -25,8 +25,6 @@ namespace Codisa.InterwayDocs
         public MainForm()
         {
             InitializeComponent();
-
-            Closed += MainFormClosed;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -53,12 +51,7 @@ namespace Codisa.InterwayDocs
             Program.RefreshTranslation();
         }
 
-        private void MainFormClosed(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        public new void Close()
+        public void Close()
         {
             ApplicationBase.Exit();
         }
