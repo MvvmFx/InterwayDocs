@@ -141,7 +141,7 @@ namespace Codisa.InterwayDocs.Framework
         private void BaseDataGridViewResize(object sender, EventArgs e)
         {
 #if WISEJ
-            ParentForm.Update();
+            ParentPage.Update();
             //ApplicationBase.Update(ParentForm);
 #endif
 
@@ -252,8 +252,13 @@ namespace Codisa.InterwayDocs.Framework
 
             _lastActiveControl.Focus();
 
+#if WISEJ
+            if (ParentPage != null)
+                ParentPage.AcceptButton = baseSearch;
+#else
             if (ParentForm != null)
                 ParentForm.AcceptButton = baseSearch;
+#endif
 
             _isFocusing = false;
         }

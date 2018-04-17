@@ -12,7 +12,11 @@ using MvvmFx.Logging;
 
 namespace Codisa.InterwayDocs
 {
+#if WISEJ
+    internal class AppBootstrapper : PageBootstrapper<IMainFormViewModel>
+#else
     internal class AppBootstrapper : Bootstrapper<IMainFormViewModel>
+#endif
     {
         private static SimpleContainer _container;
 

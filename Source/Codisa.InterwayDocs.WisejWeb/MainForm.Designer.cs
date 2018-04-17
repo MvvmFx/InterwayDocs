@@ -195,12 +195,8 @@
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mainMenu);
-            this.FormBorderStyle = Wisej.Web.FormBorderStyle.Fixed;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Movable = false;
             this.Name = "MainForm";
-            this.WindowState = Wisej.Web.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
