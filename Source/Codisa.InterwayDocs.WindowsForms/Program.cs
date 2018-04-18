@@ -104,6 +104,7 @@ namespace Codisa.InterwayDocs
         {
             ApplicationContext.UICulture = ApplicationBase.CurrentCulture.ToString().Substring(0, 2);
             RefreshTranslation();
+            UnloadConfirmation.Restore();
         }
 #endif
     }
