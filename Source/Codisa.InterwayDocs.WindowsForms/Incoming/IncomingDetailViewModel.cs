@@ -89,6 +89,28 @@ namespace Codisa.InterwayDocs.Incoming
             }
         }
 
+#if WISEJ
+        /// <summary>
+        /// Gets a value indicating whether the Model has been changed.
+        /// </summary>
+        public override bool IsDirty
+        {
+            get { return base.IsDirty; }
+            protected set
+            {
+                if (base.IsDirty != value)
+                {
+                    base.IsDirty = value;
+                    if (!Model.IsReadOnly)
+                    {
+                        if (value)
+                            UnloadConfirmation.BeforeUnloadMessage = "Save before closing.";
+                    }
+                }
+            }
+        }
+#endif
+
         #endregion
 
         #region Initializers
@@ -183,6 +205,9 @@ namespace Codisa.InterwayDocs.Incoming
                 DoRefresh(IncomingRegister.NewIncomingRegister);
 
                 DisplayName = Resources.NewRegister;
+#if WISEJ
+                UnloadConfirmation.BeforeUnloadMessage = "Save before closing.";
+#endif
             }
             else if (_showEmpty)
             {
@@ -244,7 +269,9 @@ namespace Codisa.InterwayDocs.Incoming
 
         private void SetReadOnlyButtons()
         {
-            Model.IsReadOnly = true;
+#if WISEJ
+            UnloadConfirmation.BeforeUnloadMessage = string.Empty;
+#endif
             CanCreateRegister = true;
             CanEditDetail = true;
             CanCancel = false;
@@ -253,7 +280,9 @@ namespace Codisa.InterwayDocs.Incoming
 
         private void SetEmptyRegisterButtons()
         {
-            Model.IsReadOnly = true;
+#if WISEJ
+            UnloadConfirmation.BeforeUnloadMessage = string.Empty;
+#endif
             CanCreateRegister = true;
             CanEditDetail = false;
             CanCancel = false;

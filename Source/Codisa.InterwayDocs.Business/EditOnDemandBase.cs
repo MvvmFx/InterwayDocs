@@ -23,7 +23,7 @@ namespace Codisa.InterwayDocs.Business
 
         #region Status properties
 
-        private bool _isReadOnly;
+        private bool _isReadOnly = true;
 
         public bool IsReadOnly
         {

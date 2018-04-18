@@ -15,3 +15,7 @@ using Wisej.Core;
 [assembly: AssemblyTitle("Wisej Web UI for .NET 4.5")]
 [assembly: AssemblyProduct("InterwayDocs")]
 [assembly: AssemblyDescription("Wisej Web UI for .NET 4.5")]
+
+// Make sure that you have this line uncommented
+// so that your JavaScript file will be sent to the client
+[assembly: WisejResources(ExcludeList: "")]
