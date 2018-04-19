@@ -18,8 +18,8 @@ The project is instrumental for the improvement of [MvvmFx](https://github.com/M
 ### Release mode build
 When you build the solution in __Release__ mode, at the root level there will be 3 folders with ready to run versions:
 - WinForms - Windows Forms desktop application
-- WebSite - web site IIS ready
-- WebStandalone - web site packed into a desktop .exe file
+- WebSite - Wisej web site IIS ready
+- WebStandalone - Wisej web site packed into a desktop .exe file
 
 ## Project Status
 
