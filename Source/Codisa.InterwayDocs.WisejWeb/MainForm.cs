@@ -47,8 +47,6 @@ namespace Codisa.InterwayDocs
             ApplicationContext.UICulture = Languages.LanguageList[language.SelectedIndex].UICode;
 
             ApplicationBase.Navigate(ApplicationBase.StartupUri + "?lang=" + ApplicationContext.UICulture);
-
-            Program.RefreshTranslation();
         }
 
         public void Close()
