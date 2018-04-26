@@ -74,6 +74,22 @@ namespace Codisa.InterwayDocs
             Outgoing.OutgoingDetailViewModel.ClearConfigurationList();
 
             object model = null;
+
+#if WISEJ
+            foreach (Page page in Application.OpenPages)
+            {
+                if (page is IMainForm)
+                {
+                    model = (page as IMainForm).DataContext;
+                    continue;
+                }
+
+                var translatableForm = page as IRefreshTranslation;
+                if (translatableForm != null)
+                    translatableForm.RefreshTranslation();
+            }
+#endif
+
             foreach (Form form in Application.OpenForms)
             {
                 if (form is IMainForm)
