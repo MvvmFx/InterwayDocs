@@ -46,7 +46,14 @@ namespace Codisa.InterwayDocs
 
             ApplicationContext.UICulture = Languages.LanguageList[language.SelectedIndex].UICode;
 
-            ApplicationBase.Navigate(ApplicationBase.StartupUri + "?lang=" + ApplicationContext.UICulture);
+            // change for >= 1.4.84
+            var bareLength = ApplicationBase.StartupUri.ToString().Length - ApplicationBase.StartupUri.Query.Length;
+            var bareStartupUri = ApplicationBase.StartupUri.ToString().Substring(0, bareLength);
+
+            ApplicationBase.Navigate(bareStartupUri + "?lang=" + ApplicationContext.UICulture);
+
+            // old <= 1.4.80 code
+            // ApplicationBase.Navigate(ApplicationBase.StartupUri + "?lang=" + ApplicationContext.UICulture);
         }
 
         public void Close()
