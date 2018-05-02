@@ -354,11 +354,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\..\Dependencies\packages\CSLA-Core.4.7.100\analyzers\c#\Csla.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Csla, Version=4.7.100.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
-      <HintPath>..\..\Dependencies\packages\CSLA-Core.4.7.100\lib\net45\Csla.dll</HintPath>
+    <Reference Include="Csla, Version=4.7.101.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\CSLA-Core.4.7.101\lib\net45\Csla.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CslaContrib, Version=4.6.606.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
@@ -502,6 +499,9 @@
       <Project>{bb2ccd46-4b03-477d-acc7-aabbf15f9245}</Project>
       <Name>Codisa.InterwayDocs.Rules</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\Dependencies\packages\CSLA-Core.4.7.101\analyzers\c#\Csla.Analyzers.dll" />
   </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>
