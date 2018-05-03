@@ -176,9 +176,7 @@ namespace Codisa.InterwayDocs.Configuration
             RaiseListChangedEvents = false;
             while (dr.Read())
             {
-                var item = PropertyConfigurationInfo.GetPropertyConfigurationInfo(dr);
-                System.Diagnostics.Debug.WriteLine(item.Name);
-                Add(item);
+                Add(PropertyConfigurationInfo.GetPropertyConfigurationInfo(dr));
             }
             RaiseListChangedEvents = rlce;
             IsReadOnly = true;

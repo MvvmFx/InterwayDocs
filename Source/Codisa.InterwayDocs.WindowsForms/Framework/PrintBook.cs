@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
 #if WISEJ
 using Wisej.Web;
@@ -238,12 +237,6 @@ namespace Codisa.InterwayDocs.Framework
             var headerRow = _sheet.CreateRow(_headerLength) as XSSFRow;
 
             var column = 0;
-
-            for (var index = 0; index < _configurationList.Count; index++)
-            {
-                var item = _configurationList[index];
-                Debug.WriteLine($"Number {index} Name {item.Name}");
-            }
 
             foreach (var item in _configurationList)
             {
