@@ -19,19 +19,6 @@ namespace Codisa.InterwayDocs.Configuration
     public partial class PropertyRequiredList : ReadOnlyBindingListBase<PropertyRequiredList, PropertyRequiredInfo>
     {
 
-        #region Factory Methods
-
-        /// <summary>
-        /// Factory method. Loads a <see cref="PropertyRequiredList"/> collection.
-        /// </summary>
-        /// <returns>A reference to the fetched <see cref="PropertyRequiredList"/> collection.</returns>
-        public static PropertyRequiredList GetPropertyRequiredList()
-        {
-            return DataPortal.Fetch<PropertyRequiredList>();
-        }
-
-        #endregion
-
         #region Constructor
 
         /// <summary>
