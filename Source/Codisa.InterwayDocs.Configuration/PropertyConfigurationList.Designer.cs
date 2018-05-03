@@ -19,29 +19,6 @@ namespace Codisa.InterwayDocs.Configuration
     public partial class PropertyConfigurationList : ReadOnlyBindingListBase<PropertyConfigurationList, PropertyConfigurationInfo>
     {
 
-        #region Collection Business Methods
-
-        /// <summary>
-        /// Determines whether a <see cref="PropertyConfigurationInfo"/> item is in the collection.
-        /// </summary>
-        /// <param name="objectName">The ObjectName of the item to search for.</param>
-        /// <param name="name">The Name of the item to search for.</param>
-        /// <param name="uICulture">The UICulture of the item to search for.</param>
-        /// <returns><c>true</c> if the PropertyConfigurationInfo is a collection item; otherwise, <c>false</c>.</returns>
-        public bool Contains(string objectName, string name, string uICulture)
-        {
-            foreach (var propertyConfigurationInfo in this)
-            {
-                if (propertyConfigurationInfo.ObjectName == objectName && propertyConfigurationInfo.Name == name && propertyConfigurationInfo.UICulture == uICulture)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        #endregion
-
         #region Find Methods
 
         /// <summary>
@@ -60,21 +37,6 @@ namespace Codisa.InterwayDocs.Configuration
             }
 
             return null;
-        }
-
-        #endregion
-
-        #region Factory Methods
-
-        /// <summary>
-        /// Factory method. Loads a <see cref="PropertyConfigurationList"/> collection, based on given parameters.
-        /// </summary>
-        /// <param name="objectName">The ObjectName parameter of the PropertyConfigurationList to fetch.</param>
-        /// <param name="uICulture">The UICulture parameter of the PropertyConfigurationList to fetch.</param>
-        /// <returns>A reference to the fetched <see cref="PropertyConfigurationList"/> collection.</returns>
-        public static PropertyConfigurationList GetPropertyConfigurationList(string objectName, string uICulture)
-        {
-            return DataPortal.Fetch<PropertyConfigurationList>(new CriteriaGet(objectName, uICulture));
         }
 
         #endregion
@@ -189,7 +151,7 @@ namespace Codisa.InterwayDocs.Configuration
                     cmd.Parameters.AddWithValue("@UICulture", crit.UICulture).DbType = DbType.String;
                     var args = new DataPortalHookArgs(cmd, crit);
                     OnFetchPre(args);
-                    LoadCollection(cmd);
+                    CachedList.LoadCollection(cmd);
                     OnFetchPost(args);
                 }
             }
