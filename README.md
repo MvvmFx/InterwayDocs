@@ -27,7 +27,7 @@ Project is ready to run using LocalDb for SQL Server 2014. Instructions included
 
 ## Roadmap
 
-### Release 1.3.7 (03.May.2018)
+### Release 1.3.7 (03 May 2018)
 - Add Wisej standalone executable (run as a desktop application)
 - Translate all resources in all 4 languages
 - Add language combobox to Wisej version
