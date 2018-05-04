@@ -18,8 +18,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 using System;
+using Owin;
 
-namespace Owin
+namespace Wisej.HostService.Owin
 {
     /// <summary>
     /// Adds "UseWisej" to the Owin system.
