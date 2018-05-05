@@ -255,20 +255,6 @@
     <Content Include="About.en.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="DemoDb\InterwayDocs.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DemoDb\InterwayDocs_log.ldf">
-      <DependentUpon>InterwayDocs.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="EmptyDB\InterwayDocs.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="EmptyDB\InterwayDocs_log.ldf">
-      <DependentUpon>InterwayDocs.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Scripts-1.3.7\ApplyTo-1.3.6.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
