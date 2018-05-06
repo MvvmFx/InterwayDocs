@@ -51,7 +51,6 @@ namespace Codisa.InterwayDocs.Configuration
                       propertyConfigurationInfo.UICulture == uICulture
                 select propertyConfigurationInfo).ToList();*/
 
-
             /*var list = new List<PropertyConfigurationInfo>();
             foreach (var propertyConfigurationInfo in _list)
             {
