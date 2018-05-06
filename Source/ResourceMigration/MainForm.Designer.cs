@@ -93,24 +93,28 @@
             this.EN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.EN.HeaderText = "EN-GB";
             this.EN.Name = "EN";
+            this.EN.ReadOnly = true;
             // 
             // ES
             // 
             this.ES.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ES.HeaderText = "ES";
             this.ES.Name = "ES";
+            this.ES.ReadOnly = true;
             // 
             // FR
             // 
             this.FR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.FR.HeaderText = "FR";
             this.FR.Name = "FR";
+            this.FR.ReadOnly = true;
             // 
             // PT
             // 
             this.PT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PT.HeaderText = "PT";
             this.PT.Name = "PT";
+            this.PT.ReadOnly = true;
             // 
             // fromResx
             // 

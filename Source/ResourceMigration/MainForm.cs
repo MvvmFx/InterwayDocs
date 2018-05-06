@@ -15,17 +15,18 @@ namespace ResourceMigration
             InitializeComponent();
         }
 
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             totalRows.Text = $"Total rows: n/a";
         }
+
         private void fromResx_Click(object sender, EventArgs e)
         {
+            Editable(false);
+
             dataGridView.Rows.Clear();
             ReferenceAssemblies.Perform();
             LoadFromResX();
-
 
             foreach (ResourceRow resourceRow in _resourceGrid)
             {
@@ -36,17 +37,28 @@ namespace ResourceMigration
 
                 if (resourceRow.Cultures.ContainsKey("en-GB"))
                     row[3] = resourceRow.Cultures["en-GB"];
-                if (resourceRow.Cultures.ContainsKey("es"))
-                    row[4] = resourceRow.Cultures["es"];
-                if (resourceRow.Cultures.ContainsKey("fr"))
-                    row[5] = resourceRow.Cultures["fr"];
-                if (resourceRow.Cultures.ContainsKey("pt"))
-                    row[6] = resourceRow.Cultures["pt"];
+
+                if (!resourceRow.Cultures.ContainsKey("es"))
+                    resourceRow.Cultures["es"] = resourceRow.Cultures["en-GB"];
+
+                row[4] = resourceRow.Cultures["es"];
+
+                if (!resourceRow.Cultures.ContainsKey("fr"))
+                    resourceRow.Cultures["fr"] = resourceRow.Cultures["en-GB"];
+
+                row[5] = resourceRow.Cultures["fr"];
+
+                if (!resourceRow.Cultures.ContainsKey("pt"))
+                    resourceRow.Cultures["pt"] = resourceRow.Cultures["en-GB"];
+
+                row[6] = resourceRow.Cultures["pt"];
 
                 dataGridView.Rows.Add(row);
             }
 
             totalRows.Text = $"Total rows: {dataGridView.RowCount.ToString()}";
+
+            Editable(true);
         }
 
         private void fromDatabase_Click(object sender, EventArgs e)
@@ -55,8 +67,41 @@ namespace ResourceMigration
 
         private void toDatabase_Click(object sender, EventArgs e)
         {
+            Editable(false);
+
+            _resourceGrid.Clear();
+
+            foreach (var line in dataGridView.Rows)
+            {
+                var row = (DataGridViewRow) line;
+                var resourceRow = new ResourceRow
+                {
+                    Assembly = row.Cells[0].Value.ToString(),
+                    ResourceType = row.Cells[1].Value.ToString(),
+                    ResourceName = row.Cells[2].Value.ToString()
+                };
+
+                resourceRow.Cultures.Add(dataGridView.Columns[3].Name, row.Cells[3].Value.ToString());
+                resourceRow.Cultures.Add(dataGridView.Columns[4].Name, row.Cells[4].Value.ToString());
+                resourceRow.Cultures.Add(dataGridView.Columns[5].Name, row.Cells[5].Value.ToString());
+                resourceRow.Cultures.Add(dataGridView.Columns[6].Name, row.Cells[6].Value.ToString());
+
+                _resourceGrid.Add(resourceRow);
+            }
+
+            _resourceGrid.Save();
+
+            Editable(true);
+
+            MessageBox.Show("Resources saved.", "Save eneded");
         }
 
+        private void Editable(bool setEditable)
+        {
+            dataGridView.ReadOnly = setEditable;
+            dataGridView.AllowUserToAddRows = setEditable;
+            dataGridView.AllowUserToDeleteRows = setEditable;
+        }
 
         private void LoadFromResX()
         {
