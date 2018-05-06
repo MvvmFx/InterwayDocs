@@ -59,9 +59,9 @@ namespace Codisa.InterwayDocs.Framework
             this.picture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize) (this.picture)).BeginInit();
             this.SuspendLayout();
-            // 
+            //
             // message
-            // 
+            //
             this.message.Anchor =
                 ((System.Windows.Forms.AnchorStyles)
                     (((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
@@ -72,9 +72,9 @@ namespace Codisa.InterwayDocs.Framework
             this.message.TabIndex = 1;
             this.message.Text = "message";
             this.message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
+            //
             // picture
-            // 
+            //
             this.picture.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picture.Image = ((System.Drawing.Image) (resources.GetObject("picture.Image")));
             this.picture.Location = new System.Drawing.Point(11, 3);
@@ -83,9 +83,9 @@ namespace Codisa.InterwayDocs.Framework
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picture.TabIndex = 2;
             this.picture.TabStop = false;
-            // 
+            //
             // BusyIndicator
-            // 
+            //
             this.Controls.Add(this.picture);
             this.Controls.Add(this.message);
             this.Name = "BusyIndicator";
