@@ -1,9 +1,9 @@
-/****** Object:  StoredProcedure [dbo].[GetlResourceTranslationsByCulture] ******/
-IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[GetlResourceTranslationsByCulture]') AND type in (N'P', N'PC'))
-    DROP PROCEDURE [dbo].[GetlResourceTranslationsByCulture]
+/****** Object:  StoredProcedure [dbo].[GetResourceTranslationsByCulture] ******/
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[GetResourceTranslationsByCulture]') AND type in (N'P', N'PC'))
+    DROP PROCEDURE [dbo].[GetResourceTranslationsByCulture]
 GO
 
-CREATE PROCEDURE [dbo].[GetlResourceTranslationsByCulture]
+CREATE PROCEDURE [dbo].[GetResourceTranslationsByCulture]
     @UICulture varchar(5)
 AS
     BEGIN
