@@ -19,7 +19,7 @@ AS
         FROM [dbo].[ResourceTranslations]
             INNER JOIN [dbo].[Resources] ON [ResourceTranslations].[ResourceId] = [Resources].[ResourceId]
         WHERE
-            [ResourceTranslations].[UICulture] LIKE @UICulture
+            [ResourceTranslations].[UICulture] = @UICulture
         ORDER BY
             [Resources].[ResourceType], [Resources].[ResourceName]
 
@@ -67,7 +67,7 @@ AS
             [ResourceTranslations].[Translation]
         FROM [dbo].[ResourceTranslations]
         WHERE
-            [ResourceTranslations].[ResourceId] LIKE @ResourceId
+            [ResourceTranslations].[ResourceId] = @ResourceId
         ORDER BY
             [ResourceTranslations].[UICulture]
 
