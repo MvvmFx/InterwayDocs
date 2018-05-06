@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using MvvmFx.CaliburnMicro;
 using MvvmFx.Bindings.Data;
+using MvvmFx.CaliburnMicro;
 
 namespace Codisa.InterwayDocs.Setup
 {
@@ -91,8 +91,10 @@ namespace Codisa.InterwayDocs.Setup
 
         private void about_Click(object sender, EventArgs e)
         {
-            var about = new AboutForm();
-            about.ShowDialog();
+            using (var about = new AboutForm())
+            {
+                about.ShowDialog();
+            }
         }
     }
 }

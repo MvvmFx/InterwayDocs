@@ -117,7 +117,7 @@
     <Content Include="favicon.ico" />
     <Content Include="packages.config" />
     <Content Include="NLog.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\Codisa.InterwayDocs.WindowsForms\Manual.pdf">
       <Link>Manual.pdf</Link>
@@ -396,7 +396,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\..\Dependencies\packages\NLog.4.5.3\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\..\Dependencies\packages\NLog.4.5.4\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NPOI, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">

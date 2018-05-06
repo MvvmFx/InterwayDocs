@@ -97,7 +97,7 @@ namespace Codisa.InterwayDocs.Framework
         private bool SelectFile()
         {
 #if WINFORMS
-            var diag = new SaveFileDialog
+            using (var diag = new SaveFileDialog
             {
                 AutoUpgradeEnabled = true,
                 CheckPathExists = true,
@@ -109,13 +109,14 @@ namespace Codisa.InterwayDocs.Framework
                 FileName = string.Format("{0}-{1}",
                     _filePrefix,
                     _refreshDateTime.ToString(Resources.FilenameDateTimeFormat))
-            };
+            })
+            {
+                var result = diag.ShowDialog();
+                if (result == DialogResult.Cancel)
+                    return false;
 
-            var result = diag.ShowDialog();
-            if (result == DialogResult.Cancel)
-                return false;
-
-            _fileName = diag.FileName;
+                _fileName = diag.FileName;
+            }
 #else
             _fileName = string.Format("{0}-{1}.xlsx",
                 _filePrefix,
