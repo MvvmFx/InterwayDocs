@@ -321,45 +321,4 @@ namespace ResourceMigration
 
         #endregion
     }
-
-    #region Resource matrix
-
-    public class ResourceGrid : List<ResourceRow>
-    {
-        public ResourceRow GetResourceRow(string assembly, string resourceType, string resourceName)
-        {
-            foreach (ResourceRow resourceRow in this)
-            {
-                if (resourceRow.Assembly == assembly &&
-                    resourceRow.ResourceType == resourceType &&
-                    resourceRow.ResourceName == resourceName)
-                    return resourceRow;
-            }
-
-            var row = new ResourceRow
-            {
-                Assembly = assembly,
-                ResourceType = resourceType,
-                ResourceName = resourceName
-            };
-            Add(row);
-
-            return row;
-        }
-    }
-
-    public class ResourceRow
-    {
-        public string Assembly { get; set; }
-        public string ResourceType { get; set; }
-        public string ResourceName { get; set; }
-        public Dictionary<string, string> Cultures { get; set; }
-
-        public ResourceRow()
-        {
-            Cultures = new Dictionary<string, string>();
-        }
-    }
-
-    #endregion
 }
