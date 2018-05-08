@@ -11,8 +11,6 @@ namespace Codisa.InterwayDocs.Configuration
 
         private static readonly PropertyConfigurationList CachedList = new PropertyConfigurationList();
 
-        private static readonly object LockObject = new object();
-
         #endregion
 
         #region Cache Management Methods
@@ -83,13 +81,10 @@ namespace Codisa.InterwayDocs.Configuration
         /// <returns>A reference to the fetched <see cref="PropertyConfigurationList"/> collection.</returns>
         public static PropertyConfigurationList GetPropertyConfigurationList(string objectName, string uICulture)
         {
-            lock (LockObject)
-            {
-                if (!CacheContainsObject(objectName, uICulture))
-                    DataPortal.Fetch<PropertyConfigurationList>(new CriteriaGet(objectName, uICulture));
+            if (!CacheContainsObject(objectName, uICulture))
+                DataPortal.Fetch<PropertyConfigurationList>(new CriteriaGet(objectName, uICulture));
 
-                return GetCachedList(objectName, uICulture);
-            }
+            return GetCachedList(objectName, uICulture);
         }
 
         #endregion
