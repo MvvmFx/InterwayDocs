@@ -112,6 +112,7 @@ namespace Codisa.InterwayDocs.Framework
 #if WISEJ
             BaseErrorWarnInfoProvider.Clear();
 #endif
+            ReadOnly = true;
             foreach (var control in NamedElements)
             {
                 if (AlwaysVisibleElements.Contains(control.Name))
