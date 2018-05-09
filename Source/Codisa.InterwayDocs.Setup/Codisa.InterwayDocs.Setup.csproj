@@ -151,16 +151,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Codisa.InterwayDocs.Configuration\Codisa.InterwayDocs.Configuration.csproj">
-      <Project>{8f384b5e-c997-41ef-a22a-b72c59c2315c}</Project>
-      <Name>Codisa.InterwayDocs.Configuration</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="CodisaITS-16-64.ico" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\..\Dependencies\packages\CSLA-Core.4.7.101\analyzers\c#\Csla.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Codisa.InterwayDocs.ConfigAdmin\Codisa.InterwayDocs.ConfigAdmin.csproj">
+      <Project>{e829843f-07b4-4cc6-bb10-56660547c02b}</Project>
+      <Name>Codisa.InterwayDocs.ConfigAdmin</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
