@@ -11,12 +11,6 @@ AS
 
         SET NOCOUNT ON
 
-        /* Search Variables */
-        IF (@UICulture <> '')
-            SET @UICulture = @UICulture + '%'
-        ELSE
-            SET @UICulture = '%'
-
         /* Get PropertyConfigurationInfo from table */
         SELECT
             [PropertyConfiguration].[ObjectName],
@@ -31,9 +25,8 @@ AS
         WHERE
             [PropertyConfiguration].[ObjectName] = @ObjectName AND
             [PropertyFriendyName].[UICulture] LIKE @UICulture
-            /*ISNULL([PropertyFriendyName].[UICulture], '') LIKE @UICulture*/
         ORDER BY
-            [PropertyConfiguration].[ObjectName], [PropertyFriendyName].[UICulture]
+            [PropertyConfiguration].[ObjectName], [PropertyFriendyName].[UICulture], PropertyConfiguration.[ListOrder]
 
     END
 GO
