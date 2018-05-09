@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E829843F-07B4-4CC6-BB10-56660547C02B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Codisa.InterwayDocs.Configuration</RootNamespace>
+    <AssemblyName>Codisa.InterwayDocs.ConfigAdmin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Codisa.InterwayDocs.ConfigAdmin.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Csla, Version=4.7.101.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\packages\CSLA-Core.4.7.101\lib\net45\Csla.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\DatabaseInterwayDocs.cs">
+      <Link>DatabaseInterwayDocs.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\DataPortalHookArgs.cs">
+      <Link>DataPortalHookArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyConfiguration.cs">
+      <Link>PropertyConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyConfiguration.Designer.cs">
+      <Link>PropertyConfiguration.Designer.cs</Link>
+      <DependentUpon>PropertyConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyConfigurationColl.cs">
+      <Link>PropertyConfigurationColl.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyConfigurationColl.Designer.cs">
+      <Link>PropertyConfigurationColl.Designer.cs</Link>
+      <DependentUpon>PropertyConfigurationColl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyConfigurationInfo.cs">
+      <Link>PropertyConfigurationInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyConfigurationInfo.Designer.cs">
+      <Link>PropertyConfigurationInfo.Designer.cs</Link>
+      <DependentUpon>PropertyConfigurationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyConfigurationList.cs">
+      <Link>PropertyConfigurationList.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyConfigurationList.Designer.cs">
+      <Link>PropertyConfigurationList.Designer.cs</Link>
+      <DependentUpon>PropertyConfigurationList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyFriendlyName.cs">
+      <Link>PropertyFriendlyName.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyFriendlyName.Designer.cs">
+      <Link>PropertyFriendlyName.Designer.cs</Link>
+      <DependentUpon>PropertyFriendlyName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyFriendlyNameColl.cs">
+      <Link>PropertyFriendlyNameColl.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyFriendlyNameColl.Designer.cs">
+      <Link>PropertyFriendlyNameColl.Designer.cs</Link>
+      <DependentUpon>PropertyFriendlyNameColl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyRequiredInfo.cs">
+      <Link>PropertyRequiredInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyRequiredInfo.Designer.cs">
+      <Link>PropertyRequiredInfo.Designer.cs</Link>
+      <DependentUpon>PropertyRequiredInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyRequiredList.cs">
+      <Link>PropertyRequiredList.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyRequiredList.Designer.cs">
+      <Link>PropertyRequiredList.Designer.cs</Link>
+      <DependentUpon>PropertyRequiredList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\Resource.cs">
+      <Link>Resource.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\Resource.Designer.cs">
+      <Link>Resource.Designer.cs</Link>
+      <DependentUpon>Resource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceColl.cs">
+      <Link>ResourceColl.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceColl.Designer.cs">
+      <Link>ResourceColl.Designer.cs</Link>
+      <DependentUpon>ResourceColl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceCulture.cs">
+      <Link>ResourceCulture.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceCulture.Designer.cs">
+      <Link>ResourceCulture.Designer.cs</Link>
+      <DependentUpon>ResourceCulture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceCultureColl.cs">
+      <Link>ResourceCultureColl.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceCultureColl.Designer.cs">
+      <Link>ResourceCultureColl.Designer.cs</Link>
+      <DependentUpon>ResourceCultureColl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceCultureInfo.cs">
+      <Link>ResourceCultureInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceCultureInfo.Designer.cs">
+      <Link>ResourceCultureInfo.Designer.cs</Link>
+      <DependentUpon>ResourceCultureInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceCultureList.cs">
+      <Link>ResourceCultureList.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceCultureList.Designer.cs">
+      <Link>ResourceCultureList.Designer.cs</Link>
+      <DependentUpon>ResourceCultureList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceInfo.cs">
+      <Link>ResourceInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceInfo.Designer.cs">
+      <Link>ResourceInfo.Designer.cs</Link>
+      <DependentUpon>ResourceInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceList.cs">
+      <Link>ResourceList.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceList.Designer.cs">
+      <Link>ResourceList.Designer.cs</Link>
+      <DependentUpon>ResourceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\Dependencies\packages\CSLA-Core.4.7.101\analyzers\c#\Csla.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

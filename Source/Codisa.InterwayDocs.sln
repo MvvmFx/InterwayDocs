@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codisa.InterwayDocs.Rules",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codisa.InterwayDocs.Configuration", "Codisa.InterwayDocs.Configuration\Codisa.InterwayDocs.Configuration.csproj", "{8F384B5E-C997-41EF-A22A-B72C59C2315C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codisa.InterwayDocs.ConfigAdmin", "Codisa.InterwayDocs.ConfigAdmin\Codisa.InterwayDocs.ConfigAdmin.csproj", "{E829843F-07B4-4CC6-BB10-56660547C02B}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codisa.InterwayDocs.Setup", "Codisa.InterwayDocs.Setup\Codisa.InterwayDocs.Setup.csproj", "{961A830A-CD0B-4C64-A035-12A6E4947D57}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4017396F-90F3-467E-BB87-D8352122A6DA}"
@@ -75,6 +77,14 @@ Global
 		{8F384B5E-C997-41EF-A22A-B72C59C2315C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8F384B5E-C997-41EF-A22A-B72C59C2315C}.Release|x64.ActiveCfg = Release|Any CPU
 		{8F384B5E-C997-41EF-A22A-B72C59C2315C}.Release|x64.Build.0 = Release|Any CPU
+		{E829843F-07B4-4CC6-BB10-56660547C02B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E829843F-07B4-4CC6-BB10-56660547C02B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E829843F-07B4-4CC6-BB10-56660547C02B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E829843F-07B4-4CC6-BB10-56660547C02B}.Debug|x64.Build.0 = Debug|Any CPU
+		{E829843F-07B4-4CC6-BB10-56660547C02B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E829843F-07B4-4CC6-BB10-56660547C02B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E829843F-07B4-4CC6-BB10-56660547C02B}.Release|x64.ActiveCfg = Release|Any CPU
+		{E829843F-07B4-4CC6-BB10-56660547C02B}.Release|x64.Build.0 = Release|Any CPU
 		{961A830A-CD0B-4C64-A035-12A6E4947D57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{961A830A-CD0B-4C64-A035-12A6E4947D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{961A830A-CD0B-4C64-A035-12A6E4947D57}.Debug|x64.ActiveCfg = Debug|Any CPU

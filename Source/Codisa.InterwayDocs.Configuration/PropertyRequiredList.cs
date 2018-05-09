@@ -6,12 +6,9 @@ namespace Codisa.InterwayDocs.Configuration
 {
     public partial class PropertyRequiredList
     {
-
         #region Private Fields
 
         private static PropertyRequiredList _list;
-
-        private static readonly object LockObject = new object();
 
         #endregion
 
@@ -40,13 +37,10 @@ namespace Codisa.InterwayDocs.Configuration
         /// <returns>A reference to the fetched <see cref="PropertyRequiredList"/> collection.</returns>
         public static PropertyRequiredList GetPropertyRequiredList()
         {
-            lock (LockObject)
-            {
-                if (_list == null)
-                    _list = DataPortal.Fetch<PropertyRequiredList>();
+            if (_list == null)
+                _list = DataPortal.Fetch<PropertyRequiredList>();
 
-                return _list;
-            }
+            return _list;
         }
 
         /// <summary>
