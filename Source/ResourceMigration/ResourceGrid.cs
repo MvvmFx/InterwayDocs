@@ -59,7 +59,7 @@ namespace ResourceMigration
         private int DataAcess_SaveResource(SqlConnection cn, ResourceRow resourceRow)
         {
             int resourceId = 0;
-            using (var cmd = new SqlCommand("dbo.AddResource", cn))
+            using (var cmd = new SqlCommand("dbo.MigrationAddResource", cn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ResourceId", resourceId).Direction = ParameterDirection.Output;
@@ -77,7 +77,7 @@ namespace ResourceMigration
         private void DataAcess_SaveResourceTranslation(SqlConnection cn, int resourceId, string uiCulture,
             string translation)
         {
-            using (var cmd = new SqlCommand("dbo.AddResourceTranslation", cn))
+            using (var cmd = new SqlCommand("dbo.MigrationAddResourceTranslation", cn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ResourceId", resourceId).DbType = DbType.Int32;
