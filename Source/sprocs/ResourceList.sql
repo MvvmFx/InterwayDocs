@@ -4,6 +4,8 @@ IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[GetRes
 GO
 
 CREATE PROCEDURE [dbo].[GetResourceList]
+    @ResourceType varchar(50),
+    @UICulture varchar(5)
 AS
     BEGIN
 
@@ -11,17 +13,17 @@ AS
 
         /* Get ResourceInfo from table */
         SELECT
-            [Resources].[ResourceId],
             [Resources].[ResourceType],
-            [Resources].[ResourceName]
-        FROM [dbo].[Resources]
-
-        /* Get ResourceCultureList from table */
-        SELECT
-            [ResourceTranslations].[ResourceId],
+            [Resources].[ResourceName],
             [ResourceTranslations].[UICulture],
             [ResourceTranslations].[Translation]
         FROM [dbo].[ResourceTranslations]
+            INNER JOIN [dbo].[Resources] ON [ResourceTranslations].[ResourceId] = [Resources].[ResourceId]
+        WHERE
+            [Resources].[ResourceType] = @ResourceType AND
+            [ResourceTranslations].[UICulture] = @UICulture
+        ORDER BY
+            [Resources].[ResourceName]
 
     END
 GO
