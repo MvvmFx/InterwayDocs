@@ -1,5 +1,4 @@
 using System.Linq;
-using Codisa.InterwayDocs.Business.Properties;
 using Codisa.InterwayDocs.Configuration;
 using Csla;
 using Csla.Core;
@@ -61,7 +60,7 @@ namespace Codisa.InterwayDocs.Business
             {
                 BusinessRules.AddRule(new Required(propertyInfo)
                 {
-                    MessageDelegate = () => Resources.Required
+                    MessageDelegate = () => "Required".GetTranslation()
                 });
             }
         }

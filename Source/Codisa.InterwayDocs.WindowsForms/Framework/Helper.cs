@@ -1,4 +1,6 @@
-﻿#if WISEJ
+﻿using System.Linq;
+using System.Linq.Expressions;
+#if WISEJ
 using Wisej.Web;
 #else
 using System.Windows.Forms;

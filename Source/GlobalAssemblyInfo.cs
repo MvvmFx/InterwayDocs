@@ -2,7 +2,7 @@ using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyCompany("Grupo Interway")]
+[assembly: AssemblyCompany("MvvmFx Project")]
 [assembly: AssemblyCopyright("Copyright © Grupo Interway 2016, Tiago Freitas Leal 2018.")]
 [assembly: AssemblyTrademark("")]
 [assembly: ComVisible(false)]

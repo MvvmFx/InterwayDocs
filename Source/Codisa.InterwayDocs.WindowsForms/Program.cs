@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Configuration;
 using System.Globalization;
+using System.Threading;
 using Codisa.InterwayDocs.Framework;
 #if WISEJ
 using MvvmFx.CaliburnMicro.WisejWeb.Toolable;
 using Wisej.Base;
 using Wisej.Web;
 #else
-using System.Threading;
 using System.Windows.Forms;
 #endif
-using Codisa.InterwayDocs.Properties;
 using ApplicationContext = MvvmFx.CaliburnMicro.ApplicationContext;
 
 namespace Codisa.InterwayDocs
@@ -20,7 +19,9 @@ namespace Codisa.InterwayDocs
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+#if WINFORMS
         [STAThread]
+#endif
         private static void Main()
         {
 #if WINFORMS
@@ -43,7 +44,10 @@ namespace Codisa.InterwayDocs
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo(uiCulture);
 #else
                 if (string.IsNullOrEmpty(uiCulture))
+                {
                     uiCulture = ApplicationBase.CurrentCulture.ToString();
+                    Thread.CurrentThread.CurrentCulture = CultureInfo.CurrentCulture;
+                }
                 else
                 {
                     uiCulture = uiCulture.Substring(0, 2);
@@ -56,16 +60,31 @@ namespace Codisa.InterwayDocs
             }
             catch (CultureNotFoundException exception)
             {
-                MessageBox.Show(exception.Message, Resources.LabelAlert, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(exception.Message, "LabelAlert".GetUiTranslation(), MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
 
             ApplicationContext.UICulture = uiCulture.Substring(0, 2);
+
+            TranslatedResources.ClearResources();
+            Business.BusinessResources.Get = message =>
+            {
+                return TranslatedResources.GetResource(TranslatedResources.BusinessResourceList, message);
+            };
+
+
+            UiResources.Get = message =>
+            {
+                return TranslatedResources.GetResource(TranslatedResources.ResourceList, message);
+            };
 
             new AppBootstrapper().Run();
         }
 
         internal static void RefreshTranslation()
         {
+            TranslatedResources.ClearResources();
+
             Delivery.DeliveryBookViewModel.ClearConfigurationList();
             Delivery.DeliveryDetailViewModel.ClearConfigurationList();
             Incoming.IncomingBookViewModel.ClearConfigurationList();

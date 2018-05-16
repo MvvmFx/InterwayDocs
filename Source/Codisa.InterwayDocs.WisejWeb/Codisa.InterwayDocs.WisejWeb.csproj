@@ -222,6 +222,12 @@
     <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\Show.cs">
       <Link>Framework\Show.cs</Link>
     </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\TranslatedResources.cs">
+      <Link>Framework\TranslatedResources.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\UiResources.cs">
+      <Link>Framework\UiResources.cs</Link>
+    </Compile>
     <Compile Include="..\Codisa.InterwayDocs.WindowsForms\IMainForm.cs">
       <Link>IMainForm.cs</Link>
     </Compile>
@@ -465,9 +471,6 @@
     <EmbeddedResource Include="Outgoing\OutgoingDetailView.resx">
       <DependentUpon>OutgoingDetailView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.es.resx" />
-    <EmbeddedResource Include="Properties\Resources.fr.resx" />
-    <EmbeddedResource Include="Properties\Resources.pt.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

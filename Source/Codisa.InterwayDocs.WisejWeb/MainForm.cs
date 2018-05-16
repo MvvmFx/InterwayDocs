@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using Codisa.InterwayDocs.Framework;
-using Codisa.InterwayDocs.Properties;
 using MvvmFx.Bindings.Data;
 using MvvmFx.CaliburnMicro;
 using Wisej.Base;
@@ -30,6 +28,8 @@ namespace Codisa.InterwayDocs
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            SetResources();
+
             foreach (var lang in Languages.LanguageList)
             {
                 language.Items.Add(lang.Name);
@@ -129,20 +129,25 @@ namespace Codisa.InterwayDocs
 
         public void RefreshTranslation()
         {
-            openIncomingBook.Text = Resources.LabelIncoming;
-            openOutgoingBook.Text = Resources.LabelOutgoing;
-            openDeliveryBook.Text = Resources.LabelDelivery;
-            toolsMenuItem.Text = Resources.LabelTools;
-            backup.Text = Resources.ToolsBackupLabel;
-            restore.Text = Resources.ToolsRestoreLabel;
-            export.Text = Resources.ToolsExportlabel;
-            import.Text = Resources.ToolsImportLabel;
-            helpMenuItem.Text = Resources.LabelHelp;
-            about.Text = Resources.LabelAboutApplication;
-            pdfManual.Text = Resources.LabelDocumentation;
-            languageLabel.Text = Resources.Language;
+            SetResources();
 
             language.SelectedIndex = Languages.GetIndexOfUICode(ApplicationContext.UICulture);
+        }
+
+        private void SetResources()
+        {
+            openIncomingBook.Text = "LabelIncoming".GetUiTranslation();
+            openOutgoingBook.Text = "LabelOutgoing".GetUiTranslation();
+            openDeliveryBook.Text = "LabelDelivery".GetUiTranslation();
+            toolsMenuItem.Text = "LabelTools".GetUiTranslation();
+            backup.Text = "ToolsBackupLabel".GetUiTranslation();
+            restore.Text = "ToolsRestoreLabel".GetUiTranslation();
+            export.Text = "ToolsExportlabel".GetUiTranslation();
+            import.Text = "ToolsImportLabel".GetUiTranslation();
+            helpMenuItem.Text = "LabelHelp".GetUiTranslation();
+            about.Text = "LabelAboutApplication".GetUiTranslation();
+            pdfManual.Text = "LabelDocumentation".GetUiTranslation();
+            languageLabel.Text = "Language".GetUiTranslation();
         }
 
         #endregion

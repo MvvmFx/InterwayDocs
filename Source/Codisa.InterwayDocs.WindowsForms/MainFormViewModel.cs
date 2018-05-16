@@ -10,7 +10,6 @@ using Codisa.InterwayDocs.Delivery;
 using Codisa.InterwayDocs.Framework;
 using Codisa.InterwayDocs.Incoming;
 using Codisa.InterwayDocs.Outgoing;
-using Codisa.InterwayDocs.Properties;
 using Codisa.InterwayDocs.Tools;
 using Codisa.InterwayDocs.Update;
 using MvvmFx.CaliburnMicro;
@@ -74,7 +73,7 @@ namespace Codisa.InterwayDocs
 
         protected override void OnInitialize()
         {
-            DisplayName = Resources.MainFormTitle;
+            DisplayName = "MainFormTitle".GetUiTranslation();
         }
 
         protected override void OnViewLoaded(object view)
@@ -99,7 +98,7 @@ namespace Codisa.InterwayDocs
 
         public void RefreshTranslation()
         {
-            DisplayName = Resources.MainFormTitle;
+            DisplayName = "MainFormTitle".GetUiTranslation();
 
             var mainForm = GetView();
             if (mainForm != null)
@@ -151,7 +150,7 @@ namespace Codisa.InterwayDocs
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Resources.OperationError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "OperationError".GetUiTranslation(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -167,7 +166,7 @@ namespace Codisa.InterwayDocs
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Resources.OperationError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "OperationError".GetUiTranslation(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -183,7 +182,7 @@ namespace Codisa.InterwayDocs
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Resources.OperationError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "OperationError".GetUiTranslation(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -205,7 +204,7 @@ namespace Codisa.InterwayDocs
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Resources.OperationError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "OperationError".GetUiTranslation(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -236,7 +235,7 @@ namespace Codisa.InterwayDocs
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Resources.OperationError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "OperationError".GetUiTranslation(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -251,7 +250,7 @@ namespace Codisa.InterwayDocs
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Resources.OperationError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "OperationError".GetUiTranslation(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -266,7 +265,7 @@ namespace Codisa.InterwayDocs
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Resources.OperationError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "OperationError".GetUiTranslation(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -281,7 +280,7 @@ namespace Codisa.InterwayDocs
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Resources.OperationError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "OperationError".GetUiTranslation(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

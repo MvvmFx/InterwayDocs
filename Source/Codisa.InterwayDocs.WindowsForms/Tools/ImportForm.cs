@@ -1,6 +1,6 @@
 using System;
 using System.Windows.Forms;
-using Codisa.InterwayDocs.Properties;
+using Codisa.InterwayDocs.Framework;
 
 namespace Codisa.InterwayDocs.Tools
 {
@@ -13,7 +13,7 @@ namespace Codisa.InterwayDocs.Tools
 
         private void ImportForm_Load(object sender, EventArgs e)
         {
-            Text = Resources.ToolsImportLabel;
+            Text = "ToolsImportLabel".GetUiTranslation();
             okButton.Text = DialogResult.OK.ToString();
         }
     }

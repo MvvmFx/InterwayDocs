@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Codisa.InterwayDocs.Business;
 using Codisa.InterwayDocs.Framework;
-using Codisa.InterwayDocs.Properties;
 using MvvmFx.CaliburnMicro;
 using MvvmFx.Bindings.Data;
 using Binding = MvvmFx.Bindings.Data.Binding;
@@ -72,6 +71,7 @@ namespace Codisa.InterwayDocs.Delivery
                         if (viewModel.Model.RegisterId != 0)
                         {
                             SetConfiguration();
+                            SetResources();
                             Bind();
                             DataContextChanged(this, new DataContextChangedEventArgs());
                             Visible = true;
@@ -175,26 +175,27 @@ namespace Codisa.InterwayDocs.Delivery
             base.RefreshTranslation();
 
             SetConfiguration();
+            SetResources();
+        }
 
-            toggleDetailPanel.ToolTipText = Resources.ToolTipHideDetail;
-            printDetail.ToolTipText = Resources.ToolTipExportRegisterExcel;
-            cancel.ToolTipText = Resources.ToolTipCancel;
-            save.ToolTipText = Resources.ToolTipSave;
-            editDetail.ToolTipText = Resources.ToolTipEdit;
-            createRegister.ToolTipText = Resources.ToolTipNew;
-            toolTip.SetToolTip(registerDateLabel, Resources.ToolTipRegisterDate);
-            documentGroup.Text = Resources.LabelDocument;
-            toolTip.SetToolTip(documentTypeLabel, Resources.ToolTipDocumentType);
-            toolTip.SetToolTip(documentReferenceLabel, Resources.ToolTipDocumentNumber);
-            toolTip.SetToolTip(documentEntityLabel, Resources.ToolTipDocumentEntity);
-            toolTip.SetToolTip(documentDeptLabel, Resources.ToolTipDocumentDept);
-            toolTip.SetToolTip(documentClassLabel, Resources.ToolTipDocumentClass);
-            toolTip.SetToolTip(documentDateLabel, Resources.ToolTipDocumentDate);
-            toolTip.SetToolTip(recipientNameLabel, Resources.ToolTipRecipientName);
-            toolTip.SetToolTip(expeditorNameLabel, Resources.ToolTipExpeditorName);
-            toolTip.SetToolTip(receptionDateLabel, Resources.ToolTipReceptionDate);
-            toolTip.SetToolTip(receptionDateLabel, Resources.ToolTipReceptionDate);
-            whenEmptyCreateRegister.Text = Resources.LabelClickCreateDelivery;
+        private void SetResources()
+        {
+            toggleDetailPanel.ToolTipText = "ToolTipHideDetail".GetUiTranslation();
+            printDetail.ToolTipText = "ToolTipExportRegisterExcel".GetUiTranslation();
+            cancel.ToolTipText = "ToolTipCancel".GetUiTranslation();
+            save.ToolTipText = "ToolTipSave".GetUiTranslation();
+            editDetail.ToolTipText = "ToolTipEdit".GetUiTranslation();
+            createRegister.ToolTipText = "ToolTipNew".GetUiTranslation();
+            toolTip.SetToolTip(registerDateLabel, "ToolTipRegisterDate".GetUiTranslation());
+            documentGroup.Text = "LabelDocument".GetUiTranslation();
+            toolTip.SetToolTip(documentTypeLabel, "ToolTipDocumentType".GetUiTranslation());
+            toolTip.SetToolTip(documentReferenceLabel, "ToolTipDocumentNumber".GetUiTranslation());
+            toolTip.SetToolTip(documentEntityLabel, "ToolTipDocumentEntity".GetUiTranslation());
+            toolTip.SetToolTip(documentDeptLabel, "ToolTipDocumentDept".GetUiTranslation());
+            toolTip.SetToolTip(documentClassLabel, "ToolTipDocumentClass".GetUiTranslation());
+            toolTip.SetToolTip(documentDateLabel, "ToolTipDocumentDate".GetUiTranslation());
+            toolTip.SetToolTip(recipientNameLabel, "ToolTipRecipientName".GetUiTranslation());
+            whenEmptyCreateRegister.Text = "LabelClickCreateDelivery".GetUiTranslation();
         }
 
         #endregion

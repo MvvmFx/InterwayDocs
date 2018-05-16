@@ -222,7 +222,7 @@ namespace Codisa.InterwayDocs.Framework
                 {
                     // hide
 
-                    baseToolTip.SetToolTip(baseToggleSearchArea, Resources.ToolTipShowSearchPanel);
+                    baseToolTip.SetToolTip(baseToggleSearchArea, "ToolTipShowSearchPanel".GetUiTranslation());
                     baseToggleSearchArea.Image = Resources.ArrowDown16;
 
                     // TODO: the following properties should be bound.
@@ -233,7 +233,7 @@ namespace Codisa.InterwayDocs.Framework
                 {
                     // show
 
-                    baseToolTip.SetToolTip(baseToggleSearchArea, Resources.HideSearchPanel);
+                    baseToolTip.SetToolTip(baseToggleSearchArea, "HideSearchPanel".GetUiTranslation());
                     baseToggleSearchArea.Image = Resources.ArrowUp16;
 
                     // TODO: the following properties should be bound.
@@ -315,9 +315,9 @@ namespace Codisa.InterwayDocs.Framework
             if (RootViewModel != null)
             {
                 if (baseSearchPanel.Visible)
-                    baseToolTip.SetToolTip(baseToggleSearchArea, Resources.ToolTipShowSearchPanel);
+                    baseToolTip.SetToolTip(baseToggleSearchArea, "ToolTipShowSearchPanel".GetUiTranslation());
                 else
-                    baseToolTip.SetToolTip(baseToggleSearchArea, Resources.HideSearchPanel);
+                    baseToolTip.SetToolTip(baseToggleSearchArea, "HideSearchPanel".GetUiTranslation());
             }
         }
 

@@ -221,5 +221,15 @@ namespace Codisa.InterwayDocs.Business.Properties {
                 return ResourceManager.GetString("ThreePartsFullText", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Class is in the wrong format.
+        ///The format must be &quot;AAA.AAA&quot;..
+        /// </summary>
+        internal static string WrongClassFormat {
+            get {
+                return ResourceManager.GetString("WrongClassFormat", resourceCulture);
+            }
+        }
     }
 }

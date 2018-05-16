@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Codisa.InterwayDocs.Business.Update;
-using Codisa.InterwayDocs.Properties;
+using Codisa.InterwayDocs.Framework;
 
 namespace Codisa.InterwayDocs.Update
 {
@@ -82,12 +82,12 @@ namespace Codisa.InterwayDocs.Update
 
         private void LogRefreshigDbObjects()
         {
-            AppLogger.GetLogger().Info(string.Format(Resources.RefreshigDbObjects, _appVersion));
+            AppLogger.GetLogger().Info(string.Format("RefreshigDbObjects".GetUiTranslation(), _appVersion));
         }
 
         private void LogApplyingQueryFile(string shortFilename)
         {
-            AppLogger.GetLogger().Info(string.Format(Resources.ApplyingQueryFile, shortFilename));
+            AppLogger.GetLogger().Info(string.Format("ApplyingQueryFile".GetUiTranslation(), shortFilename));
         }
 
         #endregion

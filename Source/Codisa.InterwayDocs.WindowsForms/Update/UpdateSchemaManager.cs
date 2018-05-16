@@ -6,7 +6,7 @@ using Wisej.Web;
 using System.Windows.Forms;
 #endif
 using Codisa.InterwayDocs.Business.Update;
-using Codisa.InterwayDocs.Properties;
+using Codisa.InterwayDocs.Framework;
 
 namespace Codisa.InterwayDocs.Update
 {
@@ -104,12 +104,12 @@ namespace Codisa.InterwayDocs.Update
 
         private void LogUpgradingVersion()
         {
-            AppLogger.GetLogger().Info(string.Format(Resources.UpgradingVersion, _schemaVersion, _appVersion));
+            AppLogger.GetLogger().Info(string.Format("UpgradingVersion".GetUiTranslation(), _schemaVersion, _appVersion));
         }
 
         private void LogEmptySchemaVersionAndQuit()
         {
-            var message = Resources.DatabaseTemperingVersionEmpty;
+            var message = "DatabaseTemperingVersionEmpty".GetUiTranslation();
 
             AppLogger.GetLogger().Error(message);
             ShowFatalErrorAndQuit(message);
@@ -117,7 +117,7 @@ namespace Codisa.InterwayDocs.Update
 
         private void LogWrongSchemaVersionAndQuit()
         {
-            var message = string.Format(Resources.DatabaseTemperingWrongVersion, _schemaVersion);
+            var message = string.Format("DatabaseTemperingWrongVersion".GetUiTranslation(), _schemaVersion);
 
             AppLogger.GetLogger().Error(message);
             ShowFatalErrorAndQuit(message);
@@ -125,7 +125,7 @@ namespace Codisa.InterwayDocs.Update
 
         private void LogNoScriptForVersionAndQuit()
         {
-            var message = string.Format(Resources.NoScriptForVersion, _schemaVersion);
+            var message = string.Format("NoScriptForVersion".GetUiTranslation(), _schemaVersion);
 
             AppLogger.GetLogger().Error(message);
             ShowFatalErrorAndQuit(message);
@@ -133,7 +133,7 @@ namespace Codisa.InterwayDocs.Update
 
         private void ShowFatalErrorAndQuit(string errorMessage)
         {
-            MessageBox.Show(errorMessage, Resources.FatalError, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            MessageBox.Show(errorMessage, "FatalError".GetUiTranslation(), MessageBoxButtons.OK, MessageBoxIcon.Stop);
             throw new Exception("Exit");
         }
 

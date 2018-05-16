@@ -134,20 +134,6 @@
       <Link>ResourceCultureColl.Designer.cs</Link>
       <DependentUpon>ResourceCultureColl.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceCultureInfo.cs">
-      <Link>ResourceCultureInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceCultureInfo.Designer.cs">
-      <Link>ResourceCultureInfo.Designer.cs</Link>
-      <DependentUpon>ResourceCultureInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceCultureList.cs">
-      <Link>ResourceCultureList.cs</Link>
-    </Compile>
-    <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceCultureList.Designer.cs">
-      <Link>ResourceCultureList.Designer.cs</Link>
-      <DependentUpon>ResourceCultureList.cs</DependentUpon>
-    </Compile>
     <Compile Include="..\Codisa.InterwayDocs.Configuration\ResourceInfo.cs">
       <Link>ResourceInfo.cs</Link>
     </Compile>

@@ -1,5 +1,4 @@
 ﻿using System;
-using Codisa.InterwayDocs.Business.Properties;
 using Csla.Core;
 
 namespace Codisa.InterwayDocs.Business.SearchObjects
@@ -25,13 +24,13 @@ namespace Codisa.InterwayDocs.Business.SearchObjects
 
         private void LoadDictionary()
         {
-            _optionsDictionary.Add("Today", Resources.FastDateOptionsToday);
-            _optionsDictionary.Add("Yesterday", Resources.FastDateOptionsYesterday);
-            _optionsDictionary.Add("Last7Days", Resources.FastDateOptionsLast7Days);
-            _optionsDictionary.Add("Last15Days", Resources.FastDateOptionsLast15Days);
-            _optionsDictionary.Add("Last30Days", Resources.FastDateOptionsLast30Days);
-            _optionsDictionary.Add("Last90Days", Resources.FastDateOptionsLast90Days);
-            _optionsDictionary.Add("FreeSearch", Resources.FastDateOptionsFreeSearch);
+            _optionsDictionary.Add("Today", "FastDateOptionsToday".GetTranslation());
+            _optionsDictionary.Add("Yesterday", "FastDateOptionsYesterday".GetTranslation());
+            _optionsDictionary.Add("Last7Days", "FastDateOptionsLast7Days".GetTranslation());
+            _optionsDictionary.Add("Last15Days", "FastDateOptionsLast15Days".GetTranslation());
+            _optionsDictionary.Add("Last30Days", "FastDateOptionsLast30Days".GetTranslation());
+            _optionsDictionary.Add("Last90Days", "FastDateOptionsLast90Days".GetTranslation());
+            _optionsDictionary.Add("FreeSearch", "FastDateOptionsFreeSearch".GetTranslation());
         }
 
         public int GetIndex(string key)

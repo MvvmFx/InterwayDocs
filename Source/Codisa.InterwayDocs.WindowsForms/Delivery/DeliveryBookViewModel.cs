@@ -11,7 +11,6 @@ using Codisa.InterwayDocs.Business;
 using Codisa.InterwayDocs.Business.SearchObjects;
 using Codisa.InterwayDocs.Configuration;
 using Codisa.InterwayDocs.Framework;
-using Codisa.InterwayDocs.Properties;
 using MvvmFx.CaliburnMicro;
 using ApplicationContext = MvvmFx.CaliburnMicro.ApplicationContext;
 
@@ -166,7 +165,7 @@ namespace Codisa.InterwayDocs.Delivery
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, Resources.OperationError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "OperationError".GetUiTranslation(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -221,7 +220,7 @@ namespace Codisa.InterwayDocs.Delivery
 
             _isViewAttached = true;
 
-            DisplayName = Resources.DeliveryBookDisplayName;
+            DisplayName = "DeliveryBookDisplayName".GetUiTranslation();
             ResetHeaderMessage();
             FastDate = Criteria.SelectedFastDateIndex;
             if (!RootViewModel.IsSearchPanelOpen)
@@ -271,7 +270,7 @@ namespace Codisa.InterwayDocs.Delivery
             Criteria.StartDate = startDate;
             Criteria.EndDate = endDate;
 
-            DisplayName = Resources.DeliveryBookDisplayName;
+            DisplayName = "DeliveryBookDisplayName".GetUiTranslation();
             ResetHeaderMessage();
 
             var view = GetView() as IRefreshTranslation;
@@ -309,13 +308,13 @@ namespace Codisa.InterwayDocs.Delivery
 
         private void ResetHeaderMessage()
         {
-            var todayDate = _todayDate.Date.ToString(Resources.DateTimeFormat);
+            var todayDate = _todayDate.Date.ToString("DateTimeFormat".GetUiTranslation());
             var startDate = string.IsNullOrEmpty(Criteria.CriteriaStartDate)
                 ? null
-                : Criteria.CriteriaStartDate.Date.ToString(Resources.DateTimeFormat);
+                : Criteria.CriteriaStartDate.Date.ToString("DateTimeFormat".GetUiTranslation());
             var endDate = string.IsNullOrEmpty(Criteria.CriteriaEndDate)
                 ? null
-                : Criteria.CriteriaEndDate.Date.ToString(Resources.DateTimeFormat);
+                : Criteria.CriteriaEndDate.Date.ToString("DateTimeFormat".GetUiTranslation());
 
             var message = string.Empty;
 
@@ -338,7 +337,7 @@ namespace Codisa.InterwayDocs.Delivery
 
                 message += " ";
 
-                message += Criteria.CriteriaEndDate.Date.ToString(Resources.DateTimeFormat);
+                message += Criteria.CriteriaEndDate.Date.ToString("DateTimeFormat".GetUiTranslation());
             }
 
             HeaderMessage = message;
@@ -389,7 +388,7 @@ namespace Codisa.InterwayDocs.Delivery
 
         protected override void OnError(Exception error)
         {
-            MessageBox.Show(error.Message, Resources.OperationError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(error.Message, "OperationError".GetUiTranslation(), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         /// <summary>Called when activating.</summary>
@@ -469,7 +468,7 @@ namespace Codisa.InterwayDocs.Delivery
         public void PrintList()
         {
             PrintBook.DoPrintBook(this, ConfigurationList, _refreshCriteria, _refreshDateTime,
-                5, Resources.DeliveryBookShortName, Resources.DeliveryBookDisplayName);
+                5, "DeliveryBookShortName".GetUiTranslation(), "DeliveryBookDisplayName".GetUiTranslation());
         }
 
         private bool _canPrintList;

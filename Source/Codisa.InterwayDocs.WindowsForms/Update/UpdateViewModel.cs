@@ -7,7 +7,7 @@ using Wisej.Web;
 using System.Windows.Forms;
 #endif
 using Codisa.InterwayDocs.Business.Update;
-using Codisa.InterwayDocs.Properties;
+using Codisa.InterwayDocs.Framework;
 
 namespace Codisa.InterwayDocs.Update
 {
@@ -80,7 +80,7 @@ namespace Codisa.InterwayDocs.Update
 
         private void ShowFatalErrorAndQuit(string errorMessage)
         {
-            MessageBox.Show(errorMessage, Resources.FatalError, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            MessageBox.Show(errorMessage, "FatalError".GetUiTranslation(), MessageBoxButtons.OK, MessageBoxIcon.Stop);
             throw new Exception("Exit");
         }
     }

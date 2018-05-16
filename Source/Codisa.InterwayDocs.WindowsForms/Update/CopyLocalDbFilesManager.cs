@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using Codisa.InterwayDocs.Properties;
+using Codisa.InterwayDocs.Framework;
 
 namespace Codisa.InterwayDocs.Update
 {
@@ -50,12 +50,12 @@ namespace Codisa.InterwayDocs.Update
 
         private static void LogCopyDatabaseFiles()
         {
-            AppLogger.GetLogger().Info(Resources.CopyDatabaseFiles);
+            AppLogger.GetLogger().Info("CopyDatabaseFiles".GetUiTranslation());
         }
 
         private static void LogMissingDbFile(string filePath)
         {
-            AppLogger.GetLogger().Info(string.Format(Resources.MissingDatabaseFile, filePath));
+            AppLogger.GetLogger().Info(string.Format("MissingDatabaseFile".GetUiTranslation(), filePath));
         }
 
         #endregion

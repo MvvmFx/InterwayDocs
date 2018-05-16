@@ -52,7 +52,7 @@ namespace Codisa.InterwayDocs.Rules
         /// </returns>
         protected override string GetMessage()
         {
-            return HasMessageDelegate ? base.GetMessage() : "{0} está no formato errado.\r\nO formato deve ser \"AAA.AAA\".";
+            return HasMessageDelegate ? base.GetMessage() : "Class is in the wrong format.\r\nThe format must be \"AAA.AAA\".";
         }
 
         /// <summary>

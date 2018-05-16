@@ -7,7 +7,6 @@ using System.Windows.Forms;
 #endif
 using Codisa.InterwayDocs.Business;
 using Codisa.InterwayDocs.Configuration;
-using Codisa.InterwayDocs.Properties;
 using Csla;
 using NPOI.HSSF.Util;
 using NPOI.SS.UserModel;
@@ -99,12 +98,12 @@ namespace Codisa.InterwayDocs.Framework
                 OverwritePrompt = true,
                 SupportMultiDottedExtensions = false,
                 AddExtension = true,
-                Filter = Resources.ExcelWorkbook,
+                Filter = "ExcelWorkbook".GetUiTranslation(),
                 DefaultExt = ".xlsx",
                 FileName = string.Format("{0} {1}-{2}",
                     _filePrefix,
                     _registerId,
-                    _refreshDateTime.ToString(Resources.FilenameDateTimeFormat))
+                    _refreshDateTime.ToString("FilenameDateTimeFormat".GetUiTranslation()))
             })
             {
                 var result = diag.ShowDialog();
@@ -116,7 +115,7 @@ namespace Codisa.InterwayDocs.Framework
 #else
             _fileName = string.Format("{0}-{1}.xlsx",
                 _filePrefix,
-                _refreshDateTime.ToString(Resources.FilenameDateTimeFormat));
+                _refreshDateTime.ToString("FilenameDateTimeFormat".GetUiTranslation()));
 #endif
             return true;
         }
@@ -218,7 +217,7 @@ namespace Codisa.InterwayDocs.Framework
             _dateGridStyle.SetBorderColor(BorderSide.BOTTOM, myBlueColour);
             _dateGridStyle.DataFormat = _workbook.GetCreationHelper()
                 .CreateDataFormat()
-                .GetFormat(Resources.DateTimeFormat);
+                .GetFormat("DateTimeFormat".GetUiTranslation());
             _dateGridStyle.Alignment = HorizontalAlignment.Left;
             _dateGridStyle.SetVerticalAlignment((short) VerticalAlignment.Top);
         }
@@ -365,7 +364,7 @@ namespace Codisa.InterwayDocs.Framework
                     friendlyName = property.FriendlyName;
             }
 
-            var value = string.Format(Resources.RegisterReportTitle,
+            var value = string.Format("RegisterReportTitle".GetUiTranslation(),
                 _title,
                 friendlyName,
                 _registerId,
@@ -373,7 +372,7 @@ namespace Codisa.InterwayDocs.Framework
 
             var titleLabel = row.CreateCell(0) as XSSFCell;
             titleLabel.SetCellType(CellType.String);
-            titleLabel.SetCellValue(Resources.CommunReportTitle);
+            titleLabel.SetCellValue("CommunReportTitle".GetUiTranslation());
             titleLabel.CellStyle = _generalStyle;
 
             var valueLabel = row.CreateCell(1) as XSSFCell;
@@ -390,7 +389,7 @@ namespace Codisa.InterwayDocs.Framework
 
             var titleLabel = row.CreateCell(0) as XSSFCell;
             titleLabel.SetCellType(CellType.String);
-            titleLabel.SetCellValue(Resources.ReportLabelAudit);
+            titleLabel.SetCellValue("ReportLabelAudit".GetUiTranslation());
             titleLabel.CellStyle = _generalStyle;
 
             var valueLabel = row.CreateCell(1) as XSSFCell;

@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 using Csla;
 using Csla.Data;
-using Codisa.InterwayDocs.Business.Properties;
 using Codisa.InterwayDocs.Rules;
 
 namespace Codisa.InterwayDocs.Business.SearchObjects
@@ -136,13 +135,13 @@ namespace Codisa.InterwayDocs.Business.SearchObjects
             // Property Business Rules
 
             // StartDate
-            BusinessRules.AddRule(new DateNotInFuture(StartDateProperty) { MessageDelegate = () => Resources.DateNotInFuture });
+            BusinessRules.AddRule(new DateNotInFuture(StartDateProperty) { MessageDelegate = () => "DateNotInFuture".GetTranslation() });
             // EndDate
-            BusinessRules.AddRule(new DateNotInFuture(EndDateProperty) { MessageDelegate = () => Resources.DateNotInFuture });
-            BusinessRules.AddRule(new GreaterThanOrEqual(EndDateProperty, StartDateProperty) { MessageDelegate = () => Resources.EndDateGreaterThanOrEqualStartDate, Priority = 1 });
+            BusinessRules.AddRule(new DateNotInFuture(EndDateProperty) { MessageDelegate = () => "DateNotInFuture".GetTranslation() });
+            BusinessRules.AddRule(new GreaterThanOrEqual(EndDateProperty, StartDateProperty) { MessageDelegate = () => "EndDateGreaterThanOrEqualStartDate".GetTranslation(), Priority = 1 });
             // FullText
             BusinessRules.AddRule(new CollapseWhiteSpace(FullTextProperty));
-            BusinessRules.AddRule(new ThreePartsFullText(FullTextProperty) { MessageDelegate = () => Resources.ThreePartsFullText, Priority = 1 });
+            BusinessRules.AddRule(new ThreePartsFullText(FullTextProperty) { MessageDelegate = () => "ThreePartsFullText".GetTranslation(), Priority = 1 });
             // SelectedFastDateIndex
             BusinessRules.AddRule(new FastDateToDateRange(SelectedFastDateIndexProperty));
 
