@@ -210,9 +210,6 @@
     <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\IRefreshTranslation.cs">
       <Link>Framework\IRefreshTranslation.cs</Link>
     </Compile>
-    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\Languages.cs">
-      <Link>Framework\Languages.cs</Link>
-    </Compile>
     <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\PrintBook.cs">
       <Link>Framework\PrintBook.cs</Link>
     </Compile>

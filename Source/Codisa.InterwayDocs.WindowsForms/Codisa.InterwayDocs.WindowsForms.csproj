@@ -180,7 +180,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Framework\IRefreshTranslation.cs" />
-    <Compile Include="Framework\Languages.cs" />
     <Compile Include="Framework\PrintBook.cs" />
     <Compile Include="Framework\PrintRecord.cs" />
     <Compile Include="Framework\Show.cs" />
