@@ -23,7 +23,7 @@ namespace Codisa.InterwayDocs.Update
 
         public UpdateViewModel()
         {
-            ScriptFolderPath = AppDomain.CurrentDomain.BaseDirectory + @"Scripts-1.3.7\";
+            /*ScriptFolderPath = AppDomain.CurrentDomain.BaseDirectory + @"Scripts-1.3.7\";
 
             CopyLocalDbFilesManager.DoCopy("InterwayDocs", this);
 
@@ -60,7 +60,7 @@ namespace Codisa.InterwayDocs.Update
             if (updateSchemaManager != null && updateSchemaManager.SchemaUpdated)
             {
                 var refreshObjectsManager = new RefreshObjectsManager(appVersion, this);
-            }
+            }*/
         }
 
         internal void WriteNewSchemaVersion(string appVersion)
