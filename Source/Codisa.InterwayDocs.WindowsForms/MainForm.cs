@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
+using Codisa.InterwayDocs.Configuration;
 using Codisa.InterwayDocs.Framework;
 using MvvmFx.CaliburnMicro;
 using MvvmFx.Bindings.Data;
@@ -34,22 +35,24 @@ namespace Codisa.InterwayDocs
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            foreach (var lang in Languages.LanguageList)
+            var languages = LanguageList.GetLanguageList();
+            foreach (var lang in languages)
             {
                 language.Items.Add(lang.Name);
             }
 
-            language.SelectedIndex = Languages.GetIndexOfUICode(ApplicationContext.UICulture);
+            language.SelectedIndex = languages.FindLanguageInfoByUICulture(ApplicationContext.UICulture).Index;
         }
 
         private void language_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var uICultureIndex = Languages.GetIndexOfUICode(ApplicationContext.UICulture);
+            var languages = LanguageList.GetLanguageList();
+            var uICultureIndex = languages.FindLanguageInfoByUICulture(ApplicationContext.UICulture).Index;
 
             if (uICultureIndex == language.SelectedIndex)
                 return;
 
-            ApplicationContext.UICulture = Languages.LanguageList[language.SelectedIndex].UICode;
+            ApplicationContext.UICulture = languages[language.SelectedIndex].UICulture;
 
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(ApplicationContext.UICulture);
 

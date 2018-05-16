@@ -57,42 +57,6 @@
     <Content Include="..\Codisa.InterwayDocs.WindowsForms\Release Notes.txt">
       <Link>Release Notes.txt</Link>
     </Content>
-    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\ApplyTo-1.3.6.sql">
-      <Link>Scripts-1.3.7\ApplyTo-1.3.6.sql</Link>
-    </Content>
-    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\DeliveryRegister.sql">
-      <Link>Scripts-1.3.7\DeliveryRegister.sql</Link>
-    </Content>
-    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\DeliveryView.sql">
-      <Link>Scripts-1.3.7\DeliveryView.sql</Link>
-    </Content>
-    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\IncomingRegister.sql">
-      <Link>Scripts-1.3.7\IncomingRegister.sql</Link>
-    </Content>
-    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\IncomingView.sql">
-      <Link>Scripts-1.3.7\IncomingView.sql</Link>
-    </Content>
-    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\OutgoingRegister.sql">
-      <Link>Scripts-1.3.7\OutgoingRegister.sql</Link>
-    </Content>
-    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\OutgoingView.sql">
-      <Link>Scripts-1.3.7\OutgoingView.sql</Link>
-    </Content>
-    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\PropertyConfiguration.sql">
-      <Link>Scripts-1.3.7\PropertyConfiguration.sql</Link>
-    </Content>
-    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\PropertyConfigurationColl.sql">
-      <Link>Scripts-1.3.7\PropertyConfigurationColl.sql</Link>
-    </Content>
-    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\PropertyConfigurationList.sql">
-      <Link>Scripts-1.3.7\PropertyConfigurationList.sql</Link>
-    </Content>
-    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\PropertyFriendlyName.sql">
-      <Link>Scripts-1.3.7\PropertyFriendlyName.sql</Link>
-    </Content>
-    <Content Include="..\Codisa.InterwayDocs.WindowsForms\Scripts-1.3.7\PropertyRequiredList.sql">
-      <Link>Scripts-1.3.7\PropertyRequiredList.sql</Link>
-    </Content>
     <Content Include="About.en.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -209,9 +173,6 @@
     </Compile>
     <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\IRefreshTranslation.cs">
       <Link>Framework\IRefreshTranslation.cs</Link>
-    </Compile>
-    <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\Languages.cs">
-      <Link>Framework\Languages.cs</Link>
     </Compile>
     <Compile Include="..\Codisa.InterwayDocs.WindowsForms\Framework\PrintBook.cs">
       <Link>Framework\PrintBook.cs</Link>

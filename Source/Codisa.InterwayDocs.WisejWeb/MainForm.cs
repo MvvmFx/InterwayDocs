@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using Codisa.InterwayDocs.Configuration;
 using Codisa.InterwayDocs.Framework;
 using MvvmFx.Bindings.Data;
 using MvvmFx.CaliburnMicro;
@@ -30,22 +31,24 @@ namespace Codisa.InterwayDocs
         {
             SetResources();
 
-            foreach (var lang in Languages.LanguageList)
+            var languages = LanguageList.GetLanguageList();
+            foreach (var lang in languages)
             {
                 language.Items.Add(lang.Name);
             }
 
-            language.SelectedIndex = Languages.GetIndexOfUICode(ApplicationContext.UICulture);
+            language.SelectedIndex = languages.FindLanguageInfoByUICulture(ApplicationContext.UICulture).Index;
         }
 
         private void language_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var uICultureIndex = Languages.GetIndexOfUICode(ApplicationContext.UICulture);
+            var languages = LanguageList.GetLanguageList();
+            var uICultureIndex = languages.FindLanguageInfoByUICulture(ApplicationContext.UICulture).Index;
 
             if (uICultureIndex == language.SelectedIndex)
                 return;
 
-            ApplicationContext.UICulture = Languages.LanguageList[language.SelectedIndex].UICode;
+            ApplicationContext.UICulture = languages[language.SelectedIndex].UICulture;
 
             ApplicationBase.Navigate(ApplicationBase.Url + "?lang=" + ApplicationContext.UICulture);
         }
@@ -131,7 +134,8 @@ namespace Codisa.InterwayDocs
         {
             SetResources();
 
-            language.SelectedIndex = Languages.GetIndexOfUICode(ApplicationContext.UICulture);
+            language.SelectedIndex = LanguageList.GetLanguageList()
+                .FindLanguageInfoByUICulture(ApplicationContext.UICulture).Index;
         }
 
         private void SetResources()

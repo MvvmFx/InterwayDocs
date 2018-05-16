@@ -3611,6 +3611,625 @@
       <GenerateDataPortalInsert>false</GenerateDataPortalInsert>
       <GenerateDataPortalUpdate>false</GenerateDataPortalUpdate>
       <GenerateDataPortalDelete>true</GenerateDataPortalDelete>
+      <GenerateSprocs>false</GenerateSprocs>
+      <GenerateInlineQueries />
+      <DataSetLoadingScheme>false</DataSetLoadingScheme>
+      <UseCustomLoading>false</UseCustomLoading>
+      <ObjectType>ReadOnlyCollection</ObjectType>
+      <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
+      <ObjectName>LanguageList</ObjectName>
+      <CslaBaseClass>None</CslaBaseClass>
+      <IsGenericType>false</IsGenericType>
+      <GenericArguments />
+      <ObjectNamespace>Codisa.InterwayDocs.Configuration</ObjectNamespace>
+      <ClassVisibility>Public</ClassVisibility>
+      <ClassSummary />
+      <ClassRemarks />
+      <Namespaces />
+      <Attributes />
+      <Interfaces />
+      <InheritedType>
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <IsGenericType>false</IsGenericType>
+      </InheritedType>
+      <InheritedTypeWinForms>
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <IsGenericType>false</IsGenericType>
+      </InheritedTypeWinForms>
+      <UseUnitOfWorkType />
+      <ConstructorVisibility>Default</ConstructorVisibility>
+      <Folder />
+      <FileName>LanguageList</FileName>
+      <UnitOfWorkProperties />
+      <ChildCollectionProperties />
+      <ChildProperties />
+      <InheritedChildCollectionProperties />
+      <InheritedChildProperties />
+      <ConvertValueProperties />
+      <UpdateValueProperties />
+      <InheritedValueProperties />
+      <ValueProperties />
+      <Singleton>false</Singleton>
+      <EditOnDemand>false</EditOnDemand>
+      <CheckRulesOnFetch>true</CheckRulesOnFetch>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
+      <CriteriaObjects>
+        <Criteria>
+          <Name>CriteriaGet</Name>
+          <CriteriaClassMode>Simple</CriteriaClassMode>
+          <NestedClass>true</NestedClass>
+          <Properties />
+          <CreateOptions>
+            <Factory>false</Factory>
+            <AddRemove>false</AddRemove>
+            <DataPortal>false</DataPortal>
+            <RunLocal>false</RunLocal>
+            <Procedure>false</Procedure>
+            <ProcedureName />
+            <FactorySuffix />
+          </CreateOptions>
+          <GetOptions>
+            <Factory>true</Factory>
+            <AddRemove>false</AddRemove>
+            <DataPortal>true</DataPortal>
+            <RunLocal>false</RunLocal>
+            <Procedure>true</Procedure>
+            <ProcedureName>GetLanguageColl</ProcedureName>
+            <FactorySuffix />
+          </GetOptions>
+          <DeleteOptions>
+            <Factory>false</Factory>
+            <AddRemove>false</AddRemove>
+            <DataPortal>false</DataPortal>
+            <RunLocal>false</RunLocal>
+            <Procedure>false</Procedure>
+            <ProcedureName />
+            <FactorySuffix />
+          </DeleteOptions>
+          <Summary />
+          <Remarks />
+        </Criteria>
+      </CriteriaObjects>
+      <ParentType />
+      <ParentProperties />
+      <ParentInsertOnly>false</ParentInsertOnly>
+      <IsPolymorphic>false</IsPolymorphic>
+      <ItemType>LanguageInfo</ItemType>
+      <ContainsItem>false</ContainsItem>
+      <UniqueItems>false</UniqueItems>
+      <FindMethodsParameters>
+        <Property xsi:type="ValueProperty">
+          <ParameterName>UICulture</ParameterName>
+          <Name>UICulture</Name>
+          <PropertyType>String</PropertyType>
+          <ReadOnly>true</ReadOnly>
+          <Nullable>false</Nullable>
+          <Summary />
+          <Remarks />
+          <DbBindColumn>
+            <ColumnOriginType>Table</ColumnOriginType>
+            <DataType>String</DataType>
+            <NativeType>varchar</NativeType>
+            <Size>5</Size>
+            <SpResultIndex>0</SpResultIndex>
+            <ColumnName>UICulture</ColumnName>
+            <IsPrimaryKey>true</IsPrimaryKey>
+            <ObjectName>Languages</ObjectName>
+            <CatalogName>InterwayDocs</CatalogName>
+            <SchemaName>dbo</SchemaName>
+            <IsNullable>false</IsNullable>
+            <IsIdentity>false</IsIdentity>
+          </DbBindColumn>
+          <DataAccess>ReadWrite</DataAccess>
+          <PrimaryKey>UserProvidedPK</PrimaryKey>
+          <FKConstraint />
+          <FriendlyName>UICulture</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
+          <DeclarationMode>Managed</DeclarationMode>
+          <BackingFieldType>Empty</BackingFieldType>
+          <DefaultValue />
+          <Attributes />
+          <Interfaces />
+          <BusinessRules />
+          <AuthzProvider>IsInRole</AuthzProvider>
+          <ReadRoles />
+          <WriteRoles />
+          <ReadAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </ReadAuthzRuleType>
+          <WriteAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </WriteAuthzRuleType>
+          <Access>IsPublic</Access>
+          <PropSetAccessibility>Default</PropSetAccessibility>
+          <Undoable>false</Undoable>
+        </Property>
+      </FindMethodsParameters>
+      <UpdaterType />
+      <AllowNew>false</AllowNew>
+      <AllowEdit>false</AllowEdit>
+      <AllowRemove>false</AllowRemove>
+      <AddParentReference>false</AddParentReference>
+      <SimpleCacheOptions>DataPortal</SimpleCacheOptions>
+      <InvalidateCache />
+      <ValueColumn />
+      <NameColumn />
+      <PersistenceType>SqlConnectionManager</PersistenceType>
+      <CommandTimeout />
+      <TransactionType>ADO</TransactionType>
+      <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
+      <InsertProcedureName />
+      <SelectProcedureName />
+      <UpdateProcedureName />
+      <DeleteProcedureName />
+      <DeleteUseTimestamp>false</DeleteUseTimestamp>
+      <RemoveItem>true</RemoveItem>
+      <ToStringProperty />
+      <BusinessRules />
+      <AuthzProvider>IsInRole</AuthzProvider>
+      <NewRoles />
+      <GetRoles />
+      <UpdateRoles />
+      <DeleteRoles />
+      <NewAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </NewAuthzRuleType>
+      <GetAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </GetAuthzRuleType>
+      <UpdateAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </UpdateAuthzRuleType>
+      <DeleteAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </DeleteAuthzRuleType>
+    </CslaObjectInfo>
+    <CslaObjectInfo>
+      <Generate>true</Generate>
+      <GenerateConstructor>true</GenerateConstructor>
+      <GenerateFactoryMethods>true</GenerateFactoryMethods>
+      <GenerateDataAccessRegion>true</GenerateDataAccessRegion>
+      <GenerateDataPortalInsert>false</GenerateDataPortalInsert>
+      <GenerateDataPortalUpdate>false</GenerateDataPortalUpdate>
+      <GenerateDataPortalDelete>false</GenerateDataPortalDelete>
+      <GenerateSprocs>true</GenerateSprocs>
+      <GenerateInlineQueries />
+      <DataSetLoadingScheme>false</DataSetLoadingScheme>
+      <UseCustomLoading>false</UseCustomLoading>
+      <ObjectType>ReadOnlyObject</ObjectType>
+      <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
+      <ObjectName>LanguageInfo</ObjectName>
+      <CslaBaseClass>None</CslaBaseClass>
+      <IsGenericType>false</IsGenericType>
+      <GenericArguments />
+      <ObjectNamespace>Codisa.InterwayDocs.Configuration</ObjectNamespace>
+      <ClassVisibility>Public</ClassVisibility>
+      <ClassSummary />
+      <ClassRemarks />
+      <Namespaces />
+      <Attributes />
+      <Interfaces />
+      <InheritedType>
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <IsGenericType>false</IsGenericType>
+      </InheritedType>
+      <InheritedTypeWinForms>
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <IsGenericType>false</IsGenericType>
+      </InheritedTypeWinForms>
+      <UseUnitOfWorkType />
+      <ConstructorVisibility>Default</ConstructorVisibility>
+      <Folder />
+      <FileName>LanguageInfo</FileName>
+      <UnitOfWorkProperties />
+      <ChildCollectionProperties />
+      <ChildProperties />
+      <InheritedChildCollectionProperties />
+      <InheritedChildProperties />
+      <ConvertValueProperties />
+      <UpdateValueProperties />
+      <InheritedValueProperties />
+      <ValueProperties>
+        <ValueProperty>
+          <ParameterName>UICulture</ParameterName>
+          <Name>UICulture</Name>
+          <PropertyType>String</PropertyType>
+          <ReadOnly>true</ReadOnly>
+          <Nullable>false</Nullable>
+          <Summary />
+          <Remarks />
+          <DbBindColumn>
+            <ColumnOriginType>Table</ColumnOriginType>
+            <DataType>String</DataType>
+            <NativeType>varchar</NativeType>
+            <Size>5</Size>
+            <SpResultIndex>0</SpResultIndex>
+            <ColumnName>UICulture</ColumnName>
+            <IsPrimaryKey>true</IsPrimaryKey>
+            <ObjectName>Languages</ObjectName>
+            <CatalogName>InterwayDocs</CatalogName>
+            <SchemaName>dbo</SchemaName>
+            <IsNullable>false</IsNullable>
+            <IsIdentity>false</IsIdentity>
+          </DbBindColumn>
+          <DataAccess>ReadWrite</DataAccess>
+          <PrimaryKey>UserProvidedPK</PrimaryKey>
+          <FKConstraint />
+          <FriendlyName>UICulture</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
+          <DeclarationMode>Managed</DeclarationMode>
+          <BackingFieldType>Empty</BackingFieldType>
+          <DefaultValue />
+          <Attributes />
+          <Interfaces />
+          <BusinessRules />
+          <AuthzProvider>IsInRole</AuthzProvider>
+          <ReadRoles />
+          <WriteRoles />
+          <ReadAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </ReadAuthzRuleType>
+          <WriteAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </WriteAuthzRuleType>
+          <Access>IsPublic</Access>
+          <PropSetAccessibility>Default</PropSetAccessibility>
+          <Undoable>false</Undoable>
+        </ValueProperty>
+        <ValueProperty>
+          <ParameterName>Name</ParameterName>
+          <Name>Name</Name>
+          <PropertyType>String</PropertyType>
+          <ReadOnly>true</ReadOnly>
+          <Nullable>false</Nullable>
+          <Summary />
+          <Remarks />
+          <DbBindColumn>
+            <ColumnOriginType>Table</ColumnOriginType>
+            <DataType>StringFixedLength</DataType>
+            <NativeType>nchar</NativeType>
+            <Size>10</Size>
+            <SpResultIndex>0</SpResultIndex>
+            <ColumnName>Name</ColumnName>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <ObjectName>Languages</ObjectName>
+            <CatalogName>InterwayDocs</CatalogName>
+            <SchemaName>dbo</SchemaName>
+            <IsNullable>false</IsNullable>
+            <IsIdentity>false</IsIdentity>
+          </DbBindColumn>
+          <DataAccess>ReadWrite</DataAccess>
+          <PrimaryKey>Default</PrimaryKey>
+          <FKConstraint />
+          <FriendlyName>Name</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
+          <DeclarationMode>Managed</DeclarationMode>
+          <BackingFieldType>Empty</BackingFieldType>
+          <DefaultValue />
+          <Attributes />
+          <Interfaces />
+          <BusinessRules />
+          <AuthzProvider>IsInRole</AuthzProvider>
+          <ReadRoles />
+          <WriteRoles />
+          <ReadAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </ReadAuthzRuleType>
+          <WriteAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </WriteAuthzRuleType>
+          <Access>IsPublic</Access>
+          <PropSetAccessibility>Default</PropSetAccessibility>
+          <Undoable>true</Undoable>
+        </ValueProperty>
+        <ValueProperty>
+          <ParameterName>Index</ParameterName>
+          <Name>Index</Name>
+          <PropertyType>Int32</PropertyType>
+          <ReadOnly>true</ReadOnly>
+          <Nullable>false</Nullable>
+          <Summary />
+          <Remarks />
+          <DbBindColumn>
+            <ColumnOriginType>None</ColumnOriginType>
+            <DataType>String</DataType>
+            <NativeType />
+            <Size>0</Size>
+            <SpResultIndex>0</SpResultIndex>
+            <ColumnName />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsNullable>false</IsNullable>
+            <IsIdentity>false</IsIdentity>
+          </DbBindColumn>
+          <DataAccess>ReadWrite</DataAccess>
+          <PrimaryKey>Default</PrimaryKey>
+          <FKConstraint />
+          <FriendlyName>Index</FriendlyName>
+          <IsDatabaseBound>false</IsDatabaseBound>
+          <CustomPropertyType />
+          <DeclarationMode>Managed</DeclarationMode>
+          <BackingFieldType>Empty</BackingFieldType>
+          <DefaultValue />
+          <Attributes />
+          <Interfaces />
+          <BusinessRules />
+          <AuthzProvider>IsInRole</AuthzProvider>
+          <ReadRoles />
+          <WriteRoles />
+          <ReadAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </ReadAuthzRuleType>
+          <WriteAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </WriteAuthzRuleType>
+          <Access>IsPublic</Access>
+          <PropSetAccessibility>Default</PropSetAccessibility>
+          <Undoable>true</Undoable>
+        </ValueProperty>
+      </ValueProperties>
+      <Singleton>false</Singleton>
+      <EditOnDemand>false</EditOnDemand>
+      <CheckRulesOnFetch>false</CheckRulesOnFetch>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
+      <CriteriaObjects />
+      <ParentType>LanguageList</ParentType>
+      <ParentProperties />
+      <ParentInsertOnly>true</ParentInsertOnly>
+      <IsPolymorphic>false</IsPolymorphic>
+      <ItemType />
+      <ContainsItem>true</ContainsItem>
+      <UniqueItems>false</UniqueItems>
+      <FindMethodsParameters />
+      <UpdaterType />
+      <AllowNew>false</AllowNew>
+      <AllowEdit>false</AllowEdit>
+      <AllowRemove>false</AllowRemove>
+      <AddParentReference>false</AddParentReference>
+      <SimpleCacheOptions>None</SimpleCacheOptions>
+      <InvalidateCache />
+      <ValueColumn />
+      <NameColumn />
+      <PersistenceType>SqlConnectionManager</PersistenceType>
+      <CommandTimeout />
+      <TransactionType>ADO</TransactionType>
+      <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
+      <InsertProcedureName />
+      <SelectProcedureName />
+      <UpdateProcedureName />
+      <DeleteProcedureName />
+      <DeleteUseTimestamp>false</DeleteUseTimestamp>
+      <RemoveItem>true</RemoveItem>
+      <ToStringProperty />
+      <BusinessRules />
+      <AuthzProvider>IsInRole</AuthzProvider>
+      <NewRoles />
+      <GetRoles />
+      <UpdateRoles />
+      <DeleteRoles />
+      <NewAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </NewAuthzRuleType>
+      <GetAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </GetAuthzRuleType>
+      <UpdateAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </UpdateAuthzRuleType>
+      <DeleteAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </DeleteAuthzRuleType>
+    </CslaObjectInfo>
+    <CslaObjectInfo>
+      <Generate>true</Generate>
+      <GenerateConstructor>true</GenerateConstructor>
+      <GenerateFactoryMethods>true</GenerateFactoryMethods>
+      <GenerateDataAccessRegion>true</GenerateDataAccessRegion>
+      <GenerateDataPortalInsert>false</GenerateDataPortalInsert>
+      <GenerateDataPortalUpdate>false</GenerateDataPortalUpdate>
+      <GenerateDataPortalDelete>true</GenerateDataPortalDelete>
       <GenerateSprocs>true</GenerateSprocs>
       <GenerateInlineQueries />
       <DataSetLoadingScheme>false</DataSetLoadingScheme>
@@ -3662,7 +4281,60 @@
           <Name>CriteriaGet</Name>
           <CriteriaClassMode>Simple</CriteriaClassMode>
           <NestedClass>true</NestedClass>
-          <Properties />
+          <Properties>
+            <Property>
+              <ParameterName>ResourceType</ParameterName>
+              <Name>ResourceType</Name>
+              <PropertyType>String</PropertyType>
+              <ReadOnly>true</ReadOnly>
+              <Nullable>false</Nullable>
+              <Summary />
+              <Remarks />
+              <DbBindColumn>
+                <ColumnOriginType>Table</ColumnOriginType>
+                <DataType>String</DataType>
+                <NativeType>varchar</NativeType>
+                <Size>50</Size>
+                <SpResultIndex>0</SpResultIndex>
+                <ColumnName>ResourceType</ColumnName>
+                <IsPrimaryKey>false</IsPrimaryKey>
+                <ObjectName>Resources</ObjectName>
+                <CatalogName>InterwayDocs</CatalogName>
+                <SchemaName>dbo</SchemaName>
+                <IsNullable>false</IsNullable>
+                <IsIdentity>false</IsIdentity>
+              </DbBindColumn>
+              <CustomPropertyType />
+              <ParameterValue />
+              <InlineQueryParameter>Plain</InlineQueryParameter>
+            </Property>
+            <Property>
+              <ParameterName>UICulture</ParameterName>
+              <Name>UICulture</Name>
+              <PropertyType>String</PropertyType>
+              <ReadOnly>true</ReadOnly>
+              <Nullable>false</Nullable>
+              <Summary />
+              <Remarks />
+              <DbBindColumn>
+                <ColumnOriginType>Table</ColumnOriginType>
+                <DataType>String</DataType>
+                <NativeType>varchar</NativeType>
+                <Size>5</Size>
+                <SpResultIndex>0</SpResultIndex>
+                <ColumnName>UICulture</ColumnName>
+                <IsPrimaryKey>true</IsPrimaryKey>
+                <ObjectName>ResourceTranslations</ObjectName>
+                <CatalogName>InterwayDocs</CatalogName>
+                <SchemaName>dbo</SchemaName>
+                <IsNullable>false</IsNullable>
+                <IsIdentity>false</IsIdentity>
+              </DbBindColumn>
+              <CustomPropertyType />
+              <ParameterValue />
+              <InlineQueryParameter>Plain</InlineQueryParameter>
+            </Property>
+          </Properties>
           <CreateOptions>
             <Factory>false</Factory>
             <AddRemove>false</AddRemove>
@@ -3699,7 +4371,7 @@
       <ParentInsertOnly>false</ParentInsertOnly>
       <IsPolymorphic>false</IsPolymorphic>
       <ItemType>ResourceInfo</ItemType>
-      <ContainsItem>true</ContainsItem>
+      <ContainsItem>false</ContainsItem>
       <UniqueItems>false</UniqueItems>
       <FindMethodsParameters />
       <UpdaterType />
@@ -3831,135 +4503,7 @@
       <Folder />
       <FileName>ResourceInfo</FileName>
       <UnitOfWorkProperties />
-      <ChildCollectionProperties>
-        <ChildProperty>
-          <ParameterName>ResourceCultures</ParameterName>
-          <Name>ResourceCultures</Name>
-          <PropertyType>Empty</PropertyType>
-          <ReadOnly>true</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <FriendlyName>Resource Cultures</FriendlyName>
-          <TypeName>ResourceCultureInfo</TypeName>
-          <DeclarationMode>Managed</DeclarationMode>
-          <ChildUpdateOrder>0</ChildUpdateOrder>
-          <Attributes />
-          <Interfaces />
-          <BusinessRules />
-          <AuthzProvider>IsInRole</AuthzProvider>
-          <ReadRoles />
-          <WriteRoles />
-          <ReadAuthzRuleType>
-            <BaseRuleProperties />
-            <ObjectName />
-            <AssemblyFile />
-            <Type />
-            <Name />
-            <NumberGenericParameters>0</NumberGenericParameters>
-            <OriginalGenericParameter1 />
-            <OriginalGenericParameter2 />
-            <GenericParameter1 />
-            <GenericParameter2 />
-            <Constructors />
-            <RuleProperties />
-            <CacheResult>false</CacheResult>
-          </ReadAuthzRuleType>
-          <WriteAuthzRuleType>
-            <BaseRuleProperties />
-            <ObjectName />
-            <AssemblyFile />
-            <Type />
-            <Name />
-            <NumberGenericParameters>0</NumberGenericParameters>
-            <OriginalGenericParameter1 />
-            <OriginalGenericParameter2 />
-            <GenericParameter1 />
-            <GenericParameter2 />
-            <Constructors />
-            <RuleProperties />
-            <CacheResult>false</CacheResult>
-          </WriteAuthzRuleType>
-          <LoadingScheme>ParentLoad</LoadingScheme>
-          <LazyLoad>false</LazyLoad>
-          <ParentLoadProperties>
-            <Property xsi:type="ValueProperty">
-              <ParameterName>ResourceId</ParameterName>
-              <Name>ResourceId</Name>
-              <PropertyType>Int32</PropertyType>
-              <ReadOnly>true</ReadOnly>
-              <Nullable>false</Nullable>
-              <Summary />
-              <Remarks />
-              <DbBindColumn>
-                <ColumnOriginType>Table</ColumnOriginType>
-                <DataType>Int32</DataType>
-                <NativeType>int</NativeType>
-                <Size>10</Size>
-                <SpResultIndex>0</SpResultIndex>
-                <ColumnName>ResourceId</ColumnName>
-                <IsPrimaryKey>true</IsPrimaryKey>
-                <ObjectName>Resources</ObjectName>
-                <CatalogName>InterwayDocs</CatalogName>
-                <SchemaName>dbo</SchemaName>
-                <IsNullable>false</IsNullable>
-                <IsIdentity>true</IsIdentity>
-              </DbBindColumn>
-              <DataAccess>ReadWrite</DataAccess>
-              <PrimaryKey>DBProvidedPK</PrimaryKey>
-              <FKConstraint />
-              <FriendlyName>Resource Id</FriendlyName>
-              <IsDatabaseBound>true</IsDatabaseBound>
-              <CustomPropertyType />
-              <DeclarationMode>Managed</DeclarationMode>
-              <BackingFieldType>Empty</BackingFieldType>
-              <DefaultValue />
-              <Attributes />
-              <Interfaces />
-              <BusinessRules />
-              <AuthzProvider>IsInRole</AuthzProvider>
-              <ReadRoles />
-              <WriteRoles />
-              <ReadAuthzRuleType>
-                <BaseRuleProperties />
-                <ObjectName />
-                <AssemblyFile />
-                <Type />
-                <Name />
-                <NumberGenericParameters>0</NumberGenericParameters>
-                <OriginalGenericParameter1 />
-                <OriginalGenericParameter2 />
-                <GenericParameter1 />
-                <GenericParameter2 />
-                <Constructors />
-                <RuleProperties />
-                <CacheResult>false</CacheResult>
-              </ReadAuthzRuleType>
-              <WriteAuthzRuleType>
-                <BaseRuleProperties />
-                <ObjectName />
-                <AssemblyFile />
-                <Type />
-                <Name />
-                <NumberGenericParameters>0</NumberGenericParameters>
-                <OriginalGenericParameter1 />
-                <OriginalGenericParameter2 />
-                <GenericParameter1 />
-                <GenericParameter2 />
-                <Constructors />
-                <RuleProperties />
-                <CacheResult>false</CacheResult>
-              </WriteAuthzRuleType>
-              <Access>IsPublic</Access>
-              <PropSetAccessibility>Default</PropSetAccessibility>
-              <Undoable>false</Undoable>
-            </Property>
-          </ParentLoadProperties>
-          <LoadParameters />
-          <Access>IsPublic</Access>
-          <Undoable>true</Undoable>
-        </ChildProperty>
-      </ChildCollectionProperties>
+      <ChildCollectionProperties />
       <ChildProperties />
       <InheritedChildCollectionProperties />
       <InheritedChildProperties />
@@ -3967,77 +4511,6 @@
       <UpdateValueProperties />
       <InheritedValueProperties />
       <ValueProperties>
-        <ValueProperty>
-          <ParameterName>ResourceId</ParameterName>
-          <Name>ResourceId</Name>
-          <PropertyType>Int32</PropertyType>
-          <ReadOnly>true</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <DbBindColumn>
-            <ColumnOriginType>Table</ColumnOriginType>
-            <DataType>Int32</DataType>
-            <NativeType>int</NativeType>
-            <Size>10</Size>
-            <SpResultIndex>0</SpResultIndex>
-            <ColumnName>ResourceId</ColumnName>
-            <IsPrimaryKey>true</IsPrimaryKey>
-            <ObjectName>Resources</ObjectName>
-            <CatalogName>InterwayDocs</CatalogName>
-            <SchemaName>dbo</SchemaName>
-            <IsNullable>false</IsNullable>
-            <IsIdentity>true</IsIdentity>
-          </DbBindColumn>
-          <DataAccess>ReadWrite</DataAccess>
-          <PrimaryKey>DBProvidedPK</PrimaryKey>
-          <FKConstraint />
-          <FriendlyName>Resource Id</FriendlyName>
-          <IsDatabaseBound>true</IsDatabaseBound>
-          <CustomPropertyType />
-          <DeclarationMode>Managed</DeclarationMode>
-          <BackingFieldType>Empty</BackingFieldType>
-          <DefaultValue />
-          <Attributes />
-          <Interfaces />
-          <BusinessRules />
-          <AuthzProvider>IsInRole</AuthzProvider>
-          <ReadRoles />
-          <WriteRoles />
-          <ReadAuthzRuleType>
-            <BaseRuleProperties />
-            <ObjectName />
-            <AssemblyFile />
-            <Type />
-            <Name />
-            <NumberGenericParameters>0</NumberGenericParameters>
-            <OriginalGenericParameter1 />
-            <OriginalGenericParameter2 />
-            <GenericParameter1 />
-            <GenericParameter2 />
-            <Constructors />
-            <RuleProperties />
-            <CacheResult>false</CacheResult>
-          </ReadAuthzRuleType>
-          <WriteAuthzRuleType>
-            <BaseRuleProperties />
-            <ObjectName />
-            <AssemblyFile />
-            <Type />
-            <Name />
-            <NumberGenericParameters>0</NumberGenericParameters>
-            <OriginalGenericParameter1 />
-            <OriginalGenericParameter2 />
-            <GenericParameter1 />
-            <GenericParameter2 />
-            <Constructors />
-            <RuleProperties />
-            <CacheResult>false</CacheResult>
-          </WriteAuthzRuleType>
-          <Access>IsPublic</Access>
-          <PropSetAccessibility>Default</PropSetAccessibility>
-          <Undoable>false</Undoable>
-        </ValueProperty>
         <ValueProperty>
           <ParameterName>ResourceType</ParameterName>
           <Name>ResourceType</Name>
@@ -4180,307 +4653,6 @@
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
         </ValueProperty>
-      </ValueProperties>
-      <Singleton>false</Singleton>
-      <EditOnDemand>false</EditOnDemand>
-      <CheckRulesOnFetch>false</CheckRulesOnFetch>
-      <SupportUpdateProperties>false</SupportUpdateProperties>
-      <CriteriaObjects />
-      <ParentType>ResourceList</ParentType>
-      <ParentProperties />
-      <ParentInsertOnly>true</ParentInsertOnly>
-      <IsPolymorphic>false</IsPolymorphic>
-      <ItemType />
-      <ContainsItem>true</ContainsItem>
-      <UniqueItems>false</UniqueItems>
-      <FindMethodsParameters />
-      <UpdaterType />
-      <AllowNew>false</AllowNew>
-      <AllowEdit>false</AllowEdit>
-      <AllowRemove>false</AllowRemove>
-      <AddParentReference>false</AddParentReference>
-      <SimpleCacheOptions>None</SimpleCacheOptions>
-      <InvalidateCache />
-      <ValueColumn />
-      <NameColumn />
-      <PersistenceType>SqlConnectionManager</PersistenceType>
-      <CommandTimeout />
-      <TransactionType>ADO</TransactionType>
-      <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
-      <InsertProcedureName />
-      <SelectProcedureName />
-      <UpdateProcedureName />
-      <DeleteProcedureName />
-      <DeleteUseTimestamp>false</DeleteUseTimestamp>
-      <RemoveItem>true</RemoveItem>
-      <ToStringProperty />
-      <BusinessRules />
-      <AuthzProvider>IsInRole</AuthzProvider>
-      <NewRoles />
-      <GetRoles />
-      <UpdateRoles />
-      <DeleteRoles />
-      <NewAuthzRuleType>
-        <BaseRuleProperties />
-        <ObjectName />
-        <AssemblyFile />
-        <Type />
-        <Name />
-        <NumberGenericParameters>0</NumberGenericParameters>
-        <OriginalGenericParameter1 />
-        <OriginalGenericParameter2 />
-        <GenericParameter1 />
-        <GenericParameter2 />
-        <Constructors />
-        <RuleProperties />
-        <CacheResult>false</CacheResult>
-      </NewAuthzRuleType>
-      <GetAuthzRuleType>
-        <BaseRuleProperties />
-        <ObjectName />
-        <AssemblyFile />
-        <Type />
-        <Name />
-        <NumberGenericParameters>0</NumberGenericParameters>
-        <OriginalGenericParameter1 />
-        <OriginalGenericParameter2 />
-        <GenericParameter1 />
-        <GenericParameter2 />
-        <Constructors />
-        <RuleProperties />
-        <CacheResult>false</CacheResult>
-      </GetAuthzRuleType>
-      <UpdateAuthzRuleType>
-        <BaseRuleProperties />
-        <ObjectName />
-        <AssemblyFile />
-        <Type />
-        <Name />
-        <NumberGenericParameters>0</NumberGenericParameters>
-        <OriginalGenericParameter1 />
-        <OriginalGenericParameter2 />
-        <GenericParameter1 />
-        <GenericParameter2 />
-        <Constructors />
-        <RuleProperties />
-        <CacheResult>false</CacheResult>
-      </UpdateAuthzRuleType>
-      <DeleteAuthzRuleType>
-        <BaseRuleProperties />
-        <ObjectName />
-        <AssemblyFile />
-        <Type />
-        <Name />
-        <NumberGenericParameters>0</NumberGenericParameters>
-        <OriginalGenericParameter1 />
-        <OriginalGenericParameter2 />
-        <GenericParameter1 />
-        <GenericParameter2 />
-        <Constructors />
-        <RuleProperties />
-        <CacheResult>false</CacheResult>
-      </DeleteAuthzRuleType>
-    </CslaObjectInfo>
-    <CslaObjectInfo>
-      <Generate>true</Generate>
-      <GenerateConstructor>true</GenerateConstructor>
-      <GenerateFactoryMethods>true</GenerateFactoryMethods>
-      <GenerateDataAccessRegion>true</GenerateDataAccessRegion>
-      <GenerateDataPortalInsert>false</GenerateDataPortalInsert>
-      <GenerateDataPortalUpdate>false</GenerateDataPortalUpdate>
-      <GenerateDataPortalDelete>true</GenerateDataPortalDelete>
-      <GenerateSprocs>true</GenerateSprocs>
-      <GenerateInlineQueries />
-      <DataSetLoadingScheme>false</DataSetLoadingScheme>
-      <UseCustomLoading>false</UseCustomLoading>
-      <ObjectType>ReadOnlyCollection</ObjectType>
-      <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
-      <ObjectName>ResourceCultureInfo</ObjectName>
-      <CslaBaseClass>None</CslaBaseClass>
-      <IsGenericType>false</IsGenericType>
-      <GenericArguments />
-      <ObjectNamespace>Codisa.InterwayDocs.Configuration</ObjectNamespace>
-      <ClassVisibility>Public</ClassVisibility>
-      <ClassSummary />
-      <ClassRemarks />
-      <Namespaces />
-      <Attributes />
-      <Interfaces />
-      <InheritedType>
-        <ObjectName />
-        <AssemblyFile />
-        <Type />
-        <IsGenericType>false</IsGenericType>
-      </InheritedType>
-      <InheritedTypeWinForms>
-        <ObjectName />
-        <AssemblyFile />
-        <Type />
-        <IsGenericType>false</IsGenericType>
-      </InheritedTypeWinForms>
-      <UseUnitOfWorkType />
-      <ConstructorVisibility>Default</ConstructorVisibility>
-      <Folder />
-      <FileName>ResourceCultureInfo</FileName>
-      <UnitOfWorkProperties />
-      <ChildCollectionProperties />
-      <ChildProperties />
-      <InheritedChildCollectionProperties />
-      <InheritedChildProperties />
-      <ConvertValueProperties />
-      <UpdateValueProperties />
-      <InheritedValueProperties />
-      <ValueProperties />
-      <Singleton>false</Singleton>
-      <EditOnDemand>false</EditOnDemand>
-      <CheckRulesOnFetch>true</CheckRulesOnFetch>
-      <SupportUpdateProperties>false</SupportUpdateProperties>
-      <CriteriaObjects />
-      <ParentType>ResourceInfo</ParentType>
-      <ParentProperties />
-      <ParentInsertOnly>false</ParentInsertOnly>
-      <IsPolymorphic>false</IsPolymorphic>
-      <ItemType>ResourceCultureList</ItemType>
-      <ContainsItem>true</ContainsItem>
-      <UniqueItems>false</UniqueItems>
-      <FindMethodsParameters />
-      <UpdaterType />
-      <AllowNew>false</AllowNew>
-      <AllowEdit>false</AllowEdit>
-      <AllowRemove>false</AllowRemove>
-      <AddParentReference>false</AddParentReference>
-      <SimpleCacheOptions>None</SimpleCacheOptions>
-      <InvalidateCache />
-      <ValueColumn />
-      <NameColumn />
-      <PersistenceType>SqlConnectionManager</PersistenceType>
-      <CommandTimeout />
-      <TransactionType>ADO</TransactionType>
-      <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
-      <InsertProcedureName />
-      <SelectProcedureName />
-      <UpdateProcedureName />
-      <DeleteProcedureName />
-      <DeleteUseTimestamp>false</DeleteUseTimestamp>
-      <RemoveItem>true</RemoveItem>
-      <ToStringProperty />
-      <BusinessRules />
-      <AuthzProvider>IsInRole</AuthzProvider>
-      <NewRoles />
-      <GetRoles />
-      <UpdateRoles />
-      <DeleteRoles />
-      <NewAuthzRuleType>
-        <BaseRuleProperties />
-        <ObjectName />
-        <AssemblyFile />
-        <Type />
-        <Name />
-        <NumberGenericParameters>0</NumberGenericParameters>
-        <OriginalGenericParameter1 />
-        <OriginalGenericParameter2 />
-        <GenericParameter1 />
-        <GenericParameter2 />
-        <Constructors />
-        <RuleProperties />
-        <CacheResult>false</CacheResult>
-      </NewAuthzRuleType>
-      <GetAuthzRuleType>
-        <BaseRuleProperties />
-        <ObjectName />
-        <AssemblyFile />
-        <Type />
-        <Name />
-        <NumberGenericParameters>0</NumberGenericParameters>
-        <OriginalGenericParameter1 />
-        <OriginalGenericParameter2 />
-        <GenericParameter1 />
-        <GenericParameter2 />
-        <Constructors />
-        <RuleProperties />
-        <CacheResult>false</CacheResult>
-      </GetAuthzRuleType>
-      <UpdateAuthzRuleType>
-        <BaseRuleProperties />
-        <ObjectName />
-        <AssemblyFile />
-        <Type />
-        <Name />
-        <NumberGenericParameters>0</NumberGenericParameters>
-        <OriginalGenericParameter1 />
-        <OriginalGenericParameter2 />
-        <GenericParameter1 />
-        <GenericParameter2 />
-        <Constructors />
-        <RuleProperties />
-        <CacheResult>false</CacheResult>
-      </UpdateAuthzRuleType>
-      <DeleteAuthzRuleType>
-        <BaseRuleProperties />
-        <ObjectName />
-        <AssemblyFile />
-        <Type />
-        <Name />
-        <NumberGenericParameters>0</NumberGenericParameters>
-        <OriginalGenericParameter1 />
-        <OriginalGenericParameter2 />
-        <GenericParameter1 />
-        <GenericParameter2 />
-        <Constructors />
-        <RuleProperties />
-        <CacheResult>false</CacheResult>
-      </DeleteAuthzRuleType>
-    </CslaObjectInfo>
-    <CslaObjectInfo>
-      <Generate>true</Generate>
-      <GenerateConstructor>true</GenerateConstructor>
-      <GenerateFactoryMethods>true</GenerateFactoryMethods>
-      <GenerateDataAccessRegion>true</GenerateDataAccessRegion>
-      <GenerateDataPortalInsert>false</GenerateDataPortalInsert>
-      <GenerateDataPortalUpdate>false</GenerateDataPortalUpdate>
-      <GenerateDataPortalDelete>false</GenerateDataPortalDelete>
-      <GenerateSprocs>true</GenerateSprocs>
-      <GenerateInlineQueries />
-      <DataSetLoadingScheme>false</DataSetLoadingScheme>
-      <UseCustomLoading>false</UseCustomLoading>
-      <ObjectType>ReadOnlyObject</ObjectType>
-      <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
-      <ObjectName>ResourceCultureList</ObjectName>
-      <CslaBaseClass>None</CslaBaseClass>
-      <IsGenericType>false</IsGenericType>
-      <GenericArguments />
-      <ObjectNamespace>Codisa.InterwayDocs.Configuration</ObjectNamespace>
-      <ClassVisibility>Public</ClassVisibility>
-      <ClassSummary />
-      <ClassRemarks />
-      <Namespaces />
-      <Attributes />
-      <Interfaces />
-      <InheritedType>
-        <ObjectName />
-        <AssemblyFile />
-        <Type />
-        <IsGenericType>false</IsGenericType>
-      </InheritedType>
-      <InheritedTypeWinForms>
-        <ObjectName />
-        <AssemblyFile />
-        <Type />
-        <IsGenericType>false</IsGenericType>
-      </InheritedTypeWinForms>
-      <UseUnitOfWorkType />
-      <ConstructorVisibility>Default</ConstructorVisibility>
-      <Folder />
-      <FileName>ResourceCultureList</FileName>
-      <UnitOfWorkProperties />
-      <ChildCollectionProperties />
-      <ChildProperties />
-      <InheritedChildCollectionProperties />
-      <InheritedChildProperties />
-      <ConvertValueProperties />
-      <UpdateValueProperties />
-      <InheritedValueProperties />
-      <ValueProperties>
         <ValueProperty>
           <ParameterName>UICulture</ParameterName>
           <Name>UICulture</Name>
@@ -4504,7 +4676,7 @@
             <IsIdentity>false</IsIdentity>
           </DbBindColumn>
           <DataAccess>ReadWrite</DataAccess>
-          <PrimaryKey>UserProvidedPK</PrimaryKey>
+          <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>UICulture</FriendlyName>
           <IsDatabaseBound>true</IsDatabaseBound>
@@ -4550,7 +4722,7 @@
           </WriteAuthzRuleType>
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
-          <Undoable>false</Undoable>
+          <Undoable>true</Undoable>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>Translation</ParameterName>
@@ -4629,80 +4801,8 @@
       <CheckRulesOnFetch>false</CheckRulesOnFetch>
       <SupportUpdateProperties>false</SupportUpdateProperties>
       <CriteriaObjects />
-      <ParentType>ResourceCultureInfo</ParentType>
-      <ParentProperties>
-        <Property xsi:type="ValueProperty">
-          <ParameterName>ResourceId</ParameterName>
-          <Name>ResourceId</Name>
-          <PropertyType>Int32</PropertyType>
-          <ReadOnly>true</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <DbBindColumn>
-            <ColumnOriginType>Table</ColumnOriginType>
-            <DataType>Int32</DataType>
-            <NativeType>int</NativeType>
-            <Size>10</Size>
-            <SpResultIndex>0</SpResultIndex>
-            <ColumnName>ResourceId</ColumnName>
-            <IsPrimaryKey>true</IsPrimaryKey>
-            <ObjectName>Resources</ObjectName>
-            <CatalogName>InterwayDocs</CatalogName>
-            <SchemaName>dbo</SchemaName>
-            <IsNullable>false</IsNullable>
-            <IsIdentity>true</IsIdentity>
-          </DbBindColumn>
-          <DataAccess>ReadWrite</DataAccess>
-          <PrimaryKey>DBProvidedPK</PrimaryKey>
-          <FKConstraint />
-          <FriendlyName>Resource Id</FriendlyName>
-          <IsDatabaseBound>true</IsDatabaseBound>
-          <CustomPropertyType />
-          <DeclarationMode>Managed</DeclarationMode>
-          <BackingFieldType>Empty</BackingFieldType>
-          <DefaultValue />
-          <Attributes />
-          <Interfaces />
-          <BusinessRules />
-          <AuthzProvider>IsInRole</AuthzProvider>
-          <ReadRoles />
-          <WriteRoles />
-          <ReadAuthzRuleType>
-            <BaseRuleProperties />
-            <ObjectName />
-            <AssemblyFile />
-            <Type />
-            <Name />
-            <NumberGenericParameters>0</NumberGenericParameters>
-            <OriginalGenericParameter1 />
-            <OriginalGenericParameter2 />
-            <GenericParameter1 />
-            <GenericParameter2 />
-            <Constructors />
-            <RuleProperties />
-            <CacheResult>false</CacheResult>
-          </ReadAuthzRuleType>
-          <WriteAuthzRuleType>
-            <BaseRuleProperties />
-            <ObjectName />
-            <AssemblyFile />
-            <Type />
-            <Name />
-            <NumberGenericParameters>0</NumberGenericParameters>
-            <OriginalGenericParameter1 />
-            <OriginalGenericParameter2 />
-            <GenericParameter1 />
-            <GenericParameter2 />
-            <Constructors />
-            <RuleProperties />
-            <CacheResult>false</CacheResult>
-          </WriteAuthzRuleType>
-          <Access>IsPublic</Access>
-          <PropSetAccessibility>Default</PropSetAccessibility>
-          <Undoable>false</Undoable>
-        </Property>
-      </ParentProperties>
+      <ParentType>ResourceList</ParentType>
+      <ParentProperties />
       <ParentInsertOnly>true</ParentInsertOnly>
       <IsPolymorphic>false</IsPolymorphic>
       <ItemType />
@@ -4958,9 +5058,9 @@
       <GenerateInlineQueries />
       <DataSetLoadingScheme>false</DataSetLoadingScheme>
       <UseCustomLoading>false</UseCustomLoading>
-      <ObjectType>EditableChildCollection</ObjectType>
+      <ObjectType>EditableRootCollection</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
-      <ObjectName>ResourceCultureColl</ObjectName>
+      <ObjectName>LanguageColl</ObjectName>
       <CslaBaseClass>None</CslaBaseClass>
       <IsGenericType>false</IsGenericType>
       <GenericArguments />
@@ -4986,7 +5086,7 @@
       <UseUnitOfWorkType />
       <ConstructorVisibility>Default</ConstructorVisibility>
       <Folder />
-      <FileName>ResourceCultureColl</FileName>
+      <FileName>LanguageColl</FileName>
       <UnitOfWorkProperties />
       <ChildCollectionProperties />
       <ChildProperties />
@@ -5000,12 +5100,48 @@
       <EditOnDemand>false</EditOnDemand>
       <CheckRulesOnFetch>true</CheckRulesOnFetch>
       <SupportUpdateProperties>false</SupportUpdateProperties>
-      <CriteriaObjects />
-      <ParentType>Resource</ParentType>
+      <CriteriaObjects>
+        <Criteria>
+          <Name>Criteria</Name>
+          <CriteriaClassMode>Simple</CriteriaClassMode>
+          <NestedClass>true</NestedClass>
+          <Properties />
+          <CreateOptions>
+            <Factory>true</Factory>
+            <AddRemove>false</AddRemove>
+            <DataPortal>true</DataPortal>
+            <RunLocal>true</RunLocal>
+            <Procedure>false</Procedure>
+            <ProcedureName />
+            <FactorySuffix />
+          </CreateOptions>
+          <GetOptions>
+            <Factory>true</Factory>
+            <AddRemove>false</AddRemove>
+            <DataPortal>true</DataPortal>
+            <RunLocal>false</RunLocal>
+            <Procedure>true</Procedure>
+            <ProcedureName>GetLanguageColl</ProcedureName>
+            <FactorySuffix />
+          </GetOptions>
+          <DeleteOptions>
+            <Factory>false</Factory>
+            <AddRemove>false</AddRemove>
+            <DataPortal>false</DataPortal>
+            <RunLocal>false</RunLocal>
+            <Procedure>false</Procedure>
+            <ProcedureName />
+            <FactorySuffix />
+          </DeleteOptions>
+          <Summary />
+          <Remarks />
+        </Criteria>
+      </CriteriaObjects>
+      <ParentType />
       <ParentProperties />
       <ParentInsertOnly>false</ParentInsertOnly>
       <IsPolymorphic>false</IsPolymorphic>
-      <ItemType>ResourceCulture</ItemType>
+      <ItemType>Language</ItemType>
       <ContainsItem>true</ContainsItem>
       <UniqueItems>false</UniqueItems>
       <FindMethodsParameters />
@@ -5022,9 +5158,9 @@
       <CommandTimeout />
       <TransactionType>ADO</TransactionType>
       <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
-      <InsertProcedureName>AddResourceCultureColl</InsertProcedureName>
+      <InsertProcedureName>AddLanguageColl</InsertProcedureName>
       <SelectProcedureName />
-      <UpdateProcedureName>UpdateResourceCultureColl</UpdateProcedureName>
+      <UpdateProcedureName>UpdateLanguageColl</UpdateProcedureName>
       <DeleteProcedureName />
       <DeleteUseTimestamp>false</DeleteUseTimestamp>
       <RemoveItem>true</RemoveItem>
@@ -5110,7 +5246,7 @@
       <UseCustomLoading>false</UseCustomLoading>
       <ObjectType>EditableChild</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
-      <ObjectName>ResourceCulture</ObjectName>
+      <ObjectName>Language</ObjectName>
       <CslaBaseClass>None</CslaBaseClass>
       <IsGenericType>false</IsGenericType>
       <GenericArguments />
@@ -5136,7 +5272,7 @@
       <UseUnitOfWorkType />
       <ConstructorVisibility>Default</ConstructorVisibility>
       <Folder />
-      <FileName>ResourceCulture</FileName>
+      <FileName>Language</FileName>
       <UnitOfWorkProperties />
       <ChildCollectionProperties />
       <ChildProperties />
@@ -5162,7 +5298,7 @@
             <SpResultIndex>0</SpResultIndex>
             <ColumnName>UICulture</ColumnName>
             <IsPrimaryKey>true</IsPrimaryKey>
-            <ObjectName>ResourceTranslations</ObjectName>
+            <ObjectName>Languages</ObjectName>
             <CatalogName>InterwayDocs</CatalogName>
             <SchemaName>dbo</SchemaName>
             <IsNullable>false</IsNullable>
@@ -5218,8 +5354,8 @@
           <Undoable>false</Undoable>
         </ValueProperty>
         <ValueProperty>
-          <ParameterName>Translation</ParameterName>
-          <Name>Translation</Name>
+          <ParameterName>Name</ParameterName>
+          <Name>Name</Name>
           <PropertyType>String</PropertyType>
           <ReadOnly>false</ReadOnly>
           <Nullable>false</Nullable>
@@ -5227,13 +5363,13 @@
           <Remarks />
           <DbBindColumn>
             <ColumnOriginType>Table</ColumnOriginType>
-            <DataType>String</DataType>
-            <NativeType>varchar</NativeType>
-            <Size>500</Size>
+            <DataType>StringFixedLength</DataType>
+            <NativeType>nchar</NativeType>
+            <Size>10</Size>
             <SpResultIndex>0</SpResultIndex>
-            <ColumnName>Translation</ColumnName>
+            <ColumnName>Name</ColumnName>
             <IsPrimaryKey>false</IsPrimaryKey>
-            <ObjectName>ResourceTranslations</ObjectName>
+            <ObjectName>Languages</ObjectName>
             <CatalogName>InterwayDocs</CatalogName>
             <SchemaName>dbo</SchemaName>
             <IsNullable>false</IsNullable>
@@ -5242,7 +5378,7 @@
           <DataAccess>ReadWrite</DataAccess>
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
-          <FriendlyName>Translation</FriendlyName>
+          <FriendlyName>Name</FriendlyName>
           <IsDatabaseBound>true</IsDatabaseBound>
           <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
@@ -5330,80 +5466,8 @@
           <Remarks />
         </Criteria>
       </CriteriaObjects>
-      <ParentType>ResourceCultureColl</ParentType>
-      <ParentProperties>
-        <Property xsi:type="ValueProperty">
-          <ParameterName>ResourceId</ParameterName>
-          <Name>ResourceId</Name>
-          <PropertyType>Int32</PropertyType>
-          <ReadOnly>true</ReadOnly>
-          <Nullable>false</Nullable>
-          <Summary />
-          <Remarks />
-          <DbBindColumn>
-            <ColumnOriginType>Table</ColumnOriginType>
-            <DataType>Int32</DataType>
-            <NativeType>int</NativeType>
-            <Size>10</Size>
-            <SpResultIndex>0</SpResultIndex>
-            <ColumnName>ResourceId</ColumnName>
-            <IsPrimaryKey>true</IsPrimaryKey>
-            <ObjectName>Resources</ObjectName>
-            <CatalogName>InterwayDocs</CatalogName>
-            <SchemaName>dbo</SchemaName>
-            <IsNullable>false</IsNullable>
-            <IsIdentity>true</IsIdentity>
-          </DbBindColumn>
-          <DataAccess>ReadWrite</DataAccess>
-          <PrimaryKey>DBProvidedPK</PrimaryKey>
-          <FKConstraint />
-          <FriendlyName>Resource Id</FriendlyName>
-          <IsDatabaseBound>true</IsDatabaseBound>
-          <CustomPropertyType />
-          <DeclarationMode>Managed</DeclarationMode>
-          <BackingFieldType>Empty</BackingFieldType>
-          <DefaultValue>_lastId</DefaultValue>
-          <Attributes />
-          <Interfaces />
-          <BusinessRules />
-          <AuthzProvider>IsInRole</AuthzProvider>
-          <ReadRoles />
-          <WriteRoles />
-          <ReadAuthzRuleType>
-            <BaseRuleProperties />
-            <ObjectName />
-            <AssemblyFile />
-            <Type />
-            <Name />
-            <NumberGenericParameters>0</NumberGenericParameters>
-            <OriginalGenericParameter1 />
-            <OriginalGenericParameter2 />
-            <GenericParameter1 />
-            <GenericParameter2 />
-            <Constructors />
-            <RuleProperties />
-            <CacheResult>false</CacheResult>
-          </ReadAuthzRuleType>
-          <WriteAuthzRuleType>
-            <BaseRuleProperties />
-            <ObjectName />
-            <AssemblyFile />
-            <Type />
-            <Name />
-            <NumberGenericParameters>0</NumberGenericParameters>
-            <OriginalGenericParameter1 />
-            <OriginalGenericParameter2 />
-            <GenericParameter1 />
-            <GenericParameter2 />
-            <Constructors />
-            <RuleProperties />
-            <CacheResult>false</CacheResult>
-          </WriteAuthzRuleType>
-          <Access>IsPublic</Access>
-          <PropSetAccessibility>Default</PropSetAccessibility>
-          <Undoable>false</Undoable>
-        </Property>
-      </ParentProperties>
+      <ParentType>LanguageColl</ParentType>
+      <ParentProperties />
       <ParentInsertOnly>true</ParentInsertOnly>
       <IsPolymorphic>false</IsPolymorphic>
       <ItemType />
@@ -5423,10 +5487,10 @@
       <CommandTimeout />
       <TransactionType>ADO</TransactionType>
       <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
-      <InsertProcedureName>AddResourceCulture</InsertProcedureName>
+      <InsertProcedureName>AddLanguage</InsertProcedureName>
       <SelectProcedureName />
-      <UpdateProcedureName>UpdateResourceCulture</UpdateProcedureName>
-      <DeleteProcedureName>DeleteResourceCulture</DeleteProcedureName>
+      <UpdateProcedureName>UpdateLanguage</UpdateProcedureName>
+      <DeleteProcedureName>DeleteLanguage</DeleteProcedureName>
       <DeleteUseTimestamp>false</DeleteUseTimestamp>
       <RemoveItem>true</RemoveItem>
       <ToStringProperty />
@@ -6141,6 +6205,557 @@
       <SelectProcedureName />
       <UpdateProcedureName>UpdateResource</UpdateProcedureName>
       <DeleteProcedureName>DeleteResource</DeleteProcedureName>
+      <DeleteUseTimestamp>false</DeleteUseTimestamp>
+      <RemoveItem>true</RemoveItem>
+      <ToStringProperty />
+      <BusinessRules />
+      <AuthzProvider>IsInRole</AuthzProvider>
+      <NewRoles />
+      <GetRoles />
+      <UpdateRoles />
+      <DeleteRoles />
+      <NewAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </NewAuthzRuleType>
+      <GetAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </GetAuthzRuleType>
+      <UpdateAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </UpdateAuthzRuleType>
+      <DeleteAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </DeleteAuthzRuleType>
+    </CslaObjectInfo>
+    <CslaObjectInfo>
+      <Generate>true</Generate>
+      <GenerateConstructor>true</GenerateConstructor>
+      <GenerateFactoryMethods>true</GenerateFactoryMethods>
+      <GenerateDataAccessRegion>true</GenerateDataAccessRegion>
+      <GenerateDataPortalInsert>true</GenerateDataPortalInsert>
+      <GenerateDataPortalUpdate>true</GenerateDataPortalUpdate>
+      <GenerateDataPortalDelete>true</GenerateDataPortalDelete>
+      <GenerateSprocs>true</GenerateSprocs>
+      <GenerateInlineQueries />
+      <DataSetLoadingScheme>false</DataSetLoadingScheme>
+      <UseCustomLoading>false</UseCustomLoading>
+      <ObjectType>EditableChildCollection</ObjectType>
+      <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
+      <ObjectName>ResourceCultureColl</ObjectName>
+      <CslaBaseClass>None</CslaBaseClass>
+      <IsGenericType>false</IsGenericType>
+      <GenericArguments />
+      <ObjectNamespace>Codisa.InterwayDocs.Configuration</ObjectNamespace>
+      <ClassVisibility>Public</ClassVisibility>
+      <ClassSummary />
+      <ClassRemarks />
+      <Namespaces />
+      <Attributes />
+      <Interfaces />
+      <InheritedType>
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <IsGenericType>false</IsGenericType>
+      </InheritedType>
+      <InheritedTypeWinForms>
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <IsGenericType>false</IsGenericType>
+      </InheritedTypeWinForms>
+      <UseUnitOfWorkType />
+      <ConstructorVisibility>Default</ConstructorVisibility>
+      <Folder />
+      <FileName>ResourceCultureColl</FileName>
+      <UnitOfWorkProperties />
+      <ChildCollectionProperties />
+      <ChildProperties />
+      <InheritedChildCollectionProperties />
+      <InheritedChildProperties />
+      <ConvertValueProperties />
+      <UpdateValueProperties />
+      <InheritedValueProperties />
+      <ValueProperties />
+      <Singleton>false</Singleton>
+      <EditOnDemand>false</EditOnDemand>
+      <CheckRulesOnFetch>true</CheckRulesOnFetch>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
+      <CriteriaObjects />
+      <ParentType>Resource</ParentType>
+      <ParentProperties />
+      <ParentInsertOnly>false</ParentInsertOnly>
+      <IsPolymorphic>false</IsPolymorphic>
+      <ItemType>ResourceCulture</ItemType>
+      <ContainsItem>true</ContainsItem>
+      <UniqueItems>false</UniqueItems>
+      <FindMethodsParameters />
+      <UpdaterType />
+      <AllowNew>true</AllowNew>
+      <AllowEdit>true</AllowEdit>
+      <AllowRemove>true</AllowRemove>
+      <AddParentReference>false</AddParentReference>
+      <SimpleCacheOptions>None</SimpleCacheOptions>
+      <InvalidateCache />
+      <ValueColumn />
+      <NameColumn />
+      <PersistenceType>SqlConnectionManager</PersistenceType>
+      <CommandTimeout />
+      <TransactionType>ADO</TransactionType>
+      <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
+      <InsertProcedureName>AddResourceCultureColl</InsertProcedureName>
+      <SelectProcedureName />
+      <UpdateProcedureName>UpdateResourceCultureColl</UpdateProcedureName>
+      <DeleteProcedureName />
+      <DeleteUseTimestamp>false</DeleteUseTimestamp>
+      <RemoveItem>true</RemoveItem>
+      <ToStringProperty />
+      <BusinessRules />
+      <AuthzProvider>IsInRole</AuthzProvider>
+      <NewRoles />
+      <GetRoles />
+      <UpdateRoles />
+      <DeleteRoles />
+      <NewAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </NewAuthzRuleType>
+      <GetAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </GetAuthzRuleType>
+      <UpdateAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </UpdateAuthzRuleType>
+      <DeleteAuthzRuleType>
+        <BaseRuleProperties />
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
+        <Constructors />
+        <RuleProperties />
+        <CacheResult>false</CacheResult>
+      </DeleteAuthzRuleType>
+    </CslaObjectInfo>
+    <CslaObjectInfo>
+      <Generate>true</Generate>
+      <GenerateConstructor>true</GenerateConstructor>
+      <GenerateFactoryMethods>true</GenerateFactoryMethods>
+      <GenerateDataAccessRegion>true</GenerateDataAccessRegion>
+      <GenerateDataPortalInsert>true</GenerateDataPortalInsert>
+      <GenerateDataPortalUpdate>true</GenerateDataPortalUpdate>
+      <GenerateDataPortalDelete>true</GenerateDataPortalDelete>
+      <GenerateSprocs>true</GenerateSprocs>
+      <GenerateInlineQueries />
+      <DataSetLoadingScheme>false</DataSetLoadingScheme>
+      <UseCustomLoading>false</UseCustomLoading>
+      <ObjectType>EditableChild</ObjectType>
+      <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
+      <ObjectName>ResourceCulture</ObjectName>
+      <CslaBaseClass>None</CslaBaseClass>
+      <IsGenericType>false</IsGenericType>
+      <GenericArguments />
+      <ObjectNamespace>Codisa.InterwayDocs.Configuration</ObjectNamespace>
+      <ClassVisibility>Public</ClassVisibility>
+      <ClassSummary />
+      <ClassRemarks />
+      <Namespaces />
+      <Attributes />
+      <Interfaces />
+      <InheritedType>
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <IsGenericType>false</IsGenericType>
+      </InheritedType>
+      <InheritedTypeWinForms>
+        <ObjectName />
+        <AssemblyFile />
+        <Type />
+        <IsGenericType>false</IsGenericType>
+      </InheritedTypeWinForms>
+      <UseUnitOfWorkType />
+      <ConstructorVisibility>Default</ConstructorVisibility>
+      <Folder />
+      <FileName>ResourceCulture</FileName>
+      <UnitOfWorkProperties />
+      <ChildCollectionProperties />
+      <ChildProperties />
+      <InheritedChildCollectionProperties />
+      <InheritedChildProperties />
+      <ConvertValueProperties />
+      <UpdateValueProperties />
+      <InheritedValueProperties />
+      <ValueProperties>
+        <ValueProperty>
+          <ParameterName>UICulture</ParameterName>
+          <Name>UICulture</Name>
+          <PropertyType>String</PropertyType>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <Summary />
+          <Remarks />
+          <DbBindColumn>
+            <ColumnOriginType>Table</ColumnOriginType>
+            <DataType>String</DataType>
+            <NativeType>varchar</NativeType>
+            <Size>5</Size>
+            <SpResultIndex>0</SpResultIndex>
+            <ColumnName>UICulture</ColumnName>
+            <IsPrimaryKey>true</IsPrimaryKey>
+            <ObjectName>ResourceTranslations</ObjectName>
+            <CatalogName>InterwayDocs</CatalogName>
+            <SchemaName>dbo</SchemaName>
+            <IsNullable>false</IsNullable>
+            <IsIdentity>false</IsIdentity>
+          </DbBindColumn>
+          <DataAccess>ReadWrite</DataAccess>
+          <PrimaryKey>UserProvidedPK</PrimaryKey>
+          <FKConstraint />
+          <FriendlyName>UICulture</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
+          <DeclarationMode>Managed</DeclarationMode>
+          <BackingFieldType>Empty</BackingFieldType>
+          <DefaultValue />
+          <Attributes />
+          <Interfaces />
+          <BusinessRules />
+          <AuthzProvider>IsInRole</AuthzProvider>
+          <ReadRoles />
+          <WriteRoles />
+          <ReadAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </ReadAuthzRuleType>
+          <WriteAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </WriteAuthzRuleType>
+          <Access>IsPublic</Access>
+          <PropSetAccessibility>Default</PropSetAccessibility>
+          <Undoable>false</Undoable>
+        </ValueProperty>
+        <ValueProperty>
+          <ParameterName>Translation</ParameterName>
+          <Name>Translation</Name>
+          <PropertyType>String</PropertyType>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <Summary />
+          <Remarks />
+          <DbBindColumn>
+            <ColumnOriginType>Table</ColumnOriginType>
+            <DataType>String</DataType>
+            <NativeType>varchar</NativeType>
+            <Size>500</Size>
+            <SpResultIndex>0</SpResultIndex>
+            <ColumnName>Translation</ColumnName>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <ObjectName>ResourceTranslations</ObjectName>
+            <CatalogName>InterwayDocs</CatalogName>
+            <SchemaName>dbo</SchemaName>
+            <IsNullable>false</IsNullable>
+            <IsIdentity>false</IsIdentity>
+          </DbBindColumn>
+          <DataAccess>ReadWrite</DataAccess>
+          <PrimaryKey>Default</PrimaryKey>
+          <FKConstraint />
+          <FriendlyName>Translation</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
+          <DeclarationMode>Managed</DeclarationMode>
+          <BackingFieldType>Empty</BackingFieldType>
+          <DefaultValue />
+          <Attributes />
+          <Interfaces />
+          <BusinessRules />
+          <AuthzProvider>IsInRole</AuthzProvider>
+          <ReadRoles />
+          <WriteRoles />
+          <ReadAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </ReadAuthzRuleType>
+          <WriteAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </WriteAuthzRuleType>
+          <Access>IsPublic</Access>
+          <PropSetAccessibility>Default</PropSetAccessibility>
+          <Undoable>true</Undoable>
+        </ValueProperty>
+      </ValueProperties>
+      <Singleton>false</Singleton>
+      <EditOnDemand>false</EditOnDemand>
+      <CheckRulesOnFetch>true</CheckRulesOnFetch>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
+      <CriteriaObjects>
+        <Criteria>
+          <Name>CriteriaNew</Name>
+          <CriteriaClassMode>Simple</CriteriaClassMode>
+          <NestedClass>true</NestedClass>
+          <Properties />
+          <CreateOptions>
+            <Factory>true</Factory>
+            <AddRemove>false</AddRemove>
+            <DataPortal>true</DataPortal>
+            <RunLocal>true</RunLocal>
+            <Procedure>false</Procedure>
+            <ProcedureName />
+            <FactorySuffix />
+          </CreateOptions>
+          <GetOptions>
+            <Factory>false</Factory>
+            <AddRemove>false</AddRemove>
+            <DataPortal>false</DataPortal>
+            <RunLocal>false</RunLocal>
+            <Procedure>false</Procedure>
+            <ProcedureName />
+            <FactorySuffix />
+          </GetOptions>
+          <DeleteOptions>
+            <Factory>false</Factory>
+            <AddRemove>false</AddRemove>
+            <DataPortal>false</DataPortal>
+            <RunLocal>false</RunLocal>
+            <Procedure>false</Procedure>
+            <ProcedureName />
+            <FactorySuffix />
+          </DeleteOptions>
+          <Summary />
+          <Remarks />
+        </Criteria>
+      </CriteriaObjects>
+      <ParentType>ResourceCultureColl</ParentType>
+      <ParentProperties>
+        <Property xsi:type="ValueProperty">
+          <ParameterName>ResourceId</ParameterName>
+          <Name>ResourceId</Name>
+          <PropertyType>Int32</PropertyType>
+          <ReadOnly>true</ReadOnly>
+          <Nullable>false</Nullable>
+          <Summary />
+          <Remarks />
+          <DbBindColumn>
+            <ColumnOriginType>Table</ColumnOriginType>
+            <DataType>Int32</DataType>
+            <NativeType>int</NativeType>
+            <Size>10</Size>
+            <SpResultIndex>0</SpResultIndex>
+            <ColumnName>ResourceId</ColumnName>
+            <IsPrimaryKey>true</IsPrimaryKey>
+            <ObjectName>Resources</ObjectName>
+            <CatalogName>InterwayDocs</CatalogName>
+            <SchemaName>dbo</SchemaName>
+            <IsNullable>false</IsNullable>
+            <IsIdentity>true</IsIdentity>
+          </DbBindColumn>
+          <DataAccess>ReadWrite</DataAccess>
+          <PrimaryKey>DBProvidedPK</PrimaryKey>
+          <FKConstraint />
+          <FriendlyName>Resource Id</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
+          <DeclarationMode>Managed</DeclarationMode>
+          <BackingFieldType>Empty</BackingFieldType>
+          <DefaultValue>_lastId</DefaultValue>
+          <Attributes />
+          <Interfaces />
+          <BusinessRules />
+          <AuthzProvider>IsInRole</AuthzProvider>
+          <ReadRoles />
+          <WriteRoles />
+          <ReadAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </ReadAuthzRuleType>
+          <WriteAuthzRuleType>
+            <BaseRuleProperties />
+            <ObjectName />
+            <AssemblyFile />
+            <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
+            <Constructors />
+            <RuleProperties />
+            <CacheResult>false</CacheResult>
+          </WriteAuthzRuleType>
+          <Access>IsPublic</Access>
+          <PropSetAccessibility>Default</PropSetAccessibility>
+          <Undoable>false</Undoable>
+        </Property>
+      </ParentProperties>
+      <ParentInsertOnly>true</ParentInsertOnly>
+      <IsPolymorphic>false</IsPolymorphic>
+      <ItemType />
+      <ContainsItem>true</ContainsItem>
+      <UniqueItems>false</UniqueItems>
+      <FindMethodsParameters />
+      <UpdaterType />
+      <AllowNew>true</AllowNew>
+      <AllowEdit>true</AllowEdit>
+      <AllowRemove>true</AllowRemove>
+      <AddParentReference>false</AddParentReference>
+      <SimpleCacheOptions>None</SimpleCacheOptions>
+      <InvalidateCache />
+      <ValueColumn />
+      <NameColumn />
+      <PersistenceType>SqlConnectionManager</PersistenceType>
+      <CommandTimeout />
+      <TransactionType>ADO</TransactionType>
+      <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
+      <InsertProcedureName>AddResourceCulture</InsertProcedureName>
+      <SelectProcedureName />
+      <UpdateProcedureName>UpdateResourceCulture</UpdateProcedureName>
+      <DeleteProcedureName>DeleteResourceCulture</DeleteProcedureName>
       <DeleteUseTimestamp>false</DeleteUseTimestamp>
       <RemoveItem>true</RemoveItem>
       <ToStringProperty />

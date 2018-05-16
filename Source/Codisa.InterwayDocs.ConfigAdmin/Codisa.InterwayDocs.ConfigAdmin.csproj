@@ -50,6 +50,34 @@
     <Compile Include="..\Codisa.InterwayDocs.Configuration\DataPortalHookArgs.cs">
       <Link>DataPortalHookArgs.cs</Link>
     </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\Language.cs">
+      <Link>Language.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\Language.Designer.cs">
+      <Link>Language.Designer.cs</Link>
+      <DependentUpon>Language.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\LanguageColl.cs">
+      <Link>LanguageColl.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\LanguageColl.Designer.cs">
+      <Link>LanguageColl.Designer.cs</Link>
+      <DependentUpon>LanguageColl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\LanguageInfo.cs">
+      <Link>LanguageInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\LanguageInfo.Designer.cs">
+      <Link>LanguageInfo.Designer.cs</Link>
+      <DependentUpon>LanguageInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\LanguageList.cs">
+      <Link>LanguageList.cs</Link>
+    </Compile>
+    <Compile Include="..\Codisa.InterwayDocs.Configuration\LanguageList.Designer.cs">
+      <Link>LanguageList.Designer.cs</Link>
+      <DependentUpon>LanguageList.cs</DependentUpon>
+    </Compile>
     <Compile Include="..\Codisa.InterwayDocs.Configuration\PropertyConfiguration.cs">
       <Link>PropertyConfiguration.cs</Link>
     </Compile>

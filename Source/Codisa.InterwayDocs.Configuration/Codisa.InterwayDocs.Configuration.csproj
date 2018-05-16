@@ -53,6 +53,14 @@
     </Compile>
     <Compile Include="DatabaseInterwayDocs.cs" />
     <Compile Include="DataPortalHookArgs.cs" />
+    <Compile Include="LanguageInfo.cs" />
+    <Compile Include="LanguageInfo.Designer.cs">
+      <DependentUpon>LanguageInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageList.cs" />
+    <Compile Include="LanguageList.Designer.cs">
+      <DependentUpon>LanguageList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyConfigurationInfo.cs" />
     <Compile Include="PropertyConfigurationInfo.Designer.cs">
