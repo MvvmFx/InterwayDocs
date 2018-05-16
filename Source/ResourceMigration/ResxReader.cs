@@ -181,7 +181,7 @@ namespace ResourceMigration
             foreach (AssemblyName assemblyName in assemblyNames)
             {
                 Assembly assembly = Assembly.Load(assemblyName);
-                List<string> resourceTypes = ResxReader.GetAllResourceTypes(assembly, typeof(string));
+                List<string> resourceTypes = GetAllResourceTypes(assembly, typeof(string));
                 if (resourceTypes.Count > 0)
                     assemblyResourceTypes.Add(assemblyName, resourceTypes);
             }
