@@ -12,47 +12,13 @@ namespace Codisa.InterwayDocs.Configuration
     /// This is a generated <see cref="ResourceInfo"/> business object.
     /// </summary>
     /// <remarks>
-    /// This class contains one child collection:<br/>
-    /// - <see cref="ResourceCultures"/> of type <see cref="ResourceCultureInfo"/> (1:M relation to <see cref="ResourceCultureList"/>)<br/>
     /// This class is an item of <see cref="ResourceList"/> collection.
     /// </remarks>
     [Serializable]
     public partial class ResourceInfo : ReadOnlyBase<ResourceInfo>
     {
 
-        #region ParentList Property
-
-        /// <summary>
-        /// Maintains metadata about <see cref="ParentList"/> property.
-        /// </summary>
-        [NotUndoable, NonSerialized]
-        public static readonly PropertyInfo<ResourceList> ParentListProperty = RegisterProperty<ResourceList>(p => p.ParentList);
-        /// <summary>
-        /// Provide access to the parent list reference for use in child object code.
-        /// </summary>
-        /// <value>The parent list reference.</value>
-        public ResourceList ParentList
-        {
-            get { return ReadProperty(ParentListProperty); }
-            internal set { LoadProperty(ParentListProperty, value); }
-        }
-
-        #endregion
-
         #region Business Properties
-
-        /// <summary>
-        /// Maintains metadata about <see cref="ResourceId"/> property.
-        /// </summary>
-        public static readonly PropertyInfo<int> ResourceIdProperty = RegisterProperty<int>(p => p.ResourceId, "Resource Id");
-        /// <summary>
-        /// Gets the Resource Id.
-        /// </summary>
-        /// <value>The Resource Id.</value>
-        public int ResourceId
-        {
-            get { return GetProperty(ResourceIdProperty); }
-        }
 
         /// <summary>
         /// Maintains metadata about <see cref="ResourceType"/> property.
@@ -81,17 +47,29 @@ namespace Codisa.InterwayDocs.Configuration
         }
 
         /// <summary>
-        /// Maintains metadata about child <see cref="ResourceCultures"/> property.
+        /// Maintains metadata about <see cref="UICulture"/> property.
         /// </summary>
-        public static readonly PropertyInfo<ResourceCultureInfo> ResourceCulturesProperty = RegisterProperty<ResourceCultureInfo>(p => p.ResourceCultures, "Resource Cultures");
+        public static readonly PropertyInfo<string> UICultureProperty = RegisterProperty<string>(p => p.UICulture, "UICulture");
         /// <summary>
-        /// Gets the Resource Cultures ("parent load" child property).
+        /// Gets the UICulture.
         /// </summary>
-        /// <value>The Resource Cultures.</value>
-        public ResourceCultureInfo ResourceCultures
+        /// <value>The UICulture.</value>
+        public string UICulture
         {
-            get { return GetProperty(ResourceCulturesProperty); }
-            private set { LoadProperty(ResourceCulturesProperty, value); }
+            get { return GetProperty(UICultureProperty); }
+        }
+
+        /// <summary>
+        /// Maintains metadata about <see cref="Translation"/> property.
+        /// </summary>
+        public static readonly PropertyInfo<string> TranslationProperty = RegisterProperty<string>(p => p.Translation, "Translation");
+        /// <summary>
+        /// Gets the Translation.
+        /// </summary>
+        /// <value>The Translation.</value>
+        public string Translation
+        {
+            get { return GetProperty(TranslationProperty); }
         }
 
         #endregion
@@ -107,7 +85,6 @@ namespace Codisa.InterwayDocs.Configuration
         {
             ResourceInfo obj = new ResourceInfo();
             obj.Fetch(dr);
-            obj.LoadProperty(ResourceCulturesProperty, new ResourceCultureInfo());
             return obj;
         }
 
@@ -136,22 +113,12 @@ namespace Codisa.InterwayDocs.Configuration
         private void Fetch(SafeDataReader dr)
         {
             // Value properties
-            LoadProperty(ResourceIdProperty, dr.GetInt32("ResourceId"));
             LoadProperty(ResourceTypeProperty, dr.GetString("ResourceType"));
             LoadProperty(ResourceNameProperty, dr.GetString("ResourceName"));
+            LoadProperty(UICultureProperty, dr.GetString("UICulture"));
+            LoadProperty(TranslationProperty, dr.GetString("Translation"));
             var args = new DataPortalHookArgs(dr);
             OnFetchRead(args);
-        }
-
-        /// <summary>
-        /// Loads child objects from the given SafeDataReader.
-        /// </summary>
-        /// <param name="dr">The SafeDataReader to use.</param>
-        internal void FetchChildren(SafeDataReader dr)
-        {
-            dr.NextResult();
-            var resourceCultureInfo = ResourceCultureInfo.GetResourceCultureInfo(dr);
-            resourceCultureInfo.LoadItems(ParentList);
         }
 
         #endregion

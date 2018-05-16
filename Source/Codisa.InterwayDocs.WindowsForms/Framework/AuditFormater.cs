@@ -1,5 +1,4 @@
-﻿using Codisa.InterwayDocs.Properties;
-using Csla;
+﻿using Csla;
 
 namespace Codisa.InterwayDocs.Framework
 {
@@ -7,16 +6,16 @@ namespace Codisa.InterwayDocs.Framework
     {
         public static string Format(SmartDate created, SmartDate changed)
         {
-            created.FormatString = Resources.AuditCreatedFormat;
+            created.FormatString = "AuditCreatedFormat".GetUiTranslation();
             if (changed == created)
-                return string.Format(Resources.AuditNoChanges, created);
+                return string.Format("AuditNoChanges".GetUiTranslation(), created);
 
-            changed.FormatString = Resources.AuditChangedSameDayFormat;
+            changed.FormatString = "AuditChangedSameDayFormat".GetUiTranslation();
             if (changed.Date.Year == created.Date.Year && changed.Date.DayOfYear == created.Date.DayOfYear)
-                return string.Format(Resources.AuditChangedSameDay, created, changed);
+                return string.Format("AuditChangedSameDay".GetUiTranslation(), created, changed);
 
-            changed.FormatString = Resources.AuditChangedFormat;
-            return string.Format(Resources.AuditChanged, created, changed);
+            changed.FormatString = "AuditChangedFormat".GetUiTranslation();
+            return string.Format("AuditChanged".GetUiTranslation(), created, changed);
         }
     }
 }

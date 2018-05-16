@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 using Csla;
 using Csla.Data;
-using Codisa.InterwayDocs.Business.Properties;
 using Codisa.InterwayDocs.Rules;
 using Csla.Rules;
 
@@ -303,7 +302,7 @@ namespace Codisa.InterwayDocs.Business
             // Property Business Rules
 
             // RegisterDate
-            BusinessRules.AddRule(new DateNotInFuture(RegisterDateProperty) { MessageDelegate = () => Resources.DateNotInFuture, Priority = 1 });
+            BusinessRules.AddRule(new DateNotInFuture(RegisterDateProperty) { MessageDelegate = () => "DateNotInFuture".GetTranslation(), Priority = 1 });
             // DocumentType
             BusinessRules.AddRule(new CollapseWhiteSpace(DocumentTypeProperty) { Priority = 1 });
             // DocumentReference
@@ -313,15 +312,15 @@ namespace Codisa.InterwayDocs.Business
             // DocumentDept
             BusinessRules.AddRule(new CollapseWhiteSpace(DocumentDeptProperty) { Priority = 1 });
             // DocumentClass
-            BusinessRules.AddRule(new ClassificationFormat(DocumentClassProperty) { Priority = 1 });
+            BusinessRules.AddRule(new ClassificationFormat(DocumentClassProperty) { MessageDelegate = () => "WrongClassFormat".GetTranslation(), Priority = 1 });
             // DocumentDate
-            BusinessRules.AddRule(new DateNotInFuture(DocumentDateProperty) { MessageDelegate = () => Resources.DateNotInFuture, Priority = 1 });
+            BusinessRules.AddRule(new DateNotInFuture(DocumentDateProperty) { MessageDelegate = () => "DateNotInFuture".GetTranslation(), Priority = 1 });
             // Subject
             BusinessRules.AddRule(new CollapseSpace(SubjectProperty) { Priority = 1 });
             // SenderName
             BusinessRules.AddRule(new CollapseWhiteSpace(SenderNameProperty) { Priority = 1 });
             // ReceptionDate
-            BusinessRules.AddRule(new DateNotInFuture(ReceptionDateProperty) { MessageDelegate = () => Resources.DateNotInFuture, Priority = 1 });
+            BusinessRules.AddRule(new DateNotInFuture(ReceptionDateProperty) { MessageDelegate = () => "DateNotInFuture".GetTranslation(), Priority = 1 });
             // RoutedTo
             BusinessRules.AddRule(new CollapseWhiteSpace(RoutedToProperty) { Priority = 1 });
             // Notes

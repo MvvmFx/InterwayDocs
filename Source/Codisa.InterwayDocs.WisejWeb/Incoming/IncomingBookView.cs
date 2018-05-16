@@ -2,7 +2,6 @@
 using Codisa.InterwayDocs.Business;
 using Codisa.InterwayDocs.Business.SearchObjects;
 using Codisa.InterwayDocs.Framework;
-using Codisa.InterwayDocs.Properties;
 using MvvmFx.CaliburnMicro;
 using MvvmFx.Bindings.Data;
 using Binding = MvvmFx.Bindings.Data.Binding;
@@ -67,6 +66,7 @@ namespace Codisa.InterwayDocs.Incoming
                     RootViewModel = viewModel.RootViewModel;
 
                     SetConfiguration();
+                    SetResources();
                     BindOnce();
                     Rebind();
 
@@ -182,19 +182,24 @@ namespace Codisa.InterwayDocs.Incoming
             RebindText(criteria_StartDate);
             RebindText(criteria_EndDate);
 
-            toolTip.SetToolTip(fastDate, Resources.FastDateToolTip);
-            fullTextLabel.Text = Resources.LabelFullText;
-            toolTip.SetToolTip(fullTextLabel, Resources.ToolTipFullText);
-            archiveLocationLabel.Text = Resources.LabelArchiveLocation;
-            toolTip.SetToolTip(archiveLocationLabel, Resources.ToolTipLocation);
-            dateTypeLabel.Text = Resources.LabelDates;
-            toolTip.SetToolTip(dateTypeLabel, Resources.ToolTipDates);
-            startDateLabel.Text = Resources.LabelStartDate;
-            toolTip.SetToolTip(startDateLabel, Resources.ToolTipStartDate);
-            endDateLabel.Text = Resources.LabelEndDate;
-            toolTip.SetToolTip(endDateLabel, Resources.ToolTipEndDate);
-            search.Text = Resources.LabelSearch;
-            printList.ToolTipText = Resources.ToolTipExportListExcel;
+            SetResources();
+        }
+
+        private void SetResources()
+        {
+            toolTip.SetToolTip(fastDate, "FastDateToolTip".GetUiTranslation());
+            fullTextLabel.Text = "LabelFullText".GetUiTranslation();
+            toolTip.SetToolTip(fullTextLabel, "ToolTipFullText".GetUiTranslation());
+            archiveLocationLabel.Text = "LabelArchiveLocation".GetUiTranslation();
+            toolTip.SetToolTip(archiveLocationLabel, "ToolTipLocation".GetUiTranslation());
+            dateTypeLabel.Text = "LabelDates".GetUiTranslation();
+            toolTip.SetToolTip(dateTypeLabel, "ToolTipDates".GetUiTranslation());
+            startDateLabel.Text = "LabelStartDate".GetUiTranslation();
+            toolTip.SetToolTip(startDateLabel, "ToolTipStartDate".GetUiTranslation());
+            endDateLabel.Text = "LabelEndDate".GetUiTranslation();
+            toolTip.SetToolTip(endDateLabel, "ToolTipEndDate".GetUiTranslation());
+            search.Text = "LabelSearch".GetUiTranslation();
+            printList.ToolTipText = "ToolTipExportListExcel".GetUiTranslation();
         }
 
         #endregion

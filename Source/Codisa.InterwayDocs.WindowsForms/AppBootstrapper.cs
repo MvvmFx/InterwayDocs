@@ -6,9 +6,9 @@ using Wisej.Web;
 #else
 using System.Windows.Forms;
 #endif
-using Codisa.InterwayDocs.Properties;
 using MvvmFx.CaliburnMicro;
 using MvvmFx.Logging;
+using Codisa.InterwayDocs.Framework;
 
 namespace Codisa.InterwayDocs
 {
@@ -89,10 +89,10 @@ namespace Codisa.InterwayDocs
             {
                 var message = Environment.NewLine + ex.InnerException.Message;
                 if (message != "\r\nExit")
-                    MessageBox.Show(message, Resources.AppDomain_UnhandledException);
+                    MessageBox.Show(message, "AppDomain_UnhandledException".GetUiTranslation());
             }
             else
-                MessageBox.Show(e.ExceptionObject.ToString(), Resources.AppDomain_UnhandledException);
+                MessageBox.Show(e.ExceptionObject.ToString(), "AppDomain_UnhandledException".GetUiTranslation());
         }
 
         protected override void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
@@ -101,10 +101,10 @@ namespace Codisa.InterwayDocs
             if (ex != null)
             {
                 var message = Environment.NewLine + ex.InnerException.Message;
-                MessageBox.Show(message, Resources.Application_ThreadException);
+                MessageBox.Show(message, "Application_ThreadException".GetUiTranslation());
             }
             else
-                MessageBox.Show(e.Exception.Message, Resources.Application_ThreadException);
+                MessageBox.Show(e.Exception.Message, "Application_ThreadException".GetUiTranslation());
         }
     }
 }

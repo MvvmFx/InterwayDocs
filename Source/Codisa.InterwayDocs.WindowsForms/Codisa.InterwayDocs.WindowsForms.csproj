@@ -184,6 +184,8 @@
     <Compile Include="Framework\PrintBook.cs" />
     <Compile Include="Framework\PrintRecord.cs" />
     <Compile Include="Framework\Show.cs" />
+    <Compile Include="Framework\TranslatedResources.cs" />
+    <Compile Include="Framework\UiResources.cs" />
     <Compile Include="IMainForm.cs" />
     <Compile Include="IMainFormViewModel.cs" />
     <Compile Include="Incoming\IncomingDetailView.cs">
@@ -326,13 +328,6 @@
       <DependentUpon>OutgoingBookView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.pt.resx" />
-    <EmbeddedResource Include="Properties\Resources.es.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.fr.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -376,15 +371,6 @@
     <None Include="Properties\DataSources\Codisa.InterwayDocs.Business.IncomingRegister.datasource" />
     <None Include="Properties\DataSources\Codisa.InterwayDocs.Business.OutgoingBook.datasource" />
     <None Include="Properties\DataSources\Codisa.InterwayDocs.Business.OutgoingRegister.datasource" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

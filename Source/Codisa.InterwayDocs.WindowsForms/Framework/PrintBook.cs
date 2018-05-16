@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using Codisa.InterwayDocs.Business;
 using Codisa.InterwayDocs.Business.SearchObjects;
 using Codisa.InterwayDocs.Configuration;
-using Codisa.InterwayDocs.Properties;
 using Codisa.InterwayDocs.Rules;
 using NPOI.HSSF.Util;
 using NPOI.SS.UserModel;
@@ -104,11 +103,11 @@ namespace Codisa.InterwayDocs.Framework
                 OverwritePrompt = true,
                 SupportMultiDottedExtensions = false,
                 AddExtension = true,
-                Filter = Resources.ExcelWorkbook,
+                Filter = "ExcelWorkbook".GetUiTranslation(),
                 DefaultExt = ".xlsx",
                 FileName = string.Format("{0}-{1}",
                     _filePrefix,
-                    _refreshDateTime.ToString(Resources.FilenameDateTimeFormat))
+                    _refreshDateTime.ToString("FilenameDateTimeFormat".GetUiTranslation()))
             })
             {
                 var result = diag.ShowDialog();
@@ -120,7 +119,7 @@ namespace Codisa.InterwayDocs.Framework
 #else
             _fileName = string.Format("{0}-{1}.xlsx",
                 _filePrefix,
-                _refreshDateTime.ToString(Resources.FilenameDateTimeFormat));
+                _refreshDateTime.ToString("FilenameDateTimeFormat".GetUiTranslation()));
 #endif
             return true;
         }
@@ -225,7 +224,7 @@ namespace Codisa.InterwayDocs.Framework
             _dateGridStyle.SetBorderColor(BorderSide.BOTTOM, myBlueColour);
             _dateGridStyle.DataFormat = _workbook.GetCreationHelper()
                 .CreateDataFormat()
-                .GetFormat(Resources.DateTimeFormat);
+                .GetFormat("DateTimeFormat".GetUiTranslation());
             _dateGridStyle.Alignment = HorizontalAlignment.Center;
             _dateGridStyle.SetVerticalAlignment((short) VerticalAlignment.Top);
         }
@@ -379,11 +378,11 @@ namespace Codisa.InterwayDocs.Framework
         {
             var row = _sheet.CreateRow(0) as XSSFRow;
 
-            var value = string.Format(Resources.BookReportTitle, _title, _refreshDateTime.ToString("G"));
+            var value = string.Format("BookReportTitle".GetUiTranslation(), _title, _refreshDateTime.ToString("G"));
 
             var titleLabel = row.CreateCell(0) as XSSFCell;
             titleLabel.SetCellType(CellType.String);
-            titleLabel.SetCellValue(Resources.CommunReportTitle);
+            titleLabel.SetCellValue("CommunReportTitle".GetUiTranslation());
             titleLabel.CellStyle = _generalStyle;
 
             var valueLabel = row.CreateCell(1) as XSSFCell;
@@ -398,7 +397,7 @@ namespace Codisa.InterwayDocs.Framework
 
             var titleLabel = row.CreateCell(0) as XSSFCell;
             titleLabel.SetCellType(CellType.String);
-            titleLabel.SetCellValue(Resources.LabelDates + ":");
+            titleLabel.SetCellValue("LabelDates".GetUiTranslation() + ":");
             titleLabel.CellStyle = _generalStyle;
 
             var valueLabel = row.CreateCell(1) as XSSFCell;
@@ -407,15 +406,15 @@ namespace Codisa.InterwayDocs.Framework
 
             if (_refreshCriteria.CriteriaStartDate == null && _refreshCriteria.CriteriaEndDate == null)
             {
-                value = Resources.Unspecified;
+                value = "Unspecified".GetUiTranslation();
                 valueLabel.CellStyle = _generalStyle;
             }
             else if (_refreshCriteria.CriteriaStartDate != null && _refreshCriteria.CriteriaEndDate != null)
             {
-                var startDate = _refreshCriteria.CriteriaStartDate.Date.ToString(Resources.DateTimeFormat);
-                var endDate = _refreshCriteria.CriteriaEndDate.Date.ToString(Resources.DateTimeFormat);
+                var startDate = _refreshCriteria.CriteriaStartDate.Date.ToString("DateTimeFormat".GetUiTranslation());
+                var endDate = _refreshCriteria.CriteriaEndDate.Date.ToString("DateTimeFormat".GetUiTranslation());
 
-                value = string.Format(Resources.BookReportDateRange,
+                value = string.Format("BookReportDateRange".GetUiTranslation(),
                     _refreshCriteria.DateTypeList.GetDescription(_refreshCriteria.SelectedDateTypeName),
                     startDate,
                     endDate);
@@ -424,9 +423,9 @@ namespace Codisa.InterwayDocs.Framework
             }
             else if (_refreshCriteria.CriteriaStartDate == null && _refreshCriteria.CriteriaEndDate != null)
             {
-                var endDate = _refreshCriteria.CriteriaEndDate.Date.ToString(Resources.DateTimeFormat);
+                var endDate = _refreshCriteria.CriteriaEndDate.Date.ToString("DateTimeFormat".GetUiTranslation());
 
-                value = string.Format(Resources.BookReportDateUpTo,
+                value = string.Format("BookReportDateUpTo".GetUiTranslation(),
                     _refreshCriteria.DateTypeList.GetDescription(_refreshCriteria.SelectedDateTypeName),
                     endDate);
 
@@ -434,9 +433,9 @@ namespace Codisa.InterwayDocs.Framework
             }
             else //if (_refreshCriteria.CriteriaStartDate != null && _refreshCriteria.CriteriaEndDate == null)
             {
-                var startDate = _refreshCriteria.CriteriaStartDate.Date.ToString(Resources.DateTimeFormat);
+                var startDate = _refreshCriteria.CriteriaStartDate.Date.ToString("DateTimeFormat".GetUiTranslation());
 
-                value = string.Format(Resources.BookReportDateSince,
+                value = string.Format("BookReportDateSince".GetUiTranslation(),
                     _refreshCriteria.DateTypeList.GetDescription(_refreshCriteria.SelectedDateTypeName),
                     startDate);
 
@@ -452,7 +451,7 @@ namespace Codisa.InterwayDocs.Framework
 
             var titleLabel = row.CreateCell(0) as XSSFCell;
             titleLabel.SetCellType(CellType.String);
-            titleLabel.SetCellValue(Resources.LabelFullText + ":");
+            titleLabel.SetCellValue("LabelFullText".GetUiTranslation() + ":");
             titleLabel.CellStyle = _generalStyle;
 
             var valueLabel = row.CreateCell(1) as XSSFCell;
@@ -460,7 +459,7 @@ namespace Codisa.InterwayDocs.Framework
             string value;
             if (string.IsNullOrEmpty(_refreshCriteria.FullText))
             {
-                value = Resources.Unspecified;
+                value = "Unspecified".GetUiTranslation();
                 valueLabel.CellStyle = _generalStyle;
             }
             else
@@ -481,7 +480,7 @@ namespace Codisa.InterwayDocs.Framework
 
                 var titleLabel = row.CreateCell(0) as XSSFCell;
                 titleLabel.SetCellType(CellType.String);
-                titleLabel.SetCellValue(Resources.LabelArchiveLocation + ":");
+                titleLabel.SetCellValue("LabelArchiveLocation".GetUiTranslation() + ":");
                 titleLabel.CellStyle = _generalStyle;
 
                 var valueLabel = row.CreateCell(1) as XSSFCell;
@@ -489,7 +488,7 @@ namespace Codisa.InterwayDocs.Framework
                 string value;
                 if (string.IsNullOrEmpty(refreshCriteria.ArchiveLocation))
                 {
-                    value = Resources.Unspecified;
+                    value = "Unspecified".GetUiTranslation();
                     valueLabel.CellStyle = _generalStyle;
                 }
                 else

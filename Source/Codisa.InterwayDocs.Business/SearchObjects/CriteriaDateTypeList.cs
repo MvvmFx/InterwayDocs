@@ -1,5 +1,4 @@
 using System;
-using Codisa.InterwayDocs.Business.Properties;
 using Csla;
 
 namespace Codisa.InterwayDocs.Business.SearchObjects
@@ -85,17 +84,17 @@ namespace Codisa.InterwayDocs.Business.SearchObjects
             var rlce = RaiseListChangedEvents;
             RaiseListChangedEvents = false;
 
-            AddNameValuePair("RegisterDate", Resources.RegisterDate);
-            AddNameValuePair("DocumentDate", Resources.DocumentDate);
+            AddNameValuePair("RegisterDate", "RegisterDate".GetTranslation());
+            AddNameValuePair("DocumentDate", "DocumentDate".GetTranslation());
 
             if (useSendDate)
-                AddNameValuePair("SendDate", Resources.SendDate);
+                AddNameValuePair("SendDate", "SendDate".GetTranslation());
             else
-                AddNameValuePair("ReceptionDate", Resources.ReceptionDate);
+                AddNameValuePair("ReceptionDate", "ReceptionDate".GetTranslation());
 
-            AddNameValuePair("CreateDate", Resources.CreateDate);
-            AddNameValuePair("ChangeDate", Resources.ChangeDate);
-            AddNameValuePair("AllDates", Resources.AllDates);
+            AddNameValuePair("CreateDate", "CreateDate".GetTranslation());
+            AddNameValuePair("ChangeDate", "ChangeDate".GetTranslation());
+            AddNameValuePair("AllDates", "AllDates".GetTranslation());
 
             RaiseListChangedEvents = rlce;
             IsReadOnly = true;

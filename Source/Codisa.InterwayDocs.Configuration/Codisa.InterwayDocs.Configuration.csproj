@@ -70,14 +70,6 @@
     <Compile Include="PropertyRequiredList.Designer.cs">
       <DependentUpon>PropertyRequiredList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ResourceCultureInfo.cs" />
-    <Compile Include="ResourceCultureInfo.Designer.cs">
-      <DependentUpon>ResourceCultureInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ResourceCultureList.cs" />
-    <Compile Include="ResourceCultureList.Designer.cs">
-      <DependentUpon>ResourceCultureList.cs</DependentUpon>
-    </Compile>
     <Compile Include="ResourceInfo.cs" />
     <Compile Include="ResourceInfo.Designer.cs">
       <DependentUpon>ResourceInfo.cs</DependentUpon>

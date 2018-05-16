@@ -19,6 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codisa.InterwayDocs.Setup",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4017396F-90F3-467E-BB87-D8352122A6DA}"
 	ProjectSection(SolutionItems) = preProject
+		GlobalAssemblyInfo.cs = GlobalAssemblyInfo.cs
 		How to run.txt = How to run.txt
 	EndProjectSection
 EndProject
@@ -26,8 +27,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterwayDocs.Chrome", "Inte
 	ProjectSection(ProjectDependencies) = postProject
 		{BA22EE1E-C853-40B1-A5C1-ED2B10300AC8} = {BA22EE1E-C853-40B1-A5C1-ED2B10300AC8}
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceMigration", "ResourceMigration\ResourceMigration.csproj", "{8F083CCB-B403-4157-9FF0-CC249074AF0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,14 +100,6 @@ Global
 		{8F7868FF-A25D-4958-8912-908A44F5077E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8F7868FF-A25D-4958-8912-908A44F5077E}.Release|x64.ActiveCfg = Release|x64
 		{8F7868FF-A25D-4958-8912-908A44F5077E}.Release|x64.Build.0 = Release|x64
-		{8F083CCB-B403-4157-9FF0-CC249074AF0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F083CCB-B403-4157-9FF0-CC249074AF0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F083CCB-B403-4157-9FF0-CC249074AF0C}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{8F083CCB-B403-4157-9FF0-CC249074AF0C}.Debug|x64.Build.0 = Debug|Any CPU
-		{8F083CCB-B403-4157-9FF0-CC249074AF0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F083CCB-B403-4157-9FF0-CC249074AF0C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F083CCB-B403-4157-9FF0-CC249074AF0C}.Release|x64.ActiveCfg = Release|Any CPU
-		{8F083CCB-B403-4157-9FF0-CC249074AF0C}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

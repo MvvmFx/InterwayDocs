@@ -51,7 +51,7 @@ namespace Codisa.InterwayDocs.Rules
         /// </returns>
         protected override string GetMessage()
         {
-            return HasMessageDelegate ? base.GetMessage() : "Não pode usar mais de 3 palavras.";
+            return HasMessageDelegate ? base.GetMessage() : "You can't use more than 3 words.";
         }
 
         /// <summary>

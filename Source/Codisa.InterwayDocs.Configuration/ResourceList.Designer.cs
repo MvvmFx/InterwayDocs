@@ -19,76 +19,6 @@ namespace Codisa.InterwayDocs.Configuration
     public partial class ResourceList : ReadOnlyBindingListBase<ResourceList, ResourceInfo>
     {
 
-        #region Collection Business Methods
-
-        /// <summary>
-        /// Adds a new <see cref="ResourceInfo"/> item to the collection.
-        /// </summary>
-        /// <param name="item">The item to add.</param>
-        /// <remarks>
-        /// There is no valid Parent property (inexistant or null).
-        /// The Add method is redefined so it takes care of filling the ParentList property.
-        /// </remarks>
-        public new void Add(ResourceInfo item)
-        {
-            item.ParentList = this;
-            base.Add(item);
-        }
-
-        /// <summary>
-        /// Determines whether a <see cref="ResourceInfo"/> item is in the collection.
-        /// </summary>
-        /// <param name="resourceId">The ResourceId of the item to search for.</param>
-        /// <returns><c>true</c> if the ResourceInfo is a collection item; otherwise, <c>false</c>.</returns>
-        public bool Contains(int resourceId)
-        {
-            foreach (var resourceInfo in this)
-            {
-                if (resourceInfo.ResourceId == resourceId)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        #endregion
-
-        #region Find Methods
-
-        /// <summary>
-        /// Finds a <see cref="ResourceInfo"/> item of the <see cref="ResourceList"/> collection, based on item key properties.
-        /// </summary>
-        /// <param name="resourceId">The ResourceId.</param>
-        /// <returns>A <see cref="ResourceInfo"/> object.</returns>
-        public ResourceInfo FindResourceInfoByParentProperties(int resourceId)
-        {
-            for (var i = 0; i < this.Count; i++)
-            {
-                if (this[i].ResourceId.Equals(resourceId))
-                {
-                    return this[i];
-                }
-            }
-
-            return null;
-        }
-
-        #endregion
-
-        #region Factory Methods
-
-        /// <summary>
-        /// Factory method. Loads a <see cref="ResourceList"/> collection.
-        /// </summary>
-        /// <returns>A reference to the fetched <see cref="ResourceList"/> collection.</returns>
-        public static ResourceList GetResourceList()
-        {
-            return DataPortal.Fetch<ResourceList>();
-        }
-
-        #endregion
-
         #region Constructor
 
         /// <summary>
@@ -110,21 +40,96 @@ namespace Codisa.InterwayDocs.Configuration
 
         #endregion
 
+        #region Nested Criteria
+
+        /// <summary>
+        /// CriteriaGet criteria.
+        /// </summary>
+        [Serializable]
+        protected class CriteriaGet
+        {
+
+            /// <summary>
+            /// Gets the Resource Type.
+            /// </summary>
+            /// <value>The Resource Type.</value>
+            public string ResourceType { get; private set; }
+
+            /// <summary>
+            /// Gets the UICulture.
+            /// </summary>
+            /// <value>The UICulture.</value>
+            public string UICulture { get; private set; }
+
+            /// <summary>
+            /// Initializes a new instance of the <see cref="CriteriaGet"/> class.
+            /// </summary>
+            /// <remarks> A parameterless constructor is required by the MobileFormatter.</remarks>
+            [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+            public CriteriaGet()
+            {
+            }
+
+            /// <summary>
+            /// Initializes a new instance of the <see cref="CriteriaGet"/> class.
+            /// </summary>
+            /// <param name="resourceType">The ResourceType.</param>
+            /// <param name="uICulture">The UICulture.</param>
+            public CriteriaGet(string resourceType, string uICulture)
+            {
+                ResourceType = resourceType;
+                UICulture = uICulture;
+            }
+
+            /// <summary>
+            /// Determines whether the specified <see cref="System.Object"/> is equal to this instance.
+            /// </summary>
+            /// <param name="obj">The <see cref="System.Object"/> to compare with this instance.</param>
+            /// <returns><c>true</c> if the specified <see cref="System.Object"/> is equal to this instance; otherwise, <c>false</c>.</returns>
+            public override bool Equals(object obj)
+            {
+                if (obj is CriteriaGet)
+                {
+                    var c = (CriteriaGet) obj;
+                    if (!ResourceType.Equals(c.ResourceType))
+                        return false;
+                    if (!UICulture.Equals(c.UICulture))
+                        return false;
+                    return true;
+                }
+                return false;
+            }
+
+            /// <summary>
+            /// Returns a hash code for this instance.
+            /// </summary>
+            /// <returns>An hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+            public override int GetHashCode()
+            {
+                return string.Concat("CriteriaGet", ResourceType.ToString(), UICulture.ToString()).GetHashCode();
+            }
+        }
+
+        #endregion
+
         #region Data Access
 
         /// <summary>
-        /// Loads a <see cref="ResourceList"/> collection from the database.
+        /// Loads a <see cref="ResourceList"/> collection from the database, based on given criteria.
         /// </summary>
-        protected void DataPortal_Fetch()
+        /// <param name="crit">The fetch criteria.</param>
+        protected void DataPortal_Fetch(CriteriaGet crit)
         {
             using (var ctx = ConnectionManager<SqlConnection>.GetManager(Database.InterwayDocsConnection, false))
             {
                 using (var cmd = new SqlCommand("dbo.GetResourceList", ctx.Connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    var args = new DataPortalHookArgs(cmd);
+                    cmd.Parameters.AddWithValue("@ResourceType", crit.ResourceType).DbType = DbType.String;
+                    cmd.Parameters.AddWithValue("@UICulture", crit.UICulture).DbType = DbType.String;
+                    var args = new DataPortalHookArgs(cmd, crit);
                     OnFetchPre(args);
-                    LoadCollection(cmd);
+                    CachedList.LoadCollection(cmd);
                     OnFetchPost(args);
                 }
             }
@@ -135,8 +140,6 @@ namespace Codisa.InterwayDocs.Configuration
             using (var dr = new SafeDataReader(cmd.ExecuteReader()))
             {
                 Fetch(dr);
-                if (this.Count > 0)
-                    this[0].FetchChildren(dr);
             }
         }
 

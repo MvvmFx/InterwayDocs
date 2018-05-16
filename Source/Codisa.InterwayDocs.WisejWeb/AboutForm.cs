@@ -2,7 +2,6 @@ using System;
 using System.Diagnostics;
 using System.Reflection;
 using Codisa.InterwayDocs.Framework;
-using Codisa.InterwayDocs.Properties;
 using Wisej.Base;
 using Wisej.Web;
 
@@ -37,13 +36,14 @@ namespace Codisa.InterwayDocs
         {
             string timestamp = DateTime.Now.ToString();
 
-            Text = Resources.LabelAboutApplication;
+            Text = "LabelAboutApplication".GetUiTranslation();
             okButton.Text = DialogResult.OK.ToString();
 
-            versionLabel.Text = string.Format("{0} {1}  -  {2}", Resources.AboutFormVersionLabel, _fileVersion,
+            versionLabel.Text = string.Format("{0} {1}  -  {2}", "AboutFormVersionLabel".GetUiTranslation(),
+                _fileVersion,
                 _legalCopyright);
 
-            var urlString = ApplicationBase.StartupUri + Resources.AboutFormHtmlFileName + ".html";
+            var urlString = ApplicationBase.StartupUrl + "AboutFormHtmlFileName".GetUiTranslation() + ".html";
 
             webBrowser1.Url = new Uri(urlString + "?v=" + timestamp);
         }

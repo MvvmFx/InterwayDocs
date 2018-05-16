@@ -161,7 +161,7 @@ namespace Codisa.InterwayDocs.Framework
                 {
                     // show
 
-                    BaseToggleDetailPanel.ToolTipText = Resources.ToolTipHideDetail;
+                    BaseToggleDetailPanel.ToolTipText = "ToolTipHideDetail".GetUiTranslation();
                     BaseToggleDetailPanel.Image = Resources.ArrowDown16;
 
                     if (!ParentViewModel.IsDetailPanelStateOpen)
@@ -174,7 +174,7 @@ namespace Codisa.InterwayDocs.Framework
                 {
                     // hide
 
-                    BaseToggleDetailPanel.ToolTipText = Resources.ToolTipShowDetailPanel;
+                    BaseToggleDetailPanel.ToolTipText = "ToolTipShowDetailPanel".GetUiTranslation();
                     BaseToggleDetailPanel.Image = Resources.ArrowUp16;
 
                     if (ParentViewModel.IsDetailPanelStateOpen)
@@ -192,8 +192,8 @@ namespace Codisa.InterwayDocs.Framework
 
         public virtual void RefreshTranslation()
         {
-            BaseToggleDetailPanel.ToolTipText = Resources.ToolTipHideDetail;
-            BaseToggleDetailPanel.ToolTipText = Resources.ToolTipShowDetailPanel;
+            BaseToggleDetailPanel.ToolTipText = "ToolTipHideDetail".GetUiTranslation();
+            BaseToggleDetailPanel.ToolTipText = "ToolTipShowDetailPanel".GetUiTranslation();
         }
 
         #endregion

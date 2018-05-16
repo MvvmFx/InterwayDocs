@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 using Csla;
 using Csla.Data;
-using Codisa.InterwayDocs.Business.Properties;
 using Codisa.InterwayDocs.Rules;
 using Csla.Rules;
 
@@ -275,7 +274,7 @@ namespace Codisa.InterwayDocs.Business
             // Property Business Rules
 
             // RegisterDate
-            BusinessRules.AddRule(new DateNotInFuture(RegisterDateProperty) { MessageDelegate = () => Resources.DateNotInFuture, Priority = 1 });
+            BusinessRules.AddRule(new DateNotInFuture(RegisterDateProperty) { MessageDelegate = () => "DateNotInFuture".GetTranslation(), Priority = 1 });
             // DocumentType
             BusinessRules.AddRule(new CollapseWhiteSpace(DocumentTypeProperty) { Priority = 1 });
             // DocumentReference
@@ -285,9 +284,9 @@ namespace Codisa.InterwayDocs.Business
             // DocumentDept
             BusinessRules.AddRule(new CollapseWhiteSpace(DocumentDeptProperty));
             // DocumentClass
-            BusinessRules.AddRule(new ClassificationFormat(DocumentClassProperty) { Priority = 1 });
+            BusinessRules.AddRule(new ClassificationFormat(DocumentClassProperty) { MessageDelegate = () => "WrongClassFormat".GetTranslation(), Priority = 1 });
             // DocumentDate
-            BusinessRules.AddRule(new DateNotInFuture(DocumentDateProperty) { MessageDelegate = () => Resources.DateNotInFuture, Priority = 1 });
+            BusinessRules.AddRule(new DateNotInFuture(DocumentDateProperty) { MessageDelegate = () => "DateNotInFuture".GetTranslation(), Priority = 1 });
             // RecipientName
             BusinessRules.AddRule(new CollapseWhiteSpace(RecipientNameProperty) { Priority = 1 });
             // ExpeditorName
@@ -295,7 +294,7 @@ namespace Codisa.InterwayDocs.Business
             // ReceptionName
             BusinessRules.AddRule(new CollapseWhiteSpace(ReceptionNameProperty) { Priority = 1 });
             // ReceptionDate
-            BusinessRules.AddRule(new DateNotInFuture(ReceptionDateProperty) { Severity = RuleSeverity.Information, MessageDelegate = () => Resources.DateNotInFuture, Priority = 1 });
+            BusinessRules.AddRule(new DateNotInFuture(ReceptionDateProperty) { Severity = RuleSeverity.Information, MessageDelegate = () => "DateNotInFuture".GetTranslation(), Priority = 1 });
 
             AddBusinessRulesExtend();
         }

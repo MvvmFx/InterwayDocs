@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 using Codisa.InterwayDocs.Business.Tools;
-using Codisa.InterwayDocs.Properties;
+using Codisa.InterwayDocs.Framework;
 
 namespace Codisa.InterwayDocs.Tools
 {
@@ -14,7 +14,7 @@ namespace Codisa.InterwayDocs.Tools
 
         private void BackupForm_Load(object sender, EventArgs e)
         {
-            Text = Resources.ToolsBackupLabel;
+            Text = "ToolsBackupLabel".GetUiTranslation();
             okButton.Text = DialogResult.OK.ToString();
         }
 

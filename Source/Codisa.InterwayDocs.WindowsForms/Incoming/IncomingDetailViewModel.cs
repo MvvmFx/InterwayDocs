@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using Codisa.InterwayDocs.Business;
 using Codisa.InterwayDocs.Configuration;
 using Codisa.InterwayDocs.Framework;
-using Codisa.InterwayDocs.Properties;
 using MvvmFx.CaliburnMicro;
 using ApplicationContext = MvvmFx.CaliburnMicro.ApplicationContext;
 
@@ -160,7 +159,7 @@ namespace Codisa.InterwayDocs.Incoming
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, Resources.OperationError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "OperationError".GetUiTranslation(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 _parent = Parent as IncomingBookViewModel;
@@ -204,7 +203,7 @@ namespace Codisa.InterwayDocs.Incoming
             {
                 DoRefresh(IncomingRegister.NewIncomingRegister);
 
-                DisplayName = Resources.NewRegister;
+                DisplayName = "NewRegister".GetUiTranslation();
 #if WISEJ
                 UnloadConfirmation.BeforeUnloadMessage = "Save before closing.";
 #endif
@@ -218,7 +217,7 @@ namespace Codisa.InterwayDocs.Incoming
                 DoRefresh(() => IncomingRegister.GetIncomingRegister(_registerId));
                 _refreshDateTime = DateTime.Now;
 
-                DisplayName = string.Format(Resources.RegisterNumber, Model.RegisterId);
+                DisplayName = string.Format("RegisterNumber".GetUiTranslation(), Model.RegisterId);
             }
 
             _registerId = Model.RegisterId;
@@ -241,7 +240,7 @@ namespace Codisa.InterwayDocs.Incoming
 
             if (_isCreating)
             {
-                DisplayName = Resources.NewRegister;
+                DisplayName = "NewRegister".GetUiTranslation();
             }
             else if (_showEmpty)
             {
@@ -249,7 +248,7 @@ namespace Codisa.InterwayDocs.Incoming
             }
             else
             {
-                DisplayName = string.Format(Resources.RegisterNumber, Model.RegisterId);
+                DisplayName = string.Format("RegisterNumber".GetUiTranslation(), Model.RegisterId);
                 NotifyOfPropertyChange("Audit");
             }
         }
@@ -291,7 +290,7 @@ namespace Codisa.InterwayDocs.Incoming
 
         private void ShowEmptyRegister()
         {
-            DisplayName = Resources.NoAvailableRegisters;
+            DisplayName = "NoAvailableRegisters".GetUiTranslation();
             SetEmptyRegisterButtons();
 
             if (!ParentViewModel.IsDetailPanelOpen)
@@ -339,7 +338,7 @@ namespace Codisa.InterwayDocs.Incoming
 
         protected void DoCloseCheck(Action<bool> callback)
         {
-            var result = MessageBox.Show(Resources.CloseOrCancel, Resources.UnsavedRegister,
+            var result = MessageBox.Show("CloseOrCancel".GetUiTranslation(), "UnsavedRegister".GetUiTranslation(),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
 
             var close = result == DialogResult.Yes;
@@ -471,6 +470,7 @@ namespace Codisa.InterwayDocs.Incoming
             }
             else
             {
+                Model.IsReadOnly = true;
                 ShowEmptyRegister();
             }
 
@@ -486,7 +486,7 @@ namespace Codisa.InterwayDocs.Incoming
 
             if (Error != null)
             {
-                MessageBox.Show(Error.Message, Resources.SaveError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Error.Message, "SaveError".GetUiTranslation(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -509,8 +509,8 @@ namespace Codisa.InterwayDocs.Incoming
 
         public void PrintDetail()
         {
-            PrintRecord.DoPrintRecord(this, _refreshDateTime, 4, Resources.IncomingRegisterShortName,
-                Resources.IncomingRegisterReportName, Model.RegisterId);
+            PrintRecord.DoPrintRecord(this, _refreshDateTime, 4, "IncomingRegisterShortName".GetUiTranslation(),
+                "IncomingRegisterReportName".GetUiTranslation(), Model.RegisterId);
         }
 
         public bool CanPrintDetail

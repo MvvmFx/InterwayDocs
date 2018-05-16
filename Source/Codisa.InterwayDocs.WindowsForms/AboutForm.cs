@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Windows.Forms;
 using Codisa.InterwayDocs.Framework;
-using Codisa.InterwayDocs.Properties;
 
 namespace Codisa.InterwayDocs
 {
@@ -36,13 +35,13 @@ namespace Codisa.InterwayDocs
 
         public void RefreshTranslation()
         {
-            Text = Resources.LabelAboutApplication;
+            Text = "LabelAboutApplication".GetUiTranslation();
             okButton.Text = DialogResult.OK.ToString();
 
-            versionLabel.Text = string.Format("{0} {1}  -  {2}", Resources.AboutFormVersionLabel, _fileVersion,
+            versionLabel.Text = string.Format("{0} {1}  -  {2}", "AboutFormVersionLabel".GetUiTranslation(), _fileVersion,
                 _legalCopyright);
 
-            var urlString = string.Format("file:///{0}/{1}.html", _path, Resources.AboutFormHtmlFileName);
+            var urlString = string.Format("file:///{0}/{1}.html", _path, "AboutFormHtmlFileName".GetUiTranslation());
 
             webBrowser1.Url = new Uri(urlString);
         }
