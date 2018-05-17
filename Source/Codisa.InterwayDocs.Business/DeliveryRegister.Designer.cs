@@ -42,11 +42,11 @@ namespace Codisa.InterwayDocs.Business
         /// <summary>
         /// Maintains metadata about <see cref="RegisterDate"/> property.
         /// </summary>
-        public static readonly PropertyInfo<SmartDate> RegisterDateProperty = RegisterProperty<SmartDate>(p => p.RegisterDate, "Data de registo");
+        public static readonly PropertyInfo<SmartDate> RegisterDateProperty = RegisterProperty<SmartDate>(p => p.RegisterDate, "Register date");
         /// <summary>
-        /// Gets or sets the Data de registo.
+        /// Gets or sets the Register date.
         /// </summary>
-        /// <value>The Data de registo.</value>
+        /// <value>The Register date.</value>
         public string RegisterDate
         {
             get { return GetPropertyConvert<SmartDate, string>(RegisterDateProperty); }
@@ -56,11 +56,11 @@ namespace Codisa.InterwayDocs.Business
         /// <summary>
         /// Maintains metadata about <see cref="DocumentType"/> property.
         /// </summary>
-        public static readonly PropertyInfo<string> DocumentTypeProperty = RegisterProperty<string>(p => p.DocumentType, "Tipo");
+        public static readonly PropertyInfo<string> DocumentTypeProperty = RegisterProperty<string>(p => p.DocumentType, "Type");
         /// <summary>
-        /// Gets or sets the Tipo.
+        /// Gets or sets the Type.
         /// </summary>
-        /// <value>The Tipo.</value>
+        /// <value>The Type.</value>
         public string DocumentType
         {
             get { return GetProperty(DocumentTypeProperty); }
@@ -70,11 +70,11 @@ namespace Codisa.InterwayDocs.Business
         /// <summary>
         /// Maintains metadata about <see cref="DocumentReference"/> property.
         /// </summary>
-        public static readonly PropertyInfo<string> DocumentReferenceProperty = RegisterProperty<string>(p => p.DocumentReference, "Número");
+        public static readonly PropertyInfo<string> DocumentReferenceProperty = RegisterProperty<string>(p => p.DocumentReference, "Number");
         /// <summary>
-        /// Gets or sets the Número.
+        /// Gets or sets the Number.
         /// </summary>
-        /// <value>The Número.</value>
+        /// <value>The Number.</value>
         public string DocumentReference
         {
             get { return GetProperty(DocumentReferenceProperty); }
@@ -84,11 +84,11 @@ namespace Codisa.InterwayDocs.Business
         /// <summary>
         /// Maintains metadata about <see cref="DocumentEntity"/> property.
         /// </summary>
-        public static readonly PropertyInfo<string> DocumentEntityProperty = RegisterProperty<string>(p => p.DocumentEntity, "Entidade");
+        public static readonly PropertyInfo<string> DocumentEntityProperty = RegisterProperty<string>(p => p.DocumentEntity, "Entity");
         /// <summary>
-        /// Gets or sets the Entidade.
+        /// Gets or sets the Entity.
         /// </summary>
-        /// <value>The Entidade.</value>
+        /// <value>The Entity.</value>
         public string DocumentEntity
         {
             get { return GetProperty(DocumentEntityProperty); }
@@ -98,11 +98,11 @@ namespace Codisa.InterwayDocs.Business
         /// <summary>
         /// Maintains metadata about <see cref="DocumentDept"/> property.
         /// </summary>
-        public static readonly PropertyInfo<string> DocumentDeptProperty = RegisterProperty<string>(p => p.DocumentDept, "Departamento");
+        public static readonly PropertyInfo<string> DocumentDeptProperty = RegisterProperty<string>(p => p.DocumentDept, "Department");
         /// <summary>
-        /// Gets or sets the Departamento.
+        /// Gets or sets the Department.
         /// </summary>
-        /// <value>The Departamento.</value>
+        /// <value>The Department.</value>
         public string DocumentDept
         {
             get { return GetProperty(DocumentDeptProperty); }
@@ -112,11 +112,11 @@ namespace Codisa.InterwayDocs.Business
         /// <summary>
         /// Maintains metadata about <see cref="DocumentClass"/> property.
         /// </summary>
-        public static readonly PropertyInfo<string> DocumentClassProperty = RegisterProperty<string>(p => p.DocumentClass, "Classificação");
+        public static readonly PropertyInfo<string> DocumentClassProperty = RegisterProperty<string>(p => p.DocumentClass, "Class");
         /// <summary>
-        /// Gets or sets the Classificação.
+        /// Gets or sets the Class.
         /// </summary>
-        /// <value>The Classificação.</value>
+        /// <value>The Class.</value>
         public string DocumentClass
         {
             get { return GetProperty(DocumentClassProperty); }
@@ -126,11 +126,11 @@ namespace Codisa.InterwayDocs.Business
         /// <summary>
         /// Maintains metadata about <see cref="DocumentDate"/> property.
         /// </summary>
-        public static readonly PropertyInfo<SmartDate> DocumentDateProperty = RegisterProperty<SmartDate>(p => p.DocumentDate, "Data do documento");
+        public static readonly PropertyInfo<SmartDate> DocumentDateProperty = RegisterProperty<SmartDate>(p => p.DocumentDate, "Document date");
         /// <summary>
-        /// Gets or sets the Data do documento.
+        /// Gets or sets the Document date.
         /// </summary>
-        /// <value>The Data do documento.</value>
+        /// <value>The Document date.</value>
         public string DocumentDate
         {
             get { return GetPropertyConvert<SmartDate, string>(DocumentDateProperty); }
@@ -140,11 +140,11 @@ namespace Codisa.InterwayDocs.Business
         /// <summary>
         /// Maintains metadata about <see cref="RecipientName"/> property.
         /// </summary>
-        public static readonly PropertyInfo<string> RecipientNameProperty = RegisterProperty<string>(p => p.RecipientName, "Destinatário");
+        public static readonly PropertyInfo<string> RecipientNameProperty = RegisterProperty<string>(p => p.RecipientName, "Recipient");
         /// <summary>
-        /// Gets or sets the Destinatário.
+        /// Gets or sets the Recipient.
         /// </summary>
-        /// <value>The Destinatário.</value>
+        /// <value>The Recipient.</value>
         public string RecipientName
         {
             get { return GetProperty(RecipientNameProperty); }
@@ -182,11 +182,11 @@ namespace Codisa.InterwayDocs.Business
         /// <summary>
         /// Maintains metadata about <see cref="ReceptionDate"/> property.
         /// </summary>
-        public static readonly PropertyInfo<SmartDate> ReceptionDateProperty = RegisterProperty<SmartDate>(p => p.ReceptionDate, "Data de recepção");
+        public static readonly PropertyInfo<SmartDate> ReceptionDateProperty = RegisterProperty<SmartDate>(p => p.ReceptionDate, "Reception date");
         /// <summary>
-        /// Gets or sets the Data de recepção.
+        /// Gets or sets the Reception date.
         /// </summary>
-        /// <value>The Data de recepção.</value>
+        /// <value>The Reception date.</value>
         public string ReceptionDate
         {
             get { return GetPropertyConvert<SmartDate, string>(ReceptionDateProperty); }
