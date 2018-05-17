@@ -137,7 +137,7 @@
             this.registerId.Location = new System.Drawing.Point(13, 34);
             this.registerId.Name = "registerId";
             this.registerId.Size = new System.Drawing.Size(104, 13);
-            this.registerId.Text = "Nº de Registo ####";
+            this.registerId.Text = "Register nr. ####";
             // 
             // model_RegisterDate
             // 
@@ -153,7 +153,7 @@
             this.registerDateLabel.Location = new System.Drawing.Point(274, 34);
             this.registerDateLabel.Name = "registerDateLabel";
             this.registerDateLabel.Size = new System.Drawing.Size(110, 13);
-            this.registerDateLabel.Text = "Data de registo";
+            this.registerDateLabel.Text = "Register date";
             this.registerDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip.SetToolTip(this.registerDateLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipRegisterDate);
             // 
@@ -203,7 +203,7 @@
             this.documentTypeLabel.Location = new System.Drawing.Point(14, 22);
             this.documentTypeLabel.Name = "documentTypeLabel";
             this.documentTypeLabel.Size = new System.Drawing.Size(45, 13);
-            this.documentTypeLabel.Text = "Tipo";
+            this.documentTypeLabel.Text = "Type";
             this.toolTip.SetToolTip(this.documentTypeLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipDocumentType);
             // 
             // model_DocumentReference
@@ -221,7 +221,7 @@
             this.documentReferenceLabel.Location = new System.Drawing.Point(14, 48);
             this.documentReferenceLabel.Name = "documentReferenceLabel";
             this.documentReferenceLabel.Size = new System.Drawing.Size(44, 13);
-            this.documentReferenceLabel.Text = "Número";
+            this.documentReferenceLabel.Text = "Number";
             this.toolTip.SetToolTip(this.documentReferenceLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipDocumentNumber);
             // 
             // model_DocumentEntity
@@ -239,7 +239,7 @@
             this.documentEntityLabel.Location = new System.Drawing.Point(14, 74);
             this.documentEntityLabel.Name = "documentEntityLabel";
             this.documentEntityLabel.Size = new System.Drawing.Size(36, 13);
-            this.documentEntityLabel.Text = "Entidade";
+            this.documentEntityLabel.Text = "Entity";
             this.toolTip.SetToolTip(this.documentEntityLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipDocumentEntity);
             // 
             // model_DocumentDept
@@ -257,7 +257,7 @@
             this.documentDeptLabel.Location = new System.Drawing.Point(14, 100);
             this.documentDeptLabel.Name = "documentDeptLabel";
             this.documentDeptLabel.Size = new System.Drawing.Size(47, 13);
-            this.documentDeptLabel.Text = "Departamento";
+            this.documentDeptLabel.Text = "Department";
             this.toolTip.SetToolTip(this.documentDeptLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipDocumentDept);
             // 
             // model_DocumentClass
@@ -275,7 +275,7 @@
             this.documentClassLabel.Location = new System.Drawing.Point(473, 22);
             this.documentClassLabel.Name = "documentClassLabel";
             this.documentClassLabel.Size = new System.Drawing.Size(69, 13);
-            this.documentClassLabel.Text = "Classificação";
+            this.documentClassLabel.Text = "Class";
             this.toolTip.SetToolTip(this.documentClassLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipDocumentClass);
             // 
             // model_DocumentDate
@@ -292,7 +292,7 @@
             this.documentDateLabel.Location = new System.Drawing.Point(850, 22);
             this.documentDateLabel.Name = "documentDateLabel";
             this.documentDateLabel.Size = new System.Drawing.Size(50, 13);
-            this.documentDateLabel.Text = "Data";
+            this.documentDateLabel.Text = "Date";
             this.documentDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip.SetToolTip(this.documentDateLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipDocumentDate);
             // 
@@ -313,7 +313,7 @@
             this.subjectLabel.Location = new System.Drawing.Point(473, 48);
             this.subjectLabel.Name = "subjectLabel";
             this.subjectLabel.Size = new System.Drawing.Size(45, 13);
-            this.subjectLabel.Text = "Assunto";
+            this.subjectLabel.Text = "Subject";
             this.toolTip.SetToolTip(this.subjectLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipSubject);
             // 
             // model_SenderName
@@ -331,7 +331,7 @@
             this.senderNameLabel.Location = new System.Drawing.Point(4, 192);
             this.senderNameLabel.Name = "senderNameLabel";
             this.senderNameLabel.Size = new System.Drawing.Size(69, 13);
-            this.senderNameLabel.Text = "Proveniência";
+            this.senderNameLabel.Text = "Origin";
             this.toolTip.SetToolTip(this.senderNameLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipSenderName);
             // 
             // model_ReceptionDate
@@ -349,7 +349,7 @@
             this.receptionDateLabel.Location = new System.Drawing.Point(4, 218);
             this.receptionDateLabel.Name = "receptionDateLabel";
             this.receptionDateLabel.Size = new System.Drawing.Size(93, 13);
-            this.receptionDateLabel.Text = "Data de recepção";
+            this.receptionDateLabel.Text = "Reception date";
             this.toolTip.SetToolTip(this.receptionDateLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipReceptionDate);
             // 
             // model_RoutedTo
@@ -367,7 +367,7 @@
             this.routedToLabel.Location = new System.Drawing.Point(4, 244);
             this.routedToLabel.Name = "routedToLabel";
             this.routedToLabel.Size = new System.Drawing.Size(89, 13);
-            this.routedToLabel.Text = "Encaminhamento";
+            this.routedToLabel.Text = "Circulation";
             this.toolTip.SetToolTip(this.routedToLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipRoutedTo);
             // 
             // model_Notes
@@ -387,7 +387,7 @@
             this.notesLabel.Location = new System.Drawing.Point(480, 192);
             this.notesLabel.Name = "notesLabel";
             this.notesLabel.Size = new System.Drawing.Size(70, 13);
-            this.notesLabel.Text = "Observações";
+            this.notesLabel.Text = "Observations";
             // 
             // model_ArchiveLocation
             // 
