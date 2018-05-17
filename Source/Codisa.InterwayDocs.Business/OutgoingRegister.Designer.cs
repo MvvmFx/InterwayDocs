@@ -19,7 +19,7 @@ namespace Codisa.InterwayDocs.Business
 
         #region Static Fields
 
-        private static int _lastID;
+        private static int _lastId;
 
         #endregion
 
@@ -346,7 +346,7 @@ namespace Codisa.InterwayDocs.Business
         [RunLocal]
         protected override void DataPortal_Create()
         {
-            LoadProperty(RegisterIdProperty, System.Threading.Interlocked.Decrement(ref _lastID));
+            LoadProperty(RegisterIdProperty, System.Threading.Interlocked.Decrement(ref _lastId));
             LoadProperty(RegisterDateProperty, new SmartDate(DateTime.Today));
             LoadProperty(DocumentTypeProperty, string.Empty);
             LoadProperty(DocumentReferenceProperty, string.Empty);
