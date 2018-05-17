@@ -22,7 +22,7 @@ namespace Codisa.InterwayDocs.Configuration
 
         #region Static Fields
 
-        private static int _lastID;
+        private static int _lastId;
 
         #endregion
 
@@ -198,7 +198,7 @@ namespace Codisa.InterwayDocs.Configuration
         [RunLocal]
         protected override void Child_Create()
         {
-            LoadProperty(ConfigurationIdProperty, System.Threading.Interlocked.Decrement(ref _lastID));
+            LoadProperty(ConfigurationIdProperty, System.Threading.Interlocked.Decrement(ref _lastId));
             LoadProperty(FriendlyNamesProperty, DataPortal.CreateChild<PropertyFriendlyNameColl>());
             var args = new DataPortalHookArgs();
             OnCreate(args);
