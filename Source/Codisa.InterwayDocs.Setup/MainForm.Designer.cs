@@ -68,7 +68,7 @@
             // 
             this.openOtherCustomizations.Name = "openOtherCustomizations";
             this.openOtherCustomizations.Size = new System.Drawing.Size(71, 20);
-            this.openOtherCustomizations.Text = "Outras configurações";
+            this.openOtherCustomizations.Text = "Other configurations";
             // 
             // helpMenuItem
             // 
@@ -76,13 +76,13 @@
             this.aboutToolStripMenuItem});
             this.helpMenuItem.Name = "helpMenuItem";
             this.helpMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.helpMenuItem.Text = "Ajuda";
+            this.helpMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.aboutToolStripMenuItem.Text = "Sobre o InterwayDocs Setup";
+            this.aboutToolStripMenuItem.Text = "About InterwayDocs Setup";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.about_Click);
             // 
             // statusBar
