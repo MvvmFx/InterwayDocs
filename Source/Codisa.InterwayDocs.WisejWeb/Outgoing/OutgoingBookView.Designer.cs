@@ -323,84 +323,84 @@ namespace Codisa.InterwayDocs.Outgoing
             dataGridViewCellStyle1.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
             this.registerIdDataGridViewTextBoxColumn.DataPropertyName = "RegisterId";
             this.registerIdDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;this.registerIdDataGridViewTextBoxColumn.DataPropertyName = "RegisterId";
-            this.registerIdDataGridViewTextBoxColumn.HeaderText = "N.º Ordem";
+            this.registerIdDataGridViewTextBoxColumn.HeaderText = "Register Nr.";
             this.registerIdDataGridViewTextBoxColumn.Name = "registerIdDataGridViewTextBoxColumn";
             this.registerIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // registerDateDataGridViewTextBoxColumn
             // 
             this.registerDateDataGridViewTextBoxColumn.DataPropertyName = "RegisterDate";
-            this.registerDateDataGridViewTextBoxColumn.HeaderText = "Data reg.";
+            this.registerDateDataGridViewTextBoxColumn.HeaderText = "Reg. date";
             this.registerDateDataGridViewTextBoxColumn.Name = "registerDateDataGridViewTextBoxColumn";
             this.registerDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // documentTypeDataGridViewTextBoxColumn
             // 
             this.documentTypeDataGridViewTextBoxColumn.DataPropertyName = "DocumentType";
-            this.documentTypeDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.documentTypeDataGridViewTextBoxColumn.HeaderText = "Type";
             this.documentTypeDataGridViewTextBoxColumn.Name = "documentTypeDataGridViewTextBoxColumn";
             this.documentTypeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // documentReferenceDataGridViewTextBoxColumn
             // 
             this.documentReferenceDataGridViewTextBoxColumn.DataPropertyName = "DocumentReference";
-            this.documentReferenceDataGridViewTextBoxColumn.HeaderText = "Nº documento";
+            this.documentReferenceDataGridViewTextBoxColumn.HeaderText = "Document nr.";
             this.documentReferenceDataGridViewTextBoxColumn.Name = "documentReferenceDataGridViewTextBoxColumn";
             this.documentReferenceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // documentEntityDataGridViewTextBoxColumn
             // 
             this.documentEntityDataGridViewTextBoxColumn.DataPropertyName = "DocumentEntity";
-            this.documentEntityDataGridViewTextBoxColumn.HeaderText = "Entidade";
+            this.documentEntityDataGridViewTextBoxColumn.HeaderText = "Entity";
             this.documentEntityDataGridViewTextBoxColumn.Name = "documentEntityDataGridViewTextBoxColumn";
             this.documentEntityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // documentDeptDataGridViewTextBoxColumn
             // 
             this.documentDeptDataGridViewTextBoxColumn.DataPropertyName = "DocumentDept";
-            this.documentDeptDataGridViewTextBoxColumn.HeaderText = "Departamento";
+            this.documentDeptDataGridViewTextBoxColumn.HeaderText = "Department";
             this.documentDeptDataGridViewTextBoxColumn.Name = "documentDeptDataGridViewTextBoxColumn";
             this.documentDeptDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // documentClassDataGridViewTextBoxColumn
             // 
             this.documentClassDataGridViewTextBoxColumn.DataPropertyName = "DocumentClass";
-            this.documentClassDataGridViewTextBoxColumn.HeaderText = "Classificação";
+            this.documentClassDataGridViewTextBoxColumn.HeaderText = "Class";
             this.documentClassDataGridViewTextBoxColumn.Name = "documentClassDataGridViewTextBoxColumn";
             this.documentClassDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // documentDateDataGridViewTextBoxColumn
             // 
             this.documentDateDataGridViewTextBoxColumn.DataPropertyName = "DocumentDate";
-            this.documentDateDataGridViewTextBoxColumn.HeaderText = "Data doc.";
+            this.documentDateDataGridViewTextBoxColumn.HeaderText = "Doc. date";
             this.documentDateDataGridViewTextBoxColumn.Name = "documentDateDataGridViewTextBoxColumn";
             this.documentDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // subjectDataGridViewTextBoxColumn
             // 
             this.subjectDataGridViewTextBoxColumn.DataPropertyName = "Subject";
-            this.subjectDataGridViewTextBoxColumn.HeaderText = "Assunto";
+            this.subjectDataGridViewTextBoxColumn.HeaderText = "Subject";
             this.subjectDataGridViewTextBoxColumn.Name = "subjectDataGridViewTextBoxColumn";
             this.subjectDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sendDateDataGridViewTextBoxColumn
             // 
             this.sendDateDataGridViewTextBoxColumn.DataPropertyName = "SendDate";
-            this.sendDateDataGridViewTextBoxColumn.HeaderText = "Data expedição";
+            this.sendDateDataGridViewTextBoxColumn.HeaderText = "Sent date";
             this.sendDateDataGridViewTextBoxColumn.Name = "sendDateDataGridViewTextBoxColumn";
             this.sendDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // recipientNameDataGridViewTextBoxColumn
             // 
             this.recipientNameDataGridViewTextBoxColumn.DataPropertyName = "RecipientName";
-            this.recipientNameDataGridViewTextBoxColumn.HeaderText = "Destinatário";
+            this.recipientNameDataGridViewTextBoxColumn.HeaderText = "Recipient";
             this.recipientNameDataGridViewTextBoxColumn.Name = "recipientNameDataGridViewTextBoxColumn";
             this.recipientNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // recipientTownDataGridViewTextBoxColumn
             // 
             this.recipientTownDataGridViewTextBoxColumn.DataPropertyName = "RecipientTown";
-            this.recipientTownDataGridViewTextBoxColumn.HeaderText = "Localidade";
+            this.recipientTownDataGridViewTextBoxColumn.HeaderText = "Town";
             this.recipientTownDataGridViewTextBoxColumn.Name = "recipientTownDataGridViewTextBoxColumn";
             this.recipientTownDataGridViewTextBoxColumn.ReadOnly = true;
             // 
