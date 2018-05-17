@@ -47,6 +47,30 @@ namespace Codisa.InterwayDocs.Incoming
 
         #endregion
 
+        #region Override events
+
+        protected new void ForceValidation(object sender, EventArgs e)
+        {
+            base.ForceValidation(sender, e);
+        }
+
+        protected new void ViewBaseLoad(object sender, EventArgs e)
+        {
+            base.ViewBaseLoad(sender, e);
+        }
+
+        protected new void DataGridViewSelectionChanged(object sender, EventArgs e)
+        {
+            base.DataGridViewSelectionChanged(sender, e);
+        }
+
+        protected new void StoreLastActiveControl(object sender, EventArgs e)
+        {
+            base.StoreLastActiveControl(sender, e);
+        }
+
+        #endregion
+
         #region IHaveDataContext implementation
 
         public event EventHandler<DataContextChangedEventArgs> DataContextChanged = delegate { };
