@@ -42,6 +42,15 @@ namespace Codisa.InterwayDocs.Outgoing
 
         #endregion
 
+        #region Override events
+
+        protected new void ForceValidation(object sender, EventArgs e)
+        {
+            base.ForceValidation(sender, e);
+        }
+
+        #endregion
+
         #region IHaveDataContext implementation
 
         public event EventHandler<DataContextChangedEventArgs> DataContextChanged = delegate { };
