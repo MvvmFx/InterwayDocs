@@ -240,7 +240,7 @@ namespace Codisa.InterwayDocs.WindowsForms.Framework
 
         protected override void OnError(Exception error)
         {
-            MessageBox.Show(error.Message, @"Erro de operação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(error.Message, @"Operation error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion
