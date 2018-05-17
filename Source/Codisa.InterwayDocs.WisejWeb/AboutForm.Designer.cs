@@ -64,7 +64,7 @@ namespace Codisa.InterwayDocs
             this.versionLabel.Name = "versionLabel";
             this.versionLabel.Size = new System.Drawing.Size(75, 14);
             this.versionLabel.TabIndex = 2;
-            this.versionLabel.Text = "Versão: 1.N.N";
+            this.versionLabel.Text = "Version: 1.N.N";
             // 
             // okButton
             // 
@@ -92,7 +92,7 @@ namespace Codisa.InterwayDocs
             this.MinimizeBox = false;
             this.Name = "AboutForm";
             this.StartPosition = Wisej.Web.FormStartPosition.CenterParent;
-            this.Text = "Sobre o InterwayDocs";
+            this.Text = "About InterwayDocs";
             this.Load += new System.EventHandler(this.AboutForm_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

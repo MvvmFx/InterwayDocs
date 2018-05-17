@@ -27,8 +27,8 @@ namespace Codisa.InterwayDocs.Setup
                 ProductName + " v." + ProductVersion + Environment.NewLine +
                 assemblyCopyright + Environment.NewLine +
                 Environment.NewLine +
-                "Ficheiro: " + fileName + Environment.NewLine +
-                "Versão: " + fileVersion + Environment.NewLine;
+                "File: " + fileName + Environment.NewLine +
+                "Version: " + fileVersion + Environment.NewLine;
 
             return response;
         }
