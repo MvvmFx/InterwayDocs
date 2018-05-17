@@ -80,7 +80,7 @@ namespace Codisa.InterwayDocs.Setup
             this.MinimizeBox = false;
             this.Name = "AboutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Sobre o InterwayDocs Setup";
+            this.Text = "About InterwayDocs Setup";
             this.ResumeLayout(false);
             this.PerformLayout();
 

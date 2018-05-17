@@ -388,84 +388,84 @@
             // registerIdDataGridViewTextBoxColumn
             // 
             this.registerIdDataGridViewTextBoxColumn.DataPropertyName = "RegisterId";
-            this.registerIdDataGridViewTextBoxColumn.HeaderText = "N.º Ordem";
+            this.registerIdDataGridViewTextBoxColumn.HeaderText = "Register Nr.";
             this.registerIdDataGridViewTextBoxColumn.Name = "registerIdDataGridViewTextBoxColumn";
             this.registerIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // registerDateDataGridViewTextBoxColumn
             // 
             this.registerDateDataGridViewTextBoxColumn.DataPropertyName = "RegisterDate";
-            this.registerDateDataGridViewTextBoxColumn.HeaderText = "Data reg.";
+            this.registerDateDataGridViewTextBoxColumn.HeaderText = "Reg. date";
             this.registerDateDataGridViewTextBoxColumn.Name = "registerDateDataGridViewTextBoxColumn";
             this.registerDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // documentTypeDataGridViewTextBoxColumn
             // 
             this.documentTypeDataGridViewTextBoxColumn.DataPropertyName = "DocumentType";
-            this.documentTypeDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.documentTypeDataGridViewTextBoxColumn.HeaderText = "Type";
             this.documentTypeDataGridViewTextBoxColumn.Name = "documentTypeDataGridViewTextBoxColumn";
             this.documentTypeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // documentReferenceDataGridViewTextBoxColumn
             // 
             this.documentReferenceDataGridViewTextBoxColumn.DataPropertyName = "DocumentReference";
-            this.documentReferenceDataGridViewTextBoxColumn.HeaderText = "Nº documento";
+            this.documentReferenceDataGridViewTextBoxColumn.HeaderText = "Document nr.";
             this.documentReferenceDataGridViewTextBoxColumn.Name = "documentReferenceDataGridViewTextBoxColumn";
             this.documentReferenceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // documentEntityDataGridViewTextBoxColumn
             // 
             this.documentEntityDataGridViewTextBoxColumn.DataPropertyName = "DocumentEntity";
-            this.documentEntityDataGridViewTextBoxColumn.HeaderText = "Entidade";
+            this.documentEntityDataGridViewTextBoxColumn.HeaderText = "Entity";
             this.documentEntityDataGridViewTextBoxColumn.Name = "documentEntityDataGridViewTextBoxColumn";
             this.documentEntityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // documentDeptDataGridViewTextBoxColumn
             // 
             this.documentDeptDataGridViewTextBoxColumn.DataPropertyName = "DocumentDept";
-            this.documentDeptDataGridViewTextBoxColumn.HeaderText = "Departamento";
+            this.documentDeptDataGridViewTextBoxColumn.HeaderText = "Department";
             this.documentDeptDataGridViewTextBoxColumn.Name = "documentDeptDataGridViewTextBoxColumn";
             this.documentDeptDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // documentClassDataGridViewTextBoxColumn
             // 
             this.documentClassDataGridViewTextBoxColumn.DataPropertyName = "DocumentClass";
-            this.documentClassDataGridViewTextBoxColumn.HeaderText = "Classificação";
+            this.documentClassDataGridViewTextBoxColumn.HeaderText = "Class";
             this.documentClassDataGridViewTextBoxColumn.Name = "documentClassDataGridViewTextBoxColumn";
             this.documentClassDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // documentDateDataGridViewTextBoxColumn
             // 
             this.documentDateDataGridViewTextBoxColumn.DataPropertyName = "DocumentDate";
-            this.documentDateDataGridViewTextBoxColumn.HeaderText = "Data doc.";
+            this.documentDateDataGridViewTextBoxColumn.HeaderText = "Doc. date";
             this.documentDateDataGridViewTextBoxColumn.Name = "documentDateDataGridViewTextBoxColumn";
             this.documentDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // subjectDataGridViewTextBoxColumn
             // 
             this.subjectDataGridViewTextBoxColumn.DataPropertyName = "Subject";
-            this.subjectDataGridViewTextBoxColumn.HeaderText = "Assunto";
+            this.subjectDataGridViewTextBoxColumn.HeaderText = "Subject";
             this.subjectDataGridViewTextBoxColumn.Name = "subjectDataGridViewTextBoxColumn";
             this.subjectDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // senderNameDataGridViewTextBoxColumn
             // 
             this.senderNameDataGridViewTextBoxColumn.DataPropertyName = "SenderName";
-            this.senderNameDataGridViewTextBoxColumn.HeaderText = "Proveniência";
+            this.senderNameDataGridViewTextBoxColumn.HeaderText = "Origin";
             this.senderNameDataGridViewTextBoxColumn.Name = "senderNameDataGridViewTextBoxColumn";
             this.senderNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // receptionDateDataGridViewTextBoxColumn
             // 
             this.receptionDateDataGridViewTextBoxColumn.DataPropertyName = "ReceptionDate";
-            this.receptionDateDataGridViewTextBoxColumn.HeaderText = "Data recepção";
+            this.receptionDateDataGridViewTextBoxColumn.HeaderText = "Reception date";
             this.receptionDateDataGridViewTextBoxColumn.Name = "receptionDateDataGridViewTextBoxColumn";
             this.receptionDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // routedToDataGridViewTextBoxColumn
             // 
             this.routedToDataGridViewTextBoxColumn.DataPropertyName = "RoutedTo";
-            this.routedToDataGridViewTextBoxColumn.HeaderText = "Encaminhado";
+            this.routedToDataGridViewTextBoxColumn.HeaderText = "Circulated";
             this.routedToDataGridViewTextBoxColumn.Name = "routedToDataGridViewTextBoxColumn";
             this.routedToDataGridViewTextBoxColumn.ReadOnly = true;
             // 
