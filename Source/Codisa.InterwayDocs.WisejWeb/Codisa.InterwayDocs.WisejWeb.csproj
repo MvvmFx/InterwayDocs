@@ -57,25 +57,15 @@
     <Content Include="..\Codisa.InterwayDocs.WindowsForms\Release Notes.txt">
       <Link>Release Notes.txt</Link>
     </Content>
-    <Content Include="About.en.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="About.es.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="About.fr.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="About.pt.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="About.en.html" />
+    <Content Include="About.es.html" />
+    <Content Include="About.fr.html" />
+    <Content Include="About.pt.html" />
     <Content Include="App_Data\InterwayDocs.mdf" />
     <Content Include="App_Data\InterwayDocs_log.ldf">
       <DependentUpon>InterwayDocs.mdf</DependentUpon>
     </Content>
-    <Content Include="CodisaITS-64x64.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="CodisaITS-64x64.png" />
     <Content Include="Default.html" />
     <Content Include="Default.json" />
     <Content Include="favicon.ico" />
@@ -479,6 +469,11 @@ COPY /Y "$(WisejDir)Default.html" "$(OutputDir)Default.html"
 COPY /Y "$(WisejDir)Default.json" "$(OutputDir)Default.json"
 COPY /Y "$(WisejDir)Web.config" "$(OutputDir)Web.config"
 COPY /Y "$(WisejDir)favicon.ico" "$(OutputDir)favicon.ico"
+COPY /Y "$(WisejDir)CodisaITS-64x64.png" "$(OutputDir)CodisaITS-64x64.png"
+COPY /Y "$(WisejDir)About.en.html" "$(OutputDir)About.en.html"
+COPY /Y "$(WisejDir)About.es.html" "$(OutputDir)About.es.html"
+COPY /Y "$(WisejDir)About.fr.html" "$(OutputDir)About.fr.html"
+COPY /Y "$(WisejDir)About.pt.html" "$(OutputDir)About.pt.html"
 )
     </PostBuildEvent>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
