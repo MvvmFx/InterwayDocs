@@ -506,4 +506,25 @@ If empty, finds the newest documents.</value>
   <data name="FastDateToolTip" xml:space="preserve">
     <value>Select search mode.</value>
   </data>
+  <data name="$No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="$Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="$Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="$Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="$Retry" xml:space="preserve">
+    <value>Retry</value>
+  </data>
+  <data name="$Ignore" xml:space="preserve">
+    <value>Ignore</value>
+  </data>
+  <data name="$Abort" xml:space="preserve">
+    <value>Abort</value>
+  </data>
 </root>
