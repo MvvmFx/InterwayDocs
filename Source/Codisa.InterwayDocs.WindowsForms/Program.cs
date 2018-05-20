@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Configuration;
 using System.Globalization;
-using System.Threading;
 using Codisa.InterwayDocs.Framework;
 #if WISEJ
 using MvvmFx.CaliburnMicro.WisejWeb.Toolable;
 using Wisej.Base;
 using Wisej.Web;
 #else
+using System.Threading;
 using System.Windows.Forms;
 #endif
 using ApplicationContext = MvvmFx.CaliburnMicro.ApplicationContext;
@@ -44,15 +44,9 @@ namespace Codisa.InterwayDocs
                     Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(uiCulture);
 #else
                 if (string.IsNullOrEmpty(uiCulture))
-                {
                     uiCulture = ApplicationBase.CurrentCulture.ToString();
-                    Thread.CurrentThread.CurrentCulture = CultureInfo.CurrentCulture;
-                }
                 else
-                {
-                    uiCulture = uiCulture.Substring(0, 2);
-                    ApplicationBase.Navigate(ApplicationBase.StartupUri + "?lang=" + uiCulture);
-                }
+                    ApplicationBase.CurrentCulture = CultureInfo.GetCultureInfo(uiCulture);
 #endif
             }
             catch (ArgumentNullException)
@@ -137,8 +131,12 @@ namespace Codisa.InterwayDocs
 
         private static void ApplicationBase_ApplicationRefresh(object sender, EventArgs e)
         {
-            ApplicationContext.UICulture = ApplicationBase.CurrentCulture.ToString().Substring(0, 2);
-            RefreshTranslation();
+            // disable culture change by ?lang= in URL
+            var currentCulture = ((MainForm) Application.OpenPages[0]).CurrentCulture;
+
+            if (ApplicationBase.CurrentCulture != currentCulture)
+                ApplicationBase.CurrentCulture = currentCulture;
+
             UnloadConfirmation.Restore();
         }
 #endif
