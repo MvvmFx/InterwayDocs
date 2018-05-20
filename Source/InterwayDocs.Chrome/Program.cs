@@ -34,7 +34,7 @@ namespace Wisej.Application
         {
             CefSharpLoader.Initialize();
 
-            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr");
+            //Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("fr");
 
             WinForms.Application.EnableVisualStyles();
             WinForms.Application.SetCompatibleTextRenderingDefault(false);

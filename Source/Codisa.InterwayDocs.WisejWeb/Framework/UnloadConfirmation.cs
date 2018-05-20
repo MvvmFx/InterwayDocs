@@ -1,4 +1,4 @@
-﻿using Application = Wisej.Web.Application;
+﻿using Wisej.Base;
 
 namespace Codisa.InterwayDocs.Framework
 {
@@ -6,47 +6,31 @@ namespace Codisa.InterwayDocs.Framework
     {
         static UnloadConfirmation()
         {
-            PrivateBeforeUnloadMessage = string.Empty;
+            PrivateEnableUnloadConfirmation = false;
         }
 
-        private static string PrivateBeforeUnloadMessage
+        private static bool PrivateEnableUnloadConfirmation
         {
-            get { return Application.Session.BeforeUnloadMessage; }
-            set { Application.Session.BeforeUnloadMessage = value; }
+            get { return ApplicationBase.Session.EnableUnloadConfirmation; }
+            set { ApplicationBase.Session.EnableUnloadConfirmation = value; }
         }
 
-        public static string BeforeUnloadMessage
+        public static bool EnableUnloadConfirmation
         {
-            get { return PrivateBeforeUnloadMessage; }
+            get { return PrivateEnableUnloadConfirmation; }
             set
             {
-                if (PrivateBeforeUnloadMessage != value)
+                if (PrivateEnableUnloadConfirmation != value)
                 {
-                    if (value == null)
-                        PrivateBeforeUnloadMessage = string.Empty;
-                    else
-                        PrivateBeforeUnloadMessage = value;
-
-                    SetBeforeUnloadMessage();
+                    PrivateEnableUnloadConfirmation = value;
+                    ApplicationBase.EnableUnloadConfirmation = value;
                 }
-            }
-        }
-
-        private static void SetBeforeUnloadMessage()
-        {
-            if (string.IsNullOrWhiteSpace(PrivateBeforeUnloadMessage))
-            {
-                Application.Call("window.disableUnloadConfirmation");
-            }
-            else
-            {
-                Application.Call("window.enableUnloadConfirmation", PrivateBeforeUnloadMessage);
             }
         }
 
         public static void Restore()
         {
-            SetBeforeUnloadMessage();
+            ApplicationBase.EnableUnloadConfirmation = PrivateEnableUnloadConfirmation;
         }
     }
 }

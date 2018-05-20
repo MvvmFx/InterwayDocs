@@ -86,7 +86,6 @@
     <Content Include="..\Codisa.InterwayDocs.WindowsForms\Manual.pdf">
       <Link>Manual.pdf</Link>
     </Content>
-    <EmbeddedResource Include="Platform\BrowserUnload.js" />
     <Content Include="Properties\DataSources\Codisa.InterwayDocs.Business.DeliveryBook.datasource" />
     <Content Include="Properties\DataSources\Codisa.InterwayDocs.Business.DeliveryRegister.datasource" />
     <Content Include="Properties\DataSources\Codisa.InterwayDocs.Business.IncomingBook.datasource" />
