@@ -103,7 +103,7 @@ namespace Codisa.InterwayDocs.Delivery
                     if (!Model.IsReadOnly)
                     {
                         if (value)
-                            UnloadConfirmation.BeforeUnloadMessage = "Save before closing.";
+                            UnloadConfirmation.EnableUnloadConfirmation = true;;
                     }
                 }
             }
@@ -205,7 +205,7 @@ namespace Codisa.InterwayDocs.Delivery
 
                 DisplayName = "NewRegister".GetUiTranslation();
 #if WISEJ
-                UnloadConfirmation.BeforeUnloadMessage = "Save before closing.";
+                UnloadConfirmation.EnableUnloadConfirmation = true;;
 #endif
             }
             else if (_showEmpty)
@@ -269,7 +269,7 @@ namespace Codisa.InterwayDocs.Delivery
         private void SetReadOnlyButtons()
         {
 #if WISEJ
-            UnloadConfirmation.BeforeUnloadMessage = string.Empty;
+            UnloadConfirmation.EnableUnloadConfirmation = false;
 #endif
             CanCreateRegister = true;
             CanEditDetail = true;
@@ -280,7 +280,7 @@ namespace Codisa.InterwayDocs.Delivery
         private void SetEmptyRegisterButtons()
         {
 #if WISEJ
-            UnloadConfirmation.BeforeUnloadMessage = string.Empty;
+            UnloadConfirmation.EnableUnloadConfirmation = false;
 #endif
             CanCreateRegister = true;
             CanEditDetail = false;
