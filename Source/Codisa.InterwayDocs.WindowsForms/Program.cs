@@ -41,7 +41,7 @@ namespace Codisa.InterwayDocs
                 if (string.IsNullOrEmpty(uiCulture))
                     uiCulture = Thread.CurrentThread.CurrentUICulture.ToString();
                 else
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo(uiCulture);
+                    Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(uiCulture);
 #else
                 if (string.IsNullOrEmpty(uiCulture))
                 {

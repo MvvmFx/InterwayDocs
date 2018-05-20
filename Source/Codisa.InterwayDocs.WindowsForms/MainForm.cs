@@ -54,7 +54,7 @@ namespace Codisa.InterwayDocs
 
             ApplicationContext.UICulture = languages[language.SelectedIndex].UICulture;
 
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(ApplicationContext.UICulture);
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(ApplicationContext.UICulture);
 
             Program.RefreshTranslation();
         }
