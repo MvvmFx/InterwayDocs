@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using Codisa.InterwayDocs.Configuration;
 using Codisa.InterwayDocs.Framework;
 using MvvmFx.Bindings.Data;
@@ -18,6 +19,21 @@ namespace Codisa.InterwayDocs
 
         private bool _isBindingSet;
 
+        private CultureInfo _currentCulture;
+
+        internal CultureInfo CurrentCulture
+        {
+            get { return _currentCulture; }
+            set
+            {
+                if (_currentCulture != value)
+                {
+                    _currentCulture = value;
+                    ApplicationBase.CurrentCulture = value;
+                }
+            }
+        }
+
         #endregion
 
         #region Initializers
@@ -25,6 +41,8 @@ namespace Codisa.InterwayDocs
         public MainForm()
         {
             InitializeComponent();
+
+            _currentCulture = ApplicationBase.CurrentCulture;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -50,7 +68,9 @@ namespace Codisa.InterwayDocs
 
             ApplicationContext.UICulture = languages[language.SelectedIndex].UICulture;
 
-            ApplicationBase.Navigate(ApplicationBase.Url + "?lang=" + ApplicationContext.UICulture);
+            CurrentCulture = CultureInfo.GetCultureInfo(ApplicationContext.UICulture);
+
+            Program.RefreshTranslation();
         }
 
         public void Close()
