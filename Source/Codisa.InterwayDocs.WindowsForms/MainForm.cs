@@ -35,6 +35,8 @@ namespace Codisa.InterwayDocs
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            SetResources();
+
             var languages = LanguageList.GetLanguageList();
             foreach (var lang in languages)
             {
@@ -118,13 +120,11 @@ namespace Codisa.InterwayDocs
             {
                 item.BackColor = SystemColors.MenuHighlight;
                 item.ForeColor = Color.White;
-                item.Font = new Font(item.Font, FontStyle.Bold);
             }
             else
             {
                 item.BackColor = SystemColors.Control;
                 item.ForeColor = SystemColors.ControlText;
-                item.Font = new Font(item.Font, FontStyle.Regular);
             }
         }
 
@@ -148,6 +148,14 @@ namespace Codisa.InterwayDocs
         #region Translations
 
         public void RefreshTranslation()
+        {
+            SetResources();
+
+            language.SelectedIndex = LanguageList.GetLanguageList()
+                .FindLanguageInfoByUICulture(ApplicationContext.UICulture).Index;
+        }
+
+        private void SetResources()
         {
             openIncomingBook.Text = "LabelIncoming".GetUiTranslation();
             openOutgoingBook.Text = "LabelOutgoing".GetUiTranslation();
