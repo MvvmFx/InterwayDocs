@@ -16,10 +16,11 @@ This application uses an interesting environment:
 The project is instrumental for the improvement of [MvvmFx](https://github.com/MvvmFx/MvvmFx.
 
 ### Release mode build
-When you build the solution in __Release__ mode, at the root level there will be 3 folders with ready to run versions:
-- WinForms - Windows Forms desktop application
+When you build the solution in __Release__ mode, at the root level there will be an __Outputs__ folder.
+On this folder there are 3 folders with ready to run versions:
 - WebSite - Wisej web site IIS ready
 - WebStandalone - Wisej web site packed into a desktop .exe file
+- WinForms - Windows Forms desktop application
 
 ## Project Status
 

@@ -24,7 +24,7 @@
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
     <WisejDir>$(SolutionDir)Codisa.InterwayDocs.WisejWeb\</WisejDir>
-    <OutputDir>$(SolutionDir)..\WebSite\</OutputDir>
+    <OutputDir>$(SolutionDir)..\Outputs\WebSite\</OutputDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
