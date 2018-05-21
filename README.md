@@ -15,18 +15,11 @@ This application uses an interesting environment:
 
 The project is instrumental for the improvement of [MvvmFx](https://github.com/MvvmFx/MvvmFx.
 
-### Release mode build
-When you build the solution in __Release__ mode, at the root level there will be an __Outputs__ folder.
-On this folder there are 3 folders with ready to run versions:
-- WebSite - Wisej web site IIS ready
-- WebStandalone - Wisej web site packed into a desktop .exe file
-- WinForms - Windows Forms desktop application
-
 ## Project Status
 
 Project is ready to run using LocalDb for SQL Server 2014. Instructions included on how to use LocalDB for SQL Server 2012.
 
-## Roadmap
+## News
 
 ### [Release 1.4.0](https://github.com/MvvmFx/InterwayDocs/milestone/3) (ongoing)
 - Wisej multi page application
@@ -49,6 +42,13 @@ Project is ready to run using LocalDb for SQL Server 2014. Instructions included
 - Fetch Wisej dependency from NuGet
 
 __N.B. - Run Wisej samples (web and standalone) from [NuGet](https://www.nuget.org/packages/Wisej/) - you don't need to install Wisej.__
+
+### Release mode build
+When you build the solution in __Release__ mode, at the root level there will be an __Outputs__ folder.
+On this folder there are 3 folders with ready to run versions:
+- WebSite - Wisej web site IIS ready
+- WebStandalone - Wisej web site packed into a desktop .exe file
+- WinForms - Windows Forms desktop application
 
 ## What is Wisej?
 
