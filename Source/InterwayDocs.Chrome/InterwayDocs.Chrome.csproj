@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <WisejDir>$(SolutionDir)Codisa.InterwayDocs.WisejWeb\</WisejDir>
-    <OutputDir>$(SolutionDir)..\WebStandalone\</OutputDir>
+    <OutputDir>$(SolutionDir)..\Outputs\WebStandalone\</OutputDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
