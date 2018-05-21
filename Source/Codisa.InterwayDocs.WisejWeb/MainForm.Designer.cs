@@ -153,7 +153,7 @@
             this.languageLabel.Name = "languageLabel";
             this.languageLabel.Size = new System.Drawing.Size(100, 13);
             this.languageLabel.TabIndex = 4;
-            this.languageLabel.Text = global::Codisa.InterwayDocs.Properties.Resources.Language;
+            this.languageLabel.Text = "Language";
             this.languageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // statusBar
