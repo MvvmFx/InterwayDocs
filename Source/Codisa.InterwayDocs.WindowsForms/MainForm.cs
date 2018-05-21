@@ -35,6 +35,8 @@ namespace Codisa.InterwayDocs
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            SetResources();
+
             var languages = LanguageList.GetLanguageList();
             foreach (var lang in languages)
             {
@@ -94,22 +96,36 @@ namespace Codisa.InterwayDocs
             switch (menuItem)
             {
                 case "IncomingBook":
-                    BackColorHelper(SystemColors.MenuHighlight, SystemColors.Control, SystemColors.Control);
+                    MenuItemColorHelper(true, false, false);
                     break;
                 case "OutgoingBook":
-                    BackColorHelper(SystemColors.Control, SystemColors.MenuHighlight, SystemColors.Control);
+                    MenuItemColorHelper(false, true, false);
                     break;
                 case "DeliveryBook":
-                    BackColorHelper(SystemColors.Control, SystemColors.Control, SystemColors.MenuHighlight);
+                    MenuItemColorHelper(false, false, true);
                     break;
             }
         }
 
-        private void BackColorHelper(Color incoming, Color outgoing, Color delivery)
+        private void MenuItemColorHelper(bool incoming, bool outgoing, bool delivery)
         {
-            openIncomingBook.BackColor = incoming;
-            openOutgoingBook.BackColor = outgoing;
-            openDeliveryBook.BackColor = delivery;
+            SetMenuItemColours(openIncomingBook, incoming);
+            SetMenuItemColours(openOutgoingBook, outgoing);
+            SetMenuItemColours(openDeliveryBook, delivery);
+        }
+
+        private void SetMenuItemColours(ToolStripItem item, bool active)
+        {
+            if (active)
+            {
+                item.BackColor = SystemColors.MenuHighlight;
+                item.ForeColor = Color.White;
+            }
+            else
+            {
+                item.BackColor = SystemColors.Control;
+                item.ForeColor = SystemColors.ControlText;
+            }
         }
 
         #endregion
@@ -132,6 +148,14 @@ namespace Codisa.InterwayDocs
         #region Translations
 
         public void RefreshTranslation()
+        {
+            SetResources();
+
+            language.SelectedIndex = LanguageList.GetLanguageList()
+                .FindLanguageInfoByUICulture(ApplicationContext.UICulture).Index;
+        }
+
+        private void SetResources()
         {
             openIncomingBook.Text = "LabelIncoming".GetUiTranslation();
             openOutgoingBook.Text = "LabelOutgoing".GetUiTranslation();

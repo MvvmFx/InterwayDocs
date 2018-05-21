@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace Codisa.InterwayDocs.Delivery
+﻿namespace Codisa.InterwayDocs.Delivery
 {
     partial class DeliveryBookView
     {
@@ -123,7 +121,7 @@ namespace Codisa.InterwayDocs.Delivery
             this.fastDate.Name = "fastDate";
             this.fastDate.Size = new System.Drawing.Size(121, 21);
             this.fastDate.TabIndex = 1;
-            this.toolTip.SetToolTip(this.fastDate, global::Codisa.InterwayDocs.Properties.Resources.FastDateToolTip);
+            this.toolTip.SetToolTip(this.fastDate, "Select search mode.");
             // 
             // toggleSearchArea
             // 
@@ -133,7 +131,7 @@ namespace Codisa.InterwayDocs.Delivery
             this.toggleSearchArea.Name = "toggleSearchArea";
             this.toggleSearchArea.Size = new System.Drawing.Size(23, 23);
             this.toggleSearchArea.TabIndex = 2;
-            this.toolTip.SetToolTip(this.toggleSearchArea, global::Codisa.InterwayDocs.Properties.Resources.HideSearchPanel);
+            this.toolTip.SetToolTip(this.toggleSearchArea, "Hide search panel");
             // 
             // searchPanel
             // 
@@ -160,8 +158,8 @@ namespace Codisa.InterwayDocs.Delivery
             this.fullTextLabel.Name = "fullTextLabel";
             this.fullTextLabel.Size = new System.Drawing.Size(56, 13);
             this.fullTextLabel.TabStop = false;
-            this.fullTextLabel.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelFullText;
-            this.toolTip.SetToolTip(this.fullTextLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipFullText);
+            this.fullTextLabel.Text = "Free text";
+            this.toolTip.SetToolTip(this.fullTextLabel, "Type the words that will be searched in all fields, up to three words.");
             // 
             // criteria_FullText
             // 
@@ -180,8 +178,8 @@ namespace Codisa.InterwayDocs.Delivery
             this.dateTypeLabel.Name = "dateTypeLabel";
             this.dateTypeLabel.Size = new System.Drawing.Size(35, 13);
             this.dateTypeLabel.TabStop = false;
-            this.dateTypeLabel.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelDates;
-            this.toolTip.SetToolTip(this.dateTypeLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipDates);
+            this.dateTypeLabel.Text = "Dates";
+            this.toolTip.SetToolTip(this.dateTypeLabel, "Select the date type you want to search for.");
             // 
             // dateType
             // 
@@ -197,9 +195,9 @@ namespace Codisa.InterwayDocs.Delivery
             this.startDateLabel.Name = "startDateLabel";
             this.startDateLabel.Size = new System.Drawing.Size(40, 13);
             this.startDateLabel.TabStop = false;
-            this.startDateLabel.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelStartDate;
+            this.startDateLabel.Text = "Since";
             this.startDateLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.toolTip.SetToolTip(this.startDateLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipStartDate);
+            this.toolTip.SetToolTip(this.startDateLabel, "Search since this date (inclusive). If empty, finds the oldest documents.");
             // 
             // criteria_StartDate
             // 
@@ -217,9 +215,9 @@ namespace Codisa.InterwayDocs.Delivery
             this.endDateLabel.Name = "endDateLabel";
             this.endDateLabel.Size = new System.Drawing.Size(40, 13);
             this.endDateLabel.TabStop = false;
-            this.endDateLabel.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelEndDate;
+            this.endDateLabel.Text = "Until";
             this.endDateLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.toolTip.SetToolTip(this.endDateLabel, global::Codisa.InterwayDocs.Properties.Resources.ToolTipEndDate);
+            this.toolTip.SetToolTip(this.endDateLabel, "Search until this date (inclusive). If empty, finds the newest documents.");
             // 
             // criteria_EndDate
             // 
@@ -237,7 +235,7 @@ namespace Codisa.InterwayDocs.Delivery
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(75, 23);
             this.search.TabIndex = 9;
-            this.search.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelSearch;
+            this.search.Text = "Search";
             this.search.MouseHover += new System.EventHandler(this.ForceValidation);
             this.toolTip.SetToolTip(this.search, null);
             // 
@@ -261,7 +259,7 @@ namespace Codisa.InterwayDocs.Delivery
             // 
             this.printList.Image = global::Codisa.InterwayDocs.Properties.Resources.Excel;
             this.printList.Name = "printList";
-            this.printList.ToolTipText = global::Codisa.InterwayDocs.Properties.Resources.ToolTipExportListExcel;
+            this.printList.ToolTipText = "Export the list to Excel";
             // 
             // dataGridView
             // 

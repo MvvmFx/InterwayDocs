@@ -113,22 +113,22 @@ namespace Codisa.InterwayDocs
             switch (menuItem)
             {
                 case "IncomingBook":
-                    BackColorHelper(SystemColors.MenuHighlight, SystemColors.Control, SystemColors.Control);
+                    MenuItemColorHelper(true, false, false);
                     break;
                 case "OutgoingBook":
-                    BackColorHelper(SystemColors.Control, SystemColors.MenuHighlight, SystemColors.Control);
+                    MenuItemColorHelper(false, true, false);
                     break;
                 case "DeliveryBook":
-                    BackColorHelper(SystemColors.Control, SystemColors.Control, SystemColors.MenuHighlight);
+                    MenuItemColorHelper(false, false, true);
                     break;
             }
         }
 
-        private void BackColorHelper(Color incoming, Color outgoing, Color delivery)
+        private void MenuItemColorHelper(bool incoming, bool outgoing, bool delivery)
         {
-            /*openIncomingBook.ForeColor = incoming;
-            openOutgoingBook.ForeColor = outgoing;
-            openDeliveryBook.ForeColor = delivery;*/
+            openIncomingBook.Pushed = incoming;
+            openOutgoingBook.Pushed = outgoing;
+            openDeliveryBook.Pushed = delivery;
         }
 
         #endregion

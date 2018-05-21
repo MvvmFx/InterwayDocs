@@ -68,19 +68,19 @@
             // 
             this.openIncomingBook.Name = "openIncomingBook";
             this.openIncomingBook.Size = new System.Drawing.Size(70, 23);
-            this.openIncomingBook.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelIncoming;
+            this.openIncomingBook.Text = "Incoming";
             // 
             // openOutgoingBook
             // 
             this.openOutgoingBook.Name = "openOutgoingBook";
             this.openOutgoingBook.Size = new System.Drawing.Size(70, 23);
-            this.openOutgoingBook.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelOutgoing;
+            this.openOutgoingBook.Text = "Outgoing";
             // 
             // openDeliveryBook
             // 
             this.openDeliveryBook.Name = "openDeliveryBook";
             this.openDeliveryBook.Size = new System.Drawing.Size(61, 23);
-            this.openDeliveryBook.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelDelivery;
+            this.openDeliveryBook.Text = "Delivery";
             // 
             // toolsMenuItem
             // 
@@ -91,32 +91,32 @@
             this.import});
             this.toolsMenuItem.Name = "toolsMenuItem";
             this.toolsMenuItem.Size = new System.Drawing.Size(47, 23);
-            this.toolsMenuItem.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelTools;
+            this.toolsMenuItem.Text = "Tools";
             this.toolsMenuItem.Visible = false;
             // 
             // backup
             // 
             this.backup.Name = "backup";
             this.backup.Size = new System.Drawing.Size(181, 22);
-            this.backup.Text = global::Codisa.InterwayDocs.Properties.Resources.ToolsBackupLabel;
+            this.backup.Text = "Make a data backup";
             // 
             // restore
             // 
             this.restore.Name = "restore";
             this.restore.Size = new System.Drawing.Size(181, 22);
-            this.restore.Text = global::Codisa.InterwayDocs.Properties.Resources.ToolsRestoreLabel;
+            this.restore.Text = "Restore data backup";
             // 
             // export
             // 
             this.export.Name = "export";
             this.export.Size = new System.Drawing.Size(181, 22);
-            this.export.Text = global::Codisa.InterwayDocs.Properties.Resources.ToolsExportlabel;
+            this.export.Text = "Export data";
             // 
             // import
             // 
             this.import.Name = "import";
             this.import.Size = new System.Drawing.Size(181, 22);
-            this.import.Text = global::Codisa.InterwayDocs.Properties.Resources.ToolsImportLabel;
+            this.import.Text = "Import data";
             // 
             // helpMenuItem
             // 
@@ -125,19 +125,19 @@
             this.pdfManual});
             this.helpMenuItem.Name = "helpMenuItem";
             this.helpMenuItem.Size = new System.Drawing.Size(44, 23);
-            this.helpMenuItem.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelHelp;
+            this.helpMenuItem.Text = "Help";
             // 
             // about
             // 
             this.about.Name = "about";
             this.about.Size = new System.Drawing.Size(181, 22);
-            this.about.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelAboutApplication;
+            this.about.Text = "About InterwayDocs";
             // 
             // pdfManual
             // 
             this.pdfManual.Name = "pdfManual";
             this.pdfManual.Size = new System.Drawing.Size(181, 22);
-            this.pdfManual.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelDocumentation;
+            this.pdfManual.Text = "Show Manual (PDF)";
             // 
             // language
             // 
@@ -151,7 +151,7 @@
             this.languageLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.languageLabel.Name = "languageLabel";
             this.languageLabel.Size = new System.Drawing.Size(71, 23);
-            this.languageLabel.Text = global::Codisa.InterwayDocs.Properties.Resources.Language;
+            this.languageLabel.Text = "Language";
             this.languageLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // statusBar

@@ -1843,7 +1843,7 @@
 			"states": {
 				"default": {
 					"styles": {
-						"width": 1,
+						"width": [1, 1, 1, 1],
 						"color": "windowFrame"
 					},
 					"properties": {
@@ -5165,7 +5165,7 @@
 							"properties": {
 								"cursor": "pointer",
 								"opacity": 1,
-								"padding": [1, 5, 1, 5],
+								"padding": [1, 12, 1, 12],
 								"textColor": ""
 							},
 							"styles": {
@@ -5182,10 +5182,10 @@
 						"checked": {
 							"styles": {
 								"color": "windowFrame",
-								"backgroundColor": "buttonSelected"
+								"backgroundColor": "highlight"
 							},
 							"properties": {
-								"textColor": "buttonSelectedText"
+								"textColor": "activeCaption"
 							}
 						},
 						"pressed": {
