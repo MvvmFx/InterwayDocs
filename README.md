@@ -46,9 +46,9 @@ Project is ready to run using LocalDb for SQL Server 2014. Instructions included
 - Add Wisej standalone executable (run as a desktop application)
 - Translate all resources in all 4 languages
 - Add language combobox to Wisej version
-- Fetch Wisej dependency from [NuGet](https://www.nuget.org/packages/Wisej/)
+- Fetch Wisej dependency from NuGet
 
-__N.B. - Run Wisej samples (web and standalone) from NuGet - you don't need to install Wisej.__
+__N.B. - Run Wisej samples (web and standalone) from [NuGet](https://www.nuget.org/packages/Wisej/) - you don't need to install Wisej.__
 
 ## What is Wisej?
 
