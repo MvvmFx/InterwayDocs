@@ -66,19 +66,19 @@
             // 
             this.openIncomingBook.Index = 0;
             this.openIncomingBook.Name = "openIncomingBook";
-            this.openIncomingBook.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelIncoming;
+            this.openIncomingBook.Text = "Incoming";
             // 
             // openOutgoingBook
             // 
             this.openOutgoingBook.Index = 1;
             this.openOutgoingBook.Name = "openOutgoingBook";
-            this.openOutgoingBook.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelOutgoing;
+            this.openOutgoingBook.Text = "Outgoing";
             // 
             // openDeliveryBook
             // 
             this.openDeliveryBook.Index = 2;
             this.openDeliveryBook.Name = "openDeliveryBook";
-            this.openDeliveryBook.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelDelivery;
+            this.openDeliveryBook.Text = "Delivery";
             // 
             // toolsMenuItem
             // 
@@ -89,32 +89,32 @@
             this.export,
             this.import});
             this.toolsMenuItem.Name = "toolsMenuItem";
-            this.toolsMenuItem.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelTools;
+            this.toolsMenuItem.Text = "Tools";
             this.toolsMenuItem.Visible = false;
             // 
             // backup
             // 
             this.backup.Index = 0;
             this.backup.Name = "backup";
-            this.backup.Text = global::Codisa.InterwayDocs.Properties.Resources.ToolsBackupLabel;
+            this.backup.Text = "Make a data backup";
             // 
             // restore
             // 
             this.restore.Index = 1;
             this.restore.Name = "restore";
-            this.restore.Text = global::Codisa.InterwayDocs.Properties.Resources.ToolsRestoreLabel;
+            this.restore.Text = "Restore data backup";
             // 
             // export
             // 
             this.export.Index = 2;
             this.export.Name = "export";
-            this.export.Text = global::Codisa.InterwayDocs.Properties.Resources.ToolsExportlabel;
+            this.export.Text = "Export data";
             // 
             // import
             // 
             this.import.Index = 3;
             this.import.Name = "import";
-            this.import.Text = global::Codisa.InterwayDocs.Properties.Resources.ToolsImportLabel;
+            this.import.Text = "Import data";
             // 
             // helpMenuItem
             // 
@@ -123,19 +123,19 @@
             this.about,
             this.pdfManual});
             this.helpMenuItem.Name = "helpMenuItem";
-            this.helpMenuItem.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelHelp;
+            this.helpMenuItem.Text = "Help";
             // 
             // about
             // 
             this.about.Index = 0;
             this.about.Name = "about";
-            this.about.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelAboutApplication;
+            this.about.Text = "About InterwayDocs";
             // 
             // pdfManual
             // 
             this.pdfManual.Index = 1;
             this.pdfManual.Name = "pdfManual";
-            this.pdfManual.Text = global::Codisa.InterwayDocs.Properties.Resources.LabelDocumentation;
+            this.pdfManual.Text = "Show Manual (PDF)";
             // 
             // language
             // 
@@ -195,7 +195,6 @@
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mainMenu);
-            this.Movable = false;
             this.Name = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
