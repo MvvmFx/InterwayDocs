@@ -28,20 +28,27 @@ Project is ready to run using LocalDb for SQL Server 2014. Instructions included
 
 ## Roadmap
 
-### Release 1.3.7 (03 May 2018)
+### [Release 1.4.0](https://github.com/MvvmFx/InterwayDocs/milestone/3) (ongoing)
+- Wisej multi page application
+- Add authentication, autorization and roles
+- Add user management
+
+### [Release 1.3.8](https://github.com/MvvmFx/InterwayDocs/releases/tag/v1.3.8) (21 May 2018)
+- Load all resources from database
+- Wisej change language without reloading page
+- Wisej disable change language by URL
+- Wisej main menu looks like MDI
+- Wisej alert when closing browser may loose unsaved information
+- Fix sorting of fields on Excel reports
+- Fix Excel reports on Wisej Standalone  
+
+### [Release 1.3.7](https://github.com/MvvmFx/InterwayDocs/releases/tag/v1.3.7) (03 May 2018)
 - Add Wisej standalone executable (run as a desktop application)
 - Translate all resources in all 4 languages
 - Add language combobox to Wisej version
 - Fetch Wisej dependency from NuGet
 
-__N.B. - To run Wisej samples (web and standalone) you don't need to install Wisej.__
-
-### Release 1.3.8 (ongoing - last single user release)
-- Load all translations from database
-
-### Release 1.4.0 (planned)
-- Add authentication, autorization and roles
-- Add user management
+__N.B. - Run Wisej samples (web and standalone) from [NuGet](https://www.nuget.org/packages/Wisej/) - you don't need to install Wisej.__
 
 ## What is Wisej?
 
