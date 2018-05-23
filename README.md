@@ -55,3 +55,8 @@ On this folder there are 3 folders with ready to run versions:
 Take your WinForms project, port it to Wisej retaining all your BO/DAL code and most UI code.
 Now run it as a Web application.
 [Get Wisej](http://wisej.com)
+
+License
+-------
+InterwayDocs is copyright Grupo Interway and Tiago Freitas Leal.
+Its use is governed by the [MIT license](https://github.com/MvvmFx/InterwayDocs/blob/master/LICENSE.md).
