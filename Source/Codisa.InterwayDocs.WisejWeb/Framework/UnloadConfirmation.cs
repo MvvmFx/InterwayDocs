@@ -4,14 +4,15 @@ namespace Codisa.InterwayDocs.Framework
 {
     public static class UnloadConfirmation
     {
-        static UnloadConfirmation()
-        {
-            PrivateEnableUnloadConfirmation = false;
-        }
-
         private static bool PrivateEnableUnloadConfirmation
         {
-            get { return ApplicationBase.Session.EnableUnloadConfirmation; }
+            get
+            {
+                if (ApplicationBase.Session.EnableUnloadConfirmation == null)
+                    PrivateEnableUnloadConfirmation = false;
+
+                return ApplicationBase.Session.EnableUnloadConfirmation;
+            }
             set { ApplicationBase.Session.EnableUnloadConfirmation = value; }
         }
 
