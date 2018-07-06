@@ -15,7 +15,7 @@ This application uses an interesting environment:
 
 The project is instrumental in improving [MvvmFx](https://github.com/MvvmFx/MvvmFx).
 
-## Profiling Wisej Web vs WinForms used memory
+## Profiling used memory Wisej Web vs WinForms
 
 Results of memory profile for Wisej Web and WinForms versions:
 
