@@ -18,9 +18,12 @@ The project is instrumental in improving [MvvmFx](https://github.com/MvvmFx/Mvvm
 ## Profiling Wisej Web vs WinForms used memory
 
 Results of memory profile for Wisej Web and WinForms versions:
-* 18.635 KB Wisej single instance baseline
-*    748 KB Wisej extra instance
-*  3.717 KB WinForms
+
+| Environment | Used Memory |
+| :--- | ---: |
+| Wisej single instance baseline | 18.635 KB |
+| Wisej extra instance | 748 KB |
+| WinForms | 3.717 KB |
 
 ## Project Status
 
