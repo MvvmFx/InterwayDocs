@@ -18,6 +18,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 using System;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
@@ -112,6 +113,9 @@ namespace Wisej.HostService.Owin
         /// <param name="immediate"></param>
         public void Stop(bool immediate)
         {
+            Trace.TraceInformation("Stopping Wisej.Host: Domain={0}, Port={1}, Reason={2}", this.Domain, this.Port,
+                HostingEnvironment.ShutdownReason);
+
             try
             {
                 HostingEnvironment.UnregisterObject(this);
@@ -157,6 +161,9 @@ namespace Wisej.HostService.Owin
             this.Port = port;
             this.Domain = domain;
             this.Url = "http://" + domain + ":" + port;
+
+            Trace.TraceInformation("Starting Wisej.Host: Domain={0}, Port={1}, Reason={2}", this.Domain, this.Port,
+                HostingEnvironment.ShutdownReason);
 
             // register with the .NET hosting system.
             HostingEnvironment.RegisterObject(this);
